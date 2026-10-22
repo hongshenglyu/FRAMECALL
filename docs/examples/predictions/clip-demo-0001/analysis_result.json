@@ -1,0 +1,27 @@
+{
+  "sampleId": "clip-demo-0001",
+  "taskId": 1003,
+  "status": "SUCCEEDED",
+  "stage": "COMPLETED",
+  "progressPercent": 100,
+  "resultJsonPath": "docs/examples/predictions/clip-demo-0001/analysis_result.json",
+  "events": [
+    {
+      "externalId": "P-demo-FOUL-01",
+      "eventType": "FOUL",
+      "riskLevel": "LOW",
+      "timestampMs": 8800,
+      "windowStartMs": 5800,
+      "windowEndMs": 11800,
+      "involvedTrackIds": [2, 6],
+      "summary": "Prediction for a rejected truth event",
+      "evidenceMetrics": [],
+      "trackBoxes": [],
+      "keyframePath": "",
+      "clipPath": "",
+      "confidence": 0.63
+    }
+  ],
+  "metrics": {},
+  "errorMessage": null
+}

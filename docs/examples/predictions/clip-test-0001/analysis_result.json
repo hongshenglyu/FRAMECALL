@@ -1,0 +1,27 @@
+{
+  "sampleId": "clip-test-0001",
+  "taskId": 1002,
+  "status": "SUCCEEDED",
+  "stage": "COMPLETED",
+  "progressPercent": 100,
+  "resultJsonPath": "docs/examples/predictions/clip-test-0001/analysis_result.json",
+  "events": [
+    {
+      "externalId": "P-test-OFFSIDE-01",
+      "eventType": "OFFSIDE",
+      "riskLevel": "HIGH",
+      "timestampMs": 50000,
+      "windowStartMs": 47000,
+      "windowEndMs": 53000,
+      "involvedTrackIds": [9],
+      "summary": "Predicted offside review",
+      "evidenceMetrics": [],
+      "trackBoxes": [],
+      "keyframePath": "",
+      "clipPath": "",
+      "confidence": 0.87
+    }
+  ],
+  "metrics": {},
+  "errorMessage": null
+}

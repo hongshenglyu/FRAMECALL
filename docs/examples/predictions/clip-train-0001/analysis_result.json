@@ -1,0 +1,57 @@
+{
+  "sampleId": "clip-train-0001",
+  "taskId": 1001,
+  "status": "SUCCEEDED",
+  "stage": "COMPLETED",
+  "progressPercent": 100,
+  "resultJsonPath": "docs/examples/predictions/clip-train-0001/analysis_result.json",
+  "events": [
+    {
+      "externalId": "P-train-FOUL-01",
+      "eventType": "FOUL",
+      "riskLevel": "HIGH",
+      "timestampMs": 12600,
+      "windowStartMs": 9600,
+      "windowEndMs": 15600,
+      "involvedTrackIds": [7, 12],
+      "summary": "Predicted contact duel",
+      "evidenceMetrics": [],
+      "trackBoxes": [],
+      "keyframePath": "",
+      "clipPath": "",
+      "confidence": 0.91
+    },
+    {
+      "externalId": "P-train-HANDBALL-01",
+      "eventType": "HANDBALL",
+      "riskLevel": "MEDIUM",
+      "timestampMs": 31000,
+      "windowStartMs": 28000,
+      "windowEndMs": 34000,
+      "involvedTrackIds": [4],
+      "summary": "Predicted handball review",
+      "evidenceMetrics": [],
+      "trackBoxes": [],
+      "keyframePath": "",
+      "clipPath": "",
+      "confidence": 0.72
+    },
+    {
+      "externalId": "P-train-OFFSIDE-FP",
+      "eventType": "OFFSIDE",
+      "riskLevel": "LOW",
+      "timestampMs": 40000,
+      "windowStartMs": 37000,
+      "windowEndMs": 43000,
+      "involvedTrackIds": [5],
+      "summary": "False positive offside prediction",
+      "evidenceMetrics": [],
+      "trackBoxes": [],
+      "keyframePath": "",
+      "clipPath": "",
+      "confidence": 0.58
+    }
+  ],
+  "metrics": {},
+  "errorMessage": null
+}

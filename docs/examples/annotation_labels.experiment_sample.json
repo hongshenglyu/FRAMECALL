@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "annotation.v1",
+  "datasetId": "campus-football-experiment-sample",
+  "datasetName": "Experiment Sample Labels",
+  "createdAt": "2026-06-20T10:00:00+08:00",
+  "updatedAt": "2026-06-20T10:30:00+08:00",
+  "annotators": [
+    {
+      "annotatorId": "referee-001",
+      "displayName": "Referee A",
+      "role": "REFEREE"
+    }
+  ],
+  "samples": [
+    {
+      "sampleId": "clip-train-0001",
+      "source": {
+        "type": "local_file",
+        "uri": "storage/uploads/clip-train-0001.mp4"
+      },
+      "split": "train",
+      "durationMs": 75000,
+      "fps": 25,
+      "frameCount": 1875,
+      "events": [
+        {
+          "eventId": "clip-train-0001-e01",
+          "eventType": "FOUL",
+          "label": "CONFIRMED",
+          "riskLevel": "HIGH",
+          "timestampMs": 12400,
+          "keyframe": {
+            "frameIndex": 310,
+            "timestampMs": 12400,
+            "toleranceFrames": 3
+          },
+          "windowStartMs": 9400,
+          "windowEndMs": 15400,
+          "involvedTrackIds": [7, 12],
+          "decision": {
+            "expertDecision": "FOUL",
+            "reviewResult": "CONFIRMED",
+            "confidence": 0.9,
+            "reasonCode": "CONTACT_VISIBLE"
+          },
+          "boxes": [
+            {
+              "frameIndex": 310,
+              "timestampMs": 12400,
+              "trackId": 7,
+              "label": "player",
+              "team": "A",
+              "box": [159, 122, 239, 302],
+              "confidence": 0.96,
+              "annotatedBy": "referee-001"
+            },
+            {
+              "frameIndex": 310,
+              "timestampMs": 12400,
+              "trackId": 12,
+              "label": "player",
+              "team": "B",
+              "box": [246, 121, 326, 303],
+              "confidence": 0.94,
+              "annotatedBy": "referee-001"
+            }
+          ],
+          "tracks": [
+            {
+              "trackId": 7,
+              "label": "player",
+              "team": "A",
+              "observations": [
+                {
+                  "frameIndex": 300,
+                  "timestampMs": 12000,
+                  "box": [150, 122, 230, 302],
+                  "visibility": "visible"
+                },
+                {
+                  "frameIndex": 310,
+                  "timestampMs": 12400,
+                  "box": [159, 122, 239, 302],
+                  "visibility": "visible"
+                }
+              ]
+            },
+            {
+              "trackId": 12,
+              "label": "player",
+              "team": "B",
+              "observations": [
+                {
+                  "frameIndex": 300,
+                  "timestampMs": 12000,
+                  "box": [255, 121, 335, 303],
+                  "visibility": "visible"
+                },
+                {
+                  "frameIndex": 310,
+                  "timestampMs": 12400,
+                  "box": [246, 121, 326, 303],
+                  "visibility": "partial"
+                }
+              ]
+            }
+          ],
+          "tags": ["contact"],
+          "createdBy": "referee-001",
+          "createdAt": "2026-06-20T10:05:00+08:00"
+        },
+        {
+          "eventId": "clip-train-0001-e02",
+          "eventType": "HANDBALL",
+          "label": "UNCERTAIN",
+          "riskLevel": "MEDIUM",
+          "timestampMs": 28750,
+          "keyframe": {
+            "frameIndex": 719,
+            "timestampMs": 28750,
+            "toleranceFrames": 3
+          },
+          "windowStartMs": 25750,
+          "windowEndMs": 31750,
+          "involvedTrackIds": [4],
+          "decision": {
+            "expertDecision": "HANDBALL_REVIEW",
+            "reviewResult": "UNCERTAIN",
+            "confidence": 0.62,
+            "reasonCode": "ARM_CONTACT_UNCLEAR"
+          },
+          "boxes": [
+            {
+              "frameIndex": 719,
+              "timestampMs": 28750,
+              "trackId": 4,
+              "label": "player",
+              "team": "A",
+              "box": [420, 118, 500, 305],
+              "confidence": 0.91,
+              "annotatedBy": "referee-001"
+            }
+          ],
+          "tracks": [],
+          "tags": ["handball"],
+          "createdBy": "referee-001",
+          "createdAt": "2026-06-20T10:06:00+08:00"
+        }
+      ]
+    },
+    {
+      "sampleId": "clip-test-0001",
+      "source": {
+        "type": "local_file",
+        "uri": "storage/uploads/clip-test-0001.mp4"
+      },
+      "split": "test",
+      "durationMs": 60000,
+      "fps": 25,
+      "events": [
+        {
+          "eventId": "clip-test-0001-e01",
+          "eventType": "OFFSIDE",
+          "label": "CONFIRMED",
+          "riskLevel": "HIGH",
+          "timestampMs": 49200,
+          "keyframe": {
+            "frameIndex": 1230,
+            "timestampMs": 49200,
+            "toleranceFrames": 3
+          },
+          "windowStartMs": 46200,
+          "windowEndMs": 52200,
+          "involvedTrackIds": [9],
+          "decision": {
+            "expertDecision": "OFFSIDE_REVIEW",
+            "reviewResult": "CONFIRMED",
+            "confidence": 0.85,
+            "reasonCode": "LINE_CHECK"
+          },
+          "boxes": [],
+          "tracks": [],
+          "tags": ["offside"],
+          "createdBy": "referee-001",
+          "createdAt": "2026-06-20T10:07:00+08:00"
+        }
+      ]
+    },
+    {
+      "sampleId": "clip-demo-0001",
+      "source": {
+        "type": "local_file",
+        "uri": "storage/uploads/clip-demo-0001.mp4"
+      },
+      "split": "demo",
+      "durationMs": 30000,
+      "fps": 25,
+      "events": [
+        {
+          "eventId": "clip-demo-0001-e01",
+          "eventType": "FOUL",
+          "label": "REJECTED",
+          "riskLevel": "LOW",
+          "timestampMs": 9000,
+          "keyframe": {
+            "frameIndex": 225,
+            "timestampMs": 9000,
+            "toleranceFrames": 3
+          },
+          "windowStartMs": 6000,
+          "windowEndMs": 12000,
+          "involvedTrackIds": [2, 6],
+          "decision": {
+            "expertDecision": "NO_FOUL",
+            "reviewResult": "REJECTED",
+            "confidence": 0.74,
+            "reasonCode": "INSUFFICIENT_CONTACT"
+          },
+          "boxes": [],
+          "tracks": [],
+          "tags": ["contact"],
+          "createdBy": "referee-001",
+          "createdAt": "2026-06-20T10:08:00+08:00"
+        }
+      ]
+    }
+  ]
+}
