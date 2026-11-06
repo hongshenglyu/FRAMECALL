@@ -8,6 +8,7 @@ import com.footballref.assist.domain.UserAccount;
 import com.footballref.assist.domain.VideoAsset;
 import com.footballref.assist.domain.enums.EventType;
 import com.footballref.assist.domain.enums.RiskLevel;
+import com.footballref.assist.domain.enums.Role;
 import com.footballref.assist.domain.enums.TaskStatus;
 import com.footballref.assist.repository.AnalysisTaskRepository;
 import com.footballref.assist.repository.AnnotationTaskRepository;
@@ -15,6 +16,7 @@ import com.footballref.assist.repository.DisputeEventRepository;
 import com.footballref.assist.repository.ReviewRecordRepository;
 import com.footballref.assist.repository.UserAccountRepository;
 import com.footballref.assist.repository.VideoAssetRepository;
+import com.footballref.assist.service.PasswordService;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,6 +51,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class BackendApiSmokeTest {
     private static final Path TEST_STORAGE_ROOT = createTempRoot();
+    private String adminUsername;
+    private String adminPassword;
+    @Autowired PasswordService passwords;
 
     @LocalServerPort
     int port;
@@ -91,6 +96,13 @@ class BackendApiSmokeTest {
         events.deleteAll();
         tasks.deleteAll();
         videos.deleteAll();
+        users.deleteAll();
+        adminUsername = "fixture_" + java.util.UUID.randomUUID();
+        adminPassword = java.util.UUID.randomUUID().toString() + java.util.UUID.randomUUID();
+        UserAccount admin = new UserAccount();
+        admin.setUsername(adminUsername); admin.setDisplayName("Synthetic smoke administrator");
+        admin.setRole(Role.ADMIN); admin.setEnabled(true); admin.setPasswordHash(passwords.hash(adminPassword));
+        users.save(admin);
     }
 
     @AfterAll
@@ -196,7 +208,7 @@ class BackendApiSmokeTest {
     private String loginAndReadToken() throws Exception {
         ResponseEntity<String> response = rest.postForEntity(
                 url("/api/auth/login"),
-                Map.of("username", "admin", "password", "admin123"),
+                Map.of("username", adminUsername, "password", adminPassword),
                 String.class
         );
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -263,7 +275,7 @@ class BackendApiSmokeTest {
     }
 
     private SeededTask seedSucceededTask() throws Exception {
-        UserAccount admin = users.findByUsername("admin").orElseThrow();
+        UserAccount admin = users.findByUsername(adminUsername).orElseThrow();
         Path taskDir = Files.createDirectories(TEST_STORAGE_ROOT.resolve("tasks").resolve("test-task"));
         Path videoPath = TEST_STORAGE_ROOT.resolve("uploads").resolve("test-video.mp4");
         Files.createDirectories(videoPath.getParent());

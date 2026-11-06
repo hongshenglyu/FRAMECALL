@@ -1,0 +1,6 @@
+{
+  "command": "npm.cmd run build -- --outDir ../docs/project/task-01-06-20261024/tmp/frontend-dist",
+  "cwd": "frontend",
+  "exitCode": 0,
+  "seconds": 8.906
+}

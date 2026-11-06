@@ -1,0 +1,29 @@
+﻿action,taskBefore,attemptBefore,condition,target,active,http,linearizationPoint
+cancel,PENDING,PENDING或无attempt,当前且未启动；异常关联409,CANCELLED/CANCELLED,false,200,requestCancel锁内事务提交
+progress,PENDING,仅legacy空attempt兼容,null grant/null current；正常排队attempt拒绝,保持PENDING，通知最高99,保持,legacy 200；其他409,updateProgress锁内短事务
+result,PENDING,非当前/已终态/隔离,迟到结果,不写事件/结果/100,保持,后台忽略,完成事务锁内检查
+retry,PENDING,任何,不允许当前状态重试,保持,新active或保持,409,schedule同task锁分配事务提交
+cancel,RUNNING,RUNNING active,匹配current，非隔离,CANCEL_REQUESTED/CANCEL_REQUESTED,true,202；双路已收束可200,requestCancel锁内提交后才发远端HTTP
+progress,RUNNING,RUNNING active,当前授权、非隔离、阶段/百分比不退；完全重复不写,保持RUNNING，通知最高99,true,200；倒退409；非法400,updateProgress锁内短事务
+result,RUNNING,当前RUNNING active且非隔离,完整SUCCEEDED结果，保存事件与终态同事务,SUCCEEDED/SUCCEEDED/100,false,后台无独立HTTP响应,executeAttempt完成事务提交
+retry,RUNNING,任何,不允许当前状态重试,保持,新active或保持,409,schedule同task锁分配事务提交
+cancel,CANCEL_REQUESTED,不改变,重复，不重发远端HTTP,保持，不清隔离,保持,202,requestCancel锁内读取
+progress,CANCEL_REQUESTED,任何,已取消/终态,拒绝，不改进度/错误,保持,409,updateProgress锁内拒绝
+result,CANCEL_REQUESTED,当前active,仅记录本地调用结束；取消明确返回且无未知才能收束,等待或CANCELLED，不写新事件/路径/100,待定/false,后台,settleCancellation同task锁提交
+retry,CANCEL_REQUESTED,任何,不允许当前状态重试,保持,新active或保持,409,schedule同task锁分配事务提交
+cancel,CANCELLED,不改变,重复，不发HTTP,保持,false,200,requestCancel锁内读取
+progress,CANCELLED,任何,已取消/终态,拒绝，不改进度/错误,保持,409,updateProgress锁内拒绝
+result,CANCELLED,非当前/已终态/隔离,迟到结果,不写事件/结果/100,保持,后台忽略,完成事务锁内检查
+retry,CANCELLED,任何,仅FAILED/CANCELLED且无active可分配,PENDING/新attempt,新active或保持,200或active冲突409,schedule同task锁分配事务提交
+cancel,SUCCEEDED,不改变,已成功/失败，不伪称取消,拒绝且保持,保持,409,requestCancel锁内拒绝
+progress,SUCCEEDED,任何,已取消/终态,拒绝，不改进度/错误,保持,409,updateProgress锁内拒绝
+result,SUCCEEDED,非当前/已终态/隔离,迟到结果,不写事件/结果/100,保持,后台忽略,完成事务锁内检查
+retry,SUCCEEDED,任何,不允许当前状态重试,保持,新active或保持,409,schedule同task锁分配事务提交
+cancel,FAILED,不改变,已成功/失败，不伪称取消,拒绝且保持,保持,409,requestCancel锁内拒绝
+progress,FAILED,任何,已取消/终态,拒绝，不改进度/错误,保持,409,updateProgress锁内拒绝
+result,FAILED,非当前/已终态/隔离,迟到结果,不写事件/结果/100,保持,后台忽略,完成事务锁内检查
+retry,FAILED,任何,仅FAILED/CANCELLED且无active可分配,PENDING/新attempt,新active或保持,200或active冲突409,schedule同task锁分配事务提交
+failure,PENDING/RUNNING,当前active,明确分析失败/503/结果事务回滚,FAILED，固定非秘密错误码,false,后台；派发拒绝HTTP503,fail短事务
+failure,CANCEL_REQUESTED,当前active,明确分析结束；等取消I/O明确返回,等待或CANCELLED，无新事件,待定/false,202或后续GET,settleCancellation短事务
+unknown,RUNNING或CANCEL_REQUESTED,当前active,分析I/O未知或取消I/O未知,FAILED或CANCEL_REQUESTED，RECOVERY_REQUIRED,true,重试409,fail/取消结算事务
+restart,遗留活动,任意active,单实例启动隔离，无自动重放,FAILED/RECOVERY_REQUIRED,true,重试409,quarantineInterruptedAttempts事务

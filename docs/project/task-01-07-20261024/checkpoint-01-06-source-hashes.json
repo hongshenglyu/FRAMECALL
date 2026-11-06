@@ -1,0 +1,37 @@
+[
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/TaskService.java",
+    "expected": "46c9e6b23c1c51a82d1fa1fda7d3b5659b30b9e7e407df93af59f52fffbd1ecd",
+    "actual": "46c9e6b23c1c51a82d1fa1fda7d3b5659b30b9e7e407df93af59f52fffbd1ecd"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/AiClient.java",
+    "expected": "2f64a302e84bcb8c33d095b51da5b31e3b3598f7697e64b6181b89e2496f11c4",
+    "actual": "2f64a302e84bcb8c33d095b51da5b31e3b3598f7697e64b6181b89e2496f11c4"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+    "expected": "75c401ee55aacee5a80211e6963fc6dc86f3ab68d004c58298d4cbad83d4e3e0",
+    "actual": "75c401ee55aacee5a80211e6963fc6dc86f3ab68d004c58298d4cbad83d4e3e0"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java",
+    "expected": "2af81797f6ca9b07672098612931339575c08ca095ffbf740cbb25273e16f33a",
+    "actual": "2af81797f6ca9b07672098612931339575c08ca095ffbf740cbb25273e16f33a"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/InternalSecurityTest.java",
+    "expected": "cdf5b3fd100a6654d19582a13bd7c29526c93c230df41942fe73335b4afecca2",
+    "actual": "cdf5b3fd100a6654d19582a13bd7c29526c93c230df41942fe73335b4afecca2"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/TaskLifecycleTest.java",
+    "expected": "14a9c5fe0641f22876d3cb7fda7ceafb7d400eefcb31f60f34759a47c3ebd90f",
+    "actual": "14a9c5fe0641f22876d3cb7fda7ceafb7d400eefcb31f60f34759a47c3ebd90f"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/TaskAttempt.java",
+    "expected": "7935a7c9cbdc1809ce344e50089e51d97837902def656415e1d9e10df38c5b04",
+    "actual": "7935a7c9cbdc1809ce344e50089e51d97837902def656415e1d9e10df38c5b04"
+  }
+]

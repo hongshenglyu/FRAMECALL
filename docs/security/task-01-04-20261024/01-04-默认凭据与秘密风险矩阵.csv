@@ -1,0 +1,22 @@
+﻿keyOrEntry,source,usage,profile,beforeRisk,afterPolicy,priority,evidence
+DataSeeder启动账户,backend/src/main/java/com/footballref/assist/config/DataSeeder.java:24,管理员/裁判初始化,原所有profile,原固定账户自动创建,默认关闭；显式双开关/外部随机账户；仅空库,P0,SecurityBootstrapTest真实默认/prod/demo+原登录回归
+FRAMECALL_JWT_SECRET,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,HS256签名,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_AI_SERVICE_TOKEN,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,Java→AI服务身份,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_AI_SERVICE_URL,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,固定AI目标,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_CALLBACK_BASE_URL,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,固定后端回调目标,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_STORAGE_ROOT,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,受控共享存储根,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_DATABASE_URL,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,显式数据库目标,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_DB_USERNAME,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,显式数据库用户,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_DB_PASSWORD,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:21,显式数据库口令,所有profile,旧app.*隐式值/缺必要值可能仍启动,新键必需；不安全时bean前失败；内存H2可空数据库密码,P0,每个必需键缺失负向/实际早停/配置优先级
+FRAMECALL_BOOTSTRAP_ADMIN,backend/src/main/java/com/footballref/assist/config/DataSeeder.java:24,一次显式管理员初始化,默认/生产/demo需显式授权,无可靠初始化开关/固定口令,只有双开关true、明确用户名/强密码且空库才创建；不回显,P0,确认/已有账户/实际demo内存H2
+FRAMECALL_BOOTSTRAP_CONFIRMED,backend/src/main/java/com/footballref/assist/config/DataSeeder.java:24,一次显式管理员初始化,默认/生产/demo需显式授权,无可靠初始化开关/固定口令,只有双开关true、明确用户名/强密码且空库才创建；不回显,P0,确认/已有账户/实际demo内存H2
+FRAMECALL_BOOTSTRAP_USERNAME,backend/src/main/java/com/footballref/assist/config/DataSeeder.java:24,一次显式管理员初始化,默认/生产/demo需显式授权,无可靠初始化开关/固定口令,只有双开关true、明确用户名/强密码且空库才创建；不回显,P0,确认/已有账户/实际demo内存H2
+FRAMECALL_BOOTSTRAP_PASSWORD,backend/src/main/java/com/footballref/assist/config/DataSeeder.java:24,一次显式管理员初始化,默认/生产/demo需显式授权,无可靠初始化开关/固定口令,只有双开关true、明确用户名/强密码且空库才创建；不回显,P0,确认/已有账户/实际demo内存H2
+demo + FRAMECALL_DEMO_ISOLATED,backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java:56,演示隔离,唯一demo,没有隔离默认账户策略,禁止prod等混用、文件H2/MySQL、缺确认；无固定演示账户,P0,demo混合profile/真实demo启动
+Spring自动用户,backend/src/main/java/com/footballref/assist/FootballRefAssistApplication.java:9,框架默认身份/口令日志,所有profile,可能生成随机口令输出,显式排除UserDetailsServiceAutoConfiguration,P0,实际启动与日志扫描
+JWT alg/typ/exp,backend/src/main/java/com/footballref/assist/service/JwtService.java:45,签名算法与失效,所有profile,未严格拒绝算法声明/缺失有效期,仅HS256/JWT、必需未来exp、当前新key签名,P0,正确签名的错误算法/缺exp/过期/轮换测试
+AI_SERVICE_TOKEN,ai-service/app/security.py:25,FastAPI内部身份,所有模式,仅长度约束，可能接受示例或重复值,格式/长度/字符多样性/占位拒绝503，认证协议不变,P0,AI真实HTTP弱值拒绝+原19回归
+LoginPage,frontend/src/pages/LoginPage.vue:38,用户登录,所有前端构建,预填及提示固定凭据,空输入、仅分配账户说明,P0,Chrome三次登录空字段检查+真实播放
+smoke/layout工具,scripts/smoke-system.ps1:4; scripts/check-frontend-layout.mjs:119,本机测试登录,人工工具,隐含默认凭据,显式FRAMECALL_SMOKE_*；不自动执行操作型脚本,P0,PowerShell解析/Node语法检查
+application.yml/application-mysql.yml,backend/src/main/resources（仅存在性）,私人实例配置,部署外部配置,值未读取，无法判断存量秘密是否需轮换,保留本机；POM排除资源复制；不承诺旧值已撤销,P0,resource-probe-result.json，仅复制META注册文件
+测试专用合成值,backend/src/test及本轮tmp,隔离夹具,内存H2/回环,不能与真实硬编码凭据混为一类,随机生成，不进分享日志/ZIP，原fixture按业务意图保持,P0,后端/AI结果JSON及脱敏检查

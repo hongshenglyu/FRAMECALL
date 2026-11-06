@@ -7,6 +7,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Cookie;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
+    public static final String MEDIA_COOKIE = "framecall_media";
     private final JwtService jwtService;
     private final UserAccountRepository users;
 
@@ -30,6 +32,16 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         String header = request.getHeader("Authorization");
+        // A media cookie can never authorize writes or other business endpoints.
+        if (header == null && ("GET".equals(request.getMethod()) || "HEAD".equals(request.getMethod()))
+                && request.getRequestURI().equals(request.getContextPath() + "/api/files") && request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if (MEDIA_COOKIE.equals(cookie.getName())) {
+                    header = "Bearer " + cookie.getValue();
+                    break;
+                }
+            }
+        }
         if (header != null && header.startsWith("Bearer ")) {
             String username = jwtService.subject(header.substring(7));
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -46,4 +58,3 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
-

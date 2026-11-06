@@ -1,0 +1,34 @@
+[
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/TaskService.java",
+    "beforeSha256": "9f069a941f0701a014b1f91b06198333412c0108f6bdbe544432a594e3365ba5"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/AiClient.java",
+    "beforeSha256": "90b7eba8f9f3301d4452f0ef35897ebba10f55475b77e95a7110499cb060b3a8"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+    "beforeSha256": "c87e98becf92e5144c5c1a213a3906146418c4f070520653dade430dab5085aa"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java",
+    "beforeSha256": "5e4f6a3a3c90ab7745045ed73507bb07e969e508588a01d599477db65dc47d3b"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/InternalSecurityTest.java",
+    "beforeSha256": "9f8dbd2c88c138d1eacd45589e233070f80c72fb074243f5296acbfa498682bf"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/TaskSchedulingTest.java",
+    "beforeSha256": "155f93fa37c87fc9930295e056000bc10b9f453f9639116a662a40882c9d6609"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/TaskLifecycleTest.java",
+    "beforeSha256": null
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/TaskAttempt.java",
+    "beforeSha256": "bc49286a7b9d1aff697b37bae18b6453a86d0931a400f5acf5c8cd34b919ba5a"
+  }
+]

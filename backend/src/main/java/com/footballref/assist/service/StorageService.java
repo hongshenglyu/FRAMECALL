@@ -43,6 +43,28 @@ public class StorageService {
         return path;
     }
 
+    public Path attemptDir(Long taskId, String attemptId) throws IOException {
+        if (taskId == null || taskId <= 0 || !java.util.UUID.fromString(attemptId).toString().equals(attemptId)) {
+            throw new IllegalArgumentException("Invalid analysis attempt");
+        }
+        Path target = root.resolve("tasks/task-" + taskId + "/attempts/" + attemptId);
+        Path current = root;
+        checkDirectory(current);
+        for (Path part : root.relativize(target)) {
+            current = current.resolve(part);
+            try { Files.createDirectory(current); }
+            catch (java.nio.file.FileAlreadyExistsException exists) { /* Check the existing entry below. */ }
+            checkDirectory(current);
+        }
+        return target;
+    }
+
+    private void checkDirectory(Path path) throws IOException {
+        var attributes = Files.readAttributes(path, java.nio.file.attribute.BasicFileAttributes.class, java.nio.file.LinkOption.NOFOLLOW_LINKS);
+        if (!attributes.isDirectory() || attributes.isSymbolicLink() || attributes.isOther()
+                || !path.toRealPath().startsWith(root.toRealPath())) throw new IOException("Unsafe attempt directory");
+    }
+
     public Path resolveStoragePath(String rawPath) {
         Path requested = Path.of(rawPath).toAbsolutePath().normalize();
         if (requested.startsWith(root)) {

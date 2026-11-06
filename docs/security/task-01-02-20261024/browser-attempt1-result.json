@@ -1,0 +1,15 @@
+{
+  "outcome": "FAIL",
+  "reason": "Timed out waiting for browser condition",
+  "checks": [
+    {
+      "id": "BROWSER_AVAILABLE",
+      "outcome": "PASS"
+    },
+    {
+      "id": "CDP_READY",
+      "outcome": "PASS"
+    }
+  ],
+  "mediaResponses": []
+}

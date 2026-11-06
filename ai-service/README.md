@@ -1,5 +1,36 @@
 # AI Service
 
+## Internal security configuration (WBS 01-03)
+
+Before starting, configure `AI_SERVICE_TOKEN` (random secret, at least 32 characters),
+`AI_STORAGE_ROOT` (existing absolute shared storage directory), and `AI_CALLBACK_BASE_URL`
+(fixed backend origin with scheme, literal IP and port). Do not commit their values.
+Spring must receive the same service credential as `app.ai-service-token`, and the same
+callback origin as `app.internal-callback-base-url`. Configure these using the deployment
+environment or private configuration; no instance configuration is rewritten by this change.
+The old `app.internal-token` is no longer accepted for progress callbacks.
+
+Private HTTP operations require `X-AI-Service-Token`. Analysis also requires an ephemeral,
+task-scoped `X-Callback-Token` issued by the backend. Never send either credential in a URL
+or a JSON body. Backend-managed callback grants expire after two hours and are revoked
+when the synchronous HTTP analysis invocation ends. They are not durable attempt IDs.
+
+Only a fixed `/api/internal/tasks/{taskId}/progress` callback is allowed. DNS origins,
+userinfo, query strings, fragments and redirects are rejected; `localhost` configuration
+is pinned to `127.0.0.1`. Deployment needs correctly configured origins on both services.
+Inputs are restricted to storage `uploads`; outputs to `tasks/task-{taskId}`. Existing
+symlinks, reparse points and multiply linked output files are rejected before analysis.
+Use filesystem ACLs: these checks do not provide atomic protection from malicious concurrent
+filesystem writers. `/health` is public and minimal; Swagger/OpenAPI endpoints are disabled.
+
+The HTTP endpoint currently accepts only configured mock detector/tracker modes. Non-mock
+configuration returns `503 REAL_PIPELINE_UNAVAILABLE` while the real pipeline remains
+unfinished. Direct algorithm fixtures retain their historical fallback contract; neither
+those fixtures nor successful mock HTTP output prove real model processing.
+
+Run tests using the existing virtual environment: `python -B -m unittest discover -s tests -v`.
+Security tests start isolated Uvicorn and loopback callback fixtures; they do not use real media.
+
 FastAPI service responsible for video analysis. The default mode uses a deterministic mock analyzer that produces the same JSON contract as the future YOLO + ByteTrack + pose pipeline.
 
 Run locally:

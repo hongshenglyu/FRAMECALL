@@ -1,0 +1,98 @@
+{
+  "requiredReports": 10,
+  "safeSupplementalEvidence": 6,
+  "missingReports": [],
+  "files": [
+    {
+      "path": "01-01-执行总览.md",
+      "bytes": 1857,
+      "sha256": "8162770de42ddba3f7d779ddb9c8b68e6643d06445a1a337ee9ce32a6caf0eda"
+    },
+    {
+      "path": "01-01-接口资源归属矩阵.csv",
+      "bytes": 4812,
+      "sha256": "09b477f41c06763f80b7eb805f063ed9436463daf4e8a9797e13511a7935f5a9"
+    },
+    {
+      "path": "01-01-修改文件与Diff索引.md",
+      "bytes": 2531,
+      "sha256": "1a59be8c35c962bc1453fbad7af9c954652bb20e63d2b5c0500352484c0a500e"
+    },
+    {
+      "path": "01-01-双用户与管理员测试矩阵.csv",
+      "bytes": 43858,
+      "sha256": "c41769aba8b41430282b3934bcbc015bca4f9abfc7d3faa52aa2cd9ef0dded65"
+    },
+    {
+      "path": "01-01-测试与环境记录.md",
+      "bytes": 4092,
+      "sha256": "97ef386ee6318e44d3d3dd7c19d5a5851cdf9a3d0676b14e4f1c8446ee815cc2"
+    },
+    {
+      "path": "01-01-兼容与安全残余风险.md",
+      "bytes": 1762,
+      "sha256": "f753b9c92083fa75bd0f1f0bb477a9f7f02068c582be3d03080058d557c507c2"
+    },
+    {
+      "path": "01-01-验收清单.md",
+      "bytes": 2456,
+      "sha256": "fa08ad0364816ec13be50fc57b1ea9a795f6137b71dea32f7b2d8139456ed590"
+    },
+    {
+      "path": "01-01-核验结果.json",
+      "bytes": 17877,
+      "sha256": "e0a395014d6db9f8416c3ec361e7d737a0376d0435bd8d507a58a833ad3f8187"
+    },
+    {
+      "path": "01-01-回退与停止计划.md",
+      "bytes": 1656,
+      "sha256": "3931c02b001d35b26336c7c067ead56dd0f49fdb9d7e76f95cef8b1455767bbb"
+    },
+    {
+      "path": "01-01-任务启动卡.md",
+      "bytes": 2235,
+      "sha256": "9e2de31875cbe9c37135fe83af37abef3303cf14f46d3ef2972159ab6c0fa11d"
+    },
+    {
+      "path": "baseline-test-result.json",
+      "bytes": 606,
+      "sha256": "0864950a771c758382b102946096663d54b92a7a2e437bd616c48e130e50103b"
+    },
+    {
+      "path": "regression-run1-result.json",
+      "bytes": 2843,
+      "sha256": "01eef6c4de9dc36fe38753e6b102ae0250b0ffbe53d7370e86b3dc5d3fef62cd"
+    },
+    {
+      "path": "baseline.sanitized.log",
+      "bytes": 3242,
+      "sha256": "2dc8293380dba02c08cd89e571370da6213dd28d2cd85ec3eec8ede9d4e856b6"
+    },
+    {
+      "path": "regression-run1.sanitized.log",
+      "bytes": 3802,
+      "sha256": "d2e0f6cbd1f4ef075bbdbd9d3f820f2daf3743a01d7505823f54cb1af4b7678f"
+    },
+    {
+      "path": "authorization-http-evidence.jsonl",
+      "bytes": 9974,
+      "sha256": "01a6ca9fd92a5b233ca584b26c1bdaa824f1d6f2685504134884535bf55b78c2"
+    }
+  ],
+  "readableJsonCsvJsonlMarkdown": true,
+  "privacyPatternHits": [],
+  "whitelistMatchesActualChanges": true,
+  "sourceRevisionTestedAndUnchanged": true,
+  "originalOutsideWhitelistUnchangedWithinRecordedChecks": true,
+  "gitRefsUnchanged": true,
+  "junitPass": 11,
+  "junitFailure": 0,
+  "junitError": 0,
+  "junitSkip": 0,
+  "httpAssertionsPass": 71,
+  "matrixPass": 74,
+  "matrixNotRun": 8,
+  "independentAcceptance": "NOT_RUN",
+  "G1": "未通过",
+  "archivePolicy": "10规定材料+6安全证据；排除tmp、源码全文、实例配置、媒体、数据库、权重与DPAPI"
+}

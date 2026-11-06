@@ -1,0 +1,207 @@
+[
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/TaskService.java",
+    "beforeSha256": "9f069a941f0701a014b1f91b06198333412c0108f6bdbe544432a594e3365ba5",
+    "afterSha256": "46c9e6b23c1c51a82d1fa1fda7d3b5659b30b9e7e407df93af59f52fffbd1ecd",
+    "ranges": [
+      {
+        "beforeStart": 142,
+        "beforeEnd": 142,
+        "afterStart": 142,
+        "afterEnd": 142
+      },
+      {
+        "beforeStart": 144,
+        "beforeEnd": 144,
+        "afterStart": 144,
+        "afterEnd": 145
+      },
+      {
+        "beforeStart": 146,
+        "beforeEnd": 146,
+        "afterStart": 147,
+        "afterEnd": 147
+      },
+      {
+        "beforeStart": 172,
+        "beforeEnd": 172,
+        "afterStart": 173,
+        "afterEnd": 173
+      },
+      {
+        "beforeStart": 174,
+        "beforeEnd": 175,
+        "afterStart": 175,
+        "afterEnd": 177
+      },
+      {
+        "beforeStart": 179,
+        "beforeEnd": 179,
+        "afterStart": 181,
+        "afterEnd": 181
+      },
+      {
+        "beforeStart": 181,
+        "beforeEnd": 180,
+        "afterStart": 183,
+        "afterEnd": 183
+      },
+      {
+        "beforeStart": 188,
+        "beforeEnd": 188,
+        "afterStart": 191,
+        "afterEnd": 192
+      },
+      {
+        "beforeStart": 214,
+        "beforeEnd": 223,
+        "afterStart": 218,
+        "afterEnd": 278
+      },
+      {
+        "beforeStart": 232,
+        "beforeEnd": 234,
+        "afterStart": 287,
+        "afterEnd": 308
+      },
+      {
+        "beforeStart": 241,
+        "beforeEnd": 241,
+        "afterStart": 315,
+        "afterEnd": 315
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/AiClient.java",
+    "beforeSha256": "90b7eba8f9f3301d4452f0ef35897ebba10f55475b77e95a7110499cb060b3a8",
+    "afterSha256": "2f64a302e84bcb8c33d095b51da5b31e3b3598f7697e64b6181b89e2496f11c4",
+    "ranges": [
+      {
+        "beforeStart": 23,
+        "beforeEnd": 22,
+        "afterStart": 23,
+        "afterEnd": 23
+      },
+      {
+        "beforeStart": 36,
+        "beforeEnd": 35,
+        "afterStart": 37,
+        "afterEnd": 44
+      },
+      {
+        "beforeStart": 41,
+        "beforeEnd": 41,
+        "afterStart": 50,
+        "afterEnd": 51
+      },
+      {
+        "beforeStart": 43,
+        "beforeEnd": 42,
+        "afterStart": 53,
+        "afterEnd": 53
+      },
+      {
+        "beforeStart": 48,
+        "beforeEnd": 47,
+        "afterStart": 59,
+        "afterEnd": 63
+      },
+      {
+        "beforeStart": 61,
+        "beforeEnd": 61,
+        "afterStart": 77,
+        "afterEnd": 77
+      },
+      {
+        "beforeStart": 106,
+        "beforeEnd": 108,
+        "afterStart": 122,
+        "afterEnd": 126
+      },
+      {
+        "beforeStart": 110,
+        "beforeEnd": 110,
+        "afterStart": 128,
+        "afterEnd": 128
+      },
+      {
+        "beforeStart": 112,
+        "beforeEnd": 111,
+        "afterStart": 130,
+        "afterEnd": 133
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+    "beforeSha256": "c87e98becf92e5144c5c1a213a3906146418c4f070520653dade430dab5085aa",
+    "afterSha256": "75c401ee55aacee5a80211e6963fc6dc86f3ab68d004c58298d4cbad83d4e3e0",
+    "ranges": [
+      {
+        "beforeStart": 68,
+        "beforeEnd": 68,
+        "afterStart": 68,
+        "afterEnd": 68
+      },
+      {
+        "beforeStart": 70,
+        "beforeEnd": 71,
+        "afterStart": 70,
+        "afterEnd": 71
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java",
+    "beforeSha256": "5e4f6a3a3c90ab7745045ed73507bb07e969e508588a01d599477db65dc47d3b",
+    "afterSha256": "2af81797f6ca9b07672098612931339575c08ca095ffbf740cbb25273e16f33a",
+    "ranges": [
+      {
+        "beforeStart": 216,
+        "beforeEnd": 216,
+        "afterStart": 216,
+        "afterEnd": 216
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/InternalSecurityTest.java",
+    "beforeSha256": "9f8dbd2c88c138d1eacd45589e233070f80c72fb074243f5296acbfa498682bf",
+    "afterSha256": "cdf5b3fd100a6654d19582a13bd7c29526c93c230df41942fe73335b4afecca2",
+    "ranges": [
+      {
+        "beforeStart": 183,
+        "beforeEnd": 183,
+        "afterStart": 183,
+        "afterEnd": 183
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/TaskLifecycleTest.java",
+    "beforeSha256": null,
+    "afterSha256": "14a9c5fe0641f22876d3cb7fda7ceafb7d400eefcb31f60f34759a47c3ebd90f",
+    "ranges": [
+      {
+        "beforeStart": 1,
+        "beforeEnd": 0,
+        "afterStart": 1,
+        "afterEnd": 311
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/TaskAttempt.java",
+    "beforeSha256": "bc49286a7b9d1aff697b37bae18b6453a86d0931a400f5acf5c8cd34b919ba5a",
+    "afterSha256": "7935a7c9cbdc1809ce344e50089e51d97837902def656415e1d9e10df38c5b04",
+    "ranges": [
+      {
+        "beforeStart": 20,
+        "beforeEnd": 19,
+        "afterStart": 20,
+        "afterEnd": 26
+      }
+    ]
+  }
+]

@@ -12,6 +12,12 @@ public class DisputeEvent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 36)
+    private String attemptId;
+
+    public String getAttemptId() { return attemptId; }
+    public void setAttemptId(String value) { attemptId = value; }
+
     @ManyToOne(optional = false)
     private AnalysisTask task;
 

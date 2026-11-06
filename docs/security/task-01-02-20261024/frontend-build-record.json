@@ -1,0 +1,15 @@
+{
+  "command": "npm.cmd run build -- --outDir ../docs/security/task-01-02-20261024/tmp/frontend-dist",
+  "cwd": "frontend",
+  "exitCode": 0,
+  "vite": "6.4.2",
+  "node": "23.0.0",
+  "elapsedBuildSeconds": 7.09,
+  "modules": 1649,
+  "warnings": [
+    "outDir outside project root, not emptied",
+    "two @vueuse/core PURE comments removed by Rollup",
+    "JS chunk >500kB"
+  ],
+  "artifact": "tmp/frontend-dist (excluded from ZIP)"
+}

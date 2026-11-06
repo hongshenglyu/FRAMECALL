@@ -1,0 +1,14 @@
+{
+  "command": "npm.cmd run build -- --outDir ../docs/security/task-01-03-20261024/tmp/frontend-dist",
+  "cwd": "frontend",
+  "exitCode": 0,
+  "node": "23.0.0",
+  "vite": "6.4.2",
+  "seconds": 7.56,
+  "warnings": [
+    "outside outDir not emptied",
+    "PURE comments",
+    "chunk >500kB"
+  ],
+  "frontendSourceModified": false
+}

@@ -1,15 +1,21 @@
 param(
   [string]$BackendUrl = "http://localhost:8080",
   [string]$AiUrl = "http://localhost:8001",
-  [string]$Username = "admin",
-  [string]$Password = "admin123",
-  [string]$RefereeUsername = "referee",
-  [string]$RefereePassword = "referee123",
+  [string]$Username = $env:FRAMECALL_SMOKE_USERNAME,
+  [string]$Password = $env:FRAMECALL_SMOKE_PASSWORD,
+  [string]$RefereeUsername = $env:FRAMECALL_SMOKE_REFEREE_USERNAME,
+  [string]$RefereePassword = $env:FRAMECALL_SMOKE_REFEREE_PASSWORD,
   [string]$VideoPath = ""
 )
 
 $ErrorActionPreference = "Stop"
 $ProgressPreference = "SilentlyContinue"
+
+foreach ($Credential in @($Username, $Password, $RefereeUsername, $RefereePassword)) {
+  if ([string]::IsNullOrWhiteSpace($Credential)) {
+    throw "Explicit local smoke credentials are required; no default accounts are available."
+  }
+}
 
 function Write-Step($Message) {
   Write-Host "[smoke] $Message"

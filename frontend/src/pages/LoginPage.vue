@@ -18,7 +18,7 @@
           <span>进入工作空间</span><small>ENTER</small>
         </el-button>
       </el-form>
-      <p class="login-hint">默认账号：admin / admin123，referee / referee123</p>
+      <p class="login-hint">请使用管理员为你分配的账户登录。</p>
     </section>
     <section class="login-cover" :style="coverStyle" aria-label="刻界品牌封面">
       <img src="/brand/cover.png" alt="悬浮的金属足球与黄绿色取景框" />
@@ -35,7 +35,7 @@ import { api } from '../api/client'
 
 const emit = defineEmits(['logged-in'])
 const loading = ref(false)
-const form = reactive({ username: 'admin', password: 'admin123' })
+const form = reactive({ username: '', password: '' })
 const pointer = reactive({ x: 0, y: 0 })
 const coverStyle = computed(() => ({ '--cover-x': `${pointer.x}px`, '--cover-y': `${pointer.y}px` }))
 

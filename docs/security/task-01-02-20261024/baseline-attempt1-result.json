@@ -1,0 +1,23 @@
+{
+  "phase": "before-edit",
+  "exitCode": 1,
+  "seconds": 30.946,
+  "suites": [
+    {
+      "name": "com.footballref.assist.BackendApiSmokeTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "2",
+      "skipped": "0",
+      "time": "8.425"
+    },
+    {
+      "name": "com.footballref.assist.ResourceAuthorizationTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "12.347"
+    }
+  ]
+}

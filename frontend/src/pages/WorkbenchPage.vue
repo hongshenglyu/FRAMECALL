@@ -27,6 +27,7 @@
 
       <el-divider />
       <div class="panel-title">分析任务</div>
+      <el-checkbox v-model="includeArchived" @change="loadTasks">显示归档任务</el-checkbox>
       <div class="task-list">
         <div
           v-for="task in tasks"
@@ -37,7 +38,7 @@
         >
           <div class="task-row-title">{{ task.videoTitle }}</div>
           <el-progress :percentage="task.progressPercent" :status="progressStatus(task.status)" />
-          <div class="muted">{{ task.status }} / {{ task.stage }}</div>
+          <div class="muted">{{ task.archivedAt ? '已归档' : task.status }} / {{ task.stage }}</div>
           <div v-if="task.errorMessage" class="task-error">{{ task.errorMessage }}</div>
         </div>
       </div>
@@ -53,8 +54,10 @@
           <div>
             <el-button @click="loadTasks">刷新</el-button>
             <el-button @click="cancelTask" :disabled="!canCancel">取消</el-button>
-            <el-button v-if="selectedTask.status === 'FAILED'" type="warning" @click="retryTask">重试</el-button>
-            <el-button type="primary" @click="downloadReport" :disabled="selectedTask.status !== 'SUCCEEDED'">导出PDF</el-button>
+            <el-button v-if="!selectedTask.archivedAt && selectedTask.status === 'FAILED'" type="warning" @click="retryTask">重试</el-button>
+            <el-button v-if="selectedTask.archivedAt" @click="restoreTask">恢复归档</el-button>
+            <el-button v-else @click="archiveTask" :disabled="!canArchive">归档</el-button>
+            <el-button type="primary" @click="downloadReport" :disabled="Boolean(selectedTask.archivedAt) || (!selectedTask.events?.length && selectedTask.status !== 'SUCCEEDED')">导出PDF</el-button>
           </div>
         </div>
 
@@ -67,22 +70,30 @@
           style="margin-bottom: 16px"
         />
 
+        <el-select v-model="eventSelection" :disabled="Boolean(selectedTask.archivedAt)" @change="refreshSelectedTask" aria-label="结果版本">
+          <el-option label="当前结果" value="current" />
+          <el-option label="全部历史" value="all" />
+          <el-option label="旧版未归属记录（LEGACY）" value="legacy" />
+          <el-option v-for="attempt in selectedTask.attempts || []" :key="attempt.id" :label="`${attempt.status} / ${attempt.id}`" :value="`attempt:${attempt.id}`" />
+        </el-select>
+        <div class="muted">{{ selectedTask.archivedAt ? '归档保留历史与媒体；恢复后可继续查看。' : selectedTask.eventSelection }}</div>
         <div class="event-grid">
           <div v-for="event in selectedTask.events || []" :key="event.id" class="event-card" :class="{ active: selectedEvent?.id === event.id }" @click="selectEvent(event)">
-            <img v-if="isImagePath(event.keyframePath)" :src="fileUrl(event.keyframePath)" />
+            <img v-if="isImagePath(event.keyframePath)" :src="fileUrl('event', event.id, 'keyframe')" />
             <div v-else class="event-card-placeholder">无关键帧</div>
             <div class="event-card-body">
               <el-tag :type="riskTag(event.riskLevel)">{{ event.eventType }} / {{ event.riskLevel }}</el-tag>
               <div style="margin-top: 8px; font-weight: 700">{{ formatTime(event.timestampMs) }}</div>
               <div class="muted">{{ event.summary }}</div>
               <div class="muted">ID: {{ event.involvedTrackIds }}</div>
+              <div v-if="eventSelection !== 'current'" class="muted">{{ event.attemptAssociation }} / {{ event.attemptId || 'LEGACY' }}</div>
             </div>
           </div>
         </div>
 
         <el-divider />
         <EventDetail v-if="selectedEvent" :event="selectedEvent" @reviewed="refreshSelectedTask" />
-        <ManualEventForm :task-id="selectedTask.id" @created="refreshSelectedTask" />
+        <ManualEventForm v-if="!selectedTask.archivedAt" :task-id="selectedTask.id" @created="refreshSelectedTask" />
       </template>
       <el-empty v-else description="请选择或上传一个分析任务" />
     </section>
@@ -101,6 +112,8 @@ const selectedTask = ref(null)
 const selectedEvent = ref(null)
 const uploading = ref(false)
 const file = ref(null)
+const includeArchived = ref(false)
+const eventSelection = ref('current')
 let timer = null
 
 const upload = reactive({
@@ -110,7 +123,8 @@ const upload = reactive({
   sensitivity: 'BALANCED'
 })
 
-const canCancel = computed(() => ['PENDING', 'RUNNING'].includes(selectedTask.value?.status))
+const canCancel = computed(() => !selectedTask.value?.archivedAt && ['PENDING', 'RUNNING'].includes(selectedTask.value?.status))
+const canArchive = computed(() => !['RUNNING', 'CANCEL_REQUESTED'].includes(selectedTask.value?.status) && !(selectedTask.value?.attempts || []).some(a => a.active))
 
 function onFile(event) {
   file.value = event.target.files?.[0] || null
@@ -139,13 +153,16 @@ async function submitUpload() {
 }
 
 async function loadTasks() {
-  const { data } = await api.get('/tasks')
+  const { data } = await api.get('/tasks', { params: { includeArchived: includeArchived.value } })
   tasks.value = data
 }
 
 async function selectTask(id) {
+  if (selectedTask.value?.id !== id) eventSelection.value = 'current'
+  const archived = tasks.value.find(task => task.id === id && task.archivedAt)
+  if (archived) { selectedTask.value = { ...archived, events: [] }; selectedEvent.value = null; return }
   const selectedEventId = selectedEvent.value?.id
-  const { data } = await api.get(`/tasks/${id}`)
+  const { data } = await api.get(`/tasks/${id}`, { params: historyParams() })
   selectedTask.value = data
   selectedEvent.value = data.events?.find((event) => event.id === selectedEventId) || data.events?.[0] || null
 }
@@ -171,9 +188,29 @@ async function retryTask() {
   await refreshSelectedTask()
 }
 
+function historyParams() {
+  return eventSelection.value.startsWith('attempt:')
+    ? { attemptId: eventSelection.value.slice(8) }
+    : { scope: eventSelection.value }
+}
+
+async function archiveTask() {
+  await api.delete(`/tasks/${selectedTask.value.id}`)
+  selectedTask.value = null; selectedEvent.value = null
+  ElMessage.success('已归档，历史复核与媒体已保留')
+  await loadTasks()
+}
+
+async function restoreTask() {
+  const id = selectedTask.value.id
+  await api.post(`/tasks/${id}/restore`)
+  await loadTasks(); await selectTask(id)
+}
+
 async function downloadReport() {
   try {
     const { data } = await api.get(`/tasks/${selectedTask.value.id}/report`, {
+      params: historyParams(),
       responseType: 'blob'
     })
     const url = URL.createObjectURL(new Blob([data], { type: 'application/pdf' }))

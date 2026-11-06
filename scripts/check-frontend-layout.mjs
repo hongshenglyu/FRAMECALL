@@ -117,10 +117,13 @@ async function fetchJson(url, options) {
 }
 
 async function loginAsAdmin() {
+  const username = process.env.FRAMECALL_SMOKE_USERNAME;
+  const password = process.env.FRAMECALL_SMOKE_PASSWORD;
+  if (!username || !password) throw new Error("Explicit local layout-test credentials are required.");
   return fetchJson(`${backendUrl}/api/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ username: "admin", password: "admin123" }),
+    body: JSON.stringify({ username, password }),
   });
 }
 

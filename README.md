@@ -1,4 +1,19 @@
-# 足球裁判辅助争议事件分析系统
+# FRAMECALL
+
+毕业设计题目：《基于 ByteTrack 的足球接触类犯规辅助复核系统设计与实现》。
+
+截至2026年11月6日，13项WBS完成限定验收，02-01仍因数据资产和许可核查未齐而阻塞。
+用户报告已导出19场比赛、另有近20场待整理；这些数量尚未独立审计，原始录像留在外部硬盘，不上传本仓库。
+真实YOLOv8→ByteTrack→接触候选→真实视频证据链尚未贯通，现有Mock闭环不能作为正式模型实验成果。
+最新计划为[V2.7](docs/project/plan/FRAMECALL_毕业设计总计划_V2.7_20261024.md)，
+当前状态和后续提交记录见[项目执行记录](docs/PROJECT_LOG.md)。下文保留已有实现和启动说明，研究范围以正式开题工作基准及最新计划为准。
+
+## 长期执行原则
+
+1. 减少过度防御性设计。代码、架构、文本和测试只保留必要保护，不追求无必要的复杂度。
+2. GitHub作为长期仓库。每次完整开发任务或一组相关修改完成后，执行必要测试、更新执行记录、注明WBS编号并提交、推送；不要求每个微小操作单独提交。
+3. 严格遵循正式开题的研究内容、技术路线和范围，不擅自扩展方向或增加功能。当前主线是单视角、离线、接触候选与人工复核，不自动判定犯规；开题材料中的审批与数据许可仍按已有核验边界记录。
+4. 减少非必要步骤，优先完成直接影响毕业设计交付的工作，提高开发效率。
 
 这是一个面向完整毕业设计的足球裁判辅助复核系统。当前版本已经搭好三段式结构：
 
@@ -25,10 +40,32 @@
 - 预测评估：提供预测结果与标注真值对齐脚本，计算 Precision、Recall、F1、每 3 分钟误报数和关键帧误差。
 - 前端回归：提供 1440px / 1280px 布局检查脚本，避免复核工作台出现横向溢出。
 
-## 默认账号
+## 安全配置与首次管理员
 
-- 管理员：`admin / admin123`
-- 裁判：`referee / referee123`
+默认、生产和开发启动均不创建固定账户，登录页不预填口令。
+在本机受控环境提供 `FRAMECALL_JWT_SECRET`、`FRAMECALL_AI_SERVICE_TOKEN`、
+`FRAMECALL_AI_SERVICE_URL`、`FRAMECALL_CALLBACK_BASE_URL`、`FRAMECALL_STORAGE_ROOT`、
+`FRAMECALL_DATABASE_URL`、`FRAMECALL_DB_USERNAME`、`FRAMECALL_DB_PASSWORD`。
+秘密必须独立随机生成；缺失或不安全配置会在数据库/存储初始化前终止，
+旧 `app.*` 中的默认秘密不会兜底。键名样例见 `config/security-keys.example.properties`，
+不填写或提交真实值，不把秘密发到聊天或放在命令行历史里。
+
+首次初始化只适用于空账户库：由本人在本机显式设置
+`FRAMECALL_BOOTSTRAP_ADMIN` 和 `FRAMECALL_BOOTSTRAP_CONFIRMED`，并安全提供
+`FRAMECALL_BOOTSTRAP_USERNAME`、`FRAMECALL_BOOTSTRAP_PASSWORD`；成功后关闭初始化开关。
+有现存账户时不会重置、禁用或提升任何人权限，初始化请求明确失败；
+既有弱口令应由授权维护者另行备份、核验身份并轮换，本轮不自动迁移真实数据库。
+
+不提供固定演示账户。可选 `demo` 必须是唯一激活profile，另有
+`FRAMECALL_DEMO_ISOLATED` 明确确认且数据库为合成内存H2；初始化仍须显式授权和独立合成凭据。
+拒绝 `prod,demo` 等组合及文件库/MySQL作为demo。
+
+AI侧继续使用01-03的 `AI_SERVICE_TOKEN`、`AI_CALLBACK_BASE_URL`、`AI_STORAGE_ROOT`，
+与后端对应身份、固定目标及共享根一致。实例YAML留在本机，Maven资源排除它们；
+部署如需旧的非秘密配置（端口、上传限制、JPA等），由维护者显式通过外部配置提供。
+已有target/旧Jar不会在本轮自动清除，应由维护者审查后替换。正常启动前先完成上述配置。
+旧smoke/layout脚本也须显式提供 `FRAMECALL_SMOKE_*` 环境凭据，不会登录默认账户；
+它们会操作所指服务，不能当作隔离测试直接执行。
 
 ## 快速启动
 

@@ -1,0 +1,142 @@
+{
+  "outcome": "PASS",
+  "browser": "Chrome/155.0.8059.85",
+  "frontend": "production build, isolated same-origin streaming proxy",
+  "checks": [
+    {
+      "id": "BROWSER_AVAILABLE",
+      "outcome": "PASS"
+    },
+    {
+      "id": "CDP_READY",
+      "outcome": "PASS"
+    },
+    {
+      "id": "LOGIN_FORM_READY",
+      "outcome": "PASS"
+    },
+    {
+      "id": "OWNER_REAL_UI_LOGIN",
+      "outcome": "PASS"
+    },
+    {
+      "id": "OWNER_UI_IMAGE_DECODE",
+      "outcome": "PASS"
+    },
+    {
+      "id": "COOKIE_HIDDEN_FROM_SCRIPT",
+      "outcome": "PASS"
+    },
+    {
+      "id": "ANONYMOUS_GET_DENIED",
+      "outcome": "PASS"
+    },
+    {
+      "id": "ANONYMOUS_HEAD_DENIED",
+      "outcome": "PASS"
+    },
+    {
+      "id": "OWNER_NATIVE_MP4_DECODE",
+      "outcome": "PASS",
+      "duration": 12,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "OWNER_PLAY_CLOCK_ADVANCES",
+      "outcome": "PASS"
+    },
+    {
+      "id": "OWNER_SEEK_PAUSE",
+      "outcome": "PASS"
+    },
+    {
+      "id": "AUTHORIZED_HEAD_NO_BODY",
+      "outcome": "PASS",
+      "status": 200,
+      "bytes": 0,
+      "length": "355435"
+    },
+    {
+      "id": "BROWSER_RANGE_206",
+      "outcome": "PASS",
+      "status": 206,
+      "length": 100,
+      "range": "bytes 100-199/355435"
+    },
+    {
+      "id": "REFRESH_REAUTH_IMAGE",
+      "outcome": "PASS"
+    },
+    {
+      "id": "LOGOUT_COOKIE_CLEARED",
+      "outcome": "PASS"
+    },
+    {
+      "id": "LOGIN_FORM_READY",
+      "outcome": "PASS"
+    },
+    {
+      "id": "OTHER_USER_MEDIA_DENIED",
+      "outcome": "PASS"
+    },
+    {
+      "id": "LOGIN_FORM_READY",
+      "outcome": "PASS"
+    },
+    {
+      "id": "ADMIN_ACTUAL_VIDEO_COMPONENT",
+      "outcome": "PASS"
+    },
+    {
+      "id": "ADMIN_UI_PLAY_SEEK_PAUSE",
+      "outcome": "PASS"
+    },
+    {
+      "id": "NATIVE_MEDIA_206_OBSERVED",
+      "outcome": "PASS"
+    }
+  ],
+  "mediaResponses": [
+    {
+      "status": 200,
+      "mimeType": "image/png"
+    },
+    {
+      "status": 206,
+      "mimeType": "video/mp4"
+    },
+    {
+      "status": 200,
+      "mimeType": "video/mp4"
+    },
+    {
+      "status": 206,
+      "mimeType": "video/mp4"
+    },
+    {
+      "status": 200,
+      "mimeType": "image/png"
+    },
+    {
+      "status": 401,
+      "mimeType": ""
+    },
+    {
+      "status": 404,
+      "mimeType": "application/json"
+    },
+    {
+      "status": 206,
+      "mimeType": "video/mp4"
+    },
+    {
+      "status": 206,
+      "mimeType": "video/mp4"
+    },
+    {
+      "status": 206,
+      "mimeType": "video/mp4"
+    }
+  ]
+}

@@ -2,7 +2,8 @@ package com.footballref.assist.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.footballref.assist.domain.UserAccount;
-import org.springframework.beans.factory.annotation.Value;
+import com.footballref.assist.config.SecureEnvironmentPostProcessor;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.Mac;
@@ -18,8 +19,8 @@ public class JwtService {
     private final String secret;
     private final ObjectMapper objectMapper;
 
-    public JwtService(@Value("${app.jwt-secret}") String secret, ObjectMapper objectMapper) {
-        this.secret = secret;
+    public JwtService(Environment environment, ObjectMapper objectMapper) {
+        this.secret = SecureEnvironmentPostProcessor.secret(environment, "FRAMECALL_JWT_SECRET");
         this.objectMapper = objectMapper;
     }
 
@@ -43,10 +44,12 @@ public class JwtService {
 
     public String subject(String token) {
         try {
-            String[] parts = token.split("\\.");
+            String[] parts = token.split("\\.", -1);
             if (parts.length != 3) {
                 return null;
             }
+            Map<?, ?> header = objectMapper.readValue(Base64.getUrlDecoder().decode(pad(parts[0])), Map.class);
+            if (!"HS256".equals(header.get("alg")) || !"JWT".equals(header.get("typ"))) return null;
             String expected = sign(parts[0] + "." + parts[1]);
             if (!MessageDigestLike.constantTimeEquals(expected, parts[2])) {
                 return null;
@@ -54,7 +57,7 @@ public class JwtService {
             byte[] payloadBytes = Base64.getUrlDecoder().decode(pad(parts[1]));
             Map<?, ?> payload = objectMapper.readValue(payloadBytes, Map.class);
             Object exp = payload.get("exp");
-            if (exp instanceof Number number && number.longValue() < Instant.now().getEpochSecond()) {
+            if (!(exp instanceof Number number) || number.longValue() <= Instant.now().getEpochSecond()) {
                 return null;
             }
             Object sub = payload.get("sub");
@@ -97,4 +100,3 @@ public class JwtService {
         }
     }
 }
-

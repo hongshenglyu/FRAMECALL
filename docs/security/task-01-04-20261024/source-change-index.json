@@ -1,0 +1,389 @@
+[
+  {
+    "path": "backend/src/main/java/com/footballref/assist/config/DataSeeder.java",
+    "beforeExists": true,
+    "beforeSha256": "b9dd6a3ddfe8bee0cc9f272e09948452c35f1900457a97e22e2d118bfd96007d",
+    "afterSha256": "3c2914ddb916000aa20f807f5d6879c6c25fad53a4d104e63c5c281dac40ff73",
+    "bytes": 2334,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 9,
+        "beforeLines": 0,
+        "afterStart": 9,
+        "afterLines": 1
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 14,
+        "beforeLines": 0,
+        "afterStart": 15,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 15,
+        "beforeLines": 1,
+        "afterStart": 17,
+        "afterLines": 1
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 18,
+        "beforeLines": 0,
+        "afterStart": 20,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 22,
+        "beforeLines": 2,
+        "afterStart": 25,
+        "afterLines": 10
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 39,
+        "beforeLines": 1,
+        "afterStart": 50,
+        "afterLines": 0
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "944a310a543937f2f53d57f68745f7009575d3dc1162e01a0fbf327adce7e5e9",
+    "bytes": 6103,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 105
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/JwtService.java",
+    "beforeExists": true,
+    "beforeSha256": "7785cf6888b7a19fa83baf7faf805621507bb65d9b9630ba9b44af5d9fdfa794",
+    "afterSha256": "1773beb7dee9ea0e316f8b32fec6f5865c68acde0bb4e6e31e1f0d545bfa5e55",
+    "bytes": 4081,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 5,
+        "beforeLines": 1,
+        "afterStart": 5,
+        "afterLines": 2
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 21,
+        "beforeLines": 2,
+        "afterStart": 22,
+        "afterLines": 2
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 46,
+        "beforeLines": 1,
+        "afterStart": 47,
+        "afterLines": 1
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 50,
+        "beforeLines": 0,
+        "afterStart": 51,
+        "afterLines": 2
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 57,
+        "beforeLines": 1,
+        "afterStart": 60,
+        "afterLines": 1
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 100,
+        "beforeLines": 1,
+        "afterStart": 103,
+        "afterLines": 0
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/resources/META-INF/spring.factories",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "2ba693fbe1d52d6d1ccb4f6a02538d2575dea82ed899d2c071a2bb0d0218f4e6",
+    "bytes": 115,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 1
+      }
+    ]
+  },
+  {
+    "path": "backend/pom.xml",
+    "beforeExists": true,
+    "beforeSha256": "07a5bd43618b7b1cec33743e60be36c8df673a6c26eaec948b28c6d6b4962b59",
+    "afterSha256": "5f92548d4e86c46520123bca0ef4a81250aed6537c59f402f9245639aaa36890",
+    "bytes": 2759,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 62,
+        "beforeLines": 0,
+        "afterStart": 62,
+        "afterLines": 10
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/BackendApiSmokeTest.java",
+    "beforeExists": true,
+    "beforeSha256": "8dc4ded2b8db1e0f757000761ae99189aa464ab619f8bc81a59a2a92cead3e41",
+    "afterSha256": "d5704935199db2bcee46c5ed6d487bb39989aaecb223e788031328baeb18a471",
+    "bytes": 20081,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 11,
+        "beforeLines": 0,
+        "afterStart": 11,
+        "afterLines": 1
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 18,
+        "beforeLines": 0,
+        "afterStart": 19,
+        "afterLines": 1
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 52,
+        "beforeLines": 0,
+        "afterStart": 54,
+        "afterLines": 3
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 94,
+        "beforeLines": 0,
+        "afterStart": 99,
+        "afterLines": 7
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 199,
+        "beforeLines": 1,
+        "afterStart": 211,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 266,
+        "beforeLines": 1,
+        "afterStart": 278,
+        "afterLines": 1
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/SecurityBootstrapTest.java",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "50d8a3b60e07cd8bec0eb7246fa95bacc7a18e97b6e16fee15f8fd826642ce87",
+    "bytes": 16565,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 232
+      }
+    ]
+  },
+  {
+    "path": "frontend/src/pages/LoginPage.vue",
+    "beforeExists": true,
+    "beforeSha256": "f28822199f6173315fb088bb59329bf5df5e6f5f7c3e44e437d2f5dae16846cb",
+    "afterSha256": "1db2773b6eb736abacf33e8acb80eea92c5a09350d9fefcdb8d72d69d0127e55",
+    "bytes": 2629,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 21,
+        "beforeLines": 1,
+        "afterStart": 21,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 38,
+        "beforeLines": 1,
+        "afterStart": 38,
+        "afterLines": 1
+      }
+    ]
+  },
+  {
+    "path": "ai-service/app/security.py",
+    "beforeExists": true,
+    "beforeSha256": "707712e4c58752490f9f1f05ff52a98240afcc32561a8ac3940de44a137ebeaf",
+    "afterSha256": "f09d9682994f11311e91cd194d6266948210b7a9c116c29c7256da92816ec0b0",
+    "bytes": 6002,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 27,
+        "beforeLines": 1,
+        "afterStart": 27,
+        "afterLines": 2
+      }
+    ]
+  },
+  {
+    "path": "ai-service/tests/test_internal_security.py",
+    "beforeExists": true,
+    "beforeSha256": "71aab07583daf2576b35a1966305e09b9049c96f9adf9850e1a3f590a66327d7",
+    "afterSha256": "79421d73971d981dc381730f713e52fe1841b63e9a4e5d81b73f2ba6ff29c95b",
+    "bytes": 12443,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 184,
+        "beforeLines": 1,
+        "afterStart": 184,
+        "afterLines": 2
+      }
+    ]
+  },
+  {
+    "path": "README.md",
+    "beforeExists": true,
+    "beforeSha256": "4ee1d461b4b5d22f2e48e395a9ade479c5d84de945f8b02c099b1e0a127ecacc",
+    "afterSha256": "19d2750df9b9c68cff5f3f90ceccb3a0652a2702a429fcbbab142c9969fa525a",
+    "bytes": 6778,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 28,
+        "beforeLines": 1,
+        "afterStart": 28,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 30,
+        "beforeLines": 2,
+        "afterStart": 30,
+        "afterLines": 24
+      }
+    ]
+  },
+  {
+    "path": "config/security-keys.example.properties",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "17a8ddc5b3135f866d9347413cfd3a4e5d872a3a1be047b3bdce14d8adf24ba6",
+    "bytes": 624,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 21
+      }
+    ]
+  },
+  {
+    "path": "scripts/smoke-system.ps1",
+    "beforeExists": true,
+    "beforeSha256": "231b5e8a2c6264e7d79894c244429aaef7702848780b277583c78c8f8316bac0",
+    "afterSha256": "843fa7110b5874189bf14e7b552779fb55bae3f15636760389f5e400e502d1c7",
+    "bytes": 5378,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 4,
+        "beforeLines": 4,
+        "afterStart": 4,
+        "afterLines": 4
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 13,
+        "beforeLines": 0,
+        "afterStart": 13,
+        "afterLines": 6
+      }
+    ]
+  },
+  {
+    "path": "scripts/check-frontend-layout.mjs",
+    "beforeExists": true,
+    "beforeSha256": "1893b8184d80a36b26d55ab3d53b336e06087fb47b64d3013e4987d2a38cd181",
+    "afterSha256": "945fdcdeaeb0dd69503c0f953552d797e8fd3eb7b6d5289fb73da123f64176d7",
+    "bytes": 13992,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 120,
+        "beforeLines": 0,
+        "afterStart": 120,
+        "afterLines": 3
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 123,
+        "beforeLines": 1,
+        "afterStart": 126,
+        "afterLines": 1
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/FootballRefAssistApplication.java",
+    "beforeExists": true,
+    "beforeSha256": "1ed5d5cec68f58e642269af2e4fe4568994a06ad036273deba499489cb02fa07",
+    "afterSha256": "ce88abc1e9c446d1e4581cbe529e1ef49ae5acbb382e49afc8bf4dead9e5c10a",
+    "bytes": 575,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 5,
+        "beforeLines": 0,
+        "afterStart": 5,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 8,
+        "beforeLines": 1,
+        "afterStart": 9,
+        "afterLines": 1
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 14,
+        "beforeLines": 1,
+        "afterStart": 15,
+        "afterLines": 0
+      }
+    ]
+  }
+]

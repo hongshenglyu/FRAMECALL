@@ -1,0 +1,23 @@
+{
+  "phase": "browser-proof",
+  "exitCode": 0,
+  "seconds": 24.432,
+  "suites": [
+    {
+      "name": "com.footballref.assist.MediaAccessTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "19.085"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "actualBrowserLoginPlaybackSeekPauseRefreshAndOwnership",
+      "outcome": "PASS"
+    }
+  ],
+  "selection": "MediaAccessTest#actualBrowserLoginPlaybackSeekPauseRefreshAndOwnership"
+}

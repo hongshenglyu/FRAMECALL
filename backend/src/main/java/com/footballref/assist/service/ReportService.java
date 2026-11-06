@@ -28,7 +28,7 @@ import com.lowagie.text.pdf.PdfWriter;
 import org.springframework.stereotype.Service;
 
 import java.awt.Color;
-import java.io.FileOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Instant;
@@ -48,28 +48,32 @@ public class ReportService {
     private final DisputeEventRepository events;
     private final ReviewRecordRepository reviews;
     private final ObjectMapper objectMapper;
+    private final MediaAccessService media;
 
-    public ReportService(DisputeEventRepository events, ReviewRecordRepository reviews, ObjectMapper objectMapper) {
+    public ReportService(DisputeEventRepository events, ReviewRecordRepository reviews, ObjectMapper objectMapper,
+                         MediaAccessService media) {
         this.events = events;
         this.reviews = reviews;
         this.objectMapper = objectMapper;
+        this.media = media;
     }
 
-    public Path generatePdf(AnalysisTask task) throws Exception {
-        Path output = Path.of(task.getOutputDir()).resolve("referee-review-report.pdf");
+    public byte[] generatePdf(AnalysisTask task, List<DisputeEvent> eventList, String selection) throws Exception {
+        media.controlledPath(task.getOutputDir());
         ReportFonts fonts = createFonts();
         Document document = new Document(PageSize.A4, 36, 36, 42, 42);
-        PdfWriter.getInstance(document, new FileOutputStream(output.toFile()));
+        ByteArrayOutputStream output=new ByteArrayOutputStream();
+        PdfWriter.getInstance(document, output);
         document.open();
-
-        List<DisputeEvent> eventList = events.findByTaskOrderByTimestampMsAsc(task);
+        try {
         addTitle(document, fonts, task);
+        document.add(new Paragraph("结果选择："+selection,fonts.small()));
         addOverview(document, fonts, task, eventList);
         addEventTable(document, fonts, eventList);
         addEventDetails(document, fonts, eventList);
 
-        document.close();
-        return output;
+        } finally { document.close(); }
+        return output.toByteArray();
     }
 
     private void addTitle(Document document, ReportFonts fonts, AnalysisTask task) throws DocumentException {
@@ -142,7 +146,7 @@ public class ReportService {
 
         for (DisputeEvent event : eventList) {
             ReviewRecord latest = latestReview(event);
-            Paragraph heading = new Paragraph(event.getExternalId() + "  "
+            Paragraph heading = new Paragraph(event.getExternalId() + " ["+(event.getAttemptId()==null?"LEGACY":event.getAttemptId())+"]  "
                     + label(event.getEventType()) + " / " + label(event.getRiskLevel())
                     + " / " + formatMs(event.getTimestampMs()), fonts.heading());
             heading.setSpacingBefore(6);
@@ -165,25 +169,21 @@ public class ReportService {
                     document.add(new Paragraph("复核备注：" + latest.getNote(), fonts.body()));
                 }
             }
-            document.add(new Paragraph("关键帧文件：" + safe(event.getKeyframePath()), fonts.small()));
-            document.add(new Paragraph("片段文件：" + safe(event.getClipPath()), fonts.small()));
+            document.add(new Paragraph("媒体引用：事件 #" + event.getId() + "（需登录后查看）", fonts.small()));
             document.add(Chunk.NEWLINE);
         }
     }
 
     private void addKeyframePreview(Document document, ReportFonts fonts, DisputeEvent event) throws DocumentException {
         try {
-            Path keyframe = Path.of(event.getKeyframePath()).toAbsolutePath().normalize();
-            if (!Files.exists(keyframe)) {
-                return;
-            }
+            Path keyframe = media.eventFile(event, "keyframe");
             Image image = Image.getInstance(keyframe.toString());
             image.scaleToFit(260, 148);
             image.setSpacingBefore(6);
             image.setSpacingAfter(6);
             document.add(image);
         } catch (Exception ignored) {
-            document.add(new Paragraph("关键帧预览：无法嵌入，见文件路径。", fonts.small()));
+            document.add(new Paragraph("关键帧预览：媒体不可用；原审计记录已保留。", fonts.small()));
         }
     }
 

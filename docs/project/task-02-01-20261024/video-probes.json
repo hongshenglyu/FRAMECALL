@@ -1,0 +1,3152 @@
+[
+  {
+    "path": "storage/uploads/1779017590650_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779017590661117600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779017590650_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.703,
+    "isoBmff": {
+      "path": "storage/uploads/1779017590650_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779028288194_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779028288201523000,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779028288194_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.454,
+    "isoBmff": {
+      "path": "storage/uploads/1779028288194_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779098971957_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779098971967363400,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779098971957_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.421,
+    "isoBmff": {
+      "path": "storage/uploads/1779098971957_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779099261877_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779099261884724600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779099261877_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1779099261877_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779100299595_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779100299604535300,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779100299595_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.438,
+    "isoBmff": {
+      "path": "storage/uploads/1779100299595_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779100345790_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779100345798423500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779100345790_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1779100345790_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779101097733_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779101097743085900,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779101097733_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1779101097733_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779104321843_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779104321850241000,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779104321843_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1779104321843_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779104750937_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779104750948405700,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779104750937_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.437,
+    "isoBmff": {
+      "path": "storage/uploads/1779104750937_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779105211299_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779105211308143900,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779105211299_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.438,
+    "isoBmff": {
+      "path": "storage/uploads/1779105211299_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779284717969_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779284717977493000,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779284717969_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1779284717969_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779285847118_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779285847124884900,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779285847118_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1779285847118_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779286410874_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779286410883601100,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779286410874_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1779286410874_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779286670917_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779286670926213500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779286670917_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1779286670917_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779287153616_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779287153625859500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779287153616_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1779287153616_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779287594882_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779287594892824800,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779287594882_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1779287594882_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1779886392405_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1779886392416702600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1779886392405_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1779886392405_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780389004570_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1780389004584381700,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780389004570_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1780389004570_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780389319393___26_______3.mp4",
+    "sizeBytes": 26704412,
+    "mtimeNs": 1780389319459029900,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 31.3,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 939,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780389319393___26_______3.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1780389319393___26_______3.mp4",
+      "bytes": 26704412,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 31.3,
+          "handler": "vide",
+          "sttsFrames": 939,
+          "sttsTicks": 939,
+          "sttsEntries": 1,
+          "sampleCount": 939,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780390457320___26_______4.mp4",
+    "sizeBytes": 28988192,
+    "mtimeNs": 1780390457407271800,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 33.766666666666666,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1013,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780390457320___26_______4.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.375,
+    "isoBmff": {
+      "path": "storage/uploads/1780390457320___26_______4.mp4",
+      "bytes": 28988192,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 33.766666666666666,
+          "handler": "vide",
+          "sttsFrames": 1013,
+          "sttsTicks": 1013,
+          "sttsEntries": 1,
+          "sampleCount": 1013,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780392532880_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1780392532889038200,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780392532880_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1780392532880_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780393465931___26_______3.mp4",
+    "sizeBytes": 26704412,
+    "mtimeNs": 1780393465990835500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 31.3,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 939,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780393465931___26_______3.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.407,
+    "isoBmff": {
+      "path": "storage/uploads/1780393465931___26_______3.mp4",
+      "bytes": 26704412,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 31.3,
+          "handler": "vide",
+          "sttsFrames": 939,
+          "sttsTicks": 939,
+          "sttsEntries": 1,
+          "sampleCount": 939,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780394408059___26_______5.mp4",
+    "sizeBytes": 26873263,
+    "mtimeNs": 1780394408116757800,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 31.366666666666667,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 941,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780394408059___26_______5.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1780394408059___26_______5.mp4",
+      "bytes": 26873263,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 31.366666666666667,
+          "handler": "vide",
+          "sttsFrames": 941,
+          "sttsTicks": 941,
+          "sttsEntries": 1,
+          "sampleCount": 941,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780395331600___26_______7.mp4",
+    "sizeBytes": 47038868,
+    "mtimeNs": 1780395331705856800,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 54.13333333333333,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1624,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780395331600___26_______7.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1780395331600___26_______7.mp4",
+      "bytes": 47038868,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 54.13333333333333,
+          "handler": "vide",
+          "sttsFrames": 1624,
+          "sttsTicks": 1624,
+          "sttsEntries": 1,
+          "sampleCount": 1624,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780395671390___26_______1.mp4",
+    "sizeBytes": 19056567,
+    "mtimeNs": 1780395671437295600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 22.066666666666666,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 662,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780395671390___26_______1.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "storage/uploads/1780395671390___26_______1.mp4",
+      "bytes": 19056567,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 22.066666666666666,
+          "handler": "vide",
+          "sttsFrames": 662,
+          "sttsTicks": 662,
+          "sttsEntries": 1,
+          "sampleCount": 662,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780395852683_26_______3.mp4",
+    "sizeBytes": 56363901,
+    "mtimeNs": 1780395852812450100,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 31.866666666666667,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1912,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780395852683_26_______3.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1780395852683_26_______3.mp4",
+      "bytes": 56363901,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 31.866666666666667,
+          "handler": "vide",
+          "sttsFrames": 1912,
+          "sttsTicks": 1912,
+          "sttsEntries": 1,
+          "sampleCount": 1912,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780401877155_26_______3.mp4",
+    "sizeBytes": 56363901,
+    "mtimeNs": 1780401877270559100,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 31.866666666666667,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1912,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780401877155_26_______3.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.391,
+    "isoBmff": {
+      "path": "storage/uploads/1780401877155_26_______3.mp4",
+      "bytes": 56363901,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 31.866666666666667,
+          "handler": "vide",
+          "sttsFrames": 1912,
+          "sttsTicks": 1912,
+          "sttsEntries": 1,
+          "sampleCount": 1912,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780402580338_26_______1.mp4",
+    "sizeBytes": 130580203,
+    "mtimeNs": 1780402580618931500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 71.13333333333334,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 4268,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780402580338_26_______1.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.391,
+    "isoBmff": {
+      "path": "storage/uploads/1780402580338_26_______1.mp4",
+      "bytes": 130580203,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 71.13333333333334,
+          "handler": "vide",
+          "sttsFrames": 4268,
+          "sttsTicks": 4268,
+          "sttsEntries": 1,
+          "sampleCount": 4268,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780405931409_26_______8.mp4",
+    "sizeBytes": 52853273,
+    "mtimeNs": 1780405931521177700,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 28.266666666666666,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1696,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780405931409_26_______8.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1780405931409_26_______8.mp4",
+      "bytes": 52853273,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 28.266666666666666,
+          "handler": "vide",
+          "sttsFrames": 1696,
+          "sttsTicks": 1696,
+          "sttsEntries": 1,
+          "sampleCount": 1696,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780406334728_26_______10.mp4",
+    "sizeBytes": 46906836,
+    "mtimeNs": 1780406334840221100,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 37.1,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1113,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780406334728_26_______10.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1780406334728_26_______10.mp4",
+      "bytes": 46906836,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 37.1,
+          "handler": "vide",
+          "sttsFrames": 1113,
+          "sttsTicks": 1113,
+          "sttsEntries": 1,
+          "sampleCount": 1113,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1780408811300_25__________2.mp4",
+    "sizeBytes": 39227013,
+    "mtimeNs": 1780408811390852300,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 29.733333333333334,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "2560x1440",
+    "frameCountDeclared": 892,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1780408811300_25__________2.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "storage/uploads/1780408811300_25__________2.mp4",
+      "bytes": 39227013,
+      "tracks": [
+        {
+          "width": 2560.0,
+          "height": 1440.0,
+          "timescale": 30,
+          "durationSeconds": 29.733333333333334,
+          "handler": "vide",
+          "sttsFrames": 892,
+          "sttsTicks": 892,
+          "sttsEntries": 1,
+          "sampleCount": 892,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1788102883214_football-ref-demo-sample.mp4",
+    "sizeBytes": 2848208,
+    "mtimeNs": 1788102883224374800,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 5.7,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 171,
+    "timeBase": "1/15360",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1788102883214_football-ref-demo-sample.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.407,
+    "isoBmff": {
+      "path": "storage/uploads/1788102883214_football-ref-demo-sample.mp4",
+      "bytes": 2848208,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 15360,
+          "durationSeconds": 5.7,
+          "handler": "vide",
+          "sttsFrames": 171,
+          "sttsTicks": 87552,
+          "sttsEntries": 1,
+          "sampleCount": 171,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789120750413_26________4.mp4",
+    "sizeBytes": 18974074,
+    "mtimeNs": 1789120750473217900,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 22.333333333333332,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 670,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789120750413_26________4.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.39,
+    "isoBmff": {
+      "path": "storage/uploads/1789120750413_26________4.mp4",
+      "bytes": 18974074,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 22.333333333333332,
+          "handler": "vide",
+          "sttsFrames": 670,
+          "sttsTicks": 670,
+          "sttsEntries": 1,
+          "sampleCount": 670,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789123169908_26________4.mp4",
+    "sizeBytes": 18974074,
+    "mtimeNs": 1789123169967396400,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 22.333333333333332,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 670,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789123169908_26________4.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.391,
+    "isoBmff": {
+      "path": "storage/uploads/1789123169908_26________4.mp4",
+      "bytes": 18974074,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 22.333333333333332,
+          "handler": "vide",
+          "sttsFrames": 670,
+          "sttsTicks": 670,
+          "sttsEntries": 1,
+          "sampleCount": 670,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789127825209_26________5.mp4",
+    "sizeBytes": 64946007,
+    "mtimeNs": 1789127825426143600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 77.96666666666667,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 2339,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789127825209_26________5.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.375,
+    "isoBmff": {
+      "path": "storage/uploads/1789127825209_26________5.mp4",
+      "bytes": 64946007,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 77.96666666666667,
+          "handler": "vide",
+          "sttsFrames": 2339,
+          "sttsTicks": 2339,
+          "sttsEntries": 1,
+          "sampleCount": 2339,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789128159070_26________5.mp4",
+    "sizeBytes": 15930456,
+    "mtimeNs": 1789128159115686300,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 25.0,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1280x720",
+    "frameCountDeclared": 750,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789128159070_26________5.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.39,
+    "isoBmff": {
+      "path": "storage/uploads/1789128159070_26________5.mp4",
+      "bytes": 15930456,
+      "tracks": [
+        {
+          "width": 1280.0,
+          "height": 720.0,
+          "timescale": 30,
+          "durationSeconds": 25.0,
+          "handler": "vide",
+          "sttsFrames": 750,
+          "sttsTicks": 750,
+          "sttsEntries": 1,
+          "sampleCount": 750,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789128550917_26________1.mp4",
+    "sizeBytes": 34826490,
+    "mtimeNs": 1789128551034861600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 47.3,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1280x720",
+    "frameCountDeclared": 1419,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789128550917_26________1.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.391,
+    "isoBmff": {
+      "path": "storage/uploads/1789128550917_26________1.mp4",
+      "bytes": 34826490,
+      "tracks": [
+        {
+          "width": 1280.0,
+          "height": 720.0,
+          "timescale": 30,
+          "durationSeconds": 47.3,
+          "handler": "vide",
+          "sttsFrames": 1419,
+          "sttsTicks": 1419,
+          "sttsEntries": 1,
+          "sampleCount": 1419,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789128794662_u20________.mp4",
+    "sizeBytes": 14076320,
+    "mtimeNs": 1789128794701133400,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 6.573333333333333,
+    "fpsRational": "23300/859",
+    "fps": 27.124563445867288,
+    "resolution": "1170x2532",
+    "frameCountDeclared": 233,
+    "timeBase": "1/600",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789128794662_u20________.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.531,
+    "isoBmff": {
+      "path": "storage/uploads/1789128794662_u20________.mp4",
+      "bytes": 14076320,
+      "tracks": [
+        {
+          "width": 1170.0,
+          "height": 2532.0,
+          "timescale": 600,
+          "durationSeconds": 8.59,
+          "handler": "vide",
+          "sttsFrames": 233,
+          "sttsTicks": 5154,
+          "sttsEntries": 47,
+          "sampleCount": 233,
+          "averageFps": 27.124563445867288
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789129107489_u20________.mp4",
+    "sizeBytes": 14076320,
+    "mtimeNs": 1789129107530007000,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 6.573333333333333,
+    "fpsRational": "23300/859",
+    "fps": 27.124563445867288,
+    "resolution": "1170x2532",
+    "frameCountDeclared": 233,
+    "timeBase": "1/600",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789129107489_u20________.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.532,
+    "isoBmff": {
+      "path": "storage/uploads/1789129107489_u20________.mp4",
+      "bytes": 14076320,
+      "tracks": [
+        {
+          "width": 1170.0,
+          "height": 2532.0,
+          "timescale": 600,
+          "durationSeconds": 8.59,
+          "handler": "vide",
+          "sttsFrames": 233,
+          "sttsTicks": 5154,
+          "sttsEntries": 47,
+          "sampleCount": 233,
+          "averageFps": 27.124563445867288
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "storage/uploads/1789129192087_u20________.mp4",
+    "sizeBytes": 14076320,
+    "mtimeNs": 1789129192129276600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 6.573333333333333,
+    "fpsRational": "23300/859",
+    "fps": 27.124563445867288,
+    "resolution": "1170x2532",
+    "frameCountDeclared": 233,
+    "timeBase": "1/600",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "storage/uploads/1789129192087_u20________.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.578,
+    "isoBmff": {
+      "path": "storage/uploads/1789129192087_u20________.mp4",
+      "bytes": 14076320,
+      "tracks": [
+        {
+          "width": 1170.0,
+          "height": 2532.0,
+          "timescale": 600,
+          "durationSeconds": 8.59,
+          "handler": "vide",
+          "sttsFrames": 233,
+          "sttsTicks": 5154,
+          "sttsEntries": 47,
+          "sampleCount": 233,
+          "averageFps": 27.124563445867288
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "争抢球犯规/中超26赛季第七期判例1.mp4",
+    "sizeBytes": 19056567,
+    "mtimeNs": 1779889673216499900,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 22.066666666666666,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 662,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "争抢球犯规/中超26赛季第七期判例1.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.39,
+    "isoBmff": {
+      "path": "争抢球犯规/中超26赛季第七期判例1.mp4",
+      "bytes": 19056567,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 22.066666666666666,
+          "handler": "vide",
+          "sttsFrames": 662,
+          "sttsTicks": 662,
+          "sttsEntries": 1,
+          "sampleCount": 662,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "争抢球犯规/中超26赛季第八期判例3.mp4",
+    "sizeBytes": 26704412,
+    "mtimeNs": 1779888558677733300,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 31.3,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 939,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "争抢球犯规/中超26赛季第八期判例3.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "争抢球犯规/中超26赛季第八期判例3.mp4",
+      "bytes": 26704412,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 31.3,
+          "handler": "vide",
+          "sttsFrames": 939,
+          "sttsTicks": 939,
+          "sttsEntries": 1,
+          "sampleCount": 939,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "争抢球犯规/中超26赛季第八期判例4.mp4",
+    "sizeBytes": 28988192,
+    "mtimeNs": 1779888639103783500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 33.766666666666666,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1013,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "争抢球犯规/中超26赛季第八期判例4.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.391,
+    "isoBmff": {
+      "path": "争抢球犯规/中超26赛季第八期判例4.mp4",
+      "bytes": 28988192,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 33.766666666666666,
+          "handler": "vide",
+          "sttsFrames": 1013,
+          "sttsTicks": 1013,
+          "sttsEntries": 1,
+          "sampleCount": 1013,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "争抢球犯规/中超26赛季第八期判例5.mp4",
+    "sizeBytes": 26873263,
+    "mtimeNs": 1779888707790125900,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 31.366666666666667,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 941,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "争抢球犯规/中超26赛季第八期判例5.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "争抢球犯规/中超26赛季第八期判例5.mp4",
+      "bytes": 26873263,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 31.366666666666667,
+          "handler": "vide",
+          "sttsFrames": 941,
+          "sttsTicks": 941,
+          "sttsEntries": 1,
+          "sampleCount": 941,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "争抢球犯规/中超26赛季第八期判例7.mp4",
+    "sizeBytes": 47038868,
+    "mtimeNs": 1779888839719026500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 54.13333333333333,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1624,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "争抢球犯规/中超26赛季第八期判例7.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "争抢球犯规/中超26赛季第八期判例7.mp4",
+      "bytes": 47038868,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 54.13333333333333,
+          "handler": "vide",
+          "sttsFrames": 1624,
+          "sttsTicks": 1624,
+          "sttsEntries": 1,
+          "sampleCount": 1624,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "手球犯规/25赛季第三十二期判例 2.mp4",
+    "sizeBytes": 39227013,
+    "mtimeNs": 1780407187877828500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 29.733333333333334,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "2560x1440",
+    "frameCountDeclared": 892,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "手球犯规/25赛季第三十二期判例 2.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.437,
+    "isoBmff": {
+      "path": "手球犯规/25赛季第三十二期判例 2.mp4",
+      "bytes": 39227013,
+      "tracks": [
+        {
+          "width": 2560.0,
+          "height": 1440.0,
+          "timescale": 30,
+          "durationSeconds": 29.733333333333334,
+          "handler": "vide",
+          "sttsFrames": 892,
+          "sttsTicks": 892,
+          "sttsEntries": 1,
+          "sampleCount": 892,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "手球犯规/26赛季第三期判例1.mp4",
+    "sizeBytes": 130580203,
+    "mtimeNs": 1779890868528830100,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 71.13333333333334,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 4268,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "手球犯规/26赛季第三期判例1.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "手球犯规/26赛季第三期判例1.mp4",
+      "bytes": 130580203,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 71.13333333333334,
+          "handler": "vide",
+          "sttsFrames": 4268,
+          "sttsTicks": 4268,
+          "sttsEntries": 1,
+          "sampleCount": 4268,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "手球犯规/26赛季第三期判例8.mp4",
+    "sizeBytes": 52853273,
+    "mtimeNs": 1779890959266126500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 28.266666666666666,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1696,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "手球犯规/26赛季第三期判例8.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "手球犯规/26赛季第三期判例8.mp4",
+      "bytes": 52853273,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 28.266666666666666,
+          "handler": "vide",
+          "sttsFrames": 1696,
+          "sttsTicks": 1696,
+          "sttsEntries": 1,
+          "sampleCount": 1696,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "手球犯规/26赛季第二期判例3.mp4",
+    "sizeBytes": 56363901,
+    "mtimeNs": 1779891128615682000,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 31.866666666666667,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1912,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "手球犯规/26赛季第二期判例3.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "手球犯规/26赛季第二期判例3.mp4",
+      "bytes": 56363901,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 31.866666666666667,
+          "handler": "vide",
+          "sttsFrames": 1912,
+          "sttsTicks": 1912,
+          "sttsEntries": 1,
+          "sampleCount": 1912,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "手球犯规/26赛季第五期判例10.mp4",
+    "sizeBytes": 46906836,
+    "mtimeNs": 1779890338008276200,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 37.1,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1113,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "手球犯规/26赛季第五期判例10.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.438,
+    "isoBmff": {
+      "path": "手球犯规/26赛季第五期判例10.mp4",
+      "bytes": 46906836,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 37.1,
+          "handler": "vide",
+          "sttsFrames": 1113,
+          "sttsTicks": 1113,
+          "sttsEntries": 1,
+          "sampleCount": 1113,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是争抢球犯规/26赛季十七期判例4、.mp4",
+    "sizeBytes": 15178439,
+    "mtimeNs": 1787540313519690600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 17.333333333333332,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 520,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是争抢球犯规/26赛季十七期判例4、.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.421,
+    "isoBmff": {
+      "path": "明显不是争抢球犯规/26赛季十七期判例4、.mp4",
+      "bytes": 15178439,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 17.333333333333332,
+          "handler": "vide",
+          "sttsFrames": 520,
+          "sttsTicks": 520,
+          "sttsEntries": 1,
+          "sampleCount": 520,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是争抢球犯规/26赛季第十八期判例6.mp4",
+    "sizeBytes": 29004045,
+    "mtimeNs": 1787832434236017600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 34.86666666666667,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1046,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是争抢球犯规/26赛季第十八期判例6.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.438,
+    "isoBmff": {
+      "path": "明显不是争抢球犯规/26赛季第十八期判例6.mp4",
+      "bytes": 29004045,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 34.86666666666667,
+          "handler": "vide",
+          "sttsFrames": 1046,
+          "sttsTicks": 1046,
+          "sttsEntries": 1,
+          "sampleCount": 1046,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是争抢球犯规/26赛季第十六期判例12.mp4",
+    "sizeBytes": 41145905,
+    "mtimeNs": 1787833346636324400,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 48.0,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1440,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是争抢球犯规/26赛季第十六期判例12.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.453,
+    "isoBmff": {
+      "path": "明显不是争抢球犯规/26赛季第十六期判例12.mp4",
+      "bytes": 41145905,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 48.0,
+          "handler": "vide",
+          "sttsFrames": 1440,
+          "sttsTicks": 1440,
+          "sttsEntries": 1,
+          "sampleCount": 1440,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是争抢球犯规/26赛季第十六期判例2.mp4",
+    "sizeBytes": 11240382,
+    "mtimeNs": 1787832595693450000,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 13.266666666666667,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 398,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是争抢球犯规/26赛季第十六期判例2.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.516,
+    "isoBmff": {
+      "path": "明显不是争抢球犯规/26赛季第十六期判例2.mp4",
+      "bytes": 11240382,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 13.266666666666667,
+          "handler": "vide",
+          "sttsFrames": 398,
+          "sttsTicks": 398,
+          "sttsEntries": 1,
+          "sampleCount": 398,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是争抢球犯规/26赛季第十六期判例6.mp4",
+    "sizeBytes": 39114800,
+    "mtimeNs": 1787833229455820800,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 45.4,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1362,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是争抢球犯规/26赛季第十六期判例6.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.406,
+    "isoBmff": {
+      "path": "明显不是争抢球犯规/26赛季第十六期判例6.mp4",
+      "bytes": 39114800,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 45.4,
+          "handler": "vide",
+          "sttsFrames": 1362,
+          "sttsTicks": 1362,
+          "sttsEntries": 1,
+          "sampleCount": 1362,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是手球犯规/26赛季第四期判例2.mp4",
+    "sizeBytes": 34353335,
+    "mtimeNs": 1779890525164232000,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 18.733333333333334,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1124,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是手球犯规/26赛季第四期判例2.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.469,
+    "isoBmff": {
+      "path": "明显不是手球犯规/26赛季第四期判例2.mp4",
+      "bytes": 34353335,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 18.733333333333334,
+          "handler": "vide",
+          "sttsFrames": 1124,
+          "sttsTicks": 1124,
+          "sttsEntries": 1,
+          "sampleCount": 1124,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是手球犯规/26赛季第四期判例4.mp4",
+    "sizeBytes": 44456504,
+    "mtimeNs": 1779890647265918600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "h264",
+    "durationSeconds": 25.066666666666666,
+    "fpsRational": "60",
+    "fps": 60.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 1504,
+    "timeBase": "1/60",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是手球犯规/26赛季第四期判例4.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "明显不是手球犯规/26赛季第四期判例4.mp4",
+      "bytes": 44456504,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 60,
+          "durationSeconds": 25.066666666666666,
+          "handler": "vide",
+          "sttsFrames": 1504,
+          "sttsTicks": 1504,
+          "sttsEntries": 1,
+          "sampleCount": 1504,
+          "averageFps": 60.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "明显不是越位犯规/26赛季第十六期判例4.mp4",
+    "sizeBytes": 13610709,
+    "mtimeNs": 1787833176471748300,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 16.133333333333333,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 484,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "明显不是越位犯规/26赛季第十六期判例4.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.421,
+    "isoBmff": {
+      "path": "明显不是越位犯规/26赛季第十六期判例4.mp4",
+      "bytes": 13610709,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 16.133333333333333,
+          "handler": "vide",
+          "sttsFrames": 484,
+          "sttsTicks": 484,
+          "sttsEntries": 1,
+          "sampleCount": 484,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "越位犯规/26赛季第十七期判例5.mp4",
+    "sizeBytes": 15930456,
+    "mtimeNs": 1787540409499874500,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 25.0,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1280x720",
+    "frameCountDeclared": 750,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "越位犯规/26赛季第十七期判例5.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.469,
+    "isoBmff": {
+      "path": "越位犯规/26赛季第十七期判例5.mp4",
+      "bytes": 15930456,
+      "tracks": [
+        {
+          "width": 1280.0,
+          "height": 720.0,
+          "timescale": 30,
+          "durationSeconds": 25.0,
+          "handler": "vide",
+          "sttsFrames": 750,
+          "sttsTicks": 750,
+          "sttsEntries": 1,
+          "sampleCount": 750,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "越位犯规/26赛季第十五期判例1.mp4",
+    "sizeBytes": 34826490,
+    "mtimeNs": 1785403931553805100,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 47.3,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1280x720",
+    "frameCountDeclared": 1419,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "越位犯规/26赛季第十五期判例1.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "越位犯规/26赛季第十五期判例1.mp4",
+      "bytes": 34826490,
+      "tracks": [
+        {
+          "width": 1280.0,
+          "height": 720.0,
+          "timescale": 30,
+          "durationSeconds": 47.3,
+          "handler": "vide",
+          "sttsFrames": 1419,
+          "sttsTicks": 1419,
+          "sttsEntries": 1,
+          "sampleCount": 1419,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "越位犯规/26赛季第十八期判例4.mp4",
+    "sizeBytes": 18974074,
+    "mtimeNs": 1787832156444795800,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 22.333333333333332,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 670,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "越位犯规/26赛季第十八期判例4.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.422,
+    "isoBmff": {
+      "path": "越位犯规/26赛季第十八期判例4.mp4",
+      "bytes": 18974074,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 22.333333333333332,
+          "handler": "vide",
+          "sttsFrames": 670,
+          "sttsTicks": 670,
+          "sttsEntries": 1,
+          "sampleCount": 670,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "越位犯规/26赛季第十八期判例5.mp4",
+    "sizeBytes": 64946007,
+    "mtimeNs": 1787832321021349600,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 77.96666666666667,
+    "fpsRational": "30",
+    "fps": 30.0,
+    "resolution": "1920x1080",
+    "frameCountDeclared": 2339,
+    "timeBase": "1/30",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "越位犯规/26赛季第十八期判例5.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.391,
+    "isoBmff": {
+      "path": "越位犯规/26赛季第十八期判例5.mp4",
+      "bytes": 64946007,
+      "tracks": [
+        {
+          "width": 1920.0,
+          "height": 1080.0,
+          "timescale": 30,
+          "durationSeconds": 77.96666666666667,
+          "handler": "vide",
+          "sttsFrames": 2339,
+          "sttsTicks": 2339,
+          "sttsEntries": 1,
+          "sampleCount": 2339,
+          "averageFps": 30.0
+        }
+      ],
+      "hasMdat": true
+    }
+  },
+  {
+    "path": "越位犯规/u20亚洲杯：越位案例.mp4",
+    "sizeBytes": 14076320,
+    "mtimeNs": 1789120414087525100,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "codec": "hevc",
+    "durationSeconds": 6.573333333333333,
+    "fpsRational": "23300/859",
+    "fps": 27.124563445867288,
+    "resolution": "1170x2532",
+    "frameCountDeclared": 233,
+    "timeBase": "1/600",
+    "videoStreams": 1,
+    "decodeScope": "FIRST_FRAME_ONLY",
+    "view": "UNVERIFIED",
+    "fullPlayback": "NOT_RUN",
+    "vfrStatus": "UNVERIFIED",
+    "decodeStatus": "FIRST_FRAME_PASS",
+    "firstFramePts": 0,
+    "command": [
+      "python",
+      "-B",
+      "-X",
+      "utf8",
+      "docs/project/task-02-01-20261024/audit.py",
+      "--probe",
+      "越位犯规/u20亚洲杯：越位案例.mp4"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.5,
+    "isoBmff": {
+      "path": "越位犯规/u20亚洲杯：越位案例.mp4",
+      "bytes": 14076320,
+      "tracks": [
+        {
+          "width": 1170.0,
+          "height": 2532.0,
+          "timescale": 600,
+          "durationSeconds": 8.59,
+          "handler": "vide",
+          "sttsFrames": 233,
+          "sttsTicks": 5154,
+          "sttsEntries": 47,
+          "sampleCount": 233,
+          "averageFps": 27.124563445867288
+        }
+      ],
+      "hasMdat": true
+    }
+  }
+]

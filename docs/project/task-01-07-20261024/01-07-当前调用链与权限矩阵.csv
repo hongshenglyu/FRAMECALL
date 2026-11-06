@@ -1,0 +1,8 @@
+﻿interface,before,after,authorization,serialization
+DELETE /tasks/{id},事件物理删除→任务删除,TaskHistoryService.archive→归档字段,同task锁内Video所属/指派/ADMIN，B404匿名401,同task锁；active或未知409
+POST /tasks/{id}/restore,不存在,只清archivedAt,同上，不开放额外权限,不释放active，活动记录409
+GET task/events/report,按task取全部事件混合,统一view current/all/legacy/attemptId,未归档且原权限；跨task attempt404,选择时同task锁，导出使用该版本快照
+POST review/PATCH tracks,授权后count/save，无task锁,withEvent二次鉴权并串行写,归档后404,最大已有revision+1，旧记录不重写
+POST manual,无attempt关联,withTask绑定已核验currentAttempt,同上；异常当前关联409,同task锁
+retry/cancel/progress/result,01-05/06同task锁,增加归档拒绝，原屏障/幂等保留,用户接口原授权/内部grant保持,同task锁
+event媒体/Video原片,资源授权+路径边界,事件所属Task归档后404，独立Video原片规则保持,匿名401/跨用户404,不撤回已发送或此前授权的字节

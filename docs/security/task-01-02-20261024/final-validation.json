@@ -1,0 +1,204 @@
+{
+  "task": "01-02",
+  "scope": "本轮报告与脱敏证据，非全盘安全审计",
+  "generatedAt": "2026-10-24T17:01:06.559983+08:00",
+  "sourceHashesMatch": true,
+  "noOutOfScopeOriginalChanges": true,
+  "gitRefsUnchanged": true,
+  "diffCheckExitCode": 0,
+  "privacyScan": {
+    "hits": [],
+    "instanceConfigsRead": false,
+    "rawLogsAndTokensExcluded": true,
+    "syntheticScreenshotsVisuallyChecked": true
+  },
+  "files": [
+    {
+      "path": "01-02-执行总览.md",
+      "bytes": 2204,
+      "sha256": "1a7f6698b4481ec7933d1a2c4d3f4e2940fa33dac8135e1f566ea00bb0c8daed"
+    },
+    {
+      "path": "01-02-媒体入口与授权矩阵.csv",
+      "bytes": 3787,
+      "sha256": "7bde6bf9e8efc8e2d3b40260c73e5d28b726366893dfb93fd9b727c6d6697049"
+    },
+    {
+      "path": "01-02-修改文件与Diff索引.md",
+      "bytes": 7439,
+      "sha256": "ff87c0cca771ecae61ee5680115a4fdd7a8a0eee316ee7609a1224c67a68e1a5"
+    },
+    {
+      "path": "01-02-隔离权限与Range测试矩阵.csv",
+      "bytes": 42643,
+      "sha256": "4a170305507171ed819a8b87732c114dce15988d6bbc040696fe1dd71b086626"
+    },
+    {
+      "path": "01-02-测试与运行记录.md",
+      "bytes": 6162,
+      "sha256": "b8fadaf8c647bc5bd99f8d422796535b24453c2d970b5e35532596bcef2223cb"
+    },
+    {
+      "path": "01-02-路径安全及浏览器回放审计.md",
+      "bytes": 3667,
+      "sha256": "3a989cc3b98c37bbaceebc2831bc4dd71b6100ad97e37104d4f8e8777325f347"
+    },
+    {
+      "path": "01-02-兼容与残余风险.md",
+      "bytes": 2680,
+      "sha256": "205372711e7ab4bfda09f55b216ce6658851364e7e5994ad4b35ce6cd618743f"
+    },
+    {
+      "path": "01-02-验收清单.md",
+      "bytes": 1180,
+      "sha256": "759d73566cdda285c6c8e68a0b99c6e1146c1ef59c164e42ce3d8802357f5053"
+    },
+    {
+      "path": "01-02-核验结果.json",
+      "bytes": 21939,
+      "sha256": "f0254d535dc3ffa1a829bf4c4efd5bad501bbbb0c0b41491a6d29ba6c7c4e33f"
+    },
+    {
+      "path": "01-02-回退与停止方案.md",
+      "bytes": 1473,
+      "sha256": "c71e9ce35f86890bcea9601c972a395d2c31c134b7c62c74ca221b2d9dff90c1"
+    },
+    {
+      "path": "01-02-任务启动卡.md",
+      "bytes": 4295,
+      "sha256": "9871ebe2be4338642f1510f7585f8cc4f75d9b0b7a5ec9e0d587fe0d8ab802e5"
+    },
+    {
+      "path": "source-change-index.json",
+      "bytes": 10201,
+      "sha256": "336030cb52edb2f189ebb536ef0072c74cad6ab7af5af00b498ffb367d39b9d5"
+    },
+    {
+      "path": "frontend-build-record.json",
+      "bytes": 448,
+      "sha256": "783ef416fa4f5638dd97b1b60f2f52d8c9db7fa731f562f5b1a0a12e24d495d7"
+    },
+    {
+      "path": "baseline-attempt1-result.json",
+      "bytes": 475,
+      "sha256": "88ada7c3f098d9222128915797ece15932ca31fef7452a9763342dcd4b1d6c15"
+    },
+    {
+      "path": "baseline-result.json",
+      "bytes": 2456,
+      "sha256": "dc9ca715573f0afb2db95eaddacbc407ab496f99990c7293d2a56b05f855f48c"
+    },
+    {
+      "path": "baseline.sanitized.log",
+      "bytes": 3387,
+      "sha256": "c1ddd71cc5ff8c7aca1d46b8e6543d250d95273b78d058240a135e26b4880f42"
+    },
+    {
+      "path": "baseline-authorization-evidence.jsonl",
+      "bytes": 9122,
+      "sha256": "cdea2ad8ea66cd7aa31db634e05b0dddf1eda5e451c069472f3b810b2f0ad2c9"
+    },
+    {
+      "path": "regression-result.json",
+      "bytes": 4724,
+      "sha256": "d7c67bfec065be06b61263e6db8a4c2e97197e7d5ac0d8109d73a2b53a9e6b6b"
+    },
+    {
+      "path": "regression.sanitized.log",
+      "bytes": 8575,
+      "sha256": "04a59c1556ac674df1ce1a06c727adf3ec4b2c327d2e4cd90535fdd67aeaebda"
+    },
+    {
+      "path": "regression-authorization-evidence.jsonl",
+      "bytes": 9122,
+      "sha256": "c437b1c42cc868c1d73fb77f761aa5c61b56216901b2bed56472537ca0871ab4"
+    },
+    {
+      "path": "media-attempt1-evidence.jsonl",
+      "bytes": 9459,
+      "sha256": "c9d5bfef5c31f5115666fdf582b323db445a357c8295633c70f780a8c992c5d9"
+    },
+    {
+      "path": "browser-attempt1-result.json",
+      "bytes": 252,
+      "sha256": "6c4fbc99b76235a117df9b4a1893e76a8be58ffd04476d44a9e124ab3730962c"
+    },
+    {
+      "path": "regression2-result.json",
+      "bytes": 4727,
+      "sha256": "a004d42048b5175550b3b3d4f61c67187969738288faf7546929793bb1906301"
+    },
+    {
+      "path": "regression2.sanitized.log",
+      "bytes": 4074,
+      "sha256": "2e9e3d99ed7770381efc73904969d7a889cc880f6fa27f85e3df2f32837b5cc9"
+    },
+    {
+      "path": "regression2-authorization-evidence.jsonl",
+      "bytes": 9122,
+      "sha256": "ec6092a82d78af4c7d50373afb59485c8103a1080a9f1826d4fe16a7c060d58c"
+    },
+    {
+      "path": "regression2-media-http-evidence.jsonl",
+      "bytes": 10160,
+      "sha256": "742fcbaf67f8a0e441264420fb54b969dd6858bb26f6afb9060bafc8c778cef8"
+    },
+    {
+      "path": "regression2-browser-result.json",
+      "bytes": 2561,
+      "sha256": "c2c29f73206bc1c27579aad9c46df73d7f686c2450221ce795b0f095c8c8f18b"
+    },
+    {
+      "path": "final-result.json",
+      "bytes": 5083,
+      "sha256": "770021a7042ba74840dd1c6f218df8a35a2ed9b809c85aeae0cfa9438eb79225"
+    },
+    {
+      "path": "final.sanitized.log",
+      "bytes": 4332,
+      "sha256": "b87fdbae6746ea74d48a28e2e4bd31367dd020a87cfba78a7bfa9198ecd1a744"
+    },
+    {
+      "path": "final-authorization-evidence.jsonl",
+      "bytes": 9122,
+      "sha256": "3f2d3b3116c2d7ae1da3104da07d184c017978c3a36a5375d8759b4a349c3671"
+    },
+    {
+      "path": "media-http-evidence.jsonl",
+      "bytes": 11498,
+      "sha256": "1f85bdb16b3ecac62eaf599013c1b7ee2809be6cf12f9e9022ebe210e1c5c004"
+    },
+    {
+      "path": "browser-result.json",
+      "bytes": 2497,
+      "sha256": "ae26e4f25de8d1ab63498e235ff42d67d6b25a9f33e4b35233a35ef892d76335"
+    },
+    {
+      "path": "browser-proof-result.json",
+      "bytes": 558,
+      "sha256": "81d13a2a6349cbffe3db95ae675c9f4d46a72b2efa856ad9944e1739ecfd594e"
+    },
+    {
+      "path": "browser-proof.sanitized.log",
+      "bytes": 2870,
+      "sha256": "898f995ab394800eedc5aae21af641f4c268de0e47f743d0599d8280ad426dbd"
+    },
+    {
+      "path": "browser-owner-synthetic.png",
+      "bytes": 77162,
+      "sha256": "4e6a5d917dc0caa6fffcf25758f617425646a9934d987dfc11544f5fef4e85a7"
+    },
+    {
+      "path": "browser-admin-synthetic.png",
+      "bytes": 146579,
+      "sha256": "4bbdcc795ad07986a38c70d3b7f5ece2c6bc546ee891dac0aae61a463ecc8f0f"
+    }
+  ],
+  "manifestSelfHashExcluded": true,
+  "archiveExpectedEntries": 37,
+  "zipVerification": {
+    "crc": "PASS",
+    "memberBytesMatch": true,
+    "scope": "归档后重开CRC和逐成员内容核对；本文件不自哈希"
+  }
+}

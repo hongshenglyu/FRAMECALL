@@ -1,0 +1,13 @@
+﻿route,resource,ownership,anonymous,owner,other,admin,assigned,source,consumer,normal,notes
+GET/HEAD /api/files?videoId=<id>,原视频,DB Video.owner/assignedTo/current ADMIN；缺owner拒绝,401,200/206,404,200/206,200/206,backend/src/main/java/com/footballref/assist/controller/FileController.java:47,VideoAnnotationPage/原生video,200/206/416,片段.txt拒绝404；不意味着真实剪辑已实现
+GET/HEAD /api/files?eventId=<id>&kind=keyframe,关键帧,DB Video.owner/assignedTo/current ADMIN；缺owner拒绝,401,200/206,404,200/206,200/206,backend/src/main/java/com/footballref/assist/controller/FileController.java:47,WorkbenchPage/EventDetail img,200/206/416,片段.txt拒绝404；不意味着真实剪辑已实现
+GET/HEAD /api/files?eventId=<id>&kind=clip,候选片段,DB Video.owner/assignedTo/current ADMIN；缺owner拒绝,401,200/206,404,200/206,200/206,backend/src/main/java/com/footballref/assist/controller/FileController.java:47,受控下载；现有复核页无片段video播放组件,200/206/416,片段.txt拒绝404；不意味着真实剪辑已实现
+GET /api/files?path=<legacy>,旧路径接口,所有身份拒绝,401,404,404,404,404,backend/src/main/java/com/footballref/assist/service/MediaAccessService.java:30,旧客户端需升级,404,
+POST /api/files/session,媒体Cookie,有效Bearer；不接受Cookie认证,401,204,204,204,204,backend/src/main/java/com/footballref/assist/controller/FileController.java:29,App登录及刷新,204,不返回token/路径；仅Set-Cookie；无资源读取
+DELETE /api/files/session,清除媒体Cookie,有效Bearer,401,204,204,204,204,backend/src/main/java/com/footballref/assist/controller/FileController.java:34,App退出,204,
+OPTIONS /api/files,预检,匿名拒绝；采用同源部署,401,非跨域方案,非跨域方案,非跨域方案,非跨域方案,SecurityConfig/JwtAuthFilter/WebConfig,同源GET无需预检,401,不支持匿名跨域凭据预检，不改CORS为*+credentials
+GET /api/tasks/{taskId}/report,PDF下载/本机嵌图,先requireTask；原01-01授权,401,200,404,200,200,backend/src/main/java/com/footballref/assist/controller/TaskController.java:97,Workbench axios Bearer,200,PDF字节与图片路径边界测试；字体视觉未重新验收
+GET /brand/*,公共品牌静态资源,无私人业务媒体,允许,允许,允许,允许,允许,frontend/public/brand,LoginPage/App,200,logo/品牌封面无需业务权限
+独立媒体asset管理/片段播放器/Annotation媒体下载,不存在,NOT_IMPLEMENTED,NOT_IMPLEMENTED,NOT_IMPLEMENTED,NOT_IMPLEMENTED,NOT_IMPLEMENTED,NOT_IMPLEMENTED,当前源码检索,无,NOT_IMPLEMENTED,不新建资产表/不伪造播放器功能
+GET /api/annotations/{annotationId}/labels,标注JSON附件（非视频/图像）,既有类级ADMIN-only，Bearer认证；服务端生成labelFilePath,401（静态链检查）,403（REFEREE，静态）,403（REFEREE，静态）,200（原回归覆盖正常导出）,403（REFEREE，静态）,backend/src/main/java/com/footballref/assist/controller/AnnotationController.java:93,AnnotationPage axios下载,200,媒体Cookie不能认证该路由；保留既有管理员标注权限，不把标注JSON/CSV当视频；其独立路径/异常Range未扩展动态验收
+GET /api/annotations/{annotationId}/labels.csv,标注CSV附件（非视频/图像）,既有类级ADMIN-only，Bearer认证；服务端生成labelFilePath,401（静态链检查）,403（REFEREE，静态）,403（REFEREE，静态）,200（原回归覆盖正常导出）,403（REFEREE，静态）,backend/src/main/java/com/footballref/assist/controller/AnnotationController.java:104,AnnotationPage axios下载,200,媒体Cookie不能认证该路由；保留既有管理员标注权限，不把标注JSON/CSV当视频；其独立路径/异常Range未扩展动态验收

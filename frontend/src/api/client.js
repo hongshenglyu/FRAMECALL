@@ -12,7 +12,7 @@ api.interceptors.request.use((config) => {
   return config
 })
 
-export function fileUrl(path) {
-  return `/api/files?path=${encodeURIComponent(path)}`
+export function fileUrl(resource, id, kind) {
+  const parameters = resource === 'video' ? { videoId: id } : { eventId: id, kind }
+  return `/api/files?${new URLSearchParams(parameters)}`
 }
-

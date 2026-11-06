@@ -51,11 +51,13 @@ import WorkbenchPage from './pages/WorkbenchPage.vue'
 import UserPage from './pages/UserPage.vue'
 import AnnotationPage from './pages/AnnotationPage.vue'
 import VideoAnnotationPage from './pages/VideoAnnotationPage.vue'
+import { api } from './api/client'
+import { ElMessage } from 'element-plus'
 
 const section = ref('workbench')
 const darkMode = ref(localStorage.getItem('theme') !== 'light')
 const session = reactive({
-  user: JSON.parse(localStorage.getItem('user') || 'null')
+  user: null
 })
 
 const title = computed(() => {
@@ -65,16 +67,28 @@ const title = computed(() => {
   return '裁判快速复核工作台'
 })
 
-function handleLogin(payload) {
+async function handleLogin(payload) {
   localStorage.setItem('token', payload.token)
-  localStorage.setItem('user', JSON.stringify(payload.user))
-  session.user = payload.user
+  try {
+    await api.post('/files/session')
+    localStorage.setItem('user', JSON.stringify(payload.user))
+    session.user = payload.user
+  } catch {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    ElMessage.error('媒体认证失败，请重新登录')
+  }
 }
 
-function logout() {
-  localStorage.removeItem('token')
-  localStorage.removeItem('user')
-  session.user = null
+async function logout() {
+  try {
+    await api.delete('/files/session')
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    session.user = null
+  } catch {
+    ElMessage.error('退出失败，请重试')
+  }
 }
 
 function applyTheme() {
@@ -87,5 +101,11 @@ function toggleTheme() {
   applyTheme()
 }
 
-onMounted(applyTheme)
+onMounted(async () => {
+  applyTheme()
+  const user = localStorage.getItem('user')
+  if (user && localStorage.getItem('token')) {
+    await handleLogin({ token: localStorage.getItem('token'), user: JSON.parse(user) })
+  }
+})
 </script>

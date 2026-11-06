@@ -1,0 +1,17 @@
+﻿设计要求,当前行为,源码证据,优先级,负责后续WBS,兼容风险,未来验收用例
+显式real/mock并禁止降级,环境默认mock；缺模型/依赖转fallback，分析仍成功,"ai-service/app/detector.py:24-75,192-203；ai-service/app/analyzer.py:37-87",P0,03-05,旧演示不可默认为real,"T01,T02,T03"
+每次执行独立attemptId,请求仅taskId；重试删事件后同task重跑,backend/src/main/java/com/footballref/assist/service/AiClient.java:29-39；backend/src/main/java/com/footballref/assist/service/TaskService.java:116-125,P0,01-05/01-06,不得删除旧attempt与复核证据,T08
+来源版本持久化与展示,Task/事件无来源或attempt字段，序列化未传播metrics来源,backend/src/main/java/com/footballref/assist/domain/AnalysisTask.java:9-45；backend/src/main/java/com/footballref/assist/domain/DisputeEvent.java:10-60；backend/src/main/java/com/footballref/assist/service/TaskService.java:135-159,P0,03-05/01-07,历史必须legacy_unknown，不能补real,"T11,T12"
+短事务与代理边界,@Async和@Transactional覆盖长HTTP；retry同类调用runTask,"backend/src/main/java/com/footballref/assist/service/TaskService.java:53-91,116-125",P0,01-05,不能仅加另一个注解宣称异步生效,"T08,T13"
+终态/合法状态校验,后端未校验AI状态/完整性即写SUCCEEDED，缺events甚至可空返回,"backend/src/main/java/com/footballref/assist/service/TaskService.java:69-80,135-140",P0,01-05/01-07,保留旧字段但新v1严格校验,"T01,T05,T06"
+取消竞争与任务删除围栏,取消仅按taskId；删除直接删task/事件；状态判断有限,backend/src/main/java/com/footballref/assist/service/TaskService.java:94-114；backend/src/main/java/com/footballref/assist/controller/TaskController.java:78-84,P0,01-06,取消终态保留CANCELLED拼写,"T07,T14"
+有序幂等回调,只有内部token，stage/percent无attempt/seq/版本,backend/src/main/java/com/footballref/assist/controller/InternalController.java:23-34；backend/src/main/java/com/footballref/assist/service/TaskService.java:106-113；ai-service/app/analyzer.py:303-321,P0,01-06,旧回调仅允许旧作业，不准更新新作业,"T08,T15"
+真正跨帧ByteTrack,每检测分新ID且单观测；adapter_pending,ai-service/app/tracker.py:115-154,P0,04-01,不可用模型名代替实现状态,T05
+原始PTS与源帧索引,采样frameIndex=sampleIndex*stride；跟踪再乘40,ai-service/app/detector.py:87-105；ai-service/app/tracker.py:129-145,P0,03-03,新增时间基准，不静默改写旧时间,T10
+原始fps标注导出,前端fps固定25；评估按fps换算帧误差,"frontend/src/pages/VideoAnnotationPage.vue:202-224,334；scripts/evaluate-predictions.mjs:377-390",P0,03-03/09系列,旧标注unknown，不伪造真实源fps,"T10,T11"
+合法0候选成功,无有效轨迹填固定候选并选全局一个,"ai-service/app/event_rules.py:41-57,217-237；ai-service/app/analyzer.py:90-157",P0,03-05,新real零候选不得回填事件,T04
+真实媒体及可播证据,绘制PNG与clip_placeholder.txt；详情图片无真实播放链,"ai-service/app/analyzer.py:116-138,245-288；frontend/src/components/EventDetail.vue:4-10",P0,06-02,旧图片保留但标illustration,T06
+API/UI/PDF/评估隔离,UI只看状态；PDF依现有事件生成，无来源合同,"frontend/src/pages/WorkbenchPage.vue:39-57,142-179；backend/src/main/java/com/footballref/assist/service/ReportService.java:58-71,88-111,140-188",P0,01-07/03-05/09系列,保持旧页面/复核与下载路由,"T02,T11,T12"
+资源权限与媒体鉴权,列表过滤但详情/操作缺同等校验；文件匿名放行,backend/src/main/java/com/footballref/assist/controller/TaskController.java:47-101；backend/src/main/java/com/footballref/assist/controller/EventController.java:43-90；backend/src/main/java/com/footballref/assist/config/SecurityConfig.java:18-24；backend/src/main/java/com/footballref/assist/controller/FileController.java:29-40,P0,01-07,后台执行owner/assigned/admin，不只隐藏按钮,T09
+内部地址与路径可信来源,后端硬编码回调，AI使用请求callbackUrl与路径,backend/src/main/java/com/footballref/assist/service/TaskService.java:68；backend/src/main/java/com/footballref/assist/service/AiClient.java:29-37；ai-service/app/schemas.py:29-39；ai-service/app/analyzer.py:303-321,P0,01-06/01-07,受控服务配置与opaque媒体ID，兼容旧路径仅限可信内部,"T09,T16"
+比赛级真实研究过滤,现有评估无run-v1来源准入；示例不能证明真实效果,scripts/evaluate-predictions.mjs:377-390；ai-service/app/schemas.py:73-81,P0,09系列,演示仍可独立评估但禁止论文成绩,T11

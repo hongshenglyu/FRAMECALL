@@ -1,11 +1,12 @@
 package com.footballref.assist.controller;
 
 import com.footballref.assist.service.TaskService;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
 
@@ -13,24 +14,19 @@ import java.util.Map;
 @RequestMapping("/api/internal")
 public class InternalController {
     private final TaskService taskService;
-    private final String internalToken;
 
-    public InternalController(TaskService taskService, @Value("${app.internal-token}") String internalToken) {
+    public InternalController(TaskService taskService) {
         this.taskService = taskService;
-        this.internalToken = internalToken;
     }
 
     @PostMapping("/tasks/{taskId}/progress")
-    public Map<String, Object> progress(@PathVariable Long taskId, @RequestBody ProgressRequest request, HttpServletRequest httpRequest) {
-        String token = httpRequest.getHeader("X-Internal-Token");
-        if (!internalToken.equals(token)) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid internal token");
-        }
-        taskService.updateProgress(taskId, request.stage(), request.progressPercent());
+    public Map<String, Object> progress(@PathVariable Long taskId, @Valid @RequestBody ProgressRequest request,
+                                      jakarta.servlet.http.HttpServletRequest http) {
+        taskService.updateProgress(taskId, (String) http.getAttribute("analysisAttemptId"), request.stage(), request.progressPercent());
         return Map.of("ok", true);
     }
 
-    public record ProgressRequest(String stage, int progressPercent, String message) {
+    public record ProgressRequest(@NotNull @Pattern(regexp = "EXTRACTING|DETECTING|TRACKING|EVENT_ANALYSIS|COMPLETED") String stage,
+                                  @Min(0) @Max(100) int progressPercent, String message) {
     }
 }
-

@@ -165,7 +165,7 @@ function selectVideo(videoId) {
   selectedSource.title = video.title
   selectedSource.uri = video.originalPath
   selectedSource.originalName = video.title
-  videoSrc.value = fileUrl(video.originalPath)
+  videoSrc.value = fileUrl('video', video.id)
   events.value = []
   resetForm()
 }

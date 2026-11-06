@@ -1,0 +1,72 @@
+﻿layer,case,expected,actual,outcome,evidence
+JUnit,com.footballref.assist.BackendApiSmokeTest.loginTaskDetailEventDetailAndReportExportWork,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.BackendApiSmokeTest.annotationUploadValidatesSchemaAndStoresStats,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.InternalSecurityTest.actualJavaToFastApiToSpringProgressChainUsesIsolatedStorageAndH2,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.InternalSecurityTest.outboundClientUsesDistinctServiceHeadersAndFixedCallbackThenRevokesGrant,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.InternalSecurityTest.authenticatedProgressCannotInjectStageOrOutOfBoundsPercent,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.InternalSecurityTest.currentGrantIsTaskScopedAndOldOrRevokedInvocationCannotUpdate,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.InternalSecurityTest.grantsExpireWithoutPretendingToImplementDurableAttempts,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.InternalSecurityTest.ordinaryIdentitiesAndMalformedAnonymousBodiesCannotReachProgress,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.InternalSecurityTest.invalidOutputAndOriginsDoNotReachNetworkAndRedirectDoesNotReachTrap,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.expiredCookiesDemotedAdminsAndRemovedAssignmentsCannotRead,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.anonymousCannotReadKnownMediaOrUseHeadOptionsOrCookieWrites,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.pathParametersAndUnknownResourcesNeverRevealBytesOrPaths,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.windowsJunctionEscapeIsRejectedWithoutReadingTarget,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.actualBrowserLoginPlaybackSeekPauseRefreshAndOwnership,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.rangesDeliverExactSegmentsAndRejectInvalidOrMultipleRanges,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.eventCannotBorrowAnotherTasksMediaEvenInsideRoot,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.cookieBridgeIsHttpOnlyScopedSecureAndRechecksDatabase,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.storedTraversalAliasesOutsideRootsAndActiveContentFailClosed,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.persistedOwnershipAllowsOwnerAdminAssignedAndDeniesBothDirections,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.controlledRelativeStorageAliasesAndWindowsCaseKeepAuthorizedMediaPlayable,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.symbolicLinkEscapeIsRejectedWhenPlatformPermitsCreatingLink,业务断言全部成立,SKIP,SKIP,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.pdfCannotEmbedOutsideMediaAndCannotWriteOutsideStorage,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.MediaAccessTest.sparseLargeVideoCanServeSuffixWithoutMaterializingWholeFile,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.ownerCanUseEveryExistingTaskAndEventOperation,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.anotherAuthenticatedUserCannotReadOrMutateKnownResourceIds,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.administratorRetainsExistingAllResourceAccess,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.authenticatedUploadAndManualReviewKeepServerOwnedIdentity,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.taskListKeepsOwnerAssignmentAndAdministratorSemantics,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.missingIdsUseTheSameSafeNotFoundResponseBeforeSideEffects,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.assignedRefereeRetainsExistingSharedResourceAccess,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.malformedOwnerOrParentRelationshipsFailClosedEvenForAdministrator,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.ResourceAuthorizationTest.clientRoleHintsAndStaleAdminClaimsCannotOverrideDatabaseRole,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.everyMandatoryNewSettingFailsClosedWithoutLegacyFallback,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.securityProcessorIsRegisteredInActualTestClasspath,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.defaultAndProductionNeverCreateAccountsWithoutExplicitAuthorization,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.missingConfirmationOrExistingUsersCannotResetOrEscalateAccounts,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.weakEmptyAndPlaceholderSecretsAreRejectedWithoutEchoingValues,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.actualBootRejectsUnsafeConfigBeforeContextPreparationOrFilesystemWrites(CapturedOutput),业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.actualDefaultProductionAndDemoContextsUseOnlySyntheticH2AndRespectInitialization,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.demoRequiresExclusiveProfileExplicitIsolationAndMemoryDatabase,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.jwtRejectsWrongAlgorithmAndMissingOrExpiredExpiryEvenWithValidSignature,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.explicitConfirmedBootstrapCreatesOnlyCallerSuppliedAccount,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.SecurityBootstrapTest.explicitNewKeysOverrideOldAliasesAndRotationInvalidatesOldTokens,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.boundedQueueRejectsWithoutPhantomSuccessAndLaterRetryWorks,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.twentyConcurrentRetriesHaveOneDatabaseAttemptAndOneActualExecution,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.scheduledAttemptRunsThroughRealFastApiAndAuthenticatedProgress,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.failuresAreSanitizedBoundedAndNeverAutoRetried,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.retriesRetainReviewedEventsAndOldMediaBytesInDistinctAttemptDirectories,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.authorizationRejectsBeforeAttemptCreationAndLegalStatesAreExplicit,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.h2MigrationPreservesLegacyRowsAndEnforcesAttemptPrimaryKey,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.staleAuthenticatedCallbackAndOldCompletionCannotMutateCurrentAttempt,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.uploadAndRetryReturnWhileRealAiIsBlockedAndProgressRemainsQueryable,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.restartQuarantinesPersistedQueuedAttemptWithoutReplayingIt,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.attemptDirectoryRejectsJunctionBeforeCreatingAnythingOutside,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+JUnit,com.footballref.assist.TaskSchedulingTest.connectionRefusalAndUnexpectedWorkerExceptionBecomeQueryableFailures,业务断言全部成立,PASS,PASS,verified-result.json; verified.sanitized.log
+HTTP/业务证据,QUEUE_REJECTED,场景断言全部成立,"{""http"": 503, ""queue"": 1, ""activeRejected"": 0, ""id"": ""QUEUE_REJECTED"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:13.996736100Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,20_CONCURRENT_RETRIES,场景断言全部成立,"{""worker"": ""analysis-worker-1"", ""aiCalls"": 1, ""accepted"": 1, ""requests"": 20, ""conflict"": 19, ""activeAttempts"": 1, ""id"": ""20_CONCURRENT_RETRIES"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:14.261912600Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,SCHEDULED_REAL_FASTAPI_MOCK_CHAIN,场景断言全部成立,"{""attemptDirectory"": true, ""events"": 3, ""realModels"": false, ""status"": ""SUCCEEDED"", ""progress"": 100, ""http"": 200, ""id"": ""SCHEDULED_REAL_FASTAPI_MOCK_CHAIN"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:16.308903600Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,AI_503,场景断言全部成立,"{""status"": ""FAILED"", ""attempts"": 1, ""transportCalls"": 1, ""id"": ""AI_503"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:16.416086700Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,AI_DISCONNECT,场景断言全部成立,"{""status"": ""FAILED"", ""attempts"": 1, ""transportCalls"": 1, ""id"": ""AI_DISCONNECT"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:16.550749600Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,AI_BAD,场景断言全部成立,"{""status"": ""FAILED"", ""attempts"": 1, ""transportCalls"": 1, ""id"": ""AI_BAD"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:16.664330600Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,AI_HOLD,场景断言全部成立,"{""status"": ""FAILED"", ""attempts"": 1, ""transportCalls"": 1, ""id"": ""AI_HOLD"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:17.996091700Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,HISTORY_PRESERVED,场景断言全部成立,"{""events"": 3, ""oldBytesUnchanged"": true, ""reviewCount"": 1, ""attempts"": 2, ""id"": ""HISTORY_PRESERVED"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.179216700Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,RETRY_AUTHORIZATION_AND_STATES,场景断言全部成立,"{""illegalStates"": 4, ""other"": 404, ""admin"": 200, ""anonymous"": 401, ""id"": ""RETRY_AUTHORIZATION_AND_STATES"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.298453400Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,H2_MIGRATION,场景断言全部成立,"{""duplicatePrimaryKeyRejected"": true, ""legacyRowsPreserved"": true, ""emptySchema"": true, ""id"": ""H2_MIGRATION"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.321380800Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,STALE_CALLBACK_AND_COMPLETION,场景断言全部成立,"{""lateEvents"": 0, ""currentToken"": 200, ""oldToken"": 401, ""staleAuthenticated"": 409, ""retryFenced"": 409, ""id"": ""STALE_CALLBACK_AND_COMPLETION"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.509685100Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,UPLOAD_RETURNS_BEFORE_AI,场景断言全部成立,"{""milliseconds"": 23, ""requestThread"": ""main"", ""worker"": ""analysis-worker-1"", ""http"": 200, ""readHttp"": 200, ""id"": ""UPLOAD_RETURNS_BEFORE_AI"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.586902500Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,CANCELLED_RETRY_RETURNS_BEFORE_AI,场景断言全部成立,"{""http"": 200, ""milliseconds"": 7, ""id"": ""CANCELLED_RETRY_RETURNS_BEFORE_AI"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.654840Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,RESTART_FAIL_CLOSED,场景断言全部成立,"{""retry"": 409, ""stage"": ""RECOVERY_REQUIRED"", ""aiCalls"": 0, ""quarantinedActive"": 1, ""id"": ""RESTART_FAIL_CLOSED"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.695232700Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,ATTEMPT_JUNCTION_NO_OUTSIDE_WRITE,场景断言全部成立,"{""outsideEntries"": 0, ""rejected"": true, ""id"": ""ATTEMPT_JUNCTION_NO_OUTSIDE_WRITE"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.782141500Z""}",PASS,verified-scheduling.jsonl
+HTTP/业务证据,REFUSAL_AND_UNEXPECTED_EXCEPTION,场景断言全部成立,"{""sanitized"": true, ""refusedStatus"": ""FAILED"", ""unexpectedStatus"": ""FAILED"", ""id"": ""REFUSAL_AND_UNEXPECTED_EXCEPTION"", ""outcome"": ""PASS"", ""at"": ""2026-10-24T12:11:18.891601500Z""}",PASS,verified-scheduling.jsonl

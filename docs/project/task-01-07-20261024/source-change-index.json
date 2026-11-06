@@ -1,0 +1,360 @@
+[
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/AnalysisTask.java",
+    "beforeSha256": "e6f98d2eb990bd74d61e20c43ac2942551f44b41a7050f9475503b4e71f76595",
+    "afterSha256": "c7f44632ecb7fa56ad08b4c1baa9648e0caac6b32a2c657cebd4f887b1c94997",
+    "ranges": [
+      {
+        "beforeStart": 17,
+        "beforeEnd": 16,
+        "afterStart": 17,
+        "afterEnd": 20
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/ResourceAccessService.java",
+    "beforeSha256": "816fd8b39b1c8a484cb506514134d0f9382f2f39afbb9ae2d8562882e3569316",
+    "afterSha256": "25291c88beeaafdb97c4de6deaf04fa22d23c25e9f35f0c972295aa0a3a9c435",
+    "ranges": [
+      {
+        "beforeStart": 58,
+        "beforeEnd": 58,
+        "afterStart": 58,
+        "afterEnd": 58
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/TaskService.java",
+    "beforeSha256": "46c9e6b23c1c51a82d1fa1fda7d3b5659b30b9e7e407df93af59f52fffbd1ecd",
+    "afterSha256": "29fab40d3790ca9f060ed4064855804afcb34a6fffd07d9c2539f48ec5fdf5af",
+    "ranges": [
+      {
+        "beforeStart": 88,
+        "beforeEnd": 87,
+        "afterStart": 88,
+        "afterEnd": 88
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+    "beforeSha256": "75c401ee55aacee5a80211e6963fc6dc86f3ab68d004c58298d4cbad83d4e3e0",
+    "afterSha256": "6ff8cc3a65a1d4b2be44e7e87af6bef5b56aab64727631be18a6e0a483941cea",
+    "ranges": [
+      {
+        "beforeStart": 11,
+        "beforeEnd": 10,
+        "afterStart": 11,
+        "afterEnd": 11
+      },
+      {
+        "beforeStart": 33,
+        "beforeEnd": 32,
+        "afterStart": 34,
+        "afterEnd": 34
+      },
+      {
+        "beforeStart": 40,
+        "beforeEnd": 40,
+        "afterStart": 42,
+        "afterEnd": 42
+      },
+      {
+        "beforeStart": 48,
+        "beforeEnd": 47,
+        "afterStart": 50,
+        "afterEnd": 50
+      },
+      {
+        "beforeStart": 51,
+        "beforeEnd": 51,
+        "afterStart": 54,
+        "afterEnd": 54
+      },
+      {
+        "beforeStart": 54,
+        "beforeEnd": 54,
+        "afterStart": 57,
+        "afterEnd": 58
+      },
+      {
+        "beforeStart": 60,
+        "beforeEnd": 63,
+        "afterStart": 64,
+        "afterEnd": 75
+      },
+      {
+        "beforeStart": 82,
+        "beforeEnd": 82,
+        "afterStart": 94,
+        "afterEnd": 93
+      },
+      {
+        "beforeStart": 84,
+        "beforeEnd": 87,
+        "afterStart": 95,
+        "afterEnd": 101
+      },
+      {
+        "beforeStart": 91,
+        "beforeEnd": 93,
+        "afterStart": 105,
+        "afterEnd": 108
+      },
+      {
+        "beforeStart": 97,
+        "beforeEnd": 100,
+        "afterStart": 112,
+        "afterEnd": 116
+      },
+      {
+        "beforeStart": 111,
+        "beforeEnd": 110,
+        "afterStart": 127,
+        "afterEnd": 127
+      },
+      {
+        "beforeStart": 124,
+        "beforeEnd": 123,
+        "afterStart": 141,
+        "afterEnd": 145
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+    "beforeSha256": "199dc3386d5f82f8965d0d8e7c549c7f63cfe6aed5f29e65d6426fda42adaad5",
+    "afterSha256": "f24ab990492093f5785843d1762912284962d7a3e188993154fc251f6075dbbc",
+    "ranges": [
+      {
+        "beforeStart": 14,
+        "beforeEnd": 13,
+        "afterStart": 14,
+        "afterEnd": 14
+      },
+      {
+        "beforeStart": 30,
+        "beforeEnd": 29,
+        "afterStart": 31,
+        "afterEnd": 31
+      },
+      {
+        "beforeStart": 35,
+        "beforeEnd": 35,
+        "afterStart": 37,
+        "afterEnd": 37
+      },
+      {
+        "beforeStart": 41,
+        "beforeEnd": 40,
+        "afterStart": 43,
+        "afterEnd": 43
+      },
+      {
+        "beforeStart": 47,
+        "beforeEnd": 46,
+        "afterStart": 50,
+        "afterEnd": 50
+      },
+      {
+        "beforeStart": 53,
+        "beforeEnd": 62,
+        "afterStart": 57,
+        "afterEnd": 68
+      },
+      {
+        "beforeStart": 67,
+        "beforeEnd": 69,
+        "afterStart": 73,
+        "afterEnd": 76
+      },
+      {
+        "beforeStart": 74,
+        "beforeEnd": 90,
+        "afterStart": 81,
+        "afterEnd": 99
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/ReportService.java",
+    "beforeSha256": "f62cc864e4dc3f1c8bb48e7c0ebca5b4470cfddeac2efabcfa7519c4a3244a1a",
+    "afterSha256": "88db5b39abbc1d64859658b42a95e3466fd9e71f370f43993e8d00745d3a0ebb",
+    "ranges": [
+      {
+        "beforeStart": 31,
+        "beforeEnd": 31,
+        "afterStart": 31,
+        "afterEnd": 31
+      },
+      {
+        "beforeStart": 61,
+        "beforeEnd": 63,
+        "afterStart": 61,
+        "afterEnd": 62
+      },
+      {
+        "beforeStart": 66,
+        "beforeEnd": 66,
+        "afterStart": 65,
+        "afterEnd": 66
+      },
+      {
+        "beforeStart": 68,
+        "beforeEnd": 69,
+        "afterStart": 68,
+        "afterEnd": 68
+      },
+      {
+        "beforeStart": 71,
+        "beforeEnd": 70,
+        "afterStart": 70,
+        "afterEnd": 70
+      },
+      {
+        "beforeStart": 75,
+        "beforeEnd": 76,
+        "afterStart": 75,
+        "afterEnd": 76
+      },
+      {
+        "beforeStart": 149,
+        "beforeEnd": 149,
+        "afterStart": 149,
+        "afterEnd": 149
+      },
+      {
+        "beforeStart": 186,
+        "beforeEnd": 186,
+        "afterStart": 186,
+        "afterEnd": 186
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/TaskHistoryService.java",
+    "beforeSha256": null,
+    "afterSha256": "722ebdd9393d6d18518a5d0643d7813c033a5e0f6e9fc712531020bcb3369029",
+    "ranges": [
+      {
+        "beforeStart": 1,
+        "beforeEnd": 0,
+        "afterStart": 1,
+        "afterEnd": 106
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java",
+    "beforeSha256": "2af81797f6ca9b07672098612931339575c08ca095ffbf740cbb25273e16f33a",
+    "afterSha256": "98583a69b949c38ef8685e0513271437bdf191435d26ab89ed0b5fd40f21af46",
+    "ranges": [
+      {
+        "beforeStart": 218,
+        "beforeEnd": 218,
+        "afterStart": 218,
+        "afterEnd": 222
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/TaskHistoryTest.java",
+    "beforeSha256": null,
+    "afterSha256": "069bf0b82d5eee0cd3cfdb9cdcd65f21e6d7257cb46d59cb34f9c0138286b6be",
+    "ranges": [
+      {
+        "beforeStart": 1,
+        "beforeEnd": 0,
+        "afterStart": 1,
+        "afterEnd": 225
+      }
+    ]
+  },
+  {
+    "path": "frontend/src/pages/WorkbenchPage.vue",
+    "beforeSha256": "59d05f58f4ced4cfded405768024c0e004b90d434d3b911472a0f1718cb53dce",
+    "afterSha256": "2da82c2e8a61d33f606ef8749a0ee105cff0524c69683ce2799626b9b3e9fb1f",
+    "ranges": [
+      {
+        "beforeStart": 30,
+        "beforeEnd": 29,
+        "afterStart": 30,
+        "afterEnd": 30
+      },
+      {
+        "beforeStart": 40,
+        "beforeEnd": 40,
+        "afterStart": 41,
+        "afterEnd": 41
+      },
+      {
+        "beforeStart": 56,
+        "beforeEnd": 57,
+        "afterStart": 57,
+        "afterEnd": 60
+      },
+      {
+        "beforeStart": 70,
+        "beforeEnd": 69,
+        "afterStart": 73,
+        "afterEnd": 79
+      },
+      {
+        "beforeStart": 79,
+        "beforeEnd": 78,
+        "afterStart": 89,
+        "afterEnd": 89
+      },
+      {
+        "beforeStart": 85,
+        "beforeEnd": 85,
+        "afterStart": 96,
+        "afterEnd": 96
+      },
+      {
+        "beforeStart": 104,
+        "beforeEnd": 103,
+        "afterStart": 115,
+        "afterEnd": 116
+      },
+      {
+        "beforeStart": 113,
+        "beforeEnd": 113,
+        "afterStart": 126,
+        "afterEnd": 127
+      },
+      {
+        "beforeStart": 142,
+        "beforeEnd": 142,
+        "afterStart": 156,
+        "afterEnd": 156
+      },
+      {
+        "beforeStart": 147,
+        "beforeEnd": 146,
+        "afterStart": 161,
+        "afterEnd": 163
+      },
+      {
+        "beforeStart": 148,
+        "beforeEnd": 148,
+        "afterStart": 165,
+        "afterEnd": 165
+      },
+      {
+        "beforeStart": 174,
+        "beforeEnd": 173,
+        "afterStart": 191,
+        "afterEnd": 209
+      },
+      {
+        "beforeStart": 177,
+        "beforeEnd": 176,
+        "afterStart": 213,
+        "afterEnd": 213
+      }
+    ]
+  }
+]

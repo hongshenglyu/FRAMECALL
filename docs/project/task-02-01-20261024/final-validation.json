@@ -1,0 +1,144 @@
+{
+  "task": "02-01",
+  "date": "2026-10-24",
+  "status": "PARTIAL_AWAITING_USER_MATERIALS",
+  "counts": {
+    "accessibleVideoFiles": 63,
+    "knownSourceShortClips": 23,
+    "uploadShortFiles": 40,
+    "metadataCandidateGroups": 24,
+    "exactUniqueAssets": null,
+    "locatedIndependentFullMatches": 0,
+    "verifiedWrittenPermissionMatches": 0,
+    "namedEventLeads": 2,
+    "matchManifestDataRows": 0,
+    "firstFrameDecodePass": 63,
+    "firstFrameDecodeFail": 0,
+    "auditArchiveMembersIncludingThisFile": 19
+  },
+  "unresolved": [
+    "G01: 完整录像访问位置",
+    "G02: 40余场逐场清单与独立比赛身份",
+    "G03: 研究与本地处理许可",
+    "G04: 公开传播及学校归档许可",
+    "G05: 单视角及录像完整性",
+    "G06: 6—10场完整标注候选",
+    "G07: 短片来源与全场对应",
+    "G08: 精确副本及跨文件比赛去重",
+    "G09: Excel历史备注残留"
+  ],
+  "git": {
+    "before": "git-before.json",
+    "after": "git-after.json",
+    "branch": "dev/real-ai-pipeline",
+    "head": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "trackedDiffUnchanged": true,
+    "outsideTaskStatusUnchanged": true,
+    "protectedShaFileCount": 97,
+    "protectedShaUnchanged": true
+  },
+  "scopeChecks": {
+    "onlyNewTaskAuditArtifacts": true,
+    "videoPathSizeMtimeUnchanged": true,
+    "videoByteHashCompared": false,
+    "externalScanPerformed": false,
+    "mediaCopiedOrPackaged": false,
+    "sourceOrConfigEdited": false,
+    "task02_02Started": false,
+    "formalSplitMade": false,
+    "g2Released": false
+  },
+  "hashPolicy": "SHA256 covers listed audit files; excludes self and archive to avoid circular hash. Package receipt outside ZIP verifies final-validation and archive.",
+  "files": [
+    {
+      "path": "02-01-执行总览.md",
+      "sizeBytes": 1771,
+      "sha256": "d06ad254e4e8f2a177387bc1b393c85e45d468a1777abb2df12a12574275f4bd"
+    },
+    {
+      "path": "02-01-数据资产清点报告.md",
+      "sizeBytes": 3362,
+      "sha256": "f0820908d702efae28d8abf15e3f7496dc562b9695052d33e3755422263d6a69"
+    },
+    {
+      "path": "02-01-赛事与授权核查.md",
+      "sizeBytes": 2969,
+      "sha256": "d093c497628d77d1cc8a035fafdfd84d47c251195dbaa23df2157f431b7910d8"
+    },
+    {
+      "path": "02-01-验收清单.md",
+      "sizeBytes": 3599,
+      "sha256": "872bf490cb035c27f8ac305c1e39e04f0caf8bfee7833c87ec6bc154ea18a0be"
+    },
+    {
+      "path": "annotation-source-summary.json",
+      "sizeBytes": 4989,
+      "sha256": "1e1a3d889d1d620b86c41ed0bc39e2f0cba2f430e91431b8faa0b306517b683e"
+    },
+    {
+      "path": "asset-gaps.csv",
+      "sizeBytes": 2224,
+      "sha256": "b521202f3a7a5500236d1a9d9f03ec4d69efcc55151db64a71e6abd0594bfbd4"
+    },
+    {
+      "path": "audit.py",
+      "sizeBytes": 12270,
+      "sha256": "4264b1817b7077d0a69383385709e2744ab27ec1e7b141a66f44843648c3a821"
+    },
+    {
+      "path": "build_reports.py",
+      "sizeBytes": 21827,
+      "sha256": "e20286a2b392aee2db2b4660caf1d7327c71affe064c352214fd96e7919cd962"
+    },
+    {
+      "path": "duplicate-candidates.json",
+      "sizeBytes": 6753,
+      "sha256": "89086536eb49b4304e04369223e9a443cd19a817fa26c8b1031fa29304e134f8"
+    },
+    {
+      "path": "event-evidence.json",
+      "sizeBytes": 1313,
+      "sha256": "e167ee835cbe570dc2c039bc5827d14a88c69983cb9740efcb89b8652bf20c9e"
+    },
+    {
+      "path": "git-after.json",
+      "sizeBytes": 44947,
+      "sha256": "011d7777c75d2b2513f5006d39beb563b40a00b0d835d216f054cb4e716090c0"
+    },
+    {
+      "path": "git-before.json",
+      "sizeBytes": 43895,
+      "sha256": "69212cfa8c859021be0f62ff37621742150ef1b293cc4421f4541b2745a673d3"
+    },
+    {
+      "path": "input-evidence.json",
+      "sizeBytes": 10352,
+      "sha256": "3351f04242f6411e660b72e501ee274f65d8e942523333be2fef52e6a9c1181d"
+    },
+    {
+      "path": "matches-manifest.csv",
+      "sizeBytes": 146,
+      "sha256": "ec5967e2b9c43f94bb89c44da1becc43adbf212e865d0bfb5f99a77f36271bd9"
+    },
+    {
+      "path": "scope-evidence.json",
+      "sizeBytes": 954,
+      "sha256": "37683be3b835afca3f91b381d1c0c01c2081d8a4a53e1fe8df6a7325e9c6b500"
+    },
+    {
+      "path": "video-assets.csv",
+      "sizeBytes": 27335,
+      "sha256": "75857b3f8cdbeab9b71d1f7f79228383f4aa8e8906da6cb379fec908f7b82c68"
+    },
+    {
+      "path": "video-before.json",
+      "sizeBytes": 8986,
+      "sha256": "dc9820be88dd5c0256f5725092a8ae4c073b6c1dbb1def19c408557675b0438b"
+    },
+    {
+      "path": "video-probes.json",
+      "sizeBytes": 86481,
+      "sha256": "049270a68b4c52408d3db6658a1d94ef4dd6b9af44be3f9a4169ce0362016e65"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+﻿entity,column,reference,actualConstraint,lifecycle
+ANALYSIS_TASK,VIDEO_ID,VIDEO_ASSET.ID,真实H2 FK RESTRICT (deleteRule=1),记录保留，不物理删除
+DISPUTE_EVENT,TASK_ID,ANALYSIS_TASK.ID,真实H2 FK RESTRICT (deleteRule=1),记录保留，不物理删除
+REVIEW_RECORD,EVENT_ID,DISPUTE_EVENT.ID,真实H2 FK RESTRICT (deleteRule=1),记录保留，不物理删除
+REVIEW_RECORD,REVIEWER_ID,USER_ACCOUNT.ID,真实H2 FK RESTRICT (deleteRule=1),记录保留，不物理删除
+TaskAttempt,taskId,Task.id,标量，无FK,保留审计，不级联
+Event,attemptId,TaskAttempt.id,标量，无FK,不猜测回填，UNKNOWN/LEGACY
+Task,currentAttemptId,TaskAttempt.id,标量，无FK,读取当前版本先验证同task
+Event,媒体路径,存储文件,无数据库FK,不自动清理，归档后事件媒体拒绝
+Task,archivedAt,无,本轮新增nullable时间,只归档/恢复，状态与active不变

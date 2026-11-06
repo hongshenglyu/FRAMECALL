@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import math
 import time
-import urllib.request
 from pathlib import Path
 from typing import Callable
 
@@ -22,6 +21,7 @@ from .schemas import (
     TrackBox,
 )
 from .tracker import TrackingRun, run_tracker, track_boxes_for
+from .security import send_progress
 
 try:
     from PIL import Image, ImageDraw, ImageFont
@@ -302,23 +302,7 @@ def _risk_level(score: float) -> RiskLevel:
 
 def _progress(request: AnalysisRequest, stage: str, percent: int, message: str) -> None:
     update = ProgressUpdate(taskId=request.task_id, stage=stage, progressPercent=percent, message=message)
-    if not request.callback_url:
-        return
-
-    data = update.model_dump_json(by_alias=True).encode("utf-8")
-    http_request = urllib.request.Request(
-        request.callback_url,
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "X-Internal-Token": request.internal_token or "",
-        },
-        method="POST",
-    )
-    try:
-        urllib.request.urlopen(http_request, timeout=2).read()
-    except Exception:
-        pass
+    send_progress(request, update)
 
 
 def _sleep_or_cancel(task_id: int, cancelled: Callable[[], bool]) -> None:

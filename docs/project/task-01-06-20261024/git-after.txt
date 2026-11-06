@@ -1,0 +1,50 @@
+ M README.md
+ M ai-service/README.md
+ M ai-service/app/analyzer.py
+ M ai-service/app/main.py
+ M backend/pom.xml
+ M backend/src/main/java/com/footballref/assist/FootballRefAssistApplication.java
+ M backend/src/main/java/com/footballref/assist/config/DataSeeder.java
+ M backend/src/main/java/com/footballref/assist/config/JwtAuthFilter.java
+ M backend/src/main/java/com/footballref/assist/config/SecurityConfig.java
+ M backend/src/main/java/com/footballref/assist/controller/EventController.java
+ M backend/src/main/java/com/footballref/assist/controller/FileController.java
+ M backend/src/main/java/com/footballref/assist/controller/InternalController.java
+ M backend/src/main/java/com/footballref/assist/controller/TaskController.java
+ M backend/src/main/java/com/footballref/assist/domain/AnalysisTask.java
+ M backend/src/main/java/com/footballref/assist/domain/DisputeEvent.java
+ M backend/src/main/java/com/footballref/assist/repository/AnalysisTaskRepository.java
+ M backend/src/main/java/com/footballref/assist/service/AiClient.java
+ M backend/src/main/java/com/footballref/assist/service/JwtService.java
+ M backend/src/main/java/com/footballref/assist/service/ReportService.java
+ M backend/src/main/java/com/footballref/assist/service/StorageService.java
+ M backend/src/main/java/com/footballref/assist/service/TaskService.java
+ M backend/src/test/java/com/footballref/assist/BackendApiSmokeTest.java
+ M frontend/src/App.vue
+ M frontend/src/api/client.js
+ M frontend/src/components/EventDetail.vue
+ M frontend/src/pages/LoginPage.vue
+ M frontend/src/pages/VideoAnnotationPage.vue
+ M frontend/src/pages/WorkbenchPage.vue
+ M scripts/check-frontend-layout.mjs
+ M scripts/smoke-system.ps1
+?? ai-service/app/security.py
+?? ai-service/tests/test_internal_security.py
+?? backend/src/main/java/com/footballref/assist/config/SecureEnvironmentPostProcessor.java
+?? backend/src/main/java/com/footballref/assist/domain/TaskAttempt.java
+?? backend/src/main/java/com/footballref/assist/repository/TaskAttemptRepository.java
+?? backend/src/main/java/com/footballref/assist/service/AnalysisDispatcher.java
+?? backend/src/main/java/com/footballref/assist/service/InternalCallbackService.java
+?? backend/src/main/java/com/footballref/assist/service/MediaAccessService.java
+?? backend/src/main/java/com/footballref/assist/service/ResourceAccessService.java
+?? backend/src/main/resources/
+?? backend/src/test/java/com/footballref/assist/InternalSecurityTest.java
+?? backend/src/test/java/com/footballref/assist/MediaAccessTest.java
+?? backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java
+?? backend/src/test/java/com/footballref/assist/SecurityBootstrapTest.java
+?? backend/src/test/java/com/footballref/assist/TaskLifecycleTest.java
+?? backend/src/test/java/com/footballref/assist/TaskSchedulingTest.java
+?? config/
+?? docs/contracts/
+?? docs/project/
+?? docs/security/

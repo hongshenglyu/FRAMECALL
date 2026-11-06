@@ -1,0 +1,17 @@
+{
+  "phase": "BASELINE_BEFORE_EDIT",
+  "cwd": "docs/security/task-01-01-20261024/_local-test-only",
+  "command": "<LOCAL_MAVEN> -o -f pom.xml -Dmaven.repo.local=<PROJECT>/tools/m2-repository -Dspring.config.location=classpath:/application.properties -Dspring.profiles.active=wbs01-isolated -Dspring.test.mockmvc.print=NONE -Dstyle.color=never test",
+  "exitCode": 0,
+  "seconds": 25.797,
+  "suites": [
+    {
+      "name": "com.footballref.assist.BackendApiSmokeTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "14.717"
+    }
+  ]
+}

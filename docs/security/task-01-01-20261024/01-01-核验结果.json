@@ -1,0 +1,359 @@
+{
+  "task": "WBS 01-01",
+  "startedAt": "2026-10-24T15:54:20.922145+08:00",
+  "status": "待独立验收；限定修改与隔离测试完成",
+  "gitBefore": {
+    "branch": "dev/real-ai-pipeline",
+    "head": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "tag": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "remoteCount": 0,
+    "status": "?? docs/contracts/task-00-05-20261024/00-05-兼容迁移与实施拆分.md\n?? docs/contracts/task-00-05-20261024/00-05-合同测试计划.md\n?? docs/contracts/task-00-05-20261024/00-05-当前调用链及字段矩阵.md\n?? docs/contracts/task-00-05-20261024/00-05-核验结果.json\n?? docs/contracts/task-00-05-20261024/00-05-状态机与异常时序.md\n?? docs/contracts/task-00-05-20261024/00-05-视频时基与证据来源.md\n?? docs/contracts/task-00-05-20261024/00-05-设计总览.md\n?? docs/contracts/task-00-05-20261024/00-05-验收清单.md\n?? docs/contracts/task-00-05-20261024/analysis-run-v1-draft.md\n?? docs/contracts/task-00-05-20261024/contract-gap-matrix.csv\n?? docs/project/task-00-06-20261024/00-06-执行总览.md\n?? docs/project/task-00-06-20261024/00-06-未来验证清单.md\n?? docs/project/task-00-06-20261024/00-06-核验结果.json\n?? docs/project/task-00-06-20261024/00-06-验收清单.md\n?? docs/project/task-00-06-20261024/WBS-任务启动卡模板.md\n?? docs/project/task-00-06-20261024/WBS-执行日志与交接模板.md\n?? docs/project/task-00-06-20261024/WBS-最小变更记录模板.md\n?? docs/project/task-00-06-20261024/WBS-测试回归矩阵模板.csv\n?? docs/project/task-00-06-20261024/WBS-风险与回退计划模板.md\n?? docs/project/task-00-06-20261024/WBS-验收与证据索引模板.md\n?? docs/project/task-00-06-20261024/project-workflow-v1-draft.md"
+  },
+  "plans": {
+    "version": "V1.9",
+    "md": "Downloads/FRAMECALL_%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E6%80%BB%E8%AE%A1%E5%88%92_V1.9_20261024.md",
+    "xlsx": "Downloads/FRAMECALL_%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E6%80%BB%E8%AE%A1%E5%88%92_V1.9_20261024.xlsx",
+    "sameVersionVerified": true,
+    "mainTaskRow": 11,
+    "H": "进行中",
+    "I": 0,
+    "N": "2026-10-24",
+    "O": "启动准备；待隔离双用户权限实测",
+    "G0": "治理限定放行",
+    "G1": "未通过",
+    "plansModified": false
+  },
+  "sourceFilesRead": 40,
+  "whitelist": [
+    "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+    "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+    "backend/src/main/java/com/footballref/assist/service/ResourceAccessService.java",
+    "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java"
+  ],
+  "sourceBefore": [
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+      "exists": true,
+      "sha256": "94c7fa0c5248869a7c245d60a50658e48a1a4aa73e979a76edc618b39eb203d8"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+      "exists": true,
+      "sha256": "65f2907b6f856bd96c7769d78145f145375f19eaf1dbdf3021e63b8b20a67667"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/ResourceAccessService.java",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "path": "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java",
+      "exists": false,
+      "sha256": null
+    }
+  ],
+  "isolation": {
+    "build": "_local-test-only/pom.xml",
+    "resources": "仅本轮合成application.properties，不复制原YAML",
+    "profile": "wbs01-isolated",
+    "database": "独立内存H2；不连接MySQL或文件H2",
+    "appStorage": "本轮工作区或测试独立临时目录",
+    "maven": "offline，项目本地缓存，未安装/解析网络依赖",
+    "existingTests": "原BackendApiSmokeTest DynamicPropertySource覆盖独立内存H2/临时存储；其清理范围已审读"
+  },
+  "sourceChanges": [
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+      "beforeExists": true,
+      "beforeSha256": "94c7fa0c5248869a7c245d60a50658e48a1a4aa73e979a76edc618b39eb203d8",
+      "beforeBytes": 4959,
+      "afterSha256": "9982d7ab09947ce8b3a6166af72dd171ef68f123e035612553c522e7abc8fb5d",
+      "afterBytes": 5070,
+      "afterMtimeUtc": "2026-10-24T07:57:17.079016+00:00"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+      "beforeExists": true,
+      "beforeSha256": "65f2907b6f856bd96c7769d78145f145375f19eaf1dbdf3021e63b8b20a67667",
+      "beforeBytes": 6115,
+      "afterSha256": "5ff6ef49dda98c1fd582b662ccea48152c1c9616c416d5fa9d4d7f21fcfb4df1",
+      "afterBytes": 6192,
+      "afterMtimeUtc": "2026-10-24T07:57:17.080023+00:00"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/ResourceAccessService.java",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "afterSha256": "7e80184bc3a867082423658fbe6aacf41d3fa3b917cdb8df25176bf40bf89b98",
+      "afterBytes": 2414,
+      "afterMtimeUtc": "2026-10-24T07:57:17.076502+00:00"
+    },
+    {
+      "path": "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java",
+      "beforeExists": false,
+      "beforeSha256": null,
+      "beforeBytes": null,
+      "afterSha256": "4e571f9bc93f95275a83c19c2547d4cb2136b7e5b74db7e2191b30af8372f1fa",
+      "afterBytes": 16933,
+      "afterMtimeUtc": "2026-10-24T07:59:24.042498+00:00"
+    }
+  ],
+  "baselineTest": {
+    "phase": "BASELINE_BEFORE_EDIT",
+    "cwd": "docs/security/task-01-01-20261024/_local-test-only",
+    "command": "<LOCAL_MAVEN> -o -f pom.xml -Dmaven.repo.local=<PROJECT>/tools/m2-repository -Dspring.config.location=classpath:/application.properties -Dspring.profiles.active=wbs01-isolated -Dspring.test.mockmvc.print=NONE -Dstyle.color=never test",
+    "exitCode": 0,
+    "seconds": 25.797,
+    "suites": [
+      {
+        "name": "com.footballref.assist.BackendApiSmokeTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "14.717"
+      }
+    ]
+  },
+  "regressionTest": {
+    "phase": "AFTER_AUTHORIZATION_CHANGE_RUN1",
+    "cwd": "docs/security/task-01-01-20261024/_local-test-only",
+    "command": "<LOCAL_MAVEN> -o -f pom.xml -Dmaven.repo.local=<PROJECT>/tools/m2-repository -Dspring.config.location=classpath:/application.properties -Dspring.profiles.active=wbs01-isolated -Dspring.test.mockmvc.print=NONE -Dwbs01.caseLog=authorization-cases-run1.jsonl -Dstyle.color=never test",
+    "exitCode": 0,
+    "seconds": 35.062,
+    "suites": [
+      {
+        "name": "com.footballref.assist.BackendApiSmokeTest",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "15.377"
+      },
+      {
+        "name": "com.footballref.assist.ResourceAuthorizationTest",
+        "tests": "9",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "8.698"
+      }
+    ],
+    "cases": [
+      {
+        "suite": "com.footballref.assist.BackendApiSmokeTest",
+        "name": "loginTaskDetailEventDetailAndReportExportWork",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.BackendApiSmokeTest",
+        "name": "annotationUploadValidatesSchemaAndStoresStats",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "ownerCanUseEveryExistingTaskAndEventOperation",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "anotherAuthenticatedUserCannotReadOrMutateKnownResourceIds",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "administratorRetainsExistingAllResourceAccess",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "authenticatedUploadAndManualReviewKeepServerOwnedIdentity",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "taskListKeepsOwnerAssignmentAndAdministratorSemantics",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "missingIdsUseTheSameSafeNotFoundResponseBeforeSideEffects",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "assignedRefereeRetainsExistingSharedResourceAccess",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "malformedOwnerOrParentRelationshipsFailClosedEvenForAdministrator",
+        "outcome": "PASS"
+      },
+      {
+        "suite": "com.footballref.assist.ResourceAuthorizationTest",
+        "name": "clientRoleHintsAndStaleAdminClaimsCannotOverrideDatabaseRole",
+        "outcome": "PASS"
+      }
+    ]
+  },
+  "logEncodings": {
+    "baseline.raw.log": "gb18030",
+    "regression-run1.raw.log": "gb18030"
+  },
+  "warningRecords": [
+    {
+      "log": "baseline.sanitized.log",
+      "warning": "2026-10-24T15:55:17.295+08:00  WARN 96284 --- [wbs01-isolated] [           main] .s.s.UserDetailsServiceAutoConfiguration :"
+    },
+    {
+      "log": "baseline.sanitized.log",
+      "warning": "OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended"
+    },
+    {
+      "log": "regression-run1.sanitized.log",
+      "warning": "2026-10-24T16:00:57.786+08:00  WARN 98584 --- [wbs01-isolated] [           main] .s.s.UserDetailsServiceAutoConfiguration :"
+    },
+    {
+      "log": "regression-run1.sanitized.log",
+      "warning": "OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended"
+    },
+    {
+      "log": "regression-run1.sanitized.log",
+      "warning": "2026-10-24T16:01:05.392+08:00  WARN 98584 --- [wbs01-isolated] [           main] .s.s.UserDetailsServiceAutoConfiguration :"
+    }
+  ],
+  "rollbackByteVerification": [
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+      "headBlobMatchesBefore": true
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+      "headBlobMatchesBefore": true
+    }
+  ],
+  "rollbackActuallyExecuted": false,
+  "plansModified": false,
+  "nextWBSExecuted": false,
+  "localTestWork": {
+    "executedAt": "_local-test-only",
+    "relocatedWithinTaskTo": "tmp",
+    "ignoredByExistingRules": true,
+    "reproductionCwd": "docs/security/task-01-01-20261024/tmp"
+  },
+  "incidents": [
+    {
+      "stage": "报告编排",
+      "resolved": true,
+      "detail": "首次报告生成脚本括号语法错误，解析阶段停止，未写任何报告或更改业务代码；修正并分步生成。"
+    },
+    {
+      "stage": "最终Git状态校验",
+      "resolved": true,
+      "detail": "校验脚本strip剥掉首行porcelain前导空格，误将合法M状态当作未知；改仅去行尾换行并重新核验通过，未修改业务代码/Git配置。"
+    }
+  ],
+  "testCounts": {
+    "baselineBeforeEdit": {
+      "PASS": 2,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "afterEditJUnit": {
+      "PASS": 11,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "newJUnitMethods": 9,
+    "authenticatedHttpAssertions": 71,
+    "matrix": {
+      "PASS": 74,
+      "NOT_RUN": 8
+    }
+  },
+  "highestResidualRisk": "P0：匿名文件直链01-02仍可能绕过资源所属，内部AI/默认账户/任务竞态亦未修复",
+  "limits": [
+    "01-02范围，已知直链绕过风险保留",
+    "01-03范围，AiClient为夹具",
+    "01-04范围，不改种子账户",
+    "01-05/01-06；同步执行器仅测授权",
+    "明确禁止连接/迁移；仅内存H2",
+    "前端未修改且未启动",
+    "不迁移或破坏数据库，已做空关系实体边界测试",
+    "未执行，只校验HEAD对应原字节"
+  ],
+  "gitAfter": {
+    "branch": "dev/real-ai-pipeline",
+    "head": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "tag": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "remoteCount": 0,
+    "status": " M backend/src/main/java/com/footballref/assist/controller/EventController.java\n M backend/src/main/java/com/footballref/assist/controller/TaskController.java\n?? backend/src/main/java/com/footballref/assist/service/ResourceAccessService.java\n?? backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java\n?? docs/contracts/task-00-05-20261024/00-05-兼容迁移与实施拆分.md\n?? docs/contracts/task-00-05-20261024/00-05-合同测试计划.md\n?? docs/contracts/task-00-05-20261024/00-05-当前调用链及字段矩阵.md\n?? docs/contracts/task-00-05-20261024/00-05-核验结果.json\n?? docs/contracts/task-00-05-20261024/00-05-状态机与异常时序.md\n?? docs/contracts/task-00-05-20261024/00-05-视频时基与证据来源.md\n?? docs/contracts/task-00-05-20261024/00-05-设计总览.md\n?? docs/contracts/task-00-05-20261024/00-05-验收清单.md\n?? docs/contracts/task-00-05-20261024/analysis-run-v1-draft.md\n?? docs/contracts/task-00-05-20261024/contract-gap-matrix.csv\n?? docs/project/task-00-06-20261024/00-06-执行总览.md\n?? docs/project/task-00-06-20261024/00-06-未来验证清单.md\n?? docs/project/task-00-06-20261024/00-06-核验结果.json\n?? docs/project/task-00-06-20261024/00-06-验收清单.md\n?? docs/project/task-00-06-20261024/WBS-任务启动卡模板.md\n?? docs/project/task-00-06-20261024/WBS-执行日志与交接模板.md\n?? docs/project/task-00-06-20261024/WBS-最小变更记录模板.md\n?? docs/project/task-00-06-20261024/WBS-测试回归矩阵模板.csv\n?? docs/project/task-00-06-20261024/WBS-风险与回退计划模板.md\n?? docs/project/task-00-06-20261024/WBS-验收与证据索引模板.md\n?? docs/project/task-00-06-20261024/project-workflow-v1-draft.md\n?? docs/security/task-01-01-20261024/01-01-任务启动卡.md\n?? docs/security/task-01-01-20261024/01-01-修改文件与Diff索引.md\n?? docs/security/task-01-01-20261024/01-01-兼容与安全残余风险.md\n?? docs/security/task-01-01-20261024/01-01-双用户与管理员测试矩阵.csv\n?? docs/security/task-01-01-20261024/01-01-回退与停止计划.md\n?? docs/security/task-01-01-20261024/01-01-执行总览.md\n?? docs/security/task-01-01-20261024/01-01-接口资源归属矩阵.csv\n?? docs/security/task-01-01-20261024/01-01-核验结果.json\n?? docs/security/task-01-01-20261024/01-01-测试与环境记录.md\n?? docs/security/task-01-01-20261024/01-01-验收清单.md\n?? docs/security/task-01-01-20261024/authorization-http-evidence.jsonl\n?? docs/security/task-01-01-20261024/baseline-test-result.json\n?? docs/security/task-01-01-20261024/regression-run1-result.json"
+  },
+  "gitRefsUnchanged": true,
+  "trackedDiffPaths": [
+    "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+    "backend/src/main/java/com/footballref/assist/controller/TaskController.java"
+  ],
+  "stagedDiffEmpty": true,
+  "gitDiffCheck": {
+    "exitCode": 0,
+    "warningsRetained": [
+      "warning: in the working copy of 'backend/src/main/java/com/footballref/assist/controller/EventController.java', LF will be replaced by CRLF the next time Git touches it",
+      "warning: in the working copy of 'backend/src/main/java/com/footballref/assist/controller/TaskController.java', LF will be replaced by CRLF the next time Git touches it"
+    ]
+  },
+  "integrity": {
+    "originalMetadataFiles": 5700,
+    "focusedOriginalContentFiles": 416,
+    "allowedOldFilesChanged": 2,
+    "allowedNewJavaFiles": 2,
+    "unexpectedMetadataChanges": 0,
+    "unexpectedContentChanges": 0,
+    "newOutsideWhitelistAndReportDirectory": 0,
+    "sourceHashesMatchTestedRevision": true,
+    "limits": "重点源码/配置/历史文档/Git内容哈希；非重点媒体/DB/模型仅存在/大小/mtime，不证明全盘内容。秘密摘要仅内存比对，不导出。"
+  },
+  "reportFiles": [
+    "01-01-执行总览.md",
+    "01-01-接口资源归属矩阵.csv",
+    "01-01-修改文件与Diff索引.md",
+    "01-01-双用户与管理员测试矩阵.csv",
+    "01-01-测试与环境记录.md",
+    "01-01-兼容与安全残余风险.md",
+    "01-01-验收清单.md",
+    "01-01-核验结果.json",
+    "01-01-回退与停止计划.md",
+    "01-01-任务启动卡.md",
+    "baseline-test-result.json",
+    "regression-run1-result.json",
+    "baseline.sanitized.log",
+    "regression-run1.sanitized.log",
+    "authorization-http-evidence.jsonl",
+    "final-validation.json"
+  ],
+  "archiveFile": "task-01-01-20261024-reports.zip",
+  "selfAcceptance": {
+    "PASS": 7,
+    "FAIL": 0,
+    "NOT_RUN": 1,
+    "scope": "01-01限定自检，独立验收/G1未过"
+  },
+  "completedAt": "2026-10-24T16:17:15.726679+08:00",
+  "privacyScan": {
+    "scope": [
+      "privatePath",
+      "identity",
+      "email",
+      "privateKey",
+      "jwt",
+      "credentialUrl",
+      "badDecoding",
+      "已知实例敏感标量文字残留"
+    ],
+    "hits": [],
+    "originalConfigValuesOrHashesExported": false,
+    "limits": "限定本轮报告/脱敏日志，非全盘秘密审计；tmp的原始日志/Surefire XML/合成配置/POM/编译产物及源码不入包"
+  }
+}

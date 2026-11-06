@@ -1,0 +1,215 @@
+{
+  "method": "SIZE_VIDEO_STREAM_DURATION_AVERAGE_FPS_RESOLUTION",
+  "exactByteEquality": "UNVERIFIED_NO_FULL_MEDIA_HASH",
+  "independentMatchCount": "UNVERIFIED",
+  "metadataGroupCount": 24,
+  "groups": [
+    {
+      "groupId": "MG001",
+      "paths": [
+        "storage/uploads/1779017590650_football-ref-demo-sample.mp4",
+        "storage/uploads/1779028288194_football-ref-demo-sample.mp4",
+        "storage/uploads/1779098971957_football-ref-demo-sample.mp4",
+        "storage/uploads/1779099261877_football-ref-demo-sample.mp4",
+        "storage/uploads/1779100299595_football-ref-demo-sample.mp4",
+        "storage/uploads/1779100345790_football-ref-demo-sample.mp4",
+        "storage/uploads/1779101097733_football-ref-demo-sample.mp4",
+        "storage/uploads/1779104321843_football-ref-demo-sample.mp4",
+        "storage/uploads/1779104750937_football-ref-demo-sample.mp4",
+        "storage/uploads/1779105211299_football-ref-demo-sample.mp4",
+        "storage/uploads/1779284717969_football-ref-demo-sample.mp4",
+        "storage/uploads/1779285847118_football-ref-demo-sample.mp4",
+        "storage/uploads/1779286410874_football-ref-demo-sample.mp4",
+        "storage/uploads/1779286670917_football-ref-demo-sample.mp4",
+        "storage/uploads/1779287153616_football-ref-demo-sample.mp4",
+        "storage/uploads/1779287594882_football-ref-demo-sample.mp4",
+        "storage/uploads/1779886392405_football-ref-demo-sample.mp4",
+        "storage/uploads/1780389004570_football-ref-demo-sample.mp4",
+        "storage/uploads/1780392532880_football-ref-demo-sample.mp4",
+        "storage/uploads/1788102883214_football-ref-demo-sample.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG002",
+      "paths": [
+        "storage/uploads/1780389319393___26_______3.mp4",
+        "storage/uploads/1780393465931___26_______3.mp4",
+        "争抢球犯规/中超26赛季第八期判例3.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG003",
+      "paths": [
+        "storage/uploads/1780390457320___26_______4.mp4",
+        "争抢球犯规/中超26赛季第八期判例4.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG004",
+      "paths": [
+        "storage/uploads/1780394408059___26_______5.mp4",
+        "争抢球犯规/中超26赛季第八期判例5.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG005",
+      "paths": [
+        "storage/uploads/1780395331600___26_______7.mp4",
+        "争抢球犯规/中超26赛季第八期判例7.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG006",
+      "paths": [
+        "storage/uploads/1780395671390___26_______1.mp4",
+        "争抢球犯规/中超26赛季第七期判例1.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG007",
+      "paths": [
+        "storage/uploads/1780395852683_26_______3.mp4",
+        "storage/uploads/1780401877155_26_______3.mp4",
+        "手球犯规/26赛季第二期判例3.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG008",
+      "paths": [
+        "storage/uploads/1780402580338_26_______1.mp4",
+        "手球犯规/26赛季第三期判例1.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG009",
+      "paths": [
+        "storage/uploads/1780405931409_26_______8.mp4",
+        "手球犯规/26赛季第三期判例8.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG010",
+      "paths": [
+        "storage/uploads/1780406334728_26_______10.mp4",
+        "手球犯规/26赛季第五期判例10.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG011",
+      "paths": [
+        "storage/uploads/1780408811300_25__________2.mp4",
+        "手球犯规/25赛季第三十二期判例 2.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG012",
+      "paths": [
+        "storage/uploads/1789120750413_26________4.mp4",
+        "storage/uploads/1789123169908_26________4.mp4",
+        "越位犯规/26赛季第十八期判例4.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG013",
+      "paths": [
+        "storage/uploads/1789127825209_26________5.mp4",
+        "越位犯规/26赛季第十八期判例5.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG014",
+      "paths": [
+        "storage/uploads/1789128159070_26________5.mp4",
+        "越位犯规/26赛季第十七期判例5.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG015",
+      "paths": [
+        "storage/uploads/1789128550917_26________1.mp4",
+        "越位犯规/26赛季第十五期判例1.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG016",
+      "paths": [
+        "storage/uploads/1789128794662_u20________.mp4",
+        "storage/uploads/1789129107489_u20________.mp4",
+        "storage/uploads/1789129192087_u20________.mp4",
+        "越位犯规/u20亚洲杯：越位案例.mp4"
+      ],
+      "status": "METADATA_MATCH_ONLY"
+    },
+    {
+      "groupId": "MG017",
+      "paths": [
+        "明显不是争抢球犯规/26赛季十七期判例4、.mp4"
+      ],
+      "status": "SINGLETON"
+    },
+    {
+      "groupId": "MG018",
+      "paths": [
+        "明显不是争抢球犯规/26赛季第十八期判例6.mp4"
+      ],
+      "status": "SINGLETON"
+    },
+    {
+      "groupId": "MG019",
+      "paths": [
+        "明显不是争抢球犯规/26赛季第十六期判例12.mp4"
+      ],
+      "status": "SINGLETON"
+    },
+    {
+      "groupId": "MG020",
+      "paths": [
+        "明显不是争抢球犯规/26赛季第十六期判例2.mp4"
+      ],
+      "status": "SINGLETON"
+    },
+    {
+      "groupId": "MG021",
+      "paths": [
+        "明显不是争抢球犯规/26赛季第十六期判例6.mp4"
+      ],
+      "status": "SINGLETON"
+    },
+    {
+      "groupId": "MG022",
+      "paths": [
+        "明显不是手球犯规/26赛季第四期判例2.mp4"
+      ],
+      "status": "SINGLETON"
+    },
+    {
+      "groupId": "MG023",
+      "paths": [
+        "明显不是手球犯规/26赛季第四期判例4.mp4"
+      ],
+      "status": "SINGLETON"
+    },
+    {
+      "groupId": "MG024",
+      "paths": [
+        "明显不是越位犯规/26赛季第十六期判例4.mp4"
+      ],
+      "status": "SINGLETON"
+    }
+  ]
+}

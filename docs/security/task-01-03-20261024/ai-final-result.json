@@ -1,0 +1,89 @@
+{
+  "startedAtEpoch": 1792834478.225637,
+  "finishedAtEpoch": 1792834497.0581846,
+  "seconds": 18.833,
+  "tests": 19,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "exitCode": 0,
+  "cases": [
+    {
+      "case": "test_contracts.AiContractTests.test_bytetrack_mode_falls_back_to_mock_tracks_when_detector_is_unavailable",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_contracts.AiContractTests.test_foul_rule_and_pose_outputs_are_selected_pair_scoped",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_contracts.AiContractTests.test_run_analysis_writes_default_mock_contract",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_contracts.AiContractTests.test_yolo_without_weights_falls_back_without_breaking_contract",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_authenticated_cancel_preserves_shape",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_callback_override_protocol_port_encoding_userinfo_and_redirect_paths_fail_before_network",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_callback_redirect_is_not_followed",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_dns_name_configuration_rejected_without_resolution",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_existing_result_hardlink_cannot_overwrite_other_file",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_health_is_minimal_and_documentation_disabled",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_missing_config_callback_credentials_and_bad_json_fail_closed",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_nested_junction_rejected_before_callback_or_overwrite",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_non_mock_fails_before_models_or_network",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_output_traversal_encoded_unc_drive_prefix_and_cross_task_rejected",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_private_operations_reject_anonymous_wrong_service_bearer_and_cookie",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_relative_output_and_windows_case_alias",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_symbolic_link_rejected_when_creation_permitted",
+      "outcome": "SKIP",
+      "reason": "Windows did not grant symbolic-link creation; junction separately tested"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_valid_service_runs_actual_mock_analyzer_and_fixed_callback",
+      "outcome": "PASS"
+    },
+    {
+      "case": "test_internal_security.InternalSecurityTests.test_video_cannot_read_outside_uploads",
+      "outcome": "PASS"
+    }
+  ]
+}

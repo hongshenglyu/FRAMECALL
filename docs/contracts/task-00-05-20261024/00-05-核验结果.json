@@ -1,0 +1,488 @@
+{
+  "task": "WBS 00-05",
+  "date": "2026-10-24",
+  "status": "10份设计材料完成，待ChatGPT审查；实现/运行测试未执行",
+  "gitBefore": {
+    "branch": "dev/real-ai-pipeline",
+    "head": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "tag": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "status": "",
+    "remoteCount": 0,
+    "rootMatches": true
+  },
+  "sourceScope": [
+    {
+      "path": "ai-service/app/analyzer.py",
+      "lineCount": 333,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "ai-service/app/detector.py",
+      "lineCount": 222,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "ai-service/app/event_rules.py",
+      "lineCount": 313,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "ai-service/app/main.py",
+      "lineCount": 45,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "ai-service/app/pose.py",
+      "lineCount": 384,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "ai-service/app/schemas.py",
+      "lineCount": 89,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "ai-service/app/tracker.py",
+      "lineCount": 297,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "ai-service/tests/test_contracts.py",
+      "lineCount": 131,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/FootballRefAssistApplication.java",
+      "lineCount": 14,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/config/DataSeeder.java",
+      "lineCount": 39,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/config/JwtAuthFilter.java",
+      "lineCount": 49,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/config/SchemaMigrator.java",
+      "lineCount": 83,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/config/SecurityConfig.java",
+      "lineCount": 30,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/config/WebConfig.java",
+      "lineCount": 17,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/AnnotationController.java",
+      "lineCount": 334,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/AuthController.java",
+      "lineCount": 50,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+      "lineCount": 142,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/FileController.java",
+      "lineCount": 42,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/InternalController.java",
+      "lineCount": 36,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+      "lineCount": 120,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/UserController.java",
+      "lineCount": 68,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/controller/VideoController.java",
+      "lineCount": 108,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/AnalysisTask.java",
+      "lineCount": 128,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/AnnotationTask.java",
+      "lineCount": 122,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/DisputeEvent.java",
+      "lineCount": 182,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/ReviewRecord.java",
+      "lineCount": 92,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/UserAccount.java",
+      "lineCount": 81,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/VideoAsset.java",
+      "lineCount": 101,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/enums/EventType.java",
+      "lineCount": 8,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/enums/ReviewResult.java",
+      "lineCount": 8,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/enums/RiskLevel.java",
+      "lineCount": 9,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/enums/Role.java",
+      "lineCount": 7,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/enums/Sensitivity.java",
+      "lineCount": 8,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/domain/enums/TaskStatus.java",
+      "lineCount": 11,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/repository/AnalysisTaskRepository.java",
+      "lineCount": 13,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/repository/AnnotationTaskRepository.java",
+      "lineCount": 11,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/repository/DisputeEventRepository.java",
+      "lineCount": 13,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/repository/ReviewRecordRepository.java",
+      "lineCount": 13,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/repository/UserAccountRepository.java",
+      "lineCount": 12,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/repository/VideoAssetRepository.java",
+      "lineCount": 12,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/AiClient.java",
+      "lineCount": 49,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/CurrentUserService.java",
+      "lineCount": 21,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/JwtService.java",
+      "lineCount": 100,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/PasswordService.java",
+      "lineCount": 29,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/ReportService.java",
+      "lineCount": 514,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/StorageService.java",
+      "lineCount": 75,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/main/java/com/footballref/assist/service/TaskService.java",
+      "lineCount": 180,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "backend/src/test/java/com/footballref/assist/BackendApiSmokeTest.java",
+      "lineCount": 453,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/App.vue",
+      "lineCount": 91,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/api/client.js",
+      "lineCount": 18,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/components/EventDetail.vue",
+      "lineCount": 250,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/components/ManualEventForm.vue",
+      "lineCount": 50,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/main.js",
+      "lineCount": 8,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/pages/AnnotationPage.vue",
+      "lineCount": 130,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/pages/LoginPage.vue",
+      "lineCount": 65,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/pages/UserPage.vue",
+      "lineCount": 49,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/pages/VideoAnnotationPage.vue",
+      "lineCount": 394,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/src/pages/WorkbenchPage.vue",
+      "lineCount": 222,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "frontend/vite.config.js",
+      "lineCount": 12,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "scripts/check-frontend-layout.mjs",
+      "lineCount": 390,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "scripts/evaluate-predictions.mjs",
+      "lineCount": 697,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "scripts/experiment-stats.mjs",
+      "lineCount": 563,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    },
+    {
+      "path": "scripts/smoke_ai.py",
+      "lineCount": 29,
+      "readingScope": "本轮静态读取；重点结论见字段/差距矩阵，不声称重新全面审计"
+    }
+  ],
+  "historicalReportsRead": [
+    "docs/baseline/task-00-01-20261022/00-01-现场核验报告.md",
+    "docs/baseline/task-00-01-20261022/00-01-验收清单.md",
+    "docs/baseline/task-00-01-20261022/historical-diff.md",
+    "docs/baseline/task-00-02-20261022/00-02-基线与回退验收报告.md",
+    "docs/baseline/task-00-02-20261022/00-02-验收清单.md",
+    "docs/baseline/task-00-02-20261022/backup-restore-test.md",
+    "docs/baseline/task-00-02-20261022/git-included-excluded.md",
+    "docs/baseline/task-00-02-20261022/remaining-data-backup-plan.md",
+    "docs/baseline/task-00-02-R1-20261022/00-02-R1-阶段验收报告.md",
+    "docs/baseline/task-00-02-R1-20261022/00-02-R1-验收清单.md",
+    "docs/baseline/task-00-02-R1-20261022/acl-diagnostic.md",
+    "docs/baseline/task-00-02-R1-20261022/backup-restore-R1.md",
+    "docs/baseline/task-00-02-R1-20261022/git-included-excluded-R1.md",
+    "docs/baseline/task-00-02-R1-20261022/remaining-data-backup-R1.md",
+    "docs/baseline/task-00-02-R2-20261022/00-02-R2-验收总报告.md",
+    "docs/baseline/task-00-02-R2-20261022/00-02-R2-验收清单.md",
+    "docs/baseline/task-00-02-R2-20261022/git-exclusions-and-restore-R2.md",
+    "docs/baseline/task-00-02-R2-20261022/remaining-data-backup-R2.md",
+    "docs/baseline/task-00-03-20261022/00-03-交接摘要.md",
+    "docs/baseline/task-00-03-20261022/00-03-开题权威版本核验.md",
+    "docs/baseline/task-00-03-20261022/00-03-技术基线与差距矩阵.md",
+    "docs/baseline/task-00-03-20261022/00-03-研究范围冻结.md",
+    "docs/baseline/task-00-03-20261022/00-03-验收清单.md",
+    "docs/baseline/task-00-04-20261024/00-04-AI依赖与权重.md",
+    "docs/baseline/task-00-04-20261024/00-04-三端启动依赖图.md",
+    "docs/baseline/task-00-04-20261024/00-04-前端环境.md",
+    "docs/baseline/task-00-04-20261024/00-04-后端与数据库.md",
+    "docs/baseline/task-00-04-20261024/00-04-环境总览.md",
+    "docs/baseline/task-00-04-20261024/00-04-配置键与秘密边界.md",
+    "docs/baseline/task-00-04-20261024/00-04-验收清单.md",
+    "docs/audits/framecall-full-audit-20261022/00-审计总报告.md",
+    "docs/audits/framecall-full-audit-20261022/01-源码结构与功能清单.md",
+    "docs/audits/framecall-full-audit-20261022/02-三端架构与接口数据流.md",
+    "docs/audits/framecall-full-audit-20261022/03-AI算法深度审计.md",
+    "docs/audits/framecall-full-audit-20261022/04-数据集评估与测试审计.md",
+    "docs/audits/framecall-full-audit-20261022/05-工程质量与安全审计.md",
+    "docs/audits/framecall-full-audit-20261022/06-开题报告符合性与重构建议.md",
+    "docs/audits/framecall-full-audit-20261022/07-证据索引与未核验事项.md",
+    "docs/audits/framecall-full-audit-20261022/frontend-evidence.md"
+  ],
+  "existingContract": {
+    "path": "docs/contracts/analysis-run-v1.md",
+    "exists": false
+  },
+  "gapRows": 16,
+  "plannedCases": 16,
+  "testsExecuted": false,
+  "servicesStarted": false,
+  "networkAccess": false,
+  "dependenciesInstalled": false,
+  "modePolicy": "显式real/mock；real核心环节不准降级；legacy_unknown禁止正式评价",
+  "statePolicy": "后端唯一状态权威；CAS/attempt/seq；保留CANCELLED；0候选可正常成功",
+  "openItems": [
+    "具体DB/队列实现",
+    "对账查询端点和lease参数",
+    "解码器及异常PTS处理",
+    "回调凭证与生产部署细化",
+    "真实依赖/权重/ByteTrack/媒体/评价均未实现或未验证",
+    "P24正式批准待确认",
+    "00-04旧快照1项未映射仍未定位"
+  ],
+  "nextWBS": [
+    "01-05",
+    "01-06",
+    "01-07",
+    "03-05",
+    "03-03",
+    "04-01",
+    "06-02",
+    "09系列"
+  ],
+  "scopeLimit": "不执行00-06或任何后续实现；不输出源码全文、实例配置、秘密或秘密哈希",
+  "syntheticJsonExampleCount": 7,
+  "gitAfter": {
+    "branch": "dev/real-ai-pipeline",
+    "head": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "tag": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "status": "?? docs/contracts/task-00-05-20261024/00-05-兼容迁移与实施拆分.md\n?? docs/contracts/task-00-05-20261024/00-05-合同测试计划.md\n?? docs/contracts/task-00-05-20261024/00-05-当前调用链及字段矩阵.md\n?? docs/contracts/task-00-05-20261024/00-05-核验结果.json\n?? docs/contracts/task-00-05-20261024/00-05-状态机与异常时序.md\n?? docs/contracts/task-00-05-20261024/00-05-视频时基与证据来源.md\n?? docs/contracts/task-00-05-20261024/00-05-设计总览.md\n?? docs/contracts/task-00-05-20261024/analysis-run-v1-draft.md\n?? docs/contracts/task-00-05-20261024/contract-gap-matrix.csv",
+    "remoteCount": 0,
+    "rootMatches": true
+  },
+  "gitRefsUnchanged": true,
+  "integrity": {
+    "originalMetadataFiles": 5677,
+    "originalContentFiles": 394,
+    "metadataChanges": 0,
+    "contentChanges": 0,
+    "newOutsideOutput": 0,
+    "limits": "重点源码/实例配置/历史报告/Git文件核对内容；其他非依赖文件仅大小/mtime，不证明全部媒体内容；秘密摘要只在内存比较，未导出"
+  },
+  "sourceReferenceChecks": {
+    "explicitCsvLineRangesChecked": 44,
+    "errors": [],
+    "limits": "只验证文件/行界限，语义仍需人工审阅"
+  },
+  "outputFiles": [
+    "00-05-设计总览.md",
+    "analysis-run-v1-draft.md",
+    "00-05-当前调用链及字段矩阵.md",
+    "00-05-状态机与异常时序.md",
+    "00-05-视频时基与证据来源.md",
+    "00-05-兼容迁移与实施拆分.md",
+    "00-05-合同测试计划.md",
+    "00-05-验收清单.md",
+    "contract-gap-matrix.csv",
+    "00-05-核验结果.json"
+  ],
+  "archiveFile": "task-00-05-20261024-reports.zip",
+  "acceptance": [
+    {
+      "id": 1,
+      "result": "PASS",
+      "scope": "仅本轮文档设计交付；不等于实施/测试/ChatGPT验收"
+    },
+    {
+      "id": 2,
+      "result": "PASS",
+      "scope": "仅本轮文档设计交付；不等于实施/测试/ChatGPT验收"
+    },
+    {
+      "id": 3,
+      "result": "PASS",
+      "scope": "仅本轮文档设计交付；不等于实施/测试/ChatGPT验收"
+    },
+    {
+      "id": 4,
+      "result": "PASS",
+      "scope": "仅本轮文档设计交付；不等于实施/测试/ChatGPT验收"
+    },
+    {
+      "id": 5,
+      "result": "PASS",
+      "scope": "仅本轮文档设计交付；不等于实施/测试/ChatGPT验收"
+    },
+    {
+      "id": 6,
+      "result": "PASS",
+      "scope": "仅本轮文档设计交付；不等于实施/测试/ChatGPT验收"
+    }
+  ],
+  "runtimeVerification": "UNVERIFIED / NOT_RUN",
+  "privacyScan": {
+    "scope": [
+      "identity",
+      "privatePath",
+      "email",
+      "privateKey",
+      "credentialURL",
+      "replacement",
+      "两份本机实例配置敏感标量文字残留"
+    ],
+    "secretValuesExported": false,
+    "secretHashesExported": false,
+    "hits": [],
+    "limits": "非全面秘密审计；只扫描本轮报告，不复制源码/配置/媒体/模型/数据库/DPAPI"
+  },
+  "completedAt": "2026-10-24T15:01:59.950434+08:00"
+}

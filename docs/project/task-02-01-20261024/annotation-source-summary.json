@@ -1,0 +1,176 @@
+{
+  "files": [
+    {
+      "pathAlias": "storage/annotations/10_1780394893551_video-23.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/11_1780395583431_video-24.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/12_1780395761375_video-25.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/14_1780402021943_video-27.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/16_1780403218080_video-28.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/17_1780406205839_video-29.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/18_1780406557137_video-30.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/19_1780408976148_video-31.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/1_1779286697451_annotation-labels-v1-smoke.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/20_1789123236864_video-34.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/21_1789127753159_video-33.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/22_1789128067651_video-35.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/23_1789128467794_video-36.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/24_1789128715395_video-37.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/5_1779287176936_annotation-labels-split-smoke.json",
+      "samples": 2,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 2
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/8_1780392127437_video-20.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    },
+    {
+      "pathAlias": "storage/annotations/9_1780394041766_video-22.annotation.v1.json",
+      "samples": 1,
+      "matchIdPresent": 0,
+      "competitionPresent": 0,
+      "sourceTypeCounts": {
+        "local_file": 1
+      },
+      "legacyLocationPresent": true
+    }
+  ],
+  "privateUrisSuppressed": true,
+  "legacyLocationResolution": "NOT_RUN_NOT_A_USER_PROVIDED_EXTERNAL_DIRECTORY"
+}

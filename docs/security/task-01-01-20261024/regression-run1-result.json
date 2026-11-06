@@ -1,0 +1,82 @@
+{
+  "phase": "AFTER_AUTHORIZATION_CHANGE_RUN1",
+  "cwd": "docs/security/task-01-01-20261024/_local-test-only",
+  "command": "<LOCAL_MAVEN> -o -f pom.xml -Dmaven.repo.local=<PROJECT>/tools/m2-repository -Dspring.config.location=classpath:/application.properties -Dspring.profiles.active=wbs01-isolated -Dspring.test.mockmvc.print=NONE -Dwbs01.caseLog=authorization-cases-run1.jsonl -Dstyle.color=never test",
+  "exitCode": 0,
+  "seconds": 35.062,
+  "suites": [
+    {
+      "name": "com.footballref.assist.BackendApiSmokeTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "15.377"
+    },
+    {
+      "name": "com.footballref.assist.ResourceAuthorizationTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "8.698"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.BackendApiSmokeTest",
+      "name": "loginTaskDetailEventDetailAndReportExportWork",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.BackendApiSmokeTest",
+      "name": "annotationUploadValidatesSchemaAndStoresStats",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "ownerCanUseEveryExistingTaskAndEventOperation",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "anotherAuthenticatedUserCannotReadOrMutateKnownResourceIds",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "administratorRetainsExistingAllResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "authenticatedUploadAndManualReviewKeepServerOwnedIdentity",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "taskListKeepsOwnerAssignmentAndAdministratorSemantics",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "missingIdsUseTheSameSafeNotFoundResponseBeforeSideEffects",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "assignedRefereeRetainsExistingSharedResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "malformedOwnerOrParentRelationshipsFailClosedEvenForAdministrator",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "clientRoleHintsAndStaleAdminClaimsCannotOverrideDatabaseRole",
+      "outcome": "PASS"
+    }
+  ]
+}

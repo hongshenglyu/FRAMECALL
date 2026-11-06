@@ -2,7 +2,7 @@
   <div class="detail-layout">
     <div class="event-visual">
       <div class="panel-title">事件详情</div>
-      <img v-if="isImagePath(event.keyframePath)" class="keyframe" :src="fileUrl(event.keyframePath)" />
+      <img v-if="isImagePath(event.keyframePath)" class="keyframe" :src="fileUrl('event', event.id, 'keyframe')" />
       <div v-else class="keyframe keyframe-placeholder">无关键帧</div>
       <div class="frame-toolbar">
         <el-button :icon="ArrowLeft">上一帧</el-button>

@@ -1,0 +1,11 @@
+{
+  "phase": "first",
+  "exitCode": 1,
+  "seconds": 9.157,
+  "startedAtEpoch": 1792837911.8123062,
+  "finishedAtEpoch": 1792837920.9691207,
+  "suites": [],
+  "cases": [],
+  "testsExecuted": false,
+  "reason": "compile failed; stale baseline Surefire XML excluded"
+}

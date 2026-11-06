@@ -1,0 +1,8 @@
+﻿scenario,source,before,risk,after
+创建,VideoController.java:90; TaskService.java:createTask/runTask,控制器外部调用Async，长事务执行,长事务/无attempt,短事务落库后有界独立执行器
+重试,TaskController.java:75; TaskService.java:retry,同类自调用Async且删除events,同步阻塞/复核丢失,合法终态+行锁分配attempt+追加事件
+重复/并发,AnalysisTaskRepository.java,无原子互斥,双执行,PESSIMISTIC_WRITE+刷新+active检查
+旧回调,InternalCallbackService.java; InternalController.java,仅内存task grant,认证后切换attempt竞态,grant服务器绑定attempt，更新事务复核
+重启,TaskService.java:quarantineInterruptedAttempts,无持久attempt,无法确认遗留工作,FAILED/RECOVERY_REQUIRED，保留占位拒绝重放
+超时/断联,AiClient.java:analyze; TaskService.java:fail,普通失败后可重试,远端可能仍执行,AI_OUTCOME_UNKNOWN保留占位，人工核实
+产物,StorageService.java:attemptDir; ai-service/app/security.py,每task同一输出目录,历史媒体覆盖,严格UUID attempt子目录与非链接边界

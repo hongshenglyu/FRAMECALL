@@ -1,0 +1,15 @@
+{
+  "command": "python -B -X utf8 docs/project/task-02-01-20261024/build_reports.py",
+  "exitCode": 0,
+  "zip": "task-02-01-20261024-reports.zip",
+  "sizeBytes": 60919,
+  "sha256": "d7dc14584a64b049aa5cd5ed268d2cd2b26529bf221bac5be93b8a068c197cde",
+  "crc": "PASS",
+  "members": 19,
+  "hashedMembersVerified": 18,
+  "finalValidationSha256": "8358540a583d6549c7f333e3704003b013683dd9d13dafd5c408152bd80052d3",
+  "allMembersAuditOnly": true,
+  "totalDirectoryFilesIncludingZipAndThisReceipt": 21,
+  "scopeChecks": "PASS_LIMITED",
+  "wbsAcceptance": "AWAITING_USER_SUPPLY_AND_PERMISSION_EVIDENCE"
+}

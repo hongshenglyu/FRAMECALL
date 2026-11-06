@@ -1,0 +1,11 @@
+{
+  "tests": 20,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 1,
+  "seconds": 21.425,
+  "skipReasons": [
+    "Windows did not grant symbolic-link creation; junction separately tested"
+  ],
+  "exitCode": 0
+}

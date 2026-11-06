@@ -1,0 +1,78 @@
+{
+  "phase": "corrected",
+  "exitCode": 0,
+  "seconds": 29.552,
+  "startedAtEpoch": 1792846147.6078737,
+  "suites": [
+    {
+      "name": "com.footballref.assist.TaskLifecycleTest",
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "19.261"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "successTransactionFailureRollsBackEventsBeforeQueryableFailureAndLegalRetry",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "twentyConcurrentMixedCancelAndRetryRequestsKeepOneExecution",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "authorizationRunsBeforeCancelOrRetrySideEffectsAndSharedAccessRemains",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "additiveMigrationPreservesLegacyAttemptsAndDefaultsToNoStopClaim",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "progressIsVisibleMonotonicIdempotentAndCannotDeclareSuccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "analyzeTimeoutAfterAcceptedCancelNeverReleasesUnknownWork",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "cancelAckRejectionDisconnectAndTimeoutHaveExplicitSafeOutcomes",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "queuedCancellationNeverContactsAiAndSkippedRunnableCannotReviveIt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "cancelOutcomeTransactionFailureKeepsBarrierAndRestartQuarantinesIt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "successCommittedBeforeCancelIsConflictAndTerminalCallbackCannotReopenIt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "cancelledBarrierTransactionRollbackDoesNotPretendAcceptanceOrCallRemote",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskLifecycleTest",
+      "name": "cancellationCommitsBeforeBothIoResponsesAndDiscardsLateSuccessAndEvents",
+      "outcome": "PASS"
+    }
+  ]
+}

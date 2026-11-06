@@ -1,0 +1,20 @@
+﻿接口,操作,持久化所属,规则,检查层,源码证据,测试,结果
+GET /api/tasks,列表,Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,canAccessTask空安全过滤,backend/src/main/java/com/footballref/assist/controller/TaskController.java:51,LIST；71条HTTP记录,PASS
+GET /api/tasks/{id},详情,Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,requireTask,backend/src/main/java/com/footballref/assist/controller/TaskController.java:60,TASK；71条HTTP记录,PASS
+GET /api/tasks/{id}/events,事件列表,Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,requireTask,backend/src/main/java/com/footballref/assist/controller/TaskController.java:91,EVENTS；71条HTTP记录,PASS
+POST /api/tasks/{id}/cancel,取消,Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,requestCancel前requireTask,backend/src/main/java/com/footballref/assist/controller/TaskController.java:68,CANCEL；71条HTTP记录,PASS
+POST /api/tasks/{id}/retry,重试,Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,retry前requireTask,backend/src/main/java/com/footballref/assist/controller/TaskController.java:75,RETRY；71条HTTP记录,PASS
+DELETE /api/tasks/{id},删除,Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,事务内删除前requireTask,backend/src/main/java/com/footballref/assist/controller/TaskController.java:83,DELETE；71条HTTP记录,PASS；带复核历史删除生命周期未覆盖
+GET /api/tasks/{id}/report,PDF导出,Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,generatePdf前requireTask,backend/src/main/java/com/footballref/assist/controller/TaskController.java:97,PDF；71条HTTP记录,PASS
+GET /api/events/{id},事件及复核详情,Event→Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,查reviews前requireEvent,backend/src/main/java/com/footballref/assist/controller/EventController.java:44,EVENT；71条HTTP记录,PASS
+POST /api/events/{id}/review,追加复核,Event→Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,创建ReviewRecord前requireEvent,backend/src/main/java/com/footballref/assist/controller/EventController.java:52,REVIEW；71条HTTP记录,PASS
+PATCH /api/events/{id}/tracks,轨迹修改,Event→Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,写入前requireEvent,backend/src/main/java/com/footballref/assist/controller/EventController.java:66,TRACKS；71条HTTP记录,PASS
+POST /api/events/manual,人工补录,Event→Task→Video.owner/assignedTo,OWNER/ASSIGNED/ADMIN；无权/不存在统一404；缺owner失败关闭,new Event前requireTask(request.taskId),backend/src/main/java/com/footballref/assist/controller/EventController.java:73,MANUAL；71条HTTP记录,PASS
+POST /api/videos,上传创建任务,Task→Video.owner；owner取当前数据库身份,不信任客户端owner/userId/role,现行创建逻辑未修改,backend/src/main/java/com/footballref/assist/controller/VideoController.java:61-92,CREATE_OWNER/CREATE_MANUAL_OWNER/REVIEW_OWNER,PASS
+GET /api/videos,列表,Video.owner/assignedTo,既有ADMIN全量及owner/assigned可见,现行Repository查询,backend/src/main/java/com/footballref/assist/controller/VideoController.java:52-58,既有回归及静态核对,静态已核对；未改
+PUT/PATCH /api/tasks/{id},当前无此路由,N/A,NOT_IMPLEMENTED,不虚构API,TaskController/EventController现行方法清单,N/A,NOT_IMPLEMENTED
+DELETE /api/events/{id},当前无此路由,N/A,NOT_IMPLEMENTED,不虚构API,TaskController/EventController现行方法清单,N/A,NOT_IMPLEMENTED
+GET /api/events 或独立event报告,当前无此路由,N/A,NOT_IMPLEMENTED,不虚构API,TaskController/EventController现行方法清单,N/A,NOT_IMPLEMENTED
+PUT/DELETE 独立reviewId,当前无此路由,N/A,NOT_IMPLEMENTED,不虚构API,TaskController/EventController现行方法清单,N/A,NOT_IMPLEMENTED
+GET /api/files?path=...,范围外,未在本轮治理,NOT_RUN，风险保留,不修改FileController/SecurityConfig/InternalController,backend/src/main/java/com/footballref/assist/config/SecurityConfig.java:20,范围外，不声称通过,01-02未修复
+POST /api/internal/tasks/{id}/progress,范围外,未在本轮治理,NOT_RUN，风险保留,不修改FileController/SecurityConfig/InternalController,backend/src/main/java/com/footballref/assist/config/SecurityConfig.java:20,范围外，不声称通过,01-03/01-06未修复

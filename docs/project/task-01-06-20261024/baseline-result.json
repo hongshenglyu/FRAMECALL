@@ -1,0 +1,333 @@
+{
+  "phase": "baseline",
+  "exitCode": 0,
+  "seconds": 50.691,
+  "startedAtEpoch": 1792845192.3176587,
+  "suites": [
+    {
+      "name": "com.footballref.assist.BackendApiSmokeTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "13.603"
+    },
+    {
+      "name": "com.footballref.assist.InternalSecurityTest",
+      "tests": "7",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "3.665"
+    },
+    {
+      "name": "com.footballref.assist.MediaAccessTest",
+      "tests": "14",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "1",
+      "time": "7.072"
+    },
+    {
+      "name": "com.footballref.assist.ResourceAuthorizationTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "6.548"
+    },
+    {
+      "name": "com.footballref.assist.SecurityBootstrapTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "3.304"
+    },
+    {
+      "name": "com.footballref.assist.TaskSchedulingTest",
+      "tests": "12",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "5.919"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.BackendApiSmokeTest",
+      "name": "loginTaskDetailEventDetailAndReportExportWork",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.BackendApiSmokeTest",
+      "name": "annotationUploadValidatesSchemaAndStoresStats",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.InternalSecurityTest",
+      "name": "actualJavaToFastApiToSpringProgressChainUsesIsolatedStorageAndH2",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.InternalSecurityTest",
+      "name": "outboundClientUsesDistinctServiceHeadersAndFixedCallbackThenRevokesGrant",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.InternalSecurityTest",
+      "name": "authenticatedProgressCannotInjectStageOrOutOfBoundsPercent",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.InternalSecurityTest",
+      "name": "currentGrantIsTaskScopedAndOldOrRevokedInvocationCannotUpdate",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.InternalSecurityTest",
+      "name": "grantsExpireWithoutPretendingToImplementDurableAttempts",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.InternalSecurityTest",
+      "name": "ordinaryIdentitiesAndMalformedAnonymousBodiesCannotReachProgress",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.InternalSecurityTest",
+      "name": "invalidOutputAndOriginsDoNotReachNetworkAndRedirectDoesNotReachTrap",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "expiredCookiesDemotedAdminsAndRemovedAssignmentsCannotRead",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "anonymousCannotReadKnownMediaOrUseHeadOptionsOrCookieWrites",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "pathParametersAndUnknownResourcesNeverRevealBytesOrPaths",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "windowsJunctionEscapeIsRejectedWithoutReadingTarget",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "actualBrowserLoginPlaybackSeekPauseRefreshAndOwnership",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "rangesDeliverExactSegmentsAndRejectInvalidOrMultipleRanges",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "eventCannotBorrowAnotherTasksMediaEvenInsideRoot",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "cookieBridgeIsHttpOnlyScopedSecureAndRechecksDatabase",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "storedTraversalAliasesOutsideRootsAndActiveContentFailClosed",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "persistedOwnershipAllowsOwnerAdminAssignedAndDeniesBothDirections",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "controlledRelativeStorageAliasesAndWindowsCaseKeepAuthorizedMediaPlayable",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "symbolicLinkEscapeIsRejectedWhenPlatformPermitsCreatingLink",
+      "outcome": "SKIP"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "pdfCannotEmbedOutsideMediaAndCannotWriteOutsideStorage",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "sparseLargeVideoCanServeSuffixWithoutMaterializingWholeFile",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "ownerCanUseEveryExistingTaskAndEventOperation",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "anotherAuthenticatedUserCannotReadOrMutateKnownResourceIds",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "administratorRetainsExistingAllResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "authenticatedUploadAndManualReviewKeepServerOwnedIdentity",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "taskListKeepsOwnerAssignmentAndAdministratorSemantics",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "missingIdsUseTheSameSafeNotFoundResponseBeforeSideEffects",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "assignedRefereeRetainsExistingSharedResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "malformedOwnerOrParentRelationshipsFailClosedEvenForAdministrator",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "clientRoleHintsAndStaleAdminClaimsCannotOverrideDatabaseRole",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "everyMandatoryNewSettingFailsClosedWithoutLegacyFallback",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "securityProcessorIsRegisteredInActualTestClasspath",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "defaultAndProductionNeverCreateAccountsWithoutExplicitAuthorization",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "missingConfirmationOrExistingUsersCannotResetOrEscalateAccounts",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "weakEmptyAndPlaceholderSecretsAreRejectedWithoutEchoingValues",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "actualBootRejectsUnsafeConfigBeforeContextPreparationOrFilesystemWrites(CapturedOutput)",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "actualDefaultProductionAndDemoContextsUseOnlySyntheticH2AndRespectInitialization",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "demoRequiresExclusiveProfileExplicitIsolationAndMemoryDatabase",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "jwtRejectsWrongAlgorithmAndMissingOrExpiredExpiryEvenWithValidSignature",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "explicitConfirmedBootstrapCreatesOnlyCallerSuppliedAccount",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.SecurityBootstrapTest",
+      "name": "explicitNewKeysOverrideOldAliasesAndRotationInvalidatesOldTokens",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "boundedQueueRejectsWithoutPhantomSuccessAndLaterRetryWorks",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "twentyConcurrentRetriesHaveOneDatabaseAttemptAndOneActualExecution",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "scheduledAttemptRunsThroughRealFastApiAndAuthenticatedProgress",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "failuresAreSanitizedBoundedAndNeverAutoRetried",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "retriesRetainReviewedEventsAndOldMediaBytesInDistinctAttemptDirectories",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "authorizationRejectsBeforeAttemptCreationAndLegalStatesAreExplicit",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "h2MigrationPreservesLegacyRowsAndEnforcesAttemptPrimaryKey",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "staleAuthenticatedCallbackAndOldCompletionCannotMutateCurrentAttempt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "uploadAndRetryReturnWhileRealAiIsBlockedAndProgressRemainsQueryable",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "restartQuarantinesPersistedQueuedAttemptWithoutReplayingIt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "attemptDirectoryRejectsJunctionBeforeCreatingAnythingOutside",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "connectionRefusalAndUnexpectedWorkerExceptionBecomeQueryableFailures",
+      "outcome": "PASS"
+    }
+  ]
+}

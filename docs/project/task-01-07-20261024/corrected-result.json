@@ -1,0 +1,73 @@
+{
+  "phase": "corrected",
+  "exitCode": 0,
+  "seconds": 35.3,
+  "startedAtEpoch": 1792849089.0154967,
+  "suites": [
+    {
+      "name": "com.footballref.assist.TaskHistoryTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "25.593"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "twentyMixedArchiveRetryCancelReviewAndCallbackRequestsKeepAuditAndOneAttempt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "retriesAndPdfSelectCurrentAttemptWithoutMixingLegacyOrPriorSuccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "activeOrUnknownExecutionCannotBeArchivedOrUnlockedThroughRestore",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "ownerAdministratorAndAssignedCanReadHistoryButCrossUserOperationsHaveNoSideEffects",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "archivalWithAndWithoutReviewsPreservesRowsAndBytesAndRestoresAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "archiveAndConcurrentReviewsSerializeWithoutDuplicateRevisionsOrOrphans",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "archiveTransactionFailureRollsBackWithoutTouchingAuditOrMedia",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "physicalFkViolationRollsBackWhileSoftArchiveLeavesNoOrphans",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "incrementalSchemaKeepsLegacyRowsAndRestrictiveForeignKeys",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "legacyAndInvalidScalarAssociationsAreNotFabricatedOrLeakedAcrossTasks",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskHistoryTest",
+      "name": "missingSyntheticMediaIsVisibleAndCanBeRestoredWithoutChangingAudit",
+      "outcome": "PASS"
+    }
+  ]
+}

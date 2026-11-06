@@ -7,10 +7,11 @@ import com.footballref.assist.domain.UserAccount;
 import com.footballref.assist.domain.enums.EventType;
 import com.footballref.assist.domain.enums.ReviewResult;
 import com.footballref.assist.domain.enums.RiskLevel;
-import com.footballref.assist.repository.AnalysisTaskRepository;
 import com.footballref.assist.repository.DisputeEventRepository;
 import com.footballref.assist.repository.ReviewRecordRepository;
 import com.footballref.assist.service.CurrentUserService;
+import com.footballref.assist.service.ResourceAccessService;
+import com.footballref.assist.service.TaskHistoryService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -25,75 +26,84 @@ import java.util.Map;
 public class EventController {
     private final DisputeEventRepository events;
     private final ReviewRecordRepository reviews;
-    private final AnalysisTaskRepository tasks;
+    private final ResourceAccessService resourceAccessService;
     private final CurrentUserService currentUserService;
+    private final TaskHistoryService history;
 
     public EventController(
             DisputeEventRepository events,
             ReviewRecordRepository reviews,
-            AnalysisTaskRepository tasks,
-            CurrentUserService currentUserService
+            ResourceAccessService resourceAccessService,
+            CurrentUserService currentUserService, TaskHistoryService history
     ) {
         this.events = events;
         this.reviews = reviews;
-        this.tasks = tasks;
+        this.resourceAccessService = resourceAccessService;
         this.currentUserService = currentUserService;
+        this.history=history;
     }
 
     @GetMapping("/{eventId}")
     public Map<String, Object> detail(@PathVariable Long eventId) {
-        DisputeEvent event = events.findById(eventId).orElseThrow();
+        DisputeEvent event = resourceAccessService.requireEvent(eventId);
         Map<String, Object> map = toEventMap(event);
+        map.put("attemptAssociation",history.association(event));
         map.put("reviews", reviews.findByEventOrderByRevisionDesc(event).stream().map(this::toReviewMap).toList());
         return map;
     }
 
     @PostMapping("/{eventId}/review")
     public Map<String, Object> review(@PathVariable Long eventId, @Valid @RequestBody ReviewRequest request) {
-        DisputeEvent event = events.findById(eventId).orElseThrow();
-        UserAccount reviewer = currentUserService.requireUser();
-        ReviewRecord record = new ReviewRecord();
-        record.setEvent(event);
-        record.setReviewer(reviewer);
-        record.setResult(request.result());
-        record.setReasonCode(request.reasonCode());
-        record.setNote(request.note());
-        record.setRevision((int) reviews.countByEvent(event) + 1);
-        return toReviewMap(reviews.save(record));
+        return history.withEvent(eventId,(task,event)->{
+            UserAccount reviewer = currentUserService.requireUser();
+            ReviewRecord record = new ReviewRecord();
+            record.setEvent(event);
+            record.setReviewer(reviewer);
+            record.setResult(request.result());
+            record.setReasonCode(request.reasonCode());
+            record.setNote(request.note());
+            int previous=reviews.findByEventOrderByRevisionDesc(event).stream().mapToInt(ReviewRecord::getRevision).max().orElse(0);
+            record.setRevision(Math.addExact(previous,1));
+            return toReviewMap(reviews.save(record));
+        });
     }
 
     @PatchMapping("/{eventId}/tracks")
     public Map<String, Object> updateTracks(@PathVariable Long eventId, @Valid @RequestBody UpdateTracksRequest request) {
-        DisputeEvent event = events.findById(eventId).orElseThrow();
-        event.setInvolvedTrackIds(String.join(",", request.involvedTrackIds().stream().map(String::valueOf).toList()));
-        return toEventMap(events.save(event));
+        return history.withEvent(eventId,(task,event)->{
+            event.setInvolvedTrackIds(String.join(",", request.involvedTrackIds().stream().map(String::valueOf).toList()));
+            return toEventMap(events.save(event));
+        });
     }
 
     @PostMapping("/manual")
     public Map<String, Object> manual(@Valid @RequestBody ManualEventRequest request) {
-        AnalysisTask task = tasks.findById(request.taskId()).orElseThrow();
-        DisputeEvent event = new DisputeEvent();
-        event.setTask(task);
-        event.setExternalId("MANUAL-" + System.currentTimeMillis());
-        event.setEventType(request.eventType());
-        event.setRiskLevel(RiskLevel.UNCERTAIN);
-        event.setTimestampMs(request.timestampMs());
-        event.setWindowStartMs(Math.max(0, request.timestampMs() - 3000));
-        event.setWindowEndMs(request.timestampMs() + 3000);
-        event.setSummary(request.summary());
-        event.setConfidence(0.0);
-        event.setKeyframePath(task.getVideo().getOriginalPath());
-        event.setClipPath(task.getVideo().getOriginalPath());
-        event.setInvolvedTrackIds(String.join(",", request.involvedTrackIds().stream().map(String::valueOf).toList()));
-        event.setEvidenceJson("[]");
-        event.setTrackBoxesJson("[]");
-        return toEventMap(events.save(event));
+        return history.withTask(request.taskId(),task->{
+            DisputeEvent event = new DisputeEvent();
+            event.setTask(task);
+            event.setAttemptId(history.currentAttemptId(task));
+            event.setExternalId("MANUAL-" + System.currentTimeMillis());
+            event.setEventType(request.eventType());
+            event.setRiskLevel(RiskLevel.UNCERTAIN);
+            event.setTimestampMs(request.timestampMs());
+            event.setWindowStartMs(Math.max(0, request.timestampMs() - 3000));
+            event.setWindowEndMs(request.timestampMs() + 3000);
+            event.setSummary(request.summary());
+            event.setConfidence(0.0);
+            event.setKeyframePath(task.getVideo().getOriginalPath());
+            event.setClipPath(task.getVideo().getOriginalPath());
+            event.setInvolvedTrackIds(String.join(",", request.involvedTrackIds().stream().map(String::valueOf).toList()));
+            event.setEvidenceJson("[]");
+            event.setTrackBoxesJson("[]");
+            return toEventMap(events.save(event));
+        });
     }
 
     public static Map<String, Object> toEventMap(DisputeEvent event) {
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("id", event.getId());
         map.put("taskId", event.getTask().getId());
+        map.put("attemptId", event.getAttemptId());
         map.put("externalId", event.getExternalId());
         map.put("eventType", event.getEventType());
         map.put("riskLevel", event.getRiskLevel());
@@ -139,4 +149,3 @@ public class EventController {
     ) {
     }
 }
-

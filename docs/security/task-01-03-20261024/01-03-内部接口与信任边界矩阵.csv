@@ -1,0 +1,12 @@
+﻿route,side,authentication,trustBoundary,parameters,change,source,evidence
+GET /health,FastAPI,公开，仅status/service,无模型/本机路径信息,无,原模型/模式详情删除,ai-service/app/main.py:38,AI health测试
+POST /internal/analyze,FastAPI,X-AI-Service-Token + X-Callback-Token,仅后端服务；前端Bearer/Cookie无权,taskId/videoPath/outputDir/原枚举/受限callbackUrl,认证先于JSON；输出/回调验证先于写入；非mock503,ai-service/app/main.py:43,ai-http-evidence.jsonl / 实际桥接
+POST /internal/tasks/{id}/cancel,FastAPI,X-AI-Service-Token,后端服务可取消，非用户JWT,正数taskId,认证后才写既有内存取消集合,ai-service/app/main.py:61,AI取消/匿名负向测试
+GET /docs /redoc /openapi.json,FastAPI,匿名401；已认证404,不暴露API文档,无,关闭自动文档,ai-service/app/main.py:14,AI docs测试
+run/progress/result独立路由,FastAPI,NOT_IMPLEMENTED,仅analyze同步结果及AI发出回调,无,不新增不存在接口,ai-service/app/main.py,源码路由遍历
+POST /api/internal/tasks/{id}/progress,Spring,当前taskId随机回调授权；普通JWT无权,InternalCallbackService在JWT/JSON解析前认证,已知stage / percent0..100；message不入状态,拒全局旧令牌、跨任务/旧调用/撤销/到期；合法更新保留,backend/src/main/java/com/footballref/assist/service/InternalCallbackService.java:61,internal-java-evidence.jsonl
+Spring → FastAPI analyze/cancel,Java AiClient,独立服务凭据；analyze另有回调临时凭据,配置origin独占路由权；无代理/重定向/DNS名称,AI地址app.ai-service-url；固定callback基址配置；DB视频/目录,header携带凭据，不进JSON或URL；finally撤销；取消失败显性化,backend/src/main/java/com/footballref/assist/service/AiClient.java:55,InternalSecurityTest真实HTTP+实际Python桥接
+AI → Spring progress,Python security.send_progress,仅当前请求ContextVar绑定目标/凭据,固定字面IP基址+规范taskId路径；拒重定向,message统一Analysis progress，不传私有模型路径,禁环境HTTP代理，固定2秒超时，错误502不伪成功,ai-service/app/security.py:135,AI回调/302陷阱与实际桥接
+analyzer/detector/tracker/pose输出文件,AI本机写入,HTTP前置服务身份/目录检查,root/tasks/task-ID内固定子目录/文件名,events/analysis_result.json/detections/tracks/rules/pose,现存子树含symlink/reparse/hardlink一律拒绝；依赖ACL,ai-service/app/security.py:87,路径负向/硬链接/junction测试
+scripts/smoke_ai.py / 直接run_analysis,可信本机CLI,不是HTTP接口,运行者已有本机文件系统权限,脚本原有固定smoke-ai目录,仅只读审计，未执行/未扩大写沙箱；原4算法fixture保留,scripts/smoke_ai.py:14,NOT_RUN该脚本，避免写原storage
+CORS / 文件上传,FastAPI,未配置CORS允许；无上传路由,分析仅接收JSON中已有上传文件引用,输入限定AI_STORAGE_ROOT/uploads,不另设匿名跨域/上传入口,ai-service/app/main.py + security.py,源码检查与videoPath负向

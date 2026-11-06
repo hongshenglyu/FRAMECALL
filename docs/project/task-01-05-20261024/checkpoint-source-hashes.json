@@ -1,0 +1,22 @@
+[
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/TaskService.java",
+    "beforeSha256": "41C3FCA70FAC3FFB6CC4214AA68D2F09975434D73453225DE4CDDB980D2CF11A",
+    "backupSha256": "41C3FCA70FAC3FFB6CC4214AA68D2F09975434D73453225DE4CDDB980D2CF11A"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+    "beforeSha256": "9982D7AB09947CE8B3A6166AF72DD171EF68F123E035612553C522E7ABC8FB5D",
+    "backupSha256": "9982D7AB09947CE8B3A6166AF72DD171EF68F123E035612553C522E7ABC8FB5D"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/AnalysisTask.java",
+    "beforeSha256": "B930015A9F39432509CBC6F9DFE11F072ADB67F9BA07D6D21B54DD1D1E1F16FB",
+    "backupSha256": "B930015A9F39432509CBC6F9DFE11F072ADB67F9BA07D6D21B54DD1D1E1F16FB"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/repository/AnalysisTaskRepository.java",
+    "beforeSha256": "D178AC85F8FC5CA6BA9FDF0414C6C39181A325AE6E57F9B8D354F0C40B5B7AFF",
+    "backupSha256": "D178AC85F8FC5CA6BA9FDF0414C6C39181A325AE6E57F9B8D354F0C40B5B7AFF"
+  }
+]

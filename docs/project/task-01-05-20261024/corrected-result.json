@@ -1,0 +1,126 @@
+{
+  "phase": "corrected",
+  "exitCode": 0,
+  "seconds": 33.098,
+  "startedAtEpoch": 1792843623.2713046,
+  "suites": [
+    {
+      "name": "com.footballref.assist.ResourceAuthorizationTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "16.501"
+    },
+    {
+      "name": "com.footballref.assist.TaskSchedulingTest",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "6.6"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "ownerCanUseEveryExistingTaskAndEventOperation",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "anotherAuthenticatedUserCannotReadOrMutateKnownResourceIds",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "administratorRetainsExistingAllResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "authenticatedUploadAndManualReviewKeepServerOwnedIdentity",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "taskListKeepsOwnerAssignmentAndAdministratorSemantics",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "missingIdsUseTheSameSafeNotFoundResponseBeforeSideEffects",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "assignedRefereeRetainsExistingSharedResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "malformedOwnerOrParentRelationshipsFailClosedEvenForAdministrator",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "clientRoleHintsAndStaleAdminClaimsCannotOverrideDatabaseRole",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "boundedQueueRejectsWithoutPhantomSuccessAndLaterRetryWorks",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "twentyConcurrentRetriesHaveOneDatabaseAttemptAndOneActualExecution",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "scheduledAttemptRunsThroughRealFastApiAndAuthenticatedProgress",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "failuresAreSanitizedBoundedAndNeverAutoRetried",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "retriesRetainReviewedEventsAndOldMediaBytesInDistinctAttemptDirectories",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "authorizationRejectsBeforeAttemptCreationAndLegalStatesAreExplicit",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "h2MigrationPreservesLegacyRowsAndEnforcesAttemptPrimaryKey",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "staleAuthenticatedCallbackAndOldCompletionCannotMutateCurrentAttempt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "uploadAndRetryReturnWhileRealAiIsBlockedAndProgressRemainsQueryable",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "restartQuarantinesPersistedQueuedAttemptWithoutReplayingIt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "connectionRefusalAndUnexpectedWorkerExceptionBecomeQueryableFailures",
+      "outcome": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "directories": [
+    {
+      "path": "明显不是手球犯规",
+      "status": "READABLE"
+    },
+    {
+      "path": "明显不是越位犯规",
+      "status": "READABLE"
+    },
+    {
+      "path": "明显不是争抢球犯规",
+      "status": "READABLE"
+    },
+    {
+      "path": "手球犯规",
+      "status": "READABLE"
+    },
+    {
+      "path": "越位犯规",
+      "status": "READABLE"
+    },
+    {
+      "path": "争抢球犯规",
+      "status": "READABLE"
+    },
+    {
+      "path": "storage",
+      "status": "READABLE"
+    },
+    {
+      "path": "data",
+      "status": "NOT_PRESENT_IN_PROJECT"
+    },
+    {
+      "path": "data-manifest",
+      "status": "NOT_PRESENT_IN_PROJECT"
+    }
+  ],
+  "skippedReparsePoints": [],
+  "externalDirectories": [],
+  "externalStatus": "NOT_RUN_USER_LOCATION_REQUIRED",
+  "largeMediaFullHash": "NOT_RUN",
+  "videoWriteOperations": 0,
+  "cloudCalls": 0
+}

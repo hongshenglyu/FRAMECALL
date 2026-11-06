@@ -12,6 +12,16 @@ public class AnalysisTask {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 36)
+    private String currentAttemptId;
+
+    private Instant archivedAt;
+    public Instant getArchivedAt() { return archivedAt; }
+    public void setArchivedAt(Instant value) { archivedAt = value; }
+
+    public String getCurrentAttemptId() { return currentAttemptId; }
+    public void setCurrentAttemptId(String value) { currentAttemptId = value; }
+
     @ManyToOne(optional = false)
     private VideoAsset video;
 

@@ -1,0 +1,36 @@
+{
+  "sourceAlias": "USER_SCREENSHOT_01",
+  "sha256": "6e8ec291c83f22f24ecf5994c3c8e4bdafc7f12064c00dec22cbef22c05f2dc6",
+  "bytes": 69915,
+  "evidenceType": "USER_PROVIDED_SCREENSHOT_TEXT",
+  "imageCopiedToReport": false,
+  "events": [
+    {
+      "eventId": "E01",
+      "name": "2026年吉林外国语大学足球联赛",
+      "displayedDates": "2026-03-23至2026-05-30",
+      "displayedLocation": "吉林省 长春市",
+      "format": "足球8人制",
+      "displayedStatus": "已结束"
+    },
+    {
+      "eventId": "E02",
+      "name": "吉林外国语大学25赛季",
+      "displayedDates": "2025-03-19至2025-05-19",
+      "displayedLocation": "吉林省 长春市",
+      "format": "足球8人制",
+      "displayedStatus": "已结束"
+    }
+  ],
+  "limits": [
+    "赛事名称来自截图，未向主办方独立核验",
+    "截图无录像条目、场数、平台名或回放入口",
+    "截图不构成研究、公开传播或归档授权"
+  ],
+  "userFollowup": {
+    "statement": "不在本机，我自己提供",
+    "interpretation": "完整录像当前不在本机，用户后续提供；未声明持有录像著作权或授予研究/传播/归档许可",
+    "externalInventoryStatus": "AWAITING_USER_SUPPLY",
+    "permissionStatus": "UNVERIFIED"
+  }
+}

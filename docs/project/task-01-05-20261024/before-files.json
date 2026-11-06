@@ -1,0 +1,70 @@
+[
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/TaskService.java",
+    "beforeSha256": "41c3fca70fac3ffb6cc4214aa68d2f09975434d73453225de4cddb980d2cf11a"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/AiClient.java",
+    "beforeSha256": "1580248422db4d7b19bebd8adc89842b5175d3980e08e561410e7eb7c586ca3b"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/InternalCallbackService.java",
+    "beforeSha256": "5e6f50350e4d5fdb140d1d538bf06c1f8f62dc71212993805f276a40e1de27aa"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/InternalController.java",
+    "beforeSha256": "b5566a022009cdb63db1012696fa560cd353a92a6ad4aec1f19f31ae115af489"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/TaskController.java",
+    "beforeSha256": "9982d7ab09947ce8b3a6166af72dd171ef68f123e035612553c522e7abc8fb5d"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/EventController.java",
+    "beforeSha256": "5ff6ef49dda98c1fd582b662ccea48152c1c9616c416d5fa9d4d7f21fcfb4df1"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/AnalysisTask.java",
+    "beforeSha256": "b930015a9f39432509cbc6f9dfe11f072adb67f9ba07d6d21b54dd1d1e1f16fb"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/DisputeEvent.java",
+    "beforeSha256": "3ce5f9ce50d2a995df16b4a2d77a2338cedf903a8f8bad410bedaac5d14a042c"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/repository/AnalysisTaskRepository.java",
+    "beforeSha256": "d178ac85f8fc5ca6ba9fdf0414c6c39181a325ae6e57f9b8d354f0c40b5b7aff"
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/ResourceAuthorizationTest.java",
+    "beforeSha256": "4e571f9bc93f95275a83c19c2547d4cb2136b7e5b74db7e2191b30af8372f1fa"
+  },
+  {
+    "path": "ai-service/app/security.py",
+    "beforeSha256": "f09d9682994f11311e91cd194d6266948210b7a9c116c29c7256da92816ec0b0"
+  },
+  {
+    "path": "ai-service/tests/test_internal_security.py",
+    "beforeSha256": "79421d73971d981dc381730f713e52fe1841b63e9a4e5d81b73f2ba6ff29c95b"
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/AnalysisDispatcher.java",
+    "beforeSha256": null
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/domain/TaskAttempt.java",
+    "beforeSha256": null
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/repository/TaskAttemptRepository.java",
+    "beforeSha256": null
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/TaskSchedulingTest.java",
+    "beforeSha256": null
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/StorageService.java",
+    "beforeSha256": "f64119e2501263f128a730d4b4e9fdeacb5ea1c1228ed56a234429fcb31eca48"
+  }
+]

@@ -1,0 +1,351 @@
+[
+  {
+    "path": "ai-service/app/main.py",
+    "beforeExists": true,
+    "beforeSha256": "21ff7bb2e9f03c7132c1438a728fdfb5d8d7132d15f8e4d0912467c0beec9217",
+    "afterSha256": "eac922472ea2ee89bf280ae134de7ca5c714a19f82a525fb526b4e1aa1a84710",
+    "bytes": 2712,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 3,
+        "beforeLines": 1,
+        "afterStart": 3,
+        "afterLines": 3
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 10,
+        "beforeLines": 0,
+        "afterStart": 12,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 11,
+        "beforeLines": 1,
+        "afterStart": 14,
+        "afterLines": 19
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 18,
+        "beforeLines": 11,
+        "afterStart": 39,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 32,
+        "beforeLines": 1,
+        "afterStart": 43,
+        "afterLines": 5
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 35,
+        "beforeLines": 5,
+        "afterStart": 50,
+        "afterLines": 8
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 44,
+        "beforeLines": 0,
+        "afterStart": 62,
+        "afterLines": 2
+      }
+    ]
+  },
+  {
+    "path": "ai-service/app/analyzer.py",
+    "beforeExists": true,
+    "beforeSha256": "5004a6b516c51763ef6ebeea32f43b4899e379e66199c270ec0844ddeab146e3",
+    "afterSha256": "5d837f0697bf35603330b2a6f004e039e0893162483c81518375b27e95fa940a",
+    "bytes": 13079,
+    "hunks": [
+      {
+        "kind": "delete",
+        "beforeStart": 6,
+        "beforeLines": 1,
+        "afterStart": 6,
+        "afterLines": 0
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 25,
+        "beforeLines": 0,
+        "afterStart": 24,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 305,
+        "beforeLines": 17,
+        "afterStart": 305,
+        "afterLines": 1
+      }
+    ]
+  },
+  {
+    "path": "ai-service/app/security.py",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "707712e4c58752490f9f1f05ff52a98240afcc32561a8ac3940de44a137ebeaf",
+    "bytes": 5784,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 151
+      }
+    ]
+  },
+  {
+    "path": "ai-service/tests/test_internal_security.py",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "71aab07583daf2576b35a1966305e09b9049c96f9adf9850e1a3f590a66327d7",
+    "bytes": 12348,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 196
+      }
+    ]
+  },
+  {
+    "path": "ai-service/README.md",
+    "beforeExists": true,
+    "beforeSha256": "2b4c78ad02c505c2942849ecefc6c4a08bd725ef907ac95eaceed44441105c90",
+    "afterSha256": "14bd1824ebd2cc1d8e55240680bf5bbc02dc2c81e3237fc59ced5ff0d3adc9f9",
+    "bytes": 5702,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 2,
+        "beforeLines": 0,
+        "afterStart": 2,
+        "afterLines": 31
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/config/SecurityConfig.java",
+    "beforeExists": true,
+    "beforeSha256": "bf54f158c1c606b3159e6533dbe4d56b84daa432a5e37f89bd3b55f7901395f3",
+    "afterSha256": "20d79a95db22b9204b46984f8b62a64600bb6200e1c4d7de976fa2d9ebf426e4",
+    "bytes": 1844,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 12,
+        "beforeLines": 0,
+        "afterStart": 12,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 17,
+        "beforeLines": 1,
+        "afterStart": 18,
+        "afterLines": 2
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 21,
+        "beforeLines": 1,
+        "afterStart": 23,
+        "afterLines": 1
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 27,
+        "beforeLines": 0,
+        "afterStart": 29,
+        "afterLines": 1
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/AiClient.java",
+    "beforeExists": true,
+    "beforeSha256": "788d8210f75c84fa6a93a78cc66693477640909936e1cd2f2066159bf9515c76",
+    "afterSha256": "1580248422db4d7b19bebd8adc89842b5175d3980e08e561410e7eb7c586ca3b",
+    "bytes": 7980,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 6,
+        "beforeLines": 0,
+        "afterStart": 6,
+        "afterLines": 2
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 7,
+        "beforeLines": 0,
+        "afterStart": 9,
+        "afterLines": 1
+      },
+      {
+        "kind": "insert",
+        "beforeStart": 9,
+        "beforeLines": 0,
+        "afterStart": 12,
+        "afterLines": 5
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 14,
+        "beforeLines": 1,
+        "afterStart": 22,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 16,
+        "beforeLines": 1,
+        "afterStart": 24,
+        "afterLines": 4
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 18,
+        "beforeLines": 6,
+        "afterStart": 29,
+        "afterLines": 4
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 25,
+        "beforeLines": 1,
+        "afterStart": 34,
+        "afterLines": 18
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 29,
+        "beforeLines": 11,
+        "afterStart": 55,
+        "afterLines": 27
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 44,
+        "beforeLines": 2,
+        "afterStart": 86,
+        "afterLines": 54
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 49,
+        "beforeLines": 1,
+        "afterStart": 143,
+        "afterLines": 0
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/service/InternalCallbackService.java",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "5e6f50350e4d5fdb140d1d538bf06c1f8f62dc71212993805f276a40e1de27aa",
+    "bytes": 3818,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 81
+      }
+    ]
+  },
+  {
+    "path": "backend/src/main/java/com/footballref/assist/controller/InternalController.java",
+    "beforeExists": true,
+    "beforeSha256": "970cf3cc27b630e820298288497bd2a3f1e3baaf2d500215566ac0fd075420a0",
+    "afterSha256": "b5566a022009cdb63db1012696fa560cd353a92a6ad4aec1f19f31ae115af489",
+    "bytes": 1134,
+    "hunks": [
+      {
+        "kind": "replace",
+        "beforeStart": 4,
+        "beforeLines": 3,
+        "afterStart": 4,
+        "afterLines": 5
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 8,
+        "beforeLines": 1,
+        "afterStart": 10,
+        "afterLines": 0
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 16,
+        "beforeLines": 1,
+        "afterStart": 17,
+        "afterLines": 0
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 18,
+        "beforeLines": 1,
+        "afterStart": 18,
+        "afterLines": 1
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 20,
+        "beforeLines": 1,
+        "afterStart": 20,
+        "afterLines": 0
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 24,
+        "beforeLines": 5,
+        "afterStart": 23,
+        "afterLines": 1
+      },
+      {
+        "kind": "replace",
+        "beforeStart": 33,
+        "beforeLines": 1,
+        "afterStart": 28,
+        "afterLines": 2
+      },
+      {
+        "kind": "delete",
+        "beforeStart": 36,
+        "beforeLines": 1,
+        "afterStart": 32,
+        "afterLines": 0
+      }
+    ]
+  },
+  {
+    "path": "backend/src/test/java/com/footballref/assist/InternalSecurityTest.java",
+    "beforeExists": false,
+    "beforeSha256": null,
+    "afterSha256": "9f8dbd2c88c138d1eacd45589e233070f80c72fb074243f5296acbfa498682bf",
+    "bytes": 14623,
+    "hunks": [
+      {
+        "kind": "insert",
+        "beforeStart": 1,
+        "beforeLines": 0,
+        "afterStart": 1,
+        "afterLines": 214
+      }
+    ]
+  }
+]

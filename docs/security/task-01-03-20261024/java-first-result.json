@@ -1,0 +1,160 @@
+{
+  "phase": "java-first",
+  "exitCode": 0,
+  "seconds": 104.898,
+  "startedAtEpoch": 1792834056.2757998,
+  "finishedAtEpoch": 1792834161.1736841,
+  "suites": [
+    {
+      "name": "com.footballref.assist.BackendApiSmokeTest",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "15.477"
+    },
+    {
+      "name": "com.footballref.assist.MediaAccessTest",
+      "tests": "14",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "1",
+      "time": "68.761"
+    },
+    {
+      "name": "com.footballref.assist.ResourceAuthorizationTest",
+      "tests": "9",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "8.171"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.BackendApiSmokeTest",
+      "name": "loginTaskDetailEventDetailAndReportExportWork",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.BackendApiSmokeTest",
+      "name": "annotationUploadValidatesSchemaAndStoresStats",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "expiredCookiesDemotedAdminsAndRemovedAssignmentsCannotRead",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "anonymousCannotReadKnownMediaOrUseHeadOptionsOrCookieWrites",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "pathParametersAndUnknownResourcesNeverRevealBytesOrPaths",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "windowsJunctionEscapeIsRejectedWithoutReadingTarget",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "actualBrowserLoginPlaybackSeekPauseRefreshAndOwnership",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "rangesDeliverExactSegmentsAndRejectInvalidOrMultipleRanges",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "eventCannotBorrowAnotherTasksMediaEvenInsideRoot",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "cookieBridgeIsHttpOnlyScopedSecureAndRechecksDatabase",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "storedTraversalAliasesOutsideRootsAndActiveContentFailClosed",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "persistedOwnershipAllowsOwnerAdminAssignedAndDeniesBothDirections",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "controlledRelativeStorageAliasesAndWindowsCaseKeepAuthorizedMediaPlayable",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "symbolicLinkEscapeIsRejectedWhenPlatformPermitsCreatingLink",
+      "outcome": "SKIP"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "pdfCannotEmbedOutsideMediaAndCannotWriteOutsideStorage",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.MediaAccessTest",
+      "name": "sparseLargeVideoCanServeSuffixWithoutMaterializingWholeFile",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "ownerCanUseEveryExistingTaskAndEventOperation",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "anotherAuthenticatedUserCannotReadOrMutateKnownResourceIds",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "administratorRetainsExistingAllResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "authenticatedUploadAndManualReviewKeepServerOwnedIdentity",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "taskListKeepsOwnerAssignmentAndAdministratorSemantics",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "missingIdsUseTheSameSafeNotFoundResponseBeforeSideEffects",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "assignedRefereeRetainsExistingSharedResourceAccess",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "malformedOwnerOrParentRelationshipsFailClosedEvenForAdministrator",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.ResourceAuthorizationTest",
+      "name": "clientRoleHintsAndStaleAdminClaimsCannotOverrideDatabaseRole",
+      "outcome": "PASS"
+    }
+  ]
+}

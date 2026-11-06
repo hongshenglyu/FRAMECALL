@@ -1,0 +1,197 @@
+{
+  "task": "WBS 00-06",
+  "date": "2026-10-24",
+  "status": "待验收；仅完成00-06文档自检，G0仍未验收",
+  "gitBefore": {
+    "rootMatches": true,
+    "branch": "dev/real-ai-pipeline",
+    "head": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "tag": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "remoteCount": 0,
+    "status": "?? docs/contracts/task-00-05-20261024/00-05-兼容迁移与实施拆分.md\n?? docs/contracts/task-00-05-20261024/00-05-合同测试计划.md\n?? docs/contracts/task-00-05-20261024/00-05-当前调用链及字段矩阵.md\n?? docs/contracts/task-00-05-20261024/00-05-核验结果.json\n?? docs/contracts/task-00-05-20261024/00-05-状态机与异常时序.md\n?? docs/contracts/task-00-05-20261024/00-05-视频时基与证据来源.md\n?? docs/contracts/task-00-05-20261024/00-05-设计总览.md\n?? docs/contracts/task-00-05-20261024/00-05-验收清单.md\n?? docs/contracts/task-00-05-20261024/analysis-run-v1-draft.md\n?? docs/contracts/task-00-05-20261024/contract-gap-matrix.csv",
+    "trackedCount": 98
+  },
+  "readSources": [
+    {
+      "path": "README.md",
+      "linesRead": 141,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "docs/demo_runbook.md",
+      "linesRead": 140,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "docs/manual_annotation_workflow.md",
+      "linesRead": 70,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "frontend/package.json",
+      "linesRead": 22,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "backend/pom.xml",
+      "linesRead": 69,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "ai-service/README.md",
+      "linesRead": 64,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "scripts/check-frontend-layout.mjs",
+      "linesRead": 390,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "scripts/experiment-stats.mjs",
+      "linesRead": 563,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "scripts/evaluate-predictions.mjs",
+      "linesRead": 697,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "docs/audits/framecall-full-audit-20261022/evidence/run-backend-isolated.ps1",
+      "linesRead": 27,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "docs/contracts/task-00-05-20261024/analysis-run-v1-draft.md",
+      "linesRead": 329,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    },
+    {
+      "path": "docs/contracts/task-00-05-20261024/00-05-验收清单.md",
+      "linesRead": 25,
+      "evidenceType": "本轮只读文件；不代表执行日志"
+    }
+  ],
+  "docsOrganization": [
+    "docs/audits",
+    "docs/baseline",
+    "docs/contracts",
+    "docs/examples"
+  ],
+  "workflowCanonicalTargetExists": false,
+  "canonicalTargetWritten": false,
+  "planSearchScope": "项目非依赖/非Git/非构建目录；未扫描其他个人目录",
+  "authoritativePlanPairFound": false,
+  "ciConfigurationFound": false,
+  "openItems": [
+    "权威计划MD/XLSX配对位置、版本与工作表H/I/N/O映射",
+    "00-05最新正式独立验收记录与本机待审标签需对齐",
+    "G0仍未验收，不开放01-01/G1",
+    "P24正式导师/小组批准未核验",
+    "00-04旧快照1项未定位未在本轮解决"
+  ],
+  "templates": 6,
+  "futureValidationCases": 16,
+  "testsExecuted": false,
+  "servicesStarted": false,
+  "dependenciesInstalled": false,
+  "networkRequests": false,
+  "gitMutation": false,
+  "nextAuthorizedWBS": "NONE；提交ChatGPT审查后停止",
+  "additionalCiCandidates": [],
+  "integrity": {
+    "originalMetadataFiles": 5688,
+    "focusedContentFiles": 404,
+    "metadataChanges": 0,
+    "focusedContentChanges": 0,
+    "newOutsideOutput": 0,
+    "limits": "重点原件含源码、实例配置、历史文档与Git内容；非重点媒体/数据库/模型仅大小及mtime，依赖目录和外部盘未覆盖；秘密摘要只在内存比较，不写报告"
+  },
+  "outputFiles": [
+    "00-06-执行总览.md",
+    "project-workflow-v1-draft.md",
+    "WBS-任务启动卡模板.md",
+    "WBS-最小变更记录模板.md",
+    "WBS-测试回归矩阵模板.csv",
+    "WBS-验收与证据索引模板.md",
+    "WBS-执行日志与交接模板.md",
+    "WBS-风险与回退计划模板.md",
+    "00-06-未来验证清单.md",
+    "00-06-核验结果.json",
+    "00-06-验收清单.md"
+  ],
+  "archiveFile": "task-00-06-20261024-reports.zip",
+  "G0": "UNVERIFIED / 未验收，不放行01-01或G1",
+  "acceptance": [
+    {
+      "item": "11文件齐全",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    },
+    {
+      "item": "8检查点规约可执行",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    },
+    {
+      "item": "6类模板字段可填",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    },
+    {
+      "item": "6类最低回归门槛",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    },
+    {
+      "item": "16项未来验证计划",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    },
+    {
+      "item": "脱敏及分享白名单",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    },
+    {
+      "item": "原跟踪内容与Git引用不变",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    },
+    {
+      "item": "未运行系统测试/部署",
+      "result": "PASS",
+      "scope": "文档静态自检；非ChatGPT/用户独立验收"
+    }
+  ],
+  "gitAfter": {
+    "rootMatches": true,
+    "branch": "dev/real-ai-pipeline",
+    "head": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "tag": "f3a4cb3d8865bfff4fc83ce639ab2e46c773bac1",
+    "remoteCount": 0,
+    "status": "?? docs/contracts/task-00-05-20261024/00-05-兼容迁移与实施拆分.md\n?? docs/contracts/task-00-05-20261024/00-05-合同测试计划.md\n?? docs/contracts/task-00-05-20261024/00-05-当前调用链及字段矩阵.md\n?? docs/contracts/task-00-05-20261024/00-05-核验结果.json\n?? docs/contracts/task-00-05-20261024/00-05-状态机与异常时序.md\n?? docs/contracts/task-00-05-20261024/00-05-视频时基与证据来源.md\n?? docs/contracts/task-00-05-20261024/00-05-设计总览.md\n?? docs/contracts/task-00-05-20261024/00-05-验收清单.md\n?? docs/contracts/task-00-05-20261024/analysis-run-v1-draft.md\n?? docs/contracts/task-00-05-20261024/contract-gap-matrix.csv\n?? docs/project/task-00-06-20261024/00-06-执行总览.md\n?? docs/project/task-00-06-20261024/00-06-未来验证清单.md\n?? docs/project/task-00-06-20261024/00-06-核验结果.json\n?? docs/project/task-00-06-20261024/00-06-验收清单.md\n?? docs/project/task-00-06-20261024/WBS-任务启动卡模板.md\n?? docs/project/task-00-06-20261024/WBS-执行日志与交接模板.md\n?? docs/project/task-00-06-20261024/WBS-最小变更记录模板.md\n?? docs/project/task-00-06-20261024/WBS-测试回归矩阵模板.csv\n?? docs/project/task-00-06-20261024/WBS-风险与回退计划模板.md\n?? docs/project/task-00-06-20261024/WBS-验收与证据索引模板.md\n?? docs/project/task-00-06-20261024/project-workflow-v1-draft.md",
+    "trackedCount": 98
+  },
+  "gitRefsUnchanged": true,
+  "gitTrackedDiffEmpty": true,
+  "newUntrackedReports": 11,
+  "preservedPriorUntrackedReports": 10,
+  "privacyScan": {
+    "scope": [
+      "identity",
+      "privatePath",
+      "email",
+      "privateKey",
+      "credentialUrl",
+      "badDecoding",
+      "本机配置已知敏感标量残留"
+    ],
+    "hits": [],
+    "secretValuesExported": false,
+    "secretHashesExported": false,
+    "limits": "限定本轮11份材料；不是全面秘密审计；不读取DPAPI内容、不分享私人资料"
+  },
+  "completedAt": "2026-10-24T15:34:29.001256+08:00"
+}

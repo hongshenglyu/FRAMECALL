@@ -1,0 +1,97 @@
+{
+  "foreignKeys": [
+    {
+      "table": "ANALYSIS_TASK",
+      "column": "VIDEO_ID",
+      "parentColumn": "ID",
+      "deleteRule": 1,
+      "parent": "VIDEO_ASSET"
+    },
+    {
+      "table": "DISPUTE_EVENT",
+      "column": "TASK_ID",
+      "parentColumn": "ID",
+      "deleteRule": 1,
+      "parent": "ANALYSIS_TASK"
+    },
+    {
+      "table": "REVIEW_RECORD",
+      "column": "EVENT_ID",
+      "parentColumn": "ID",
+      "deleteRule": 1,
+      "parent": "DISPUTE_EVENT"
+    },
+    {
+      "table": "REVIEW_RECORD",
+      "column": "REVIEWER_ID",
+      "parentColumn": "ID",
+      "deleteRule": 1,
+      "parent": "USER_ACCOUNT"
+    }
+  ],
+  "indexes": [
+    {
+      "index": "PRIMARY_KEY_1",
+      "nonUnique": false,
+      "column": "ID",
+      "table": "ANALYSIS_TASK"
+    },
+    {
+      "index": "FKP9BVMOO8MC8LHHKTK5CNVJF13_INDEX_1",
+      "nonUnique": true,
+      "column": "VIDEO_ID",
+      "table": "ANALYSIS_TASK"
+    },
+    {
+      "index": "PRIMARY_KEY_8",
+      "nonUnique": false,
+      "column": "ID",
+      "table": "TASK_ATTEMPT"
+    },
+    {
+      "index": "IDX_ATTEMPT_TASK_ACTIVE",
+      "nonUnique": true,
+      "column": "TASK_ID",
+      "table": "TASK_ATTEMPT"
+    },
+    {
+      "index": "IDX_ATTEMPT_TASK_ACTIVE",
+      "nonUnique": true,
+      "column": "ACTIVE",
+      "table": "TASK_ATTEMPT"
+    },
+    {
+      "index": "PRIMARY_KEY_6",
+      "nonUnique": false,
+      "column": "ID",
+      "table": "DISPUTE_EVENT"
+    },
+    {
+      "index": "FK261WV92C0B16SPIQDKDP438VK_INDEX_6",
+      "nonUnique": true,
+      "column": "TASK_ID",
+      "table": "DISPUTE_EVENT"
+    },
+    {
+      "index": "PRIMARY_KEY_9",
+      "nonUnique": false,
+      "column": "ID",
+      "table": "REVIEW_RECORD"
+    },
+    {
+      "index": "FKHGGS5HLY6UBH5Q9AHR3SL3ABR_INDEX_9",
+      "nonUnique": true,
+      "column": "EVENT_ID",
+      "table": "REVIEW_RECORD"
+    },
+    {
+      "index": "FKPHD235LIJSBTPE3Q4FKIWHL0J_INDEX_9",
+      "nonUnique": true,
+      "column": "REVIEWER_ID",
+      "table": "REVIEW_RECORD"
+    }
+  ],
+  "scope": "synthetic-memory-H2-before-implementation",
+  "database": "H2",
+  "version": "2.2.224 (2023-09-17)"
+}

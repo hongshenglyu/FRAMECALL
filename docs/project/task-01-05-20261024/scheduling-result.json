@@ -1,0 +1,58 @@
+{
+  "phase": "scheduling",
+  "exitCode": 1,
+  "seconds": 26.231,
+  "startedAtEpoch": 1792843506.294762,
+  "suites": [
+    {
+      "name": "com.footballref.assist.TaskSchedulingTest",
+      "tests": "8",
+      "failures": "1",
+      "errors": "0",
+      "skipped": "0",
+      "time": "17.61"
+    }
+  ],
+  "cases": [
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "boundedQueueRejectsWithoutPhantomSuccessAndLaterRetryWorks",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "twentyConcurrentRetriesHaveOneDatabaseAttemptAndOneActualExecution",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "failuresAreSanitizedBoundedAndNeverAutoRetried",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "retriesRetainReviewedEventsAndOldMediaBytesInDistinctAttemptDirectories",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "authorizationRejectsBeforeAttemptCreationAndLegalStatesAreExplicit",
+      "outcome": "FAIL"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "staleAuthenticatedCallbackAndOldCompletionCannotMutateCurrentAttempt",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "uploadAndRetryReturnWhileRealAiIsBlockedAndProgressRemainsQueryable",
+      "outcome": "PASS"
+    },
+    {
+      "suite": "com.footballref.assist.TaskSchedulingTest",
+      "name": "restartQuarantinesPersistedQueuedAttemptWithoutReplayingIt",
+      "outcome": "PASS"
+    }
+  ]
+}
