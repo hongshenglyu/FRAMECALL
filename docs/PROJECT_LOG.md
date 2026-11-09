@@ -32,3 +32,15 @@
 - 交付仅为`docs/data/matches-manifest.csv`、`docs/data/video-parts.csv`、`docs/data/dataset-audit.md`，只公开赛事相对路径，不上传原片或私人绝对路径；本条日志是本次唯一另改文档。80份业务源码及测试字节SHA未变。
 - 机器校验通过：98实际文件逐一覆盖、MatchID/PartID唯一、同场分段归并、赛事隔离、根目录第3段正确归入半决赛、逐场时长等于已读分段之和、CSV重读和脱敏检查。此次仅暂存三份报告和本日志，按02-01任务提交并核对远程同步，不重跑无关业务测试。
 - WBS 02-01保持阻塞（本轮部分清点已完成），G2不放行；下一步补4场缺段、核对疑似重复段，补逐场赛程身份、开终场及段间连续性依据和研究/传播/归档授权。未修改任何视频，未进入02-02，未启动YOLOv8或ByteTrack开发。
+
+## 2026-11-09｜P0清单增量修订 / P1权重准备（训练资源优先）
+
+- 工作区起初干净；fetch后从fcf354d安全快进到远端402acc2，取得V2.8精简执行计划，保留原Git历史及01-01至01-07成果。V2.8 Excel在已查项目计划目录/Downloads顶层未找到，不阻塞。
+- P0仅列举五处问题比赛目录，读取7段元数据；依清单校验现存路径时发现2025半决赛第3段旧根路径失效，初次命令exit 1且未写CSV。只补核对同场目录的一个候选文件，大小/时长/FPS一致，保留原MatchID/PartID、修订相对路径。没有移动原片，也未猜测由谁移动。
+- 修订后增量命令exit 0，共新读8份容器元数据、解码0帧；复用其他旧时长/解码记录，未重扫99GiB或全片哈希。2026赛事23组50段、2025赛季16组47段，合计39组97段。原疑似重复视频3确已不存在，删除的是当前CSV行，原片由用户此前手动删除；Codex未删除视频。
+- 四场缺视频1/1和2的用户确认已登记PARTIAL_CONFIRMED，其余35场为UNVERIFIED_FULLNESS，未宣称完整。登记用户确认的本地研究用途；逐场来源/传播/归档证据仍未核实。02-01依V2.8为进行中、整体未验收，G2未放行。
+- P1：系统Python及AI虚拟环境均为Python3.11.6，均无torch/torchvision/Ultralytics；系统已有PyAV18.1.0、opencv-python-headless5.0.0.93与imageio-ffmpeg0.6.0，AI虚拟环境未装这些可选包。首轮只查opencv-python未命中，补查发行包变体后更正为headless已安装。只读资源采样显示可用内存约1.3—1.5GiB、CPU约64%，为保护另一个重要训练，未安装大型依赖，CPU推理标DEFERRED_RESOURCE_PROTECTION。
+- GPU相关的CUDA探测、模型加载/推理/训练、显存分配和压力测试全部DEFERRED_GPU_BUSY；没有导入torch/Ultralytics、查询GPU、分配显存、操作其他项目进程或环境。无真实推理设备、处理0帧，检测数/推理耗时不适用，没有可视化，不计模型成功或失败。
+- 已从Ultralytics官方v8.3.0资产准备YOLOv8n COCO detect权重（6,549,796 bytes），限速512KiB/s；下载/大小/SHA256/ZIP CRC命令exit 0。SHA256为f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36。本机忽略路径`models/yolo/v8.3.0/yolov8n.pt`；仅公开`config/yolov8n.weights.json`的相对位置、来源与摘要。上游AGPL-3.0许可及验证边界见`docs/ai/yolo-preparation-20261109.md`。
+- 本轮只更新两份CSV、数据报告、权重元数据、上述简短P1记录及本日志；CSV唯一ID、映射、97行及汇总检查通过。脱敏校验首轮exit 1因盘符正则误匹配公开https URL，修正词边界后重跑exit 0；未发现私人路径/令牌模式。暂存不含原片、模型或真实密钥；未重跑01阶段全套测试或改变现有业务功能。
+- 下一步先待用户允许GPU使用或资源足以安全进行CPU推理，再准备隔离依赖并完成真实YOLO 15—30秒样片检测及本机证据；P1未验收，未实现ByteTrack/接触评分/自动犯规判定或正式split。
