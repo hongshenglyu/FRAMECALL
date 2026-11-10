@@ -16,8 +16,13 @@
   "upstreamDigest": null,
   "verification": "Official HTTPS source, API size, local SHA256, ZIP CRC; upstream asset has no published digest",
   "downloadRateLimitBytesPerSecond": 524288,
-  "modelLoadStatus": "DEFERRED_GPU_BUSY",
-  "inferencePerformed": false,
-  "cudaProbeStatus": "DEFERRED_GPU_BUSY",
-  "date": "2026-11-09"
+  "modelLoadStatus": "LOADED_CUDA",
+  "inferencePerformed": true,
+  "cudaProbeStatus": "PASS",
+  "date": "2026-11-09",
+  "cudaValidationDate": "2026-11-10",
+  "validatedDevice": "cuda:0",
+  "validatedGpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "validatedTorchVersion": "2.7.1+cu126",
+  "validatedUltralyticsVersion": "8.3.228"
 }

@@ -44,3 +44,14 @@
 - 已从Ultralytics官方v8.3.0资产准备YOLOv8n COCO detect权重（6,549,796 bytes），限速512KiB/s；下载/大小/SHA256/ZIP CRC命令exit 0。SHA256为f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36。本机忽略路径`models/yolo/v8.3.0/yolov8n.pt`；仅公开`config/yolov8n.weights.json`的相对位置、来源与摘要。上游AGPL-3.0许可及验证边界见`docs/ai/yolo-preparation-20261109.md`。
 - 本轮只更新两份CSV、数据报告、权重元数据、上述简短P1记录及本日志；CSV唯一ID、映射、97行及汇总检查通过。脱敏校验首轮exit 1因盘符正则误匹配公开https URL，修正词边界后重跑exit 0；未发现私人路径/令牌模式。暂存不含原片、模型或真实密钥；未重跑01阶段全套测试或改变现有业务功能。
 - 下一步先待用户允许GPU使用或资源足以安全进行CPU推理，再准备隔离依赖并完成真实YOLO 15—30秒样片检测及本机证据；P1未验收，未实现ByteTrack/接触评分/自动犯规判定或正式split。
+
+
+## 2026-11-10｜P1真实YOLOv8 CUDA检测
+
+- 用户明确解除DEFERRED_GPU_BUSY并授权CUDA；起点eb6186e与最新远端一致，工作区无旧改动。未重扫录像或重下载权重，39组/97段清单不变；不修改其他训练进程、驱动或环境。
+- 新建FRAMECALL独立`.venv-yolo`，Python3.11.6、torch2.7.1+cu126、torchvision0.22.1+cu126、Ultralytics8.3.228、PyAV18.1.0、OpenCV4.12.0.88、NumPy2.2.6；官方CUDA安装、pip check和实际CUDA检查均exit0。GPU为RTX4050 Laptop、驱动581.86，参数和每帧结果实测cuda:0。依赖固定于requirements-yolo-smoke.txt，旧AI环境不改。
+- 独立真实入口`scripts/real-yolo-smoke.py`不调用旧fallback/模拟评分，实际失败exit1，无CPU/Mock替代。按PyAV原始PTS和顺序原始帧索引流式检测、batch1/imgsz640/conf0.25/person/不跳帧，输出可供后续跟踪的逐帧JSONL与真实H.264画框视频；未实现跟踪。
+- 样片为东方语学院VS叽歪国传第七轮第1段，MatchID E2026-D4064D929E、PartID E2026-D4064D929E-P001，源相对600秒起。初测25秒732帧/6790框，predict19.50s/37.54fps、总121.45s；扩展60秒1759帧/17468框，predict45.02s/39.07fps、总171.82s。覆盖重叠不累计为85秒；框累计不是球员人数。GPU allocator峰值70.46MiB、reserved92MiB，未遇OOM或降低分辨率。
+- 两次运行exit0，输出视频732及1759帧全解码，JSONL逐帧原片PTS一致、frameIndex连续、坐标/置信度有效；源文件大小/mtime未变。代表帧已人工查看：近处多人框对齐真实人像，远端小人和遮挡有漏检，person仍可能包括裁判和场边人，不宣称身份分类或犯规判定。未做定量检测精度评估。
+- 运行日志/数据/可视化仅在`artifacts/real-yolo-smoke/p1-initial-25s`及`p1-extended-60s`，均被忽略。SDK初次配置路径警告通过预建本机忽略目录解决，关闭同步；初测标签拥挤在扩展时改为细框无标签。完整命令、版本、时序口径见`docs/ai/p1-real-yolo-20261110.md`，仅保留一份简短结果报告。
+- 结论：本轮P1首次真实CUDA独立检测按用户验收标准通过；旧前后端服务不变，完整真实系统链尚未贯通，未训练YOLO或进入ByteTrack/接触算法/正式split。后续可在该真实输出基础上单独启动P2。

@@ -114,3 +114,7 @@ docs/**/source-changes.patch
 /docs/project/task-02-01-20261024/git-before.json
 /docs/project/task-02-01-20261024/git-after.json
 /docs/project/task-02-01-20261024/video-before.json
+
+# P1 isolated CUDA environment and local-only real footage evidence.
+/ai-service/.venv-yolo/
+/artifacts/real-yolo-smoke/
