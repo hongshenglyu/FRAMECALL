@@ -1,0 +1,10 @@
+{
+  "geometry": {"point": "bottom_center", "distance_scale": "mean_box_height", "min_height_px": 12, "max_height_ratio": 2.0, "duplicate_iou": 0.85},
+  "motion": {"window_ms": 600, "max_step_ms": 150, "min_samples": 4, "min_span_ms": 100, "change_min_samples": 8, "change_min_span_ms": 240, "half_min_span_ms": 80, "min_confidence": 0.20, "max_step_speed_heights_s": 8.0, "max_height_step_ratio": 1.6, "max_filter_disagreement_heights": 0.5},
+  "scoring": {"near_distance": 0.8, "closing_reference_heights_s": 1.5, "change_reference_heights_s": 2.0, "minimum_score": 0.30, "weights": {"distance": 0.55, "closing_speed": 0.25, "relative_velocity_change": 0.20}},
+  "merging": {"same_pair_gap_ms": 600, "minimum_support_frames": 2, "shared_anchor_gap_ms": 200, "shared_anchor_distance_heights": 0.8},
+  "methods": {
+    "distance-baseline": {"distance": true, "closing_speed": false, "relative_velocity_change": false},
+    "combined": {"distance": true, "closing_speed": true, "relative_velocity_change": true}
+  }
+}

@@ -119,3 +119,4 @@ docs/**/source-changes.patch
 /ai-service/.venv-yolo/
 /artifacts/real-yolo-smoke/
 /artifacts/real-bytetrack/
+/artifacts/real-contact-candidates/
