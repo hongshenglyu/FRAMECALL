@@ -118,3 +118,4 @@ docs/**/source-changes.patch
 # P1 isolated CUDA environment and local-only real footage evidence.
 /ai-service/.venv-yolo/
 /artifacts/real-yolo-smoke/
+/artifacts/real-bytetrack/

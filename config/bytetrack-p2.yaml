@@ -1,0 +1,10 @@
+# Ultralytics 8.3.228 built-in ByteTrack defaults (AGPL-3.0).
+# P2 keeps score fusion: disabling it mixed visually different people in the local control.
+# https://github.com/ultralytics/ultralytics/blob/v8.3.228/ultralytics/cfg/trackers/bytetrack.yaml
+tracker_type: bytetrack
+track_high_thresh: 0.25
+track_low_thresh: 0.1
+new_track_thresh: 0.25
+track_buffer: 30
+match_thresh: 0.8
+fuse_score: true
