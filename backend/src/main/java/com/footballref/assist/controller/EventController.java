@@ -138,6 +138,9 @@ public class EventController {
         map.put("eventId", record.getEvent().getId());
         map.put("annotationRevisionId",record.getAnnotationRevision()==null?null:record.getAnnotationRevision().getId());
         map.put("reviewer", record.getReviewer().getDisplayName());
+        map.put("reviewerId",record.getReviewer().getId());
+        map.put("differentAccountFromAnnotator",record.getAnnotationRevision()==null?null:
+                !record.getReviewer().getId().equals(record.getAnnotationRevision().getAnnotator().getId()));
         map.put("result", record.getResult());
         map.put("reasonCode", record.getReasonCode());
         map.put("note", record.getNote());

@@ -86,6 +86,13 @@
         <template v-if="isPilotTask">
           <p class="muted">试标素材{{ pilotSummary.samples || selectedTask.events.length }}段 · 人工已提交{{ pilotSummary.humanAnnotatedSamples || 0 }}段 · 待标注{{ pilotSummary.unlabeledSamples ?? selectedTask.events.length }}段；不将选材线索或联调记录作为真值。</p>
           <el-button @click="exportPilot">导出试标记录JSON</el-button>
+          <div v-if="currentUser?.role === 'ADMIN'" class="frame-toolbar">
+            <el-select v-model="reviewerId" placeholder="分配另一位裁判的账号" clearable aria-label="分配复核裁判">
+              <el-option v-for="user in referees" :key="user.id" :value="user.id" :label="`${user.displayName} / ${user.username}`" />
+            </el-select>
+            <el-button :loading="assigning" @click="assignReviewer">保存裁判分配</el-button>
+          </div>
+          <p class="muted">由另一位真实裁判使用本人账号复核。同账号记录属于自查；不同账号也不能代替裁判身份与资质确认。</p>
         </template>
         <template v-else-if="isContactTask">
           <p class="muted">保留{{ selectedTask.events.length }}个原始候选；默认按复核片段合并展示。评分不是犯规概率。</p>
@@ -134,6 +141,8 @@ const importing = ref(false)
 const showAllCandidates = ref(false)
 const isPilotTask = computed(() => selectedTask.value?.stage === 'CONTACT_PILOT_IMPORTED')
 const pilotSummary = ref({})
+const currentUser = JSON.parse(localStorage.getItem('user') || 'null')
+const referees = ref([]), reviewerId = ref(null), assigning = ref(false)
 const isContactTask = computed(() => isPilotTask.value || selectedTask.value?.stage === 'REAL_CONTACT_IMPORTED')
 const displayedEvents = computed(() => {
   const events = selectedTask.value?.events || []
@@ -218,7 +227,11 @@ async function selectTask(id) {
   const selectedEventId = selectedEvent.value?.id
   const { data } = await api.get(`/tasks/${id}`, { params: historyParams() })
   selectedTask.value = data
-  if (isPilotTask.value) pilotSummary.value = (await api.get(`/tasks/${id}/contact-annotations`)).data.summary
+  if (isPilotTask.value) {
+    pilotSummary.value = (await api.get(`/tasks/${id}/contact-annotations`)).data.summary
+    reviewerId.value = data.assignedToUserId ?? null
+    if (currentUser?.role === 'ADMIN') referees.value = (await api.get('/users')).data.filter(u => u.enabled && u.role === 'REFEREE')
+  }
   const next = data.events?.find((event) => event.id === selectedEventId) || displayedEvents.value[0] || null
   if (next) await selectEvent(next)
   else selectedEvent.value = null
@@ -228,6 +241,15 @@ async function refreshSelectedTask() {
   if (selectedTask.value) {
     await selectTask(selectedTask.value.id)
   }
+}
+
+async function assignReviewer() {
+  assigning.value = true
+  try {
+    await api.patch(`/videos/${selectedTask.value.videoId}/assignment`, { assignedToUserId: reviewerId.value || null })
+    await refreshSelectedTask(); ElMessage.success('裁判分配已保存，请由本人登录复核')
+  } catch { ElMessage.error('分配失败，请选择已启用且不同于所有者的裁判账号') }
+  finally { assigning.value = false }
 }
 
 async function selectEvent(event) {

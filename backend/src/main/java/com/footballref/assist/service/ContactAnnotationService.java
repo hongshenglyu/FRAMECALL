@@ -85,6 +85,10 @@ public class ContactAnnotationService {
             require(key.matches("[a-f0-9-]{36}"),"Invalid annotation key");
             int previous=annotations.findByEventOrderByIdDesc(event).stream().filter(a->a.getAnnotationKey().equals(key)).mapToInt(ContactAnnotationRevision::getRevision).max().orElse(0);
             if(previous!=request.expectedRevision()) throw new ResponseStatusException(HttpStatus.CONFLICT,"Annotation changed; reload before creating another revision");
+            if(previous>0 && current.requireUser().getRole()!=com.footballref.assist.domain.enums.Role.ADMIN
+                    && annotations.findByEventOrderByIdDesc(event).stream().filter(a->a.getAnnotationKey().equals(key))
+                    .anyMatch(a->!a.getAnnotator().getId().equals(current.requireUser().getId())))
+                throw new ResponseStatusException(HttpStatus.FORBIDDEN,"Review another annotator's record without revising its original label");
             Map<String,Object> payload=new LinkedHashMap<>();
             payload.put("matchId",meta.path("source").path("matchId")); payload.put("partId",meta.path("source").path("partId"));
             payload.put("segmentId",meta.path("source").path("segmentId")); payload.put("sceneType",request.sceneType());

@@ -157,4 +157,46 @@ class ContactAnnotationTest {
         assertEquals(1,e.path("summary").path("humanSubmittedRecords").asInt());
         r.put("expectedRevision",2);assertEquals(3,save(r,200).path("revision").asInt());
     }
+    @Test void anotherAssignedRefereeCanReviewButCannotRewriteOriginalAndAccessIsRevocable() throws Exception {
+        var original=save(annotation("VISIBLE_CONTACT"),200);
+        var admin=user();admin.setRole(Role.ADMIN);users.save(admin);
+        long videoId=tasks.findById(taskId).orElseThrow().getVideo().getId();
+        String assignment="/api/videos/"+videoId+"/assignment";
+        mvc.perform(patch(assignment).header("Authorization","Bearer "+jwt.issue(owner)).contentType("application/json")
+                .content(json.writeValueAsBytes(Map.of("assignedToUserId",other.getId())))).andExpect(status().isForbidden());
+        mvc.perform(get("/api/events/"+eventId+"/annotations").header("Authorization","Bearer "+jwt.issue(other))).andExpect(status().isNotFound());
+        mvc.perform(patch(assignment).header("Authorization","Bearer "+jwt.issue(admin)).contentType("application/json")
+                .content(json.writeValueAsBytes(Map.of("assignedToUserId",other.getId())))).andExpect(status().isOk());
+        mvc.perform(get("/api/events/"+eventId+"/annotations").header("Authorization","Bearer "+jwt.issue(other))).andExpect(status().isOk());
+        mvc.perform(get("/api/files").param("eventId",Long.toString(eventId)).param("kind","clip")
+                .header("Authorization","Bearer "+jwt.issue(other))).andExpect(status().isOk());
+        var changed=annotation("NO_VISIBLE_CONTACT");changed.put("annotationKey",original.path("annotationKey").asText()).put("expectedRevision",1);
+        mvc.perform(post("/api/events/"+eventId+"/annotations").header("Authorization","Bearer "+jwt.issue(other)).contentType("application/json")
+                .content(json.writeValueAsBytes(changed))).andExpect(status().isForbidden());
+        var review=mvc.perform(post("/api/events/"+eventId+"/review").header("Authorization","Bearer "+jwt.issue(other)).contentType("application/json")
+                .content(json.writeValueAsBytes(Map.of("result","INSUFFICIENT_VIEW","reasonCode","SYNTHETIC_ONLY","note","Isolated permission fixture; not real referee judgment","annotationRevisionId",original.path("id").asLong()))))
+                .andExpect(status().isOk()).andReturn();
+        var saved=json.readTree(review.getResponse().getContentAsByteArray());assertEquals(other.getId().longValue(),saved.path("reviewerId").asLong());
+        assertTrue(saved.path("differentAccountFromAnnotator").asBoolean());
+        var sample=exported().path("samples").get(0);assertEquals(1,sample.path("annotations").size());
+        assertEquals(original.path("annotation"),sample.path("annotations").get(0).path("annotation"));
+        assertEquals("INSUFFICIENT_VIEW",sample.path("reviews").get(0).path("result").asText());
+        mvc.perform(patch(assignment).header("Authorization","Bearer "+jwt.issue(admin)).contentType("application/json")
+                .content("{\"assignedToUserId\":null}")).andExpect(status().isOk());
+        mvc.perform(get("/api/events/"+eventId+"/annotations").header("Authorization","Bearer "+jwt.issue(other))).andExpect(status().isNotFound());
+        mvc.perform(get("/api/files").param("eventId",Long.toString(eventId)).param("kind","clip")
+                .header("Authorization","Bearer "+jwt.issue(other))).andExpect(status().isNotFound());
+        assertEquals(1,exported().path("samples").get(0).path("reviews").size());
+    }
+    @Test void sameAccountReviewIsExplicitlySelfCheckAndDisabledRefereeCannotBeAssigned() throws Exception {
+        var original=save(annotation("NO_VISIBLE_CONTACT"),200);
+        var result=mvc.perform(post("/api/events/"+eventId+"/review").header("Authorization","Bearer "+jwt.issue(owner)).contentType("application/json")
+                .content(json.writeValueAsBytes(Map.of("result","NO_VISIBLE_CONTACT","reasonCode","SYNTHETIC_ONLY","annotationRevisionId",original.path("id").asLong()))))
+                .andExpect(status().isOk()).andReturn();
+        assertFalse(json.readTree(result.getResponse().getContentAsByteArray()).path("differentAccountFromAnnotator").asBoolean());
+        var admin=user();admin.setRole(Role.ADMIN);users.save(admin);other.setEnabled(false);users.save(other);
+        long videoId=tasks.findById(taskId).orElseThrow().getVideo().getId();
+        mvc.perform(patch("/api/videos/"+videoId+"/assignment").header("Authorization","Bearer "+jwt.issue(admin)).contentType("application/json")
+                .content(json.writeValueAsBytes(Map.of("assignedToUserId",other.getId())))).andExpect(status().isBadRequest());
+    }
 }

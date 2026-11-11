@@ -1,0 +1,335 @@
+{
+  "schema": "framecall.contact-pilot.v1",
+  "method": "pilot-preparation",
+  "source": {
+    "matchId": "E2026-D4064D929E",
+    "partId": "E2026-D4064D929E-P001",
+    "segmentId": 0,
+    "event": "2026年吉林外国语大学足球联赛",
+    "relativePath": "东方语学院VS叽歪国传第七轮/东方语学院VS叽歪国传1.mp4",
+    "candidatesSha256": "f02e63042ec6dfc323275830fe24a2fc293e0415014148c48a413d33546c0415",
+    "sourceStartTimeMs": 68.0,
+    "partDurationMs": 1708713.6109999998
+  },
+  "batchId": "p5-coverage-20261111",
+  "samples": [
+    {
+      "sampleId": "P5-S17",
+      "clipId": "pilot-17",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "中场蓝黑队员接近球的片段；需人工确认双人争抢及接触可见性。",
+      "sourceStartTimeMs": 414086.72222222225,
+      "sourceLastFrameTimeMs": 426053.2,
+      "clipDurationMs": 12000.644,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 37267805,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 414086.72222222225,
+          "durationMs": 33.522222222222226
+        },
+        "last": {
+          "sourcePts": 38344788,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 426053.2,
+          "durationMs": 33.522222222222226
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S18",
+      "clipId": "pilot-18",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "球周围多人接近、交叉；需逐帧区分参与者及遮挡。",
+      "sourceStartTimeMs": 684097.0777777778,
+      "sourceLastFrameTimeMs": 696063.7444444444,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 61568737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 684097.0777777778,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 62645737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 696063.7444444444,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S19",
+      "clipId": "pilot-19",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "蓝黑队员近距离争球线索，远端人物尺度较小；不预设接触。",
+      "sourceStartTimeMs": 784073.7666666667,
+      "sourceLastFrameTimeMs": 796040.4333333333,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 70566639,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 784073.7666666667,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 71643639,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 796040.4333333333,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S20",
+      "clipId": "pilot-20",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "近侧蓝黑队员追球、相向或并行运动；需区分接触与无接触争抢。",
+      "sourceStartTimeMs": 909094.8111111111,
+      "sourceLastFrameTimeMs": 921041.4222222222,
+      "clipDurationMs": 11980.778,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 81818533,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 909094.8111111111,
+          "durationMs": 34.13333333333333
+        },
+        "last": {
+          "sourcePts": 82893728,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 921041.4222222222,
+          "durationMs": 34.13333333333333
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S22",
+      "clipId": "pilot-22",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "中场对向接近与球权竞争线索；接触标签待人工判断。",
+      "sourceStartTimeMs": 1264088.611111111,
+      "sourceLastFrameTimeMs": 1276055.2777777778,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 113767975,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1264088.611111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 114844975,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1276055.2777777778,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S23",
+      "clipId": "pilot-23",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "蓝黑队员接近球、多人交叉线索；不依据框或人物接近赋予接触标签。",
+      "sourceStartTimeMs": 1384088.9444444445,
+      "sourceLastFrameTimeMs": 1396055.611111111,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 124568005,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1384088.9444444445,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 125645005,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1396055.611111111,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S25",
+      "clipId": "pilot-25",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "近侧蓝黑队员追抢线索；需人工确认是否实际接触。",
+      "sourceStartTimeMs": 1599081.611111111,
+      "sourceLastFrameTimeMs": 1611048.2777777778,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 143917345,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1599081.611111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 144994345,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1611048.2777777778,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S26",
+      "clipId": "pilot-26",
+      "selectionReasons": [
+        "SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "selectionNotes": "中场蓝黑队员近距离争球线索；连续边界和接触均待人工标注。",
+      "sourceStartTimeMs": 1624081.611111111,
+      "sourceLastFrameTimeMs": 1636048.2777777778,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 146167345,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1624081.611111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 147244345,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1636048.2777777778,
+          "durationMs": 33.333333333333336
+        }
+      }
+    }
+  ],
+  "purpose": "PILOT_DEVELOPMENT_ONLY",
+  "summary": {
+    "samples": 8,
+    "humanAnnotated": 0,
+    "unlabeled": 8,
+    "formalGroundTruth": 0
+  },
+  "limits": [
+    "Selection notes are leads, not human labels",
+    "No new detector/tracker execution; track anomalies unverified",
+    "Existing annotations and original 16 clips are unchanged; this match stays DEVELOPMENT"
+  ],
+  "selectionExclusions": [
+    {
+      "sampleNumber": 21,
+      "reason": "连续抽帧显示后半段主要停顿，双人争抢过程不够突出；不导入本批。"
+    },
+    {
+      "sampleNumber": 24,
+      "reason": "远端边路过程不够清楚，未能从抽帧充分确认典型双人争抢；不导入本批。"
+    }
+  ]
+}

@@ -92,6 +92,19 @@ public class VideoController {
         return Map.of("video", toMap(savedVideo), "task", TaskController.toTaskMap(savedTask));
     }
 
+    @PatchMapping("/{videoId}/assignment")
+    @org.springframework.security.access.prepost.PreAuthorize("hasRole('ADMIN')")
+    public Map<String,Object> assignReviewer(@PathVariable Long videoId,@RequestBody AssignmentRequest request) {
+        VideoAsset video=videos.findById(videoId).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Video not found"));
+        UserAccount reviewer=request.assignedToUserId()==null?null:users.findById(request.assignedToUserId())
+                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Reviewer not found"));
+        if(reviewer!=null && (!reviewer.isEnabled() || reviewer.getRole()!=Role.REFEREE || reviewer.getId().equals(video.getOwner().getId())))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Choose an enabled referee account different from the owner");
+        video.setAssignedTo(reviewer);
+        return toMap(videos.save(video));
+    }
+    public record AssignmentRequest(Long assignedToUserId) {}
+
     private Map<String, Object> toMap(VideoAsset video) {
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("id", video.getId());
@@ -102,6 +115,7 @@ public class VideoController {
         map.put("originalPath", video.getOriginalPath());
         map.put("owner", video.getOwner().getDisplayName());
         map.put("assignedTo", video.getAssignedTo() == null ? "" : video.getAssignedTo().getDisplayName());
+        map.put("assignedToUserId",video.getAssignedTo()==null?null:video.getAssignedTo().getId());
         map.put("createdAt", video.getCreatedAt());
         return map;
     }

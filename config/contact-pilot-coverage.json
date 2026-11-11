@@ -1,0 +1,19 @@
+{
+  "batchId": "p5-coverage-20261111",
+  "partId": "E2026-D4064D929E-P001",
+  "selectionBasis": "Codex inspected source frames for contested-ball selection leads; contact visibility and event boundaries remain for humans. No model labels.",
+  "windows": [
+    {"sampleNumber":17,"startSeconds":414,"durationSeconds":12,"selectionNotes":"中场蓝黑队员接近球的片段；需人工确认双人争抢及接触可见性。"},
+    {"sampleNumber":18,"startSeconds":684,"durationSeconds":12,"selectionNotes":"球周围多人接近、交叉；需逐帧区分参与者及遮挡。"},
+    {"sampleNumber":19,"startSeconds":784,"durationSeconds":12,"selectionNotes":"蓝黑队员近距离争球线索，远端人物尺度较小；不预设接触。"},
+    {"sampleNumber":20,"startSeconds":909,"durationSeconds":12,"selectionNotes":"近侧蓝黑队员追球、相向或并行运动；需区分接触与无接触争抢。"},
+    {"sampleNumber":22,"startSeconds":1264,"durationSeconds":12,"selectionNotes":"中场对向接近与球权竞争线索；接触标签待人工判断。"},
+    {"sampleNumber":23,"startSeconds":1384,"durationSeconds":12,"selectionNotes":"蓝黑队员接近球、多人交叉线索；不依据框或人物接近赋予接触标签。"},
+    {"sampleNumber":25,"startSeconds":1599,"durationSeconds":12,"selectionNotes":"近侧蓝黑队员追抢线索；需人工确认是否实际接触。"},
+    {"sampleNumber":26,"startSeconds":1624,"durationSeconds":12,"selectionNotes":"中场蓝黑队员近距离争球线索；连续边界和接触均待人工标注。"}
+  ],
+  "excludedAfterSequenceInspection": [
+    {"sampleNumber":21,"reason":"连续抽帧显示后半段主要停顿，双人争抢过程不够突出；不导入本批。"},
+    {"sampleNumber":24,"reason":"远端边路过程不够清楚，未能从抽帧充分确认典型双人争抢；不导入本批。"}
+  ]
+}

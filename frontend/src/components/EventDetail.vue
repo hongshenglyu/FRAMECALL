@@ -12,7 +12,7 @@
           <el-button v-if="!isPilot" :disabled="!event.clipPath || mediaError" @click="seek(contact.clipPeakTimeMs / 1000)">定位证据峰值</el-button>
           <el-button :disabled="!event.clipPath || mediaError" @click="slowPlay">0.5倍播放</el-button>
         </div>
-        <p class="muted">{{ isPilot ? '试标素材尚无人工标签。预览帧及选材原因不代表接触或犯规。' : '复核优先级不是犯规概率；证据峰值不是首次可见接触时间。' }}</p>
+        <p class="muted">{{ isPilot ? '试标结论以人工标注为准。预览帧及选材原因不代表接触或犯规。' : '复核优先级不是犯规概率；证据峰值不是首次可见接触时间。' }}</p>
         <p class="muted">{{ event.externalId }} · 源PTS {{ isPilot ? `${formatTime(contact.clip.firstSourceTimeMs)}—${formatTime(contact.clip.lastSourceTimeMs)}` : formatTime(contact.candidate?.peakTimeMs) }}</p>
         <p class="muted source-reference">{{ contact.source?.relativePath }}<br />{{ contact.source?.matchId }} / {{ contact.source?.partId }}</p>
         <el-select v-if="relatedEvents.length > 1" :model-value="event.id" @change="selectRelated" aria-label="同片段原始候选">
@@ -153,7 +153,8 @@
       <div v-if="event.reviews?.length" class="evidence-section">
         <div class="panel-title">已保存的复核记录</div>
         <p v-for="record in event.reviews" :key="record.id">
-          第{{ record.revision }}版 · {{ resultLabel(record.result) }} · {{ record.reviewer }}<br />{{ record.note }}
+          第{{ record.revision }}版 · {{ resultLabel(record.result) }} · {{ record.reviewer }}
+          <span v-if="isPilot"> · {{ record.differentAccountFromAnnotator ? '其他账号复核（身份待核实）' : '同账号自查' }}</span><br />{{ record.note }}
         </p>
       </div>
     </div>
@@ -176,6 +177,7 @@ const isContact = computed(() => props.event.eventType === 'CONTACT')
 const contact = computed(() => JSON.parse(props.event.contactMetadataJson || '{}'))
 const isPilot = computed(() => Boolean(contact.value.pilotSample))
 const annotationRevisions = ref([])
+const currentUser = JSON.parse(localStorage.getItem('user') || 'null')
 const submittedAnnotations = computed(() => annotationRevisions.value.filter(r => r.recordType === 'HUMAN' && r.status === 'SUBMITTED'))
 
 const review = reactive({
@@ -225,7 +227,7 @@ const metricGroups = computed(() => {
 watch(
   () => props.event,
   () => {
-    const latest = props.event.reviews?.[0]
+    const latest = isPilot.value ? props.event.reviews?.find(r => r.reviewerId === currentUser?.id) : props.event.reviews?.[0]
     review.result = latest?.result || (isPilot.value ? null : isContact.value ? 'INSUFFICIENT_VIEW' : 'UNCERTAIN')
     review.reasonCode = latest?.reasonCode || (isPilot.value ? '' : 'INSUFFICIENT_EVIDENCE')
     review.note = latest?.note || ''

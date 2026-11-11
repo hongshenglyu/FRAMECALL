@@ -83,15 +83,60 @@ def prepare(args, output):
     print(json.dumps(bundle['summary']),flush=True)
 
 
+def prepare_selected(args, output):
+    plan = json.loads(args.selection_plan.read_text(encoding='utf8'))
+    original = json.loads((ROOT/'artifacts/contact-pilot/p5-16-ready/bundle.json').read_text(encoding='utf8'))
+    if plan['partId'] != original['source']['partId']:
+        raise ValueError('Supplement must stay in the existing development match/part')
+    with (ROOT/'docs/data/video-parts.csv').open(encoding='utf-8-sig',newline='') as stream:
+        part = next(p for p in csv.DictReader(stream) if p['partId']==plan['partId'])
+    source = (args.event_root/part['relativePath']).resolve(strict=True)
+    source.relative_to(args.event_root.resolve(strict=True))
+    clips, samples = [], []
+    for item in plan['windows']:
+        start = original['source']['sourceStartTimeMs']+item['startSeconds']*1000
+        end = start+item['durationSeconds']*1000
+        if any(start<c['endTimeMs'] and end>c['startTimeMs'] for c in original['clips']+clips):
+            raise ValueError('Supplement overlaps existing or another selected clip')
+        number = item['sampleNumber']
+        if not 17<=number<=99 or any(s['sampleId']==f'P5-S{number:02d}' for s in samples):
+            raise ValueError('Use new unique sample numbers')
+        clip = dict(clipId=f'pilot-{number:02d}',startTimeMs=start,endTimeMs=end,eventIds=[],anchorEventIds=[])
+        extract_windows(source,[clip],[],output)
+        clip['previewFile'] = clip['clipId']+'.jpg'
+        clips.append(clip)
+        sample = sample_record(number,clip['clipId'],['SOURCE_VISUAL_SELECTION_NOT_A_CONTACT_LABEL'],[])
+        sample.update(selectionNotes=item['selectionNotes'],sourceStartTimeMs=clip['firstSourceTimeMs'],
+                      sourceLastFrameTimeMs=clip['lastSourceTimeMs'],clipDurationMs=clip['encodedDurationMs'],
+                      sourceFrameBounds=dict(first=clip['sourceFrames'][0],last=clip['sourceFrames'][-1]))
+        samples.append(sample)
+    media = [dict(file=p.name,sha256=hashlib.sha256(p.read_bytes()).hexdigest(),sizeBytes=p.stat().st_size)
+             for p in sorted(output.iterdir()) if p.suffix in {'.mp4','.jpg'}]
+    bundle = dict(schema='framecall.contact-pilot.v1',method='pilot-preparation',source=original['source'],
+                  batchId=plan['batchId'],samples=samples,clips=clips,media=media,purpose='PILOT_DEVELOPMENT_ONLY',
+                  selectionExclusions=plan.get('excludedAfterSequenceInspection',[]),
+                  summary=dict(samples=len(samples),humanAnnotated=0,unlabeled=len(samples),formalGroundTruth=0),
+                  limits=['Selection notes are leads, not human labels','No new detector/tracker execution; track anomalies unverified',
+                          'Existing annotations and original 16 clips are unchanged; this match stays DEVELOPMENT'])
+    (output/'bundle.json').write_text(json.dumps(bundle,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    public = {k:v for k,v in bundle.items() if k not in {'clips','media'}}
+    public_path = output/'manifest.json'
+    public_path.write_text(json.dumps(public,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    print(json.dumps(bundle['summary']),flush=True)
+
+
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--event-root',type=Path,required=True)
     parser.add_argument('--run-name',required=True)
+    parser.add_argument('--selection-plan',type=Path,help='Explicit source windows for an additional unlabeled development batch')
     args=parser.parse_args()
     if Path(args.run_name).name!=args.run_name or args.run_name in {'.','..'}: parser.error('Use a new single output name')
     output=ROOT/'artifacts/contact-pilot'/args.run_name
     output.mkdir(parents=True,exist_ok=False)
-    try: prepare(args,output)
+    try:
+        if args.selection_plan: prepare_selected(args,output)
+        else: prepare(args,output)
     except Exception as error:
         (output/'failure.json').write_text(json.dumps({'status':'FAILED','error':str(error)}),encoding='utf8')
         raise
