@@ -119,4 +119,42 @@ class ContactAnnotationTest {
         var r=annotation("NO_VISIBLE_CONTACT");r.put("sceneType","NO_CONTEST").putNull("contestStartTimeMs").putNull("contestEndTimeMs");
         var row=save(r,200);assertTrue(row.path("annotation").path("sourcePoints").path("contestStart").isNull());
     }
+    @Test void wholeClipNoContactDraftCanBeSubmittedWithoutInventingEventTimes() throws Exception {
+        var r=annotation("NO_VISIBLE_CONTACT");r.put("sceneType","NORMAL_APPROACH").put("status","DRAFT").putNull("contestStartTimeMs").putNull("contestEndTimeMs");
+        var draft=save(r,200);
+        r.put("annotationKey",draft.path("annotationKey").asText()).put("expectedRevision",1).put("status","SUBMITTED");
+        var submitted=save(r,200);assertEquals(2,submitted.path("revision").asInt());
+        var label=submitted.path("annotation");assertEquals("CLIP",label.path("observationScope").asText());
+        for(String field:List.of("contestStartTimeMs","firstContactTimeMs","contestEndTimeMs")) assertTrue(label.path(field).isNull());
+        assertEquals(90000,label.path("observedSourceRange").path("first").path("sourcePts").asInt());
+        assertEquals(2,exported().path("samples").get(0).path("annotations").size());
+        r.put("sceneType","CONTEST").put("expectedRevision",2);save(r,400);
+        r.put("sceneType","NORMAL_APPROACH").put("contestStartTimeMs",1000);save(r,400);
+        r.putNull("contestStartTimeMs").put("humanObserved",false);save(r,400);
+    }
+    void deleteDraft(JsonNode row,UserAccount actor,int expected) throws Exception {
+        mvc.perform(delete("/api/events/"+eventId+"/annotations/"+row.path("id").asLong())
+                .header("Authorization","Bearer "+jwt.issue(actor))).andExpect(status().is(expected));
+    }
+    @Test void deletingDraftRemovesItsPendingVersionsButKeepsPayloadsAndRejectsStaleOrUnauthorizedDelete() throws Exception {
+        var r=annotation("NO_VISIBLE_CONTACT");r.put("status","DRAFT");var first=save(r,200);
+        r.put("annotationKey",first.path("annotationKey").asText()).put("expectedRevision",1);var second=save(r,200);
+        assertTrue(second.path("canDeleteDraft").asBoolean());
+        deleteDraft(second,other,404);deleteDraft(first,owner,409);deleteDraft(second,owner,200);deleteDraft(second,owner,409);
+        var e=exported();var rows=e.path("samples").get(0).path("annotations");assertEquals(2,rows.size());
+        for(JsonNode row:rows) {assertFalse(row.path("discardedAt").isNull());assertFalse(row.path("canDeleteDraft").asBoolean());}
+        assertEquals(first.path("annotation"),rows.get(1).path("annotation"));assertEquals(second.path("annotation"),rows.get(0).path("annotation"));
+        assertEquals(0,e.path("summary").path("humanSubmittedRecords").asInt());
+    }
+    @Test void discardingNewDraftPreservesSubmittedReviewAndNeverReusesRevisionNumbers() throws Exception {
+        var r=annotation("NO_VISIBLE_CONTACT");var submitted=save(r,200);deleteDraft(submitted,owner,400);
+        mvc.perform(post("/api/events/"+eventId+"/review").header("Authorization","Bearer "+jwt.issue(owner)).contentType("application/json")
+                .content(json.writeValueAsBytes(Map.of("result","NO_VISIBLE_CONTACT","reasonCode","SYNTHETIC_REVIEW","annotationRevisionId",submitted.path("id").asLong())))).andExpect(status().isOk());
+        r.put("annotationKey",submitted.path("annotationKey").asText()).put("expectedRevision",1).put("status","DRAFT");var draft=save(r,200);
+        deleteDraft(draft,owner,200);var e=exported();var sample=e.path("samples").get(0);var preserved=sample.path("annotations").get(1);
+        assertTrue(preserved.path("discardedAt").isNull());assertEquals("REVIEWED",preserved.path("reviewStatus").asText());
+        assertEquals(2,preserved.path("revisionHead").asInt());assertEquals(1,sample.path("reviews").size());
+        assertEquals(1,e.path("summary").path("humanSubmittedRecords").asInt());
+        r.put("expectedRevision",2);assertEquals(3,save(r,200).path("revision").asInt());
+    }
 }

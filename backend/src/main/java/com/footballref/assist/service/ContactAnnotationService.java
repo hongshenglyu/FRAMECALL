@@ -74,7 +74,9 @@ public class ContactAnnotationService {
             }
             if("SUBMITTED".equals(request.status())) {
                 require(request.humanObserved() && request.sceneType()!=null && request.contactVisibility()!=null,"Submission needs explicit human inspection, scene type and visibility");
-                if(Set.of("CONTEST","NORMAL_APPROACH").contains(request.sceneType())) require(!start.isNull() && !end.isNull(),"Observed contest/approach needs start and end");
+                boolean clipNegative="NORMAL_APPROACH".equals(request.sceneType()) && "NO_VISIBLE_CONTACT".equals(request.contactVisibility()) && start.isNull() && end.isNull();
+                if("CONTEST".equals(request.sceneType()) || "NORMAL_APPROACH".equals(request.sceneType()) && !clipNegative)
+                    require(!start.isNull() && !end.isNull(),"An event interval needs start and end; a whole-clip no-contact approach may leave both empty");
                 if("VISIBLE_CONTACT".equals(request.contactVisibility())) require(!first.isNull(),"Visible contact needs its first observed PTS");
                 if("NO_CONTEST".equals(request.sceneType())) require(start.isNull() && first.isNull() && end.isNull() && "NO_VISIBLE_CONTACT".equals(request.contactVisibility()),"No contest must not invent contest times");
                 if("UNCLEAR".equals(request.sceneType())) require("INSUFFICIENT_VIEW".equals(request.contactVisibility()),"Unclear footage requires insufficient-view visibility");
@@ -91,6 +93,8 @@ public class ContactAnnotationService {
             payload.put("contestEndTimeMs",end.isNull()?null:end.path("timeMs").asDouble());
             payload.put("sourcePoints",Map.of("contestStart",start,"firstContact",first,"contestEnd",end));
             payload.put("contactVisibility",request.contactVisibility()); payload.put("humanObserved",request.humanObserved());
+            payload.put("observationScope",start.isNull() && end.isNull()?"CLIP":"EVENT");
+            payload.put("observedSourceRange",Map.of("first",frameMap.get(0),"last",frameMap.get(frameMap.size()-1)));
             payload.put("note",request.note()); payload.put("formalGroundTruth",false);
             ContactAnnotationRevision row=new ContactAnnotationRevision(); row.setEvent(event); row.setAnnotator(current.requireUser());
             row.setAnnotationKey(key); row.setRevision(previous+1); row.setStatus(request.status()); row.setRecordType(request.recordType());
@@ -98,10 +102,33 @@ public class ContactAnnotationService {
             return toMap(annotations.save(row));
         });
     }
+    /** Remove pending edits from the working list while keeping their original payloads and submitted revisions. */
+    public Map<String,Object> deleteDraft(Long eventId,Long revisionId) {
+        return history.withEvent(eventId,(task,event)->{
+            metadata(event);
+            ContactAnnotationRevision target=annotations.findById(revisionId).filter(r->r.getEvent().getId().equals(event.getId()))
+                    .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Draft not found"));
+            require(target.getStatus().equals("DRAFT"),"Submitted annotations cannot be deleted as drafts");
+            if(!canManageDraft(target)) throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Draft not found");
+            List<ContactAnnotationRevision> group=annotations.findByEventOrderByIdDesc(event).stream().filter(r->r.getAnnotationKey().equals(target.getAnnotationKey())).toList();
+            ContactAnnotationRevision latest=group.stream().filter(r->r.getDiscardedAt()==null).findFirst().orElse(null);
+            if(latest==null || !latest.getId().equals(revisionId)) throw new ResponseStatusException(HttpStatus.CONFLICT,"Draft changed or was deleted; reload first");
+            int submitted=group.stream().filter(r->r.getStatus().equals("SUBMITTED")).mapToInt(ContactAnnotationRevision::getRevision).max().orElse(0);
+            var now=java.time.Instant.now();int deleted=0;
+            for(ContactAnnotationRevision row:group) if(row.getDiscardedAt()==null && row.getStatus().equals("DRAFT") && row.getRevision()>submitted) {
+                row.setDiscardedAt(now);annotations.save(row);deleted++;
+            }
+            return Map.of("deleted",true,"annotationKey",target.getAnnotationKey(),"discardedDraftRevisions",deleted);
+        });
+    }
+    private boolean canManageDraft(ContactAnnotationRevision row) {
+        UserAccount actor=current.requireUser();
+        return actor.getId().equals(row.getAnnotator().getId()) || actor.getRole()==com.footballref.assist.domain.enums.Role.ADMIN;
+    }
     public void associateReview(ReviewRecord review,DisputeEvent event,Long revisionId) {
         if(revisionId==null) { require(!isPilot(event),"Save an original human annotation and select its submitted revision before referee review"); return; }
         ContactAnnotationRevision row=annotations.findById(revisionId).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Annotation revision not found"));
-        require(row.getEvent().getId().equals(event.getId()) && row.getStatus().equals("SUBMITTED") && row.getRecordType().equals("HUMAN"),"Review must reference a submitted human annotation of this sample");
+        require(row.getEvent().getId().equals(event.getId()) && row.getDiscardedAt()==null && row.getStatus().equals("SUBMITTED") && row.getRecordType().equals("HUMAN"),"Review must reference a submitted human annotation of this sample");
         review.setAnnotationRevision(row);
     }
     private boolean isPilot(DisputeEvent event) {
@@ -112,6 +139,11 @@ public class ContactAnnotationService {
         Map<String,Object> result=new LinkedHashMap<>();
         result.put("id",row.getId()); result.put("annotationKey",row.getAnnotationKey()); result.put("revision",row.getRevision());
         result.put("status",row.getStatus()); result.put("recordType",row.getRecordType()); result.put("createdAt",row.getCreatedAt());
+        result.put("discardedAt",row.getDiscardedAt());
+        List<ContactAnnotationRevision> group=annotations.findByEventOrderByIdDesc(row.getEvent()).stream().filter(r->r.getAnnotationKey().equals(row.getAnnotationKey())).toList();
+        result.put("revisionHead",group.stream().mapToInt(ContactAnnotationRevision::getRevision).max().orElse(row.getRevision()));
+        result.put("canDeleteDraft",row.getDiscardedAt()==null && row.getStatus().equals("DRAFT") && canManageDraft(row)
+                && group.stream().filter(r->r.getDiscardedAt()==null).findFirst().map(r->r.getId().equals(row.getId())).orElse(false));
         result.put("annotator",Map.of("id",row.getAnnotator().getId(),"displayName",row.getAnnotator().getDisplayName()));
         try{result.put("annotation",mapper.readTree(row.getAnnotationJson()));}catch(com.fasterxml.jackson.core.JsonProcessingException e){throw new IllegalStateException(e);}
         result.put("reviewStatus",reviews.findByEventOrderByRevisionDesc(row.getEvent()).stream().anyMatch(r->r.getAnnotationRevision()!=null && r.getAnnotationRevision().getId().equals(row.getId()))?"REVIEWED":"PENDING");
@@ -122,7 +154,7 @@ public class ContactAnnotationService {
         List<Map<String,Object>> samples=new ArrayList<>(); int humanSamples=0,humanEvents=0;
         for(DisputeEvent event:view.events()) if(isPilot(event)) {
             List<ContactAnnotationRevision> rows=annotations.findByEventOrderByIdDesc(event);
-            Map<String,ContactAnnotationRevision> latest=new LinkedHashMap<>(); rows.forEach(row->latest.putIfAbsent(row.getAnnotationKey(),row));
+            Map<String,ContactAnnotationRevision> latest=new LinkedHashMap<>(); rows.stream().filter(r->r.getDiscardedAt()==null).forEach(row->latest.putIfAbsent(row.getAnnotationKey(),row));
             long submitted=latest.values().stream().filter(r->r.getRecordType().equals("HUMAN") && r.getStatus().equals("SUBMITTED")).count();
             if(submitted>0) humanSamples++; humanEvents+=Math.toIntExact(submitted);
             JsonNode meta=metadata(event);

@@ -15,6 +15,8 @@ public class ContactAnnotationRevision {
     @Column(nullable=false,length=24) private String status;
     @Lob @Column(nullable=false) private String annotationJson;
     @Column(nullable=false,updatable=false) private Instant createdAt=Instant.now();
+    private Instant discardedAt;
+    public Instant getDiscardedAt(){return discardedAt;} public void setDiscardedAt(Instant v){discardedAt=v;}
     public Long getId(){return id;}
     public DisputeEvent getEvent(){return event;} public void setEvent(DisputeEvent v){event=v;}
     public UserAccount getAnnotator(){return annotator;} public void setAnnotator(UserAccount v){annotator=v;}

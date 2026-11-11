@@ -29,25 +29,28 @@
         <el-button size="small" :disabled="!ready || (field.key === 'firstContactTimeMs' && form.contactVisibility !== 'VISIBLE_CONTACT')" @click="mark(field.key)">记录当前源帧</el-button>
         <el-button size="small" @click="form[field.key] = null">清空</el-button>
       </div>
-      <p class="muted">使用实际PTS逐帧定位，未见接触时首次接触必须为空。未见争抢时无需编造争抢起止。</p>
+      <p class="muted">使用实际PTS逐帧定位，未见接触时首次接触必须为空。整段正常接近且未见接触，或未见争抢时，起止可留空；无接触争抢仍需记录起止。</p>
       <el-form-item label="原始标注备注"><el-input v-model="form.note" type="textarea" :rows="2" maxlength="1000" /></el-form-item>
       <el-checkbox v-model="form.humanObserved">我已实际查看素材并核对边界与接触可见性</el-checkbox>
       <div class="frame-toolbar">
         <el-button :loading="saving" :disabled="!ready" @click="save('DRAFT')">保存未完成草稿</el-button>
-        <el-button type="primary" :loading="saving" :disabled="!canSubmit" @click="save('SUBMITTED')">提交原始标注待复核</el-button>
+        <el-button type="primary" :loading="saving" :disabled="!ready || saving" @click="save('SUBMITTED')">提交原始标注待复核</el-button>
+        <el-button type="danger" plain :disabled="saving || !selectedRow?.canDeleteDraft" @click="deleteDraft">删除当前草稿</el-button>
       </div>
+      <p v-if="submissionProblem" class="muted">提交前：{{ submissionProblem }}</p>
     </el-form>
     <details v-if="data.revisions?.length">
       <summary>全部原始修订记录（{{ data.revisions.length }}）</summary>
-      <p v-for="row in data.revisions" :key="row.id">{{ row.annotationKey.slice(0,8) }} · 第{{ row.revision }}版 · {{ row.status }} · {{ row.annotator.displayName }} · {{ row.reviewStatus }}</p>
+      <p v-for="row in data.revisions" :key="row.id">{{ row.annotationKey.slice(0,8) }} · 第{{ row.revision }}版 · {{ row.discardedAt ? '草稿已删除（历史保留）' : row.status }} · {{ row.annotator.displayName }} · {{ row.reviewStatus }}</p>
     </details>
   </section>
 </template>
 
 <script setup>
 import { computed, reactive, ref, watch } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { api } from '../api/client'
+import { restoreAnnotation, submissionIssue } from '../utils/contactAnnotationForm.mjs'
 
 const props = defineProps({ eventId: Number, readTime: Function, reviewCount: Number })
 const emit = defineEmits(['seek', 'revisions', 'saved'])
@@ -58,30 +61,26 @@ const blank = () => ({ annotationKey: null, expectedRevision: 0, recordType: 'HU
 const form = reactive(blank())
 const timeFields = [{ key: 'contestStartTimeMs', label: '争抢／接近开始' }, { key: 'firstContactTimeMs', label: '首次可见接触' }, { key: 'contestEndTimeMs', label: '连续过程结束' }]
 const ready = computed(() => data.value.frames.length > 0 && !error.value)
-const latest = computed(() => [...new Map(data.value.revisions.slice().reverse().map(r => [r.annotationKey, r])).values()])
-const canSubmit = computed(() => {
-  if (!ready.value || !form.humanObserved || !form.sceneType || !form.contactVisibility) return false
-  if (form.sceneType === 'NO_CONTEST') return form.contactVisibility === 'NO_VISIBLE_CONTACT' && timeFields.every(f => form[f.key] === null)
-  if (form.sceneType === 'UNCLEAR') return form.contactVisibility === 'INSUFFICIENT_VIEW' && form.firstContactTimeMs === null
-  if (form.contestStartTimeMs === null || form.contestEndTimeMs === null || form.contestStartTimeMs >= form.contestEndTimeMs) return false
-  return form.contactVisibility === 'VISIBLE_CONTACT'
-    ? form.firstContactTimeMs !== null && form.contestStartTimeMs <= form.firstContactTimeMs && form.firstContactTimeMs <= form.contestEndTimeMs
-    : form.firstContactTimeMs === null
-})
+const latest = computed(() => [...new Map(data.value.revisions.filter(r => !r.discardedAt).slice().reverse().map(r => [r.annotationKey, r])).values()])
+const selectedRow = computed(() => latest.value.find(r => r.annotationKey === selectedKey.value))
+const submissionProblem = computed(() => submissionIssue(form))
 async function load() {
   error.value = ''
   try { data.value = (await api.get(`/events/${props.eventId}/annotations`)).data; emit('revisions', data.value.revisions) }
   catch { data.value = { frames: [], revisions: [] }; error.value = '源PTS映射或原始标注无法读取，不能记录虚构时间。' }
 }
-watch(() => props.eventId, async () => { newAnnotation(); await load() }, { immediate: true })
+watch(() => props.eventId, async () => {
+  newAnnotation(); await load()
+  const draft = latest.value.filter(r => r.status === 'DRAFT' && r.annotator.id === data.value.currentAnnotator?.id).sort((a, b) => b.id - a.id)[0]
+  if (draft) { selectedKey.value = draft.annotationKey; choose(draft.annotationKey) }
+}, { immediate: true })
 watch(() => props.reviewCount, load)
 function newAnnotation() { selectedKey.value = null; Object.assign(form, blank()) }
 function choose(key) {
   const row = latest.value.find(r => r.annotationKey === key)
   if (!row) { newAnnotation(); return }
   Object.assign(form, blank())
-  for (const name of ['sceneType','contestStartTimeMs','firstContactTimeMs','contestEndTimeMs','contactVisibility','note']) form[name] = row.annotation[name]
-  Object.assign(form, { annotationKey: key, expectedRevision: row.revision, recordType: 'HUMAN', humanObserved: false })
+  Object.assign(form, restoreAnnotation(row, data.value.currentAnnotator?.id))
 }
 function currentIndex() {
   const current = props.readTime()
@@ -105,6 +104,7 @@ function step(delta) {
 function visibilityChanged() { if (form.contactVisibility !== 'VISIBLE_CONTACT') form.firstContactTimeMs = null }
 function format(value) { return value === null ? '未记录' : `${(value / 1000).toFixed(3)}s（源PTS）` }
 async function save(status) {
+  if (status === 'SUBMITTED' && submissionProblem.value) { ElMessage.warning(submissionProblem.value); return }
   saving.value = true
   try {
     const { data: row } = await api.post(`/events/${props.eventId}/annotations`, { ...form, status })
@@ -112,6 +112,19 @@ async function save(status) {
     ElMessage.success(status === 'DRAFT' ? '草稿已保存，尚未完成标注' : '原始标注已提交，待独立复核')
     emit('saved')
   } catch (failure) { ElMessage.error(failure.response?.status === 409 ? '已有新修订，请重新载入' : '保存失败，请检查边界、首次接触时间和人工确认') }
+  finally { saving.value = false }
+}
+async function deleteDraft() {
+  const row = selectedRow.value
+  if (!row?.canDeleteDraft) return
+  try { await ElMessageBox.confirm('删除这条记录尚未提交的草稿版本？已提交标注和历史记录会保留。', '删除草稿', { confirmButtonText: '删除草稿', cancelButtonText: '取消', type: 'warning' }) }
+  catch { return }
+  saving.value = true
+  try {
+    await api.delete(`/events/${props.eventId}/annotations/${row.id}`)
+    await load(); selectedKey.value = row.annotationKey; choose(row.annotationKey)
+    ElMessage.success('草稿已删除，已提交版本不受影响'); emit('saved')
+  } catch (failure) { ElMessage.error(failure.response?.status === 409 ? '草稿已有变化，请重新载入' : '草稿删除失败，请刷新后重试') }
   finally { saving.value = false }
 }
 </script>

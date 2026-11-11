@@ -11,6 +11,8 @@ public class ContactAnnotationController {
     public Map<String,Object> detail(@PathVariable Long id){return service.detail(id);}
     @PostMapping("/api/events/{id}/annotations")
     public Map<String,Object> save(@PathVariable Long id,@RequestBody ContactAnnotationService.Request request){return service.save(id,request);}
+    @DeleteMapping("/api/events/{id}/annotations/{revisionId}")
+    public Map<String,Object> deleteDraft(@PathVariable Long id,@PathVariable Long revisionId){return service.deleteDraft(id,revisionId);}
     @GetMapping("/api/tasks/{id}/contact-annotations")
     public Map<String,Object> export(@PathVariable Long id){return service.export(id);}
 }
