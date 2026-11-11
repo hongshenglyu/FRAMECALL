@@ -55,6 +55,12 @@ public class EventController {
     @PostMapping("/{eventId}/review")
     public Map<String, Object> review(@PathVariable Long eventId, @Valid @RequestBody ReviewRequest request) {
         return history.withEvent(eventId,(task,event)->{
+            boolean contactResult = java.util.Set.of(ReviewResult.VISIBLE_CONTACT, ReviewResult.NO_VISIBLE_CONTACT,
+                    ReviewResult.INSUFFICIENT_VIEW).contains(request.result());
+            if ((event.getEventType() == EventType.CONTACT) != contactResult) {
+                throw new org.springframework.web.server.ResponseStatusException(org.springframework.http.HttpStatus.BAD_REQUEST,
+                        "Use contact visibility conclusions for contact candidates; no automatic foul decision");
+            }
             UserAccount reviewer = currentUserService.requireUser();
             ReviewRecord record = new ReviewRecord();
             record.setEvent(event);
@@ -117,6 +123,7 @@ public class EventController {
         map.put("involvedTrackIds", event.getInvolvedTrackIds());
         map.put("evidenceJson", event.getEvidenceJson());
         map.put("trackBoxesJson", event.getTrackBoxesJson());
+        map.put("contactMetadataJson", event.getContactMetadataJson());
         map.put("createdAt", event.getCreatedAt());
         return map;
     }

@@ -62,6 +62,12 @@ public class DisputeEvent {
     @Lob
     private String trackBoxesJson;
 
+    @Lob
+    private String contactMetadataJson;
+
+    public String getContactMetadataJson() { return contactMetadataJson; }
+    public void setContactMetadataJson(String value) { contactMetadataJson = value; }
+
     @Column(nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 

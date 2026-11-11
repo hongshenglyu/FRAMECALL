@@ -26,6 +26,12 @@
       </el-form>
 
       <el-divider />
+      <div class="panel-title">导入真实候选片段</div>
+      <p class="muted">选择包含bundle.json与MP4的提取结果目录，复用已有真实分析成果。</p>
+      <input type="file" webkitdirectory multiple @change="onBundleFiles" aria-label="真实候选包目录" />
+      <el-button :loading="importing" :disabled="!bundleFiles.length" @click="importBundle">导入并复核</el-button>
+
+      <el-divider />
       <div class="panel-title">分析任务</div>
       <el-checkbox v-model="includeArchived" @change="loadTasks">显示归档任务</el-checkbox>
       <div class="task-list">
@@ -77,12 +83,16 @@
           <el-option v-for="attempt in selectedTask.attempts || []" :key="attempt.id" :label="`${attempt.status} / ${attempt.id}`" :value="`attempt:${attempt.id}`" />
         </el-select>
         <div class="muted">{{ selectedTask.archivedAt ? '归档保留历史与媒体；恢复后可继续查看。' : selectedTask.eventSelection }}</div>
+        <template v-if="isContactTask">
+          <p class="muted">保留{{ selectedTask.events.length }}个原始候选；默认按复核片段合并展示。评分不是犯规概率。</p>
+          <el-checkbox v-model="showAllCandidates">显示全部原始候选（含未提取片段）</el-checkbox>
+        </template>
         <div class="event-grid">
-          <div v-for="event in selectedTask.events || []" :key="event.id" class="event-card" :class="{ active: selectedEvent?.id === event.id }" @click="selectEvent(event)">
+          <div v-for="event in displayedEvents" :key="event.id" class="event-card" :class="{ active: selectedEvent?.id === event.id }" @click="selectEvent(event)">
             <img v-if="isImagePath(event.keyframePath)" :src="fileUrl('event', event.id, 'keyframe')" />
             <div v-else class="event-card-placeholder">无关键帧</div>
             <div class="event-card-body">
-              <el-tag :type="riskTag(event.riskLevel)">{{ event.eventType }} / {{ event.riskLevel }}</el-tag>
+              <el-tag :type="riskTag(event.riskLevel)">{{ event.eventType === 'CONTACT' ? '身体接触候选 · 待人工复核' : `${event.eventType} / ${event.riskLevel}` }}</el-tag>
               <div style="margin-top: 8px; font-weight: 700">{{ formatTime(event.timestampMs) }}</div>
               <div class="muted">{{ event.summary }}</div>
               <div class="muted">ID: {{ event.involvedTrackIds }}</div>
@@ -92,8 +102,8 @@
         </div>
 
         <el-divider />
-        <EventDetail v-if="selectedEvent" :event="selectedEvent" @reviewed="refreshSelectedTask" />
-        <ManualEventForm v-if="!selectedTask.archivedAt" :task-id="selectedTask.id" @created="refreshSelectedTask" />
+        <EventDetail v-if="selectedEvent" :event="selectedEvent" :related-events="relatedEvents" @select-event="selectEvent" @reviewed="refreshSelectedTask" />
+        <ManualEventForm v-if="!selectedTask.archivedAt && !isContactTask" :task-id="selectedTask.id" @created="refreshSelectedTask" />
       </template>
       <el-empty v-else description="请选择或上传一个分析任务" />
     </section>
@@ -114,6 +124,22 @@ const uploading = ref(false)
 const file = ref(null)
 const includeArchived = ref(false)
 const eventSelection = ref('current')
+const bundleFiles = ref([])
+const importing = ref(false)
+const showAllCandidates = ref(false)
+const isContactTask = computed(() => selectedTask.value?.stage === 'REAL_CONTACT_IMPORTED')
+const displayedEvents = computed(() => {
+  const events = selectedTask.value?.events || []
+  if (!isContactTask.value || showAllCandidates.value) return events
+  const clips = new Map()
+  for (const event of events) {
+    if (!event.clipPath) continue
+    const anchors = JSON.parse(event.contactMetadataJson).clip.anchorEventIds
+    if (!clips.has(event.clipPath) || anchors.includes(event.externalId)) clips.set(event.clipPath, event)
+  }
+  return [...clips.values()].sort((a,b) => a.timestampMs-b.timestampMs)
+})
+const relatedEvents = computed(() => selectedEvent.value?.clipPath ? (selectedTask.value?.events || []).filter(e => e.clipPath === selectedEvent.value.clipPath) : [])
 let timer = null
 
 const upload = reactive({
@@ -128,6 +154,27 @@ const canArchive = computed(() => !['RUNNING', 'CANCEL_REQUESTED'].includes(sele
 
 function onFile(event) {
   file.value = event.target.files?.[0] || null
+}
+
+function onBundleFiles(event) { bundleFiles.value = [...event.target.files] }
+async function importBundle() {
+  importing.value = true
+  try {
+    const manifest = bundleFiles.value.find(f => f.name === 'bundle.json')
+    if (!manifest) throw new Error('请选择含bundle.json的目录')
+    const bundle = JSON.parse(await manifest.text())
+    const body = new FormData()
+    body.append('manifest', manifest)
+    for (const media of bundle.media) {
+      const file = bundleFiles.value.find(f => f.name === media.file)
+      if (!file) throw new Error(`缺少视频或关键帧：${media.file}`)
+      body.append('media', file, file.name)
+    }
+    const { data } = await api.post('/videos/contact-import', body)
+    ElMessage.success('真实候选和媒体已导入，待人工复核')
+    await loadTasks(); await selectTask(data.task.id)
+  } catch (error) { ElMessage.error(error.response?.data?.message || error.message || '导入失败') }
+  finally { importing.value = false }
 }
 
 async function submitUpload() {
@@ -164,7 +211,9 @@ async function selectTask(id) {
   const selectedEventId = selectedEvent.value?.id
   const { data } = await api.get(`/tasks/${id}`, { params: historyParams() })
   selectedTask.value = data
-  selectedEvent.value = data.events?.find((event) => event.id === selectedEventId) || data.events?.[0] || null
+  const next = data.events?.find((event) => event.id === selectedEventId) || displayedEvents.value[0] || null
+  if (next) await selectEvent(next)
+  else selectedEvent.value = null
 }
 
 async function refreshSelectedTask() {
@@ -173,8 +222,10 @@ async function refreshSelectedTask() {
   }
 }
 
-function selectEvent(event) {
+async function selectEvent(event) {
   selectedEvent.value = event
+  const { data } = await api.get(`/events/${event.id}`)
+  if (selectedEvent.value?.id === event.id) selectedEvent.value = data
 }
 
 async function cancelTask() {
@@ -251,7 +302,7 @@ onMounted(() => {
   loadTasks()
   timer = setInterval(async () => {
     await loadTasks()
-    if (selectedTask.value) await refreshSelectedTask()
+    if (selectedTask.value && ['PENDING', 'RUNNING', 'CANCEL_REQUESTED'].includes(selectedTask.value.status)) await refreshSelectedTask()
   }, 2500)
 })
 

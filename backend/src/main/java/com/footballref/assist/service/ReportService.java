@@ -93,9 +93,10 @@ public class ReportService {
             throws DocumentException {
         VideoAsset video = task.getVideo();
         long reviewedCount = eventList.stream().filter(event -> latestReview(event) != null).count();
+        boolean contactOnly = !eventList.isEmpty() && eventList.stream().allMatch(event -> event.getEventType()==EventType.CONTACT);
         long confirmedCount = eventList.stream()
                 .map(this::latestReview)
-                .filter(review -> review != null && review.getResult() == ReviewResult.CONFIRMED)
+                .filter(review -> review != null && review.getResult() == (contactOnly?ReviewResult.VISIBLE_CONTACT:ReviewResult.CONFIRMED))
                 .count();
 
         addSectionHeading(document, fonts, "一、任务概览");
@@ -109,7 +110,7 @@ public class ReportService {
         addInfoCell(table, fonts, "任务状态", String.valueOf(task.getStatus()));
         addInfoCell(table, fonts, "灵敏度", String.valueOf(task.getSensitivity()));
         addInfoCell(table, fonts, "事件数量", String.valueOf(eventList.size()));
-        addInfoCell(table, fonts, "已复核/成立", reviewedCount + " / " + confirmedCount);
+        addInfoCell(table, fonts, contactOnly?"已复核/可见接触":"已复核/成立", reviewedCount + " / " + confirmedCount);
         document.add(table);
         document.add(Chunk.NEWLINE);
     }
@@ -123,7 +124,7 @@ public class ReportService {
         addHeaderCell(table, fonts, "类型");
         addHeaderCell(table, fonts, "风险");
         addHeaderCell(table, fonts, "时间");
-        addHeaderCell(table, fonts, "置信度");
+        addHeaderCell(table, fonts, "优先级/置信度");
         addHeaderCell(table, fonts, "涉事ID");
         addHeaderCell(table, fonts, "复核结论");
 
@@ -154,6 +155,7 @@ public class ReportService {
             document.add(heading);
 
             document.add(new Paragraph("事件摘要：" + safe(event.getSummary()), fonts.body()));
+            if (event.getEventType()==EventType.CONTACT) document.add(new Paragraph("优先级仅用于复核排序，不是犯规概率；峰值不是首次可见接触。",fonts.body()));
             document.add(new Paragraph("涉事球员/轨迹ID：" + safe(event.getInvolvedTrackIds()), fonts.body()));
             addKeyframePreview(document, fonts, event);
             addEvidenceGroups(document, fonts, event);
@@ -332,6 +334,7 @@ public class ReportService {
     }
 
     private static String metricValue(JsonNode metric) {
+        if (metric.path("value").isNull() || metric.path("value").isMissingNode()) return "不可计算（运动样本或质量证据不足）";
         double value = metric.path("value").asDouble(Double.NaN);
         String formatted = Double.isNaN(value) ? metric.path("value").asText("-") : decimal(value, 3);
         String unit = metric.path("unit").asText("");
@@ -437,6 +440,7 @@ public class ReportService {
             case FOUL -> "犯规";
             case HANDBALL -> "手球";
             case OFFSIDE -> "越位";
+            case CONTACT -> "身体接触候选（非犯规判定）";
         };
     }
 
@@ -454,6 +458,9 @@ public class ReportService {
             case CONFIRMED -> "成立";
             case REJECTED -> "不成立";
             case UNCERTAIN -> "无法判断";
+            case VISIBLE_CONTACT -> "可见身体接触（非犯规判定）";
+            case NO_VISIBLE_CONTACT -> "未见身体接触";
+            case INSUFFICIENT_VIEW -> "画面不足以判断";
         };
     }
 
