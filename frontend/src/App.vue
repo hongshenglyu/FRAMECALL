@@ -16,7 +16,7 @@
         标注管理
       </el-button>
       <el-button class="nav-button" :type="section === 'videoAnnotation' ? 'primary' : 'default'" @click="section = 'videoAnnotation'" v-if="session.user.role === 'ADMIN'">
-        视频标注
+        历史标注工具
       </el-button>
       <div class="sidebar-meta">
         <strong>{{ session.user.displayName }}</strong>
@@ -63,7 +63,7 @@ const session = reactive({
 const title = computed(() => {
   if (section.value === 'users') return '用户管理'
   if (section.value === 'annotations') return '标注任务管理'
-  if (section.value === 'videoAnnotation') return '视频手动标注'
+  if (section.value === 'videoAnnotation') return '历史标注工具'
   return '裁判快速复核工作台'
 })
 

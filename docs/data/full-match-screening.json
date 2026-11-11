@@ -1,0 +1,273 @@
+{
+  "target": "6-10 verified complete matches",
+  "screeningCandidates": 8,
+  "confirmedCompleteNow": 0,
+  "splitPolicy": "All parts of a match share one split. Current P1-P5 match is DEVELOPMENT only. Reserved test footage has not been used for P5 tuning; finalize and freeze splits after eligibility checks.",
+  "matches": [
+    {
+      "matchId": "E2026-D4064D929E",
+      "eventId": "E2026",
+      "matchLabel": "东方语学院VS叽歪国传第七轮",
+      "partIds": [
+        "E2026-D4064D929E-P001",
+        "E2026-D4064D929E-P002",
+        "E2026-D4064D929E-P003",
+        "E2026-D4064D929E-P004",
+        "E2026-D4064D929E-P005",
+        "E2026-D4064D929E-P006",
+        "E2026-D4064D929E-P007"
+      ],
+      "partCount": 7,
+      "readPartCountAtPriorAudit": 7,
+      "knownDurationSeconds": 5235.289566,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": true,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    },
+    {
+      "matchId": "E2026-05874991CE",
+      "eventId": "E2026",
+      "matchLabel": "西方语中东欧B队VS人工智能学院第四轮",
+      "partIds": [
+        "E2026-05874991CE-P001"
+      ],
+      "partCount": 1,
+      "readPartCountAtPriorAudit": 1,
+      "knownDurationSeconds": 6140.874789,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    },
+    {
+      "matchId": "E2025-152F696FA9",
+      "eventId": "E2025",
+      "matchLabel": "国际商学院VS东方语学院第四轮",
+      "partIds": [
+        "E2025-152F696FA9-P001",
+        "E2025-152F696FA9-P002",
+        "E2025-152F696FA9-P003"
+      ],
+      "partCount": 3,
+      "readPartCountAtPriorAudit": 3,
+      "knownDurationSeconds": 5093.278733,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    },
+    {
+      "matchId": "E2025-16299AC604",
+      "eventId": "E2025",
+      "matchLabel": "人工智能学院足球VS东方语学院第三轮",
+      "partIds": [
+        "E2025-16299AC604-P001",
+        "E2025-16299AC604-P002",
+        "E2025-16299AC604-P003"
+      ],
+      "partCount": 3,
+      "readPartCountAtPriorAudit": 3,
+      "knownDurationSeconds": 3964.557078,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    },
+    {
+      "matchId": "E2026-0E01A9836E",
+      "eventId": "E2026",
+      "matchLabel": "东方语学院VS吉外商学院A队第三轮",
+      "partIds": [
+        "E2026-0E01A9836E-P001",
+        "E2026-0E01A9836E-P002",
+        "E2026-0E01A9836E-P003",
+        "E2026-0E01A9836E-P004",
+        "E2026-0E01A9836E-P005"
+      ],
+      "partCount": 5,
+      "readPartCountAtPriorAudit": 5,
+      "knownDurationSeconds": 5482.850478,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "VALIDATION_RESERVED",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    },
+    {
+      "matchId": "E2025-23A6D68C35",
+      "eventId": "E2025",
+      "matchLabel": "叽歪国传VS英教高翻第三轮",
+      "partIds": [
+        "E2025-23A6D68C35-P001",
+        "E2025-23A6D68C35-P002"
+      ],
+      "partCount": 2,
+      "readPartCountAtPriorAudit": 2,
+      "knownDurationSeconds": 4810.551778,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "VALIDATION_RESERVED",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    },
+    {
+      "matchId": "E2026-0E0681C00F",
+      "eventId": "E2026",
+      "matchLabel": "人工智能学院VS西方语中东欧B队决赛",
+      "partIds": [
+        "E2026-0E0681C00F-P001"
+      ],
+      "partCount": 1,
+      "readPartCountAtPriorAudit": 1,
+      "knownDurationSeconds": 7473.852356,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "TEST_RESERVED",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    },
+    {
+      "matchId": "E2025-2F24F4C95D",
+      "eventId": "E2025",
+      "matchLabel": "文旅中东欧国艺联队VS国际商学院决赛",
+      "partIds": [
+        "E2025-2F24F4C95D-P001",
+        "E2025-2F24F4C95D-P002"
+      ],
+      "partCount": 2,
+      "readPartCountAtPriorAudit": 2,
+      "knownDurationSeconds": 5252.277489,
+      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "isConfirmedFullMatch": false,
+      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-08_REUSED",
+      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "proposedMatchSplit": "TEST_RESERVED",
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Official fixture identity",
+        "Opening and final whistle coverage",
+        "Between-part continuity",
+        "Decode completeness",
+        "Source and permitted uses"
+      ],
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+    }
+  ],
+  "notFullnessEvidence": "Neither duration nor UNVERIFIED_FULLNESS proves full-match coverage"
+}

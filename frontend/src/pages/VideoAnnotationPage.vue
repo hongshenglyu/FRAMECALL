@@ -1,5 +1,6 @@
 <template>
   <section class="annotation-workspace">
+    <el-alert title="历史annotation.v1工具：包含固定FPS及旧类型字段，不用于P5真实接触试标。请在工作台打开P5素材，使用原始接触标注。" type="warning" :closable="false" style="grid-column: 1 / -1" />
     <div class="panel annotation-video-panel">
       <div class="panel-title">视频标注工作台</div>
       <div class="annotation-source-row">

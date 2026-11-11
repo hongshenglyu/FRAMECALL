@@ -39,10 +39,12 @@ public class ContactImportService {
 
     @Transactional(rollbackFor=Exception.class)
     public Map<String,Object> importBundle(JsonNode bundle, List<MultipartFile> files) throws Exception {
-        require(bundle != null && bundle.path("schema").asText().equals("framecall.contact-clips.v1")
-                && bundle.path("method").asText().equals("combined"));
-        JsonNode source=bundle.path("source"), bindings=bundle.path("events");
-        require(bindings.isArray() && !bindings.isEmpty() && bindings.size()==bundle.path("summary").path("originalCandidates").asInt());
+        require(bundle != null);
+        boolean pilot=bundle.path("schema").asText().equals("framecall.contact-pilot.v1");
+        require(pilot ? bundle.path("method").asText().equals("pilot-preparation")
+                : bundle.path("schema").asText().equals("framecall.contact-clips.v1") && bundle.path("method").asText().equals("combined"));
+        JsonNode source=bundle.path("source"), bindings=bundle.path(pilot?"samples":"events");
+        require(bindings.isArray() && !bindings.isEmpty() && bindings.size()==bundle.path("summary").path(pilot?"samples":"originalCandidates").asInt());
         Map<String,MultipartFile> uploads=new HashMap<>();
         for (MultipartFile file:files) require(file.getOriginalFilename()!=null && uploads.put(file.getOriginalFilename(),file)==null);
         Set<String> expected=new HashSet<>();
@@ -61,6 +63,16 @@ public class ContactImportService {
         require(!clips.isEmpty());
         Set<String> ids=new HashSet<>();
         for (JsonNode binding:bindings) {
+            if (pilot) {
+                JsonNode clip=clips.get(binding.path("clipId").asText());
+                require(binding.path("sampleId").asText().matches("P5-S[0-9]{2}") && ids.add(binding.path("sampleId").asText())
+                        && binding.path("annotationStatus").asText().equals("UNLABELED") && binding.path("annotations").isEmpty()
+                        && binding.path("reviews").isEmpty() && binding.path("contactVisibility").isNull()
+                        && binding.path("contestStartTimeMs").isNull() && binding.path("firstContactTimeMs").isNull()
+                        && binding.path("contestEndTimeMs").isNull() && clip!=null && clip.path("sourceFrames").isArray()
+                        && !clip.path("sourceFrames").isEmpty() && expected.contains(clip.path("previewFile").asText()));
+                continue;
+            }
             JsonNode e=binding.path("candidate");
             double start=e.path("startTimeMs").asDouble(), peak=e.path("peakTimeMs").asDouble(), end=e.path("endTimeMs").asDouble();
             require(ids.add(e.path("eventId").asText()) && e.path("eventId").asText().matches("CONTACT-[a-f0-9]{16}")
@@ -86,11 +98,11 @@ public class ContactImportService {
             } else require(binding.path("keyframe").isNull() && binding.path("clipPeakTimeMs").isNull());
         }
         VideoAsset video=new VideoAsset();
-        video.setOwner(currentUser.requireUser()); video.setTitle("P4真实接触候选复核 / "+source.path("matchId").asText());
+        video.setOwner(currentUser.requireUser()); video.setTitle((pilot?"P5待人工试标 / ":"P4真实接触候选复核 / ")+source.path("matchId").asText());
         video.setCompetition(source.path("event").asText()); video.setTeams(source.path("relativePath").asText().split("/")[0]);
         video.setOriginalPath(""); videos.save(video);
         AnalysisTask task=new AnalysisTask(); task.setVideo(video); task.setStatus(TaskStatus.SUCCEEDED);
-        task.setStage("REAL_CONTACT_IMPORTED"); task.setProgressPercent(100); tasks.save(task);
+        task.setStage(pilot?"CONTACT_PILOT_IMPORTED":"REAL_CONTACT_IMPORTED"); task.setProgressPercent(100); tasks.save(task);
         TaskAttempt attempt=new TaskAttempt(); attempt.setTaskId(task.getId()); attempt.setStatus(TaskStatus.SUCCEEDED);
         attempt.setOwnerInstance(UUID.randomUUID().toString()); attempt.setActive(false); attempt.setExecutionFinished(true);
         attempt.setStartedAt(Instant.now()); attempt.setFinishedAt(Instant.now()); attempts.save(attempt);
@@ -101,6 +113,20 @@ public class ContactImportService {
         task.setOutputDir(directory.toString()); task.setResultJsonPath(record.toString()); tasks.save(task);
         video.setOriginalPath(directory.resolve(bundle.path("clips").get(0).path("file").asText()).toString()); videos.save(video);
         for (JsonNode binding:bindings) {
+            if (pilot) {
+                JsonNode clip=clips.get(binding.path("clipId").asText());
+                DisputeEvent sample=new DisputeEvent(); sample.setTask(task); sample.setAttemptId(attempt.getId());
+                sample.setExternalId(binding.path("sampleId").asText()); sample.setEventType(EventType.CONTACT); sample.setRiskLevel(RiskLevel.UNCERTAIN);
+                sample.setTimestampMs(Math.round(clip.path("firstSourceTimeMs").asDouble()));
+                sample.setWindowStartMs(Math.round(clip.path("firstSourceTimeMs").asDouble())); sample.setWindowEndMs(Math.round(clip.path("lastSourceTimeMs").asDouble()));
+                sample.setSummary("真实试标素材；争抢、接触及边界均待人工标注，取样来源不代表标签");
+                sample.setConfidence(0); sample.setInvolvedTrackIds(""); sample.setEvidenceJson("[]"); sample.setTrackBoxesJson("[]");
+                var compact=clip.deepCopy(); ((com.fasterxml.jackson.databind.node.ObjectNode)compact).remove("sourceFrames");
+                sample.setContactMetadataJson(mapper.writeValueAsString(Map.of("source",source,"pilotSample",binding,"clip",compact)));
+                sample.setClipPath(directory.resolve(clip.path("file").asText()).toString());
+                sample.setKeyframePath(directory.resolve(clip.path("previewFile").asText()).toString()); events.save(sample);
+                continue;
+            }
             JsonNode e=binding.path("candidate"), peak=e.path("peakEvidence");
             DisputeEvent event=new DisputeEvent(); event.setTask(task); event.setAttemptId(attempt.getId());
             event.setExternalId(e.path("eventId").asText()); event.setEventType(EventType.CONTACT); event.setRiskLevel(RiskLevel.UNCERTAIN);

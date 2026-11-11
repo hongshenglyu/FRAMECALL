@@ -26,7 +26,7 @@
       </el-form>
 
       <el-divider />
-      <div class="panel-title">导入真实候选片段</div>
+      <div class="panel-title">导入真实候选／试标素材</div>
       <p class="muted">选择包含bundle.json与MP4的提取结果目录，复用已有真实分析成果。</p>
       <input type="file" webkitdirectory multiple @change="onBundleFiles" aria-label="真实候选包目录" />
       <el-button :loading="importing" :disabled="!bundleFiles.length" @click="importBundle">导入并复核</el-button>
@@ -83,7 +83,11 @@
           <el-option v-for="attempt in selectedTask.attempts || []" :key="attempt.id" :label="`${attempt.status} / ${attempt.id}`" :value="`attempt:${attempt.id}`" />
         </el-select>
         <div class="muted">{{ selectedTask.archivedAt ? '归档保留历史与媒体；恢复后可继续查看。' : selectedTask.eventSelection }}</div>
-        <template v-if="isContactTask">
+        <template v-if="isPilotTask">
+          <p class="muted">试标素材{{ pilotSummary.samples || selectedTask.events.length }}段 · 人工已提交{{ pilotSummary.humanAnnotatedSamples || 0 }}段 · 待标注{{ pilotSummary.unlabeledSamples ?? selectedTask.events.length }}段；不将选材线索或联调记录作为真值。</p>
+          <el-button @click="exportPilot">导出试标记录JSON</el-button>
+        </template>
+        <template v-else-if="isContactTask">
           <p class="muted">保留{{ selectedTask.events.length }}个原始候选；默认按复核片段合并展示。评分不是犯规概率。</p>
           <el-checkbox v-model="showAllCandidates">显示全部原始候选（含未提取片段）</el-checkbox>
         </template>
@@ -92,9 +96,10 @@
             <img v-if="isImagePath(event.keyframePath)" :src="fileUrl('event', event.id, 'keyframe')" />
             <div v-else class="event-card-placeholder">无关键帧</div>
             <div class="event-card-body">
-              <el-tag :type="riskTag(event.riskLevel)">{{ event.eventType === 'CONTACT' ? '身体接触候选 · 待人工复核' : `${event.eventType} / ${event.riskLevel}` }}</el-tag>
+              <el-tag :type="riskTag(event.riskLevel)">{{ isPilotTask ? '试标素材 · 人工状态见标注记录' : event.eventType === 'CONTACT' ? '身体接触候选 · 待人工复核' : `${event.eventType} / ${event.riskLevel}` }}</el-tag>
               <div style="margin-top: 8px; font-weight: 700">{{ formatTime(event.timestampMs) }}</div>
               <div class="muted">{{ event.summary }}</div>
+              <div v-if="isPilotTask" class="muted">{{ event.externalId }}</div>
               <div class="muted">ID: {{ event.involvedTrackIds }}</div>
               <div v-if="eventSelection !== 'current'" class="muted">{{ event.attemptAssociation }} / {{ event.attemptId || 'LEGACY' }}</div>
             </div>
@@ -127,7 +132,9 @@ const eventSelection = ref('current')
 const bundleFiles = ref([])
 const importing = ref(false)
 const showAllCandidates = ref(false)
-const isContactTask = computed(() => selectedTask.value?.stage === 'REAL_CONTACT_IMPORTED')
+const isPilotTask = computed(() => selectedTask.value?.stage === 'CONTACT_PILOT_IMPORTED')
+const pilotSummary = ref({})
+const isContactTask = computed(() => isPilotTask.value || selectedTask.value?.stage === 'REAL_CONTACT_IMPORTED')
 const displayedEvents = computed(() => {
   const events = selectedTask.value?.events || []
   if (!isContactTask.value || showAllCandidates.value) return events
@@ -211,6 +218,7 @@ async function selectTask(id) {
   const selectedEventId = selectedEvent.value?.id
   const { data } = await api.get(`/tasks/${id}`, { params: historyParams() })
   selectedTask.value = data
+  if (isPilotTask.value) pilotSummary.value = (await api.get(`/tasks/${id}/contact-annotations`)).data.summary
   const next = data.events?.find((event) => event.id === selectedEventId) || displayedEvents.value[0] || null
   if (next) await selectEvent(next)
   else selectedEvent.value = null
@@ -275,6 +283,12 @@ async function downloadReport() {
   } catch (error) {
     ElMessage.error(error.response?.data?.message || '报告导出失败')
   }
+}
+
+async function exportPilot() {
+  const { data } = await api.get(`/tasks/${selectedTask.value.id}/contact-annotations`)
+  const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }))
+  const link = document.createElement('a'); link.href = url; link.download = 'contact-pilot-annotations.json'; link.click(); URL.revokeObjectURL(url)
 }
 
 function riskTag(risk) {

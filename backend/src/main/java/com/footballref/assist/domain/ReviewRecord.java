@@ -14,6 +14,11 @@ public class ReviewRecord {
     @ManyToOne(optional = false)
     private DisputeEvent event;
 
+    @ManyToOne
+    private ContactAnnotationRevision annotationRevision;
+    public ContactAnnotationRevision getAnnotationRevision(){return annotationRevision;}
+    public void setAnnotationRevision(ContactAnnotationRevision value){annotationRevision=value;}
+
     @ManyToOne(optional = false)
     private UserAccount reviewer;
 

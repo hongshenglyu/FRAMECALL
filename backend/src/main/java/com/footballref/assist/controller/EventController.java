@@ -29,18 +29,21 @@ public class EventController {
     private final ResourceAccessService resourceAccessService;
     private final CurrentUserService currentUserService;
     private final TaskHistoryService history;
+    private final com.footballref.assist.service.ContactAnnotationService contactAnnotations;
 
     public EventController(
             DisputeEventRepository events,
             ReviewRecordRepository reviews,
             ResourceAccessService resourceAccessService,
-            CurrentUserService currentUserService, TaskHistoryService history
+            CurrentUserService currentUserService, TaskHistoryService history,
+            com.footballref.assist.service.ContactAnnotationService contactAnnotations
     ) {
         this.events = events;
         this.reviews = reviews;
         this.resourceAccessService = resourceAccessService;
         this.currentUserService = currentUserService;
         this.history=history;
+        this.contactAnnotations=contactAnnotations;
     }
 
     @GetMapping("/{eventId}")
@@ -48,7 +51,7 @@ public class EventController {
         DisputeEvent event = resourceAccessService.requireEvent(eventId);
         Map<String, Object> map = toEventMap(event);
         map.put("attemptAssociation",history.association(event));
-        map.put("reviews", reviews.findByEventOrderByRevisionDesc(event).stream().map(this::toReviewMap).toList());
+        map.put("reviews", reviews.findByEventOrderByRevisionDesc(event).stream().map(EventController::toReviewMap).toList());
         return map;
     }
 
@@ -64,6 +67,7 @@ public class EventController {
             UserAccount reviewer = currentUserService.requireUser();
             ReviewRecord record = new ReviewRecord();
             record.setEvent(event);
+            contactAnnotations.associateReview(record,event,request.annotationRevisionId());
             record.setReviewer(reviewer);
             record.setResult(request.result());
             record.setReasonCode(request.reasonCode());
@@ -128,10 +132,11 @@ public class EventController {
         return map;
     }
 
-    private Map<String, Object> toReviewMap(ReviewRecord record) {
+    public static Map<String, Object> toReviewMap(ReviewRecord record) {
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("id", record.getId());
         map.put("eventId", record.getEvent().getId());
+        map.put("annotationRevisionId",record.getAnnotationRevision()==null?null:record.getAnnotationRevision().getId());
         map.put("reviewer", record.getReviewer().getDisplayName());
         map.put("result", record.getResult());
         map.put("reasonCode", record.getReasonCode());
@@ -141,7 +146,7 @@ public class EventController {
         return map;
     }
 
-    public record ReviewRequest(@NotNull ReviewResult result, @NotBlank String reasonCode, String note) {
+    public record ReviewRequest(@NotNull ReviewResult result, @NotBlank String reasonCode, String note, Long annotationRevisionId) {
     }
 
     public record UpdateTracksRequest(@NotNull List<Long> involvedTrackIds) {

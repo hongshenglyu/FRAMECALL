@@ -106,6 +106,12 @@ def extract_windows(source, windows, events, output):
                 for w in active:
                     cid = w['clipId']
                     if cid not in encoders:
+                        if not w['eventIds']:
+                            success, preview = cv2.imencode('.jpg', pixels)
+                            if not success:
+                                raise RuntimeError('Could not encode source sampling preview')
+                            (output/f'{cid}.jpg').write_bytes(preview.tobytes())
+                            w['previewTimeMs'] = ms
                         target = av.open(str(output/f'{cid}.mp4'), mode='w', options={'movflags':'+faststart'})
                         encoder = target.add_stream('libx264', rate=stream.average_rate)
                         encoder.width, encoder.height = frame.width, frame.height

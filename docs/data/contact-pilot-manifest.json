@@ -1,0 +1,681 @@
+{
+  "schema": "framecall.contact-pilot.v1",
+  "method": "pilot-preparation",
+  "source": {
+    "matchId": "E2026-D4064D929E",
+    "partId": "E2026-D4064D929E-P001",
+    "segmentId": 0,
+    "event": "2026年吉林外国语大学足球联赛",
+    "relativePath": "东方语学院VS叽歪国传第七轮/东方语学院VS叽歪国传1.mp4",
+    "candidatesSha256": "f02e63042ec6dfc323275830fe24a2fc293e0415014148c48a413d33546c0415",
+    "sourceStartTimeMs": 68.0,
+    "partDurationMs": 1708713.6109999998
+  },
+  "samples": [
+    {
+      "sampleId": "P5-S01",
+      "clipId": "pilot-01",
+      "selectionReasons": [
+        "ALGORITHM_CONTEXT_NOT_A_LABEL",
+        "NORMAL_APPROACH_LEAD_REQUIRES_HUMAN_CONFIRMATION"
+      ],
+      "basedOnCandidateIds": [
+        "CONTACT-13bb7ffe118e4e22",
+        "CONTACT-53d883728a01d9dc",
+        "CONTACT-f22c04e7b09bf7b5",
+        "CONTACT-039072fc019c640d",
+        "CONTACT-91dd1d77cb9649a0",
+        "CONTACT-f5cebd937e9bd5c8",
+        "CONTACT-5659213fd86a8677",
+        "CONTACT-5ab60813c84c4cf0",
+        "CONTACT-49c61b1c3e444ae1"
+      ],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 601220.3888888889,
+      "sourceLastFrameTimeMs": 605287.0555555555,
+      "clipDurationMs": 4100.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 54109835,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 601220.3888888889,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 54475835,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 605287.0555555555,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S02",
+      "clipId": "pilot-02",
+      "selectionReasons": [
+        "ALGORITHM_CONTEXT_NOT_A_LABEL"
+      ],
+      "basedOnCandidateIds": [
+        "CONTACT-97680a4557c256ea",
+        "CONTACT-0c35f6f66fd76b7d",
+        "CONTACT-1666cf4a87a7db1f",
+        "CONTACT-25614b5043c600c9",
+        "CONTACT-4f3cc468bc9774b8",
+        "CONTACT-05a31f45577fdef8",
+        "CONTACT-e0816641dd5a1a79",
+        "CONTACT-413255c9954256ae",
+        "CONTACT-0b60d38da9057f95",
+        "CONTACT-21e5c6dbbec8bd04",
+        "CONTACT-d1aef1bbe3f5a08d"
+      ],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 609753.7222222222,
+      "sourceLastFrameTimeMs": 613330.411111111,
+      "clipDurationMs": 3610.856,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 54877835,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 609753.7222222222,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 55199737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 613330.411111111,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S03",
+      "clipId": "pilot-03",
+      "selectionReasons": [
+        "ALGORITHM_CONTEXT_NOT_A_LABEL",
+        "TRACK_CONFUSION_OR_DUPLICATION_LEAD_NOT_A_LABEL"
+      ],
+      "basedOnCandidateIds": [
+        "CONTACT-67cf0d8e2ba2fa49",
+        "CONTACT-2721ac5e10d93a7c",
+        "CONTACT-f9d80285df8b0752",
+        "CONTACT-77da9d957afffcd9",
+        "CONTACT-7e82cc0fb092f52d",
+        "CONTACT-97b67d3df5daa155",
+        "CONTACT-372e243066613696"
+      ],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 616530.411111111,
+      "sourceLastFrameTimeMs": 620630.411111111,
+      "clipDurationMs": 4134.167,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 55487737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 616530.411111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 55856737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 620630.411111111,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S04",
+      "clipId": "pilot-04",
+      "selectionReasons": [
+        "ALGORITHM_CONTEXT_NOT_A_LABEL",
+        "TRACK_CONFUSION_OR_DUPLICATION_LEAD_NOT_A_LABEL"
+      ],
+      "basedOnCandidateIds": [
+        "CONTACT-d9b5f313e5354cf6",
+        "CONTACT-bb4b5da5c4452590",
+        "CONTACT-a19dc942684dbc2b",
+        "CONTACT-fd6c14b8c9725b75",
+        "CONTACT-948f8e3871f96ce0",
+        "CONTACT-852eee2ccc60e838",
+        "CONTACT-f3cb6a73ce74d631",
+        "CONTACT-4d0614ddc5f6a6c6",
+        "CONTACT-132b311e760f781d",
+        "CONTACT-38bf580a1ac1b057",
+        "CONTACT-7f924e41580dc55f"
+      ],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 625530.411111111,
+      "sourceLastFrameTimeMs": 629497.0777777778,
+      "clipDurationMs": 4000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 56297737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 625530.411111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 56654737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 629497.0777777778,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S05",
+      "clipId": "pilot-05",
+      "selectionReasons": [
+        "ALGORITHM_CONTEXT_NOT_A_LABEL"
+      ],
+      "basedOnCandidateIds": [
+        "CONTACT-250e413d1ccfccf7",
+        "CONTACT-d16e28b2c544a48a",
+        "CONTACT-1020cacda077e7a5",
+        "CONTACT-93d47a0b56223006",
+        "CONTACT-22183102b65e1aa4",
+        "CONTACT-209e81320b637a95",
+        "CONTACT-426b6dcb1f5aaf95",
+        "CONTACT-f37a0e65a64ae800",
+        "CONTACT-61c41faa071151e1",
+        "CONTACT-87aebaaa17e6d871",
+        "CONTACT-f56ee07a062bf687",
+        "CONTACT-d73f3ca0a8118f3c",
+        "CONTACT-f504818055a19629",
+        "CONTACT-9664c659e39f2c51"
+      ],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 632063.7444444444,
+      "sourceLastFrameTimeMs": 642730.411111111,
+      "clipDurationMs": 10700.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 56885737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 632063.7444444444,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 57845737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 642730.411111111,
+          "durationMs": 66.66666666666667
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S06",
+      "clipId": "pilot-06",
+      "selectionReasons": [
+        "ALGORITHM_CONTEXT_NOT_A_LABEL"
+      ],
+      "basedOnCandidateIds": [
+        "CONTACT-06a4e7ac519b640f",
+        "CONTACT-0396b8f05abbe9cc",
+        "CONTACT-74d95390e947b613",
+        "CONTACT-79cc8897bcf2787e",
+        "CONTACT-10c4a1dc4924d6d5",
+        "CONTACT-a67338483ad5114e",
+        "CONTACT-9985beda1fa14688"
+      ],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 646430.411111111,
+      "sourceLastFrameTimeMs": 650163.7444444444,
+      "clipDurationMs": 3767.5,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 58178737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 646430.411111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 58514737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 650163.7444444444,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S07",
+      "clipId": "pilot-07",
+      "selectionReasons": [
+        "ALGORITHM_CONTEXT_NOT_A_LABEL",
+        "TRACK_CONFUSION_OR_DUPLICATION_LEAD_NOT_A_LABEL"
+      ],
+      "basedOnCandidateIds": [
+        "CONTACT-22ccce122113d720",
+        "CONTACT-e0ee1ce2f4e88beb",
+        "CONTACT-17e5ec36af73d002"
+      ],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 657830.411111111,
+      "sourceLastFrameTimeMs": 660030.411111111,
+      "clipDurationMs": 2234.167,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 59204737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 657830.411111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 59402737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 660030.411111111,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S08",
+      "clipId": "pilot-08",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 480120.2444444444,
+      "sourceLastFrameTimeMs": 492053.72222222225,
+      "clipDurationMs": 11967.644,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 43210822,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 480120.2444444444,
+          "durationMs": 33.522222222222226
+        },
+        "last": {
+          "sourcePts": 44284835,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 492053.72222222225,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S09",
+      "clipId": "pilot-09",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 720097.0777777778,
+      "sourceLastFrameTimeMs": 732063.7444444444,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 64808737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 720097.0777777778,
+          "durationMs": 66.66666666666667
+        },
+        "last": {
+          "sourcePts": 65885737,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 732063.7444444444,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S10",
+      "clipId": "pilot-10",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 840107.1,
+      "sourceLastFrameTimeMs": 852073.7666666667,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 75609639,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 840107.1,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 76686639,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 852073.7666666667,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S11",
+      "clipId": "pilot-11",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 960089.7888888889,
+      "sourceLastFrameTimeMs": 972070.5333333333,
+      "clipDurationMs": 12014.911,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 86408081,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 960089.7888888889,
+          "durationMs": 34.13333333333333
+        },
+        "last": {
+          "sourcePts": 87486348,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 972070.5333333333,
+          "durationMs": 34.13333333333333
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S12",
+      "clipId": "pilot-12",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 1080108.2555555555,
+      "sourceLastFrameTimeMs": 1092074.9222222222,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 97209743,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1080108.2555555555,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 98286743,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1092074.9222222222,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S13",
+      "clipId": "pilot-13",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 1200118.2777777778,
+      "sourceLastFrameTimeMs": 1212084.9444444445,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 108010645,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1200118.2777777778,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 109087645,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1212084.9444444445,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S14",
+      "clipId": "pilot-14",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 1320088.611111111,
+      "sourceLastFrameTimeMs": 1332055.2777777778,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 118807975,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1320088.611111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 119884975,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1332055.2777777778,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S15",
+      "clipId": "pilot-15",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 1440088.9444444445,
+      "sourceLastFrameTimeMs": 1452055.611111111,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 129608005,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1440088.9444444445,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 130685005,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1452055.611111111,
+          "durationMs": 33.333333333333336
+        }
+      }
+    },
+    {
+      "sampleId": "P5-S16",
+      "clipId": "pilot-16",
+      "selectionReasons": [
+        "SOURCE_SYSTEMATIC_SCAN_NOT_ALGORITHM_SELECTED"
+      ],
+      "basedOnCandidateIds": [],
+      "split": "DEVELOPMENT",
+      "annotationStatus": "UNLABELED",
+      "contestStartTimeMs": null,
+      "firstContactTimeMs": null,
+      "contestEndTimeMs": null,
+      "contactVisibility": null,
+      "annotator": null,
+      "reviewStatus": "PENDING",
+      "annotations": [],
+      "reviews": [],
+      "note": "Selection context only; a person must inspect the footage. No contact or foul ground truth assigned.",
+      "sourceStartTimeMs": 1560114.611111111,
+      "sourceLastFrameTimeMs": 1572081.2777777778,
+      "clipDurationMs": 12000.833,
+      "sourceFrameBounds": {
+        "first": {
+          "sourcePts": 140410315,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1560114.611111111,
+          "durationMs": 33.333333333333336
+        },
+        "last": {
+          "sourcePts": 141487315,
+          "sourceTimeBase": "1/90000",
+          "timeMs": 1572081.2777777778,
+          "durationMs": 33.333333333333336
+        }
+      }
+    }
+  ],
+  "purpose": "PILOT_DEVELOPMENT_ONLY",
+  "summary": {
+    "samples": 16,
+    "algorithmContext": 7,
+    "independentSourceWindows": 9,
+    "humanAnnotated": 0,
+    "unlabeled": 16,
+    "confirmedContactFreeContests": 0,
+    "humanDiscoveredContests": 0,
+    "formalGroundTruth": 0
+  },
+  "limits": [
+    "Human discovery and contact visibility remain pending",
+    "Not a complete-match dataset",
+    "All parts of this match stay in DEVELOPMENT; never use it as an independent test match"
+  ]
+}

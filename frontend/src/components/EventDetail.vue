@@ -9,17 +9,17 @@
         <el-alert v-if="mediaError" title="视频资源无法读取，请核查本地片段。系统未替换或伪造画面。" type="error" :closable="false" />
         <div class="frame-toolbar">
           <el-button :disabled="!event.clipPath || mediaError" @click="seek(0)">片段起点</el-button>
-          <el-button :disabled="!event.clipPath || mediaError" @click="seek(contact.clipPeakTimeMs / 1000)">定位证据峰值</el-button>
+          <el-button v-if="!isPilot" :disabled="!event.clipPath || mediaError" @click="seek(contact.clipPeakTimeMs / 1000)">定位证据峰值</el-button>
           <el-button :disabled="!event.clipPath || mediaError" @click="slowPlay">0.5倍播放</el-button>
         </div>
-        <p class="muted">复核优先级不是犯规概率；证据峰值不是首次可见接触时间。</p>
-        <p class="muted">{{ event.externalId }} · 源PTS {{ formatTime(contact.candidate?.peakTimeMs) }}</p>
+        <p class="muted">{{ isPilot ? '试标素材尚无人工标签。预览帧及选材原因不代表接触或犯规。' : '复核优先级不是犯规概率；证据峰值不是首次可见接触时间。' }}</p>
+        <p class="muted">{{ event.externalId }} · 源PTS {{ isPilot ? `${formatTime(contact.clip.firstSourceTimeMs)}—${formatTime(contact.clip.lastSourceTimeMs)}` : formatTime(contact.candidate?.peakTimeMs) }}</p>
         <p class="muted source-reference">{{ contact.source?.relativePath }}<br />{{ contact.source?.matchId }} / {{ contact.source?.partId }}</p>
         <el-select v-if="relatedEvents.length > 1" :model-value="event.id" @change="selectRelated" aria-label="同片段原始候选">
           <el-option v-for="related in relatedEvents" :key="related.id" :value="related.id" :label="related.externalId" />
         </el-select>
         <details v-if="isImagePath(event.keyframePath)">
-          <summary>候选峰值原始帧</summary>
+          <summary>{{ isPilot ? '素材预览帧（不是接触标签）' : '候选峰值原始帧' }}</summary>
           <img class="keyframe" :src="fileUrl('event', event.id, 'keyframe')" alt="源视频候选峰值帧" />
         </details>
       </template>
@@ -32,18 +32,19 @@
       </div>
       <div class="evidence-summary">
         <div>
-          <span>时间点</span>
+          <span>{{ isPilot ? '素材起点' : '时间点' }}</span>
           <strong>{{ formatTime(event.timestampMs) }}</strong>
         </div>
         <div>
           <span>涉事轨迹</span>
           <strong>{{ event.involvedTrackIds || '-' }}</strong>
         </div>
-        <div>
+        <div v-if="!isPilot">
           <span>{{ isContact ? '复核优先级' : '置信度' }}</span>
           <strong>{{ confidenceText }}</strong>
         </div>
       </div>
+      <ContactAnnotationForm v-if="isPilot" :event-id="event.id" :read-time="readPlaybackTime" :review-count="event.reviews?.length || 0" @seek="seek($event / 1000)" @revisions="annotationRevisions = $event" @saved="emit('reviewed')" />
 
       <details v-if="isContact" class="contact-quality">
         <summary>轨迹与证据质量限制</summary>
@@ -111,9 +112,15 @@
 
       <el-divider />
       <div class="panel-title">裁判复核</div>
+      <p v-if="isPilot" class="muted">原始标注与裁判结论分别保存。先提交人工原始标注，再选择具体修订版本进行复核。</p>
       <el-form label-position="top">
+        <el-form-item v-if="isPilot" label="被复核的原始标注版本">
+          <el-select v-model="review.annotationRevisionId" placeholder="先选择已提交的原始标注" aria-label="被复核标注版本">
+            <el-option v-for="row in submittedAnnotations" :key="row.id" :value="row.id" :label="`${row.annotationKey.slice(0,8)} / 第${row.revision}版 / ${row.annotator.displayName}`" />
+          </el-select>
+        </el-form-item>
         <el-form-item label="结论">
-          <el-select v-model="review.result" style="width: 100%">
+          <el-select v-model="review.result" placeholder="待裁判人工选择" style="width: 100%">
             <template v-if="isContact">
               <el-option label="可见身体接触" value="VISIBLE_CONTACT" />
               <el-option label="未见身体接触" value="NO_VISIBLE_CONTACT" />
@@ -141,7 +148,7 @@
         <el-form-item label="备注">
           <el-input v-model="review.note" type="textarea" :rows="3" />
         </el-form-item>
-        <el-button type="primary" :loading="saving" @click="submitReview">保存复核结论</el-button>
+        <el-button type="primary" :loading="saving" :disabled="isPilot && (!review.annotationRevisionId || !review.result || !review.reasonCode)" @click="submitReview">保存复核结论</el-button>
       </el-form>
       <div v-if="event.reviews?.length" class="evidence-section">
         <div class="panel-title">已保存的复核记录</div>
@@ -158,6 +165,7 @@ import { computed, reactive, ref, watch } from 'vue'
 import { ElMessage } from 'element-plus'
 import { ArrowLeft, ArrowRight, VideoPlay } from '@element-plus/icons-vue'
 import { api, fileUrl } from '../api/client'
+import ContactAnnotationForm from './ContactAnnotationForm.vue'
 
 const props = defineProps({ event: { type: Object, required: true }, relatedEvents: { type: Array, default: () => [] } })
 const emit = defineEmits(['reviewed', 'select-event'])
@@ -166,11 +174,14 @@ const mediaError = ref(false)
 const saving = ref(false)
 const isContact = computed(() => props.event.eventType === 'CONTACT')
 const contact = computed(() => JSON.parse(props.event.contactMetadataJson || '{}'))
+const isPilot = computed(() => Boolean(contact.value.pilotSample))
+const annotationRevisions = ref([])
+const submittedAnnotations = computed(() => annotationRevisions.value.filter(r => r.recordType === 'HUMAN' && r.status === 'SUBMITTED'))
 
 const review = reactive({
   result: 'UNCERTAIN',
   reasonCode: 'INSUFFICIENT_EVIDENCE',
-  note: ''
+  note: '', annotationRevisionId: null
 })
 
 const metrics = computed(() => {
@@ -215,11 +226,13 @@ watch(
   () => props.event,
   () => {
     const latest = props.event.reviews?.[0]
-    review.result = latest?.result || (isContact.value ? 'INSUFFICIENT_VIEW' : 'UNCERTAIN')
-    review.reasonCode = latest?.reasonCode || 'INSUFFICIENT_EVIDENCE'
+    review.result = latest?.result || (isPilot.value ? null : isContact.value ? 'INSUFFICIENT_VIEW' : 'UNCERTAIN')
+    review.reasonCode = latest?.reasonCode || (isPilot.value ? '' : 'INSUFFICIENT_EVIDENCE')
     review.note = latest?.note || ''
+    review.annotationRevisionId = latest?.annotationRevisionId || null
   }, { immediate: true }
 )
+watch(() => props.event.id, () => { annotationRevisions.value = [] })
 watch(() => props.event.clipPath, () => { mediaError.value = false })
 
 async function submitReview() {
@@ -234,6 +247,7 @@ async function submitReview() {
 }
 
 function seek(seconds) { if (player.value) { player.value.pause(); player.value.currentTime = seconds } }
+function readPlaybackTime() { return player.value && player.value.readyState >= 2 && !player.value.seeking && !mediaError.value ? player.value.currentTime * 1000 : null }
 function slowPlay() { if (player.value) { player.value.playbackRate = 0.5; player.value.play().catch(() => { mediaError.value = true }) } }
 function selectRelated(id) { emit('select-event', props.relatedEvents.find(e => e.id === id)) }
 function resultLabel(value) { return { VISIBLE_CONTACT: '可见身体接触', NO_VISIBLE_CONTACT: '未见身体接触', INSUFFICIENT_VIEW: '画面不足以判断', CONFIRMED: '成立', REJECTED: '不成立', UNCERTAIN: '无法判断' }[value] || value }

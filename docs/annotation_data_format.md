@@ -1,5 +1,7 @@
 # 数据标注格式草案
 
+> 历史兼容格式说明。P5真实接触试标使用`framecall.contact-annotations.v1`及实际源PTS，规范与操作见[接触试标规范](manual_annotation_workflow.md)。以下annotation.v1的旧类型、固定FPS示例及训练说明不作为本轮接触标注或真值依据。
+
 本文档定义下一阶段数据与标注体系的最小 JSON 格式。当前后端 `AnnotationTask` 已支持登记标注任务并上传 `annotation.v1` 标注文件；上传时会校验基础结构，统计样本数量、事件数量、事件类型分布和数据划分分布，并在标注管理页展示。视频手动标注流程见：[视频手动标注流程](manual_annotation_workflow.md)。后续页面编辑、AI 服务读取和实验脚本统计都围绕同一合同扩展。
 
 ## 1. 设计目标
