@@ -66,9 +66,11 @@ public class VideoController {
             @RequestParam String teams,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime matchTime,
             @RequestParam(required = false) Long assignedToUserId,
+            @RequestParam(defaultValue = "MOCK") String analysisMode,
             @RequestParam(defaultValue = "BALANCED") Sensitivity sensitivity
     ) throws Exception {
         UserAccount current = currentUserService.requireUser();
+        if (!java.util.Set.of("MOCK","REAL_CONTACT").contains(analysisMode)) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Invalid analysis mode");
         Path storedPath = storageService.storeUpload(file);
 
         VideoAsset video = new VideoAsset();
@@ -86,6 +88,7 @@ public class VideoController {
 
         AnalysisTask task = new AnalysisTask();
         task.setVideo(savedVideo);
+        task.setAnalysisMode(analysisMode);
         task.setSensitivity(sensitivity);
         AnalysisTask savedTask = taskService.createTask(task);
         taskService.runTask(savedTask.getId());

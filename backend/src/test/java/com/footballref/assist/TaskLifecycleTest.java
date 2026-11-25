@@ -127,7 +127,9 @@ class TaskLifecycleTest {
         assertEquals(400,progress(s,s.token,"INVALID",80));assertEquals(400,progress(s,s.token,"TRACKING",101));
         String stale=callbacks.issue(s.id,UUID.randomUUID().toString());assertEquals(409,progress(s,stale,"COMPLETED",100));
         String valid=callbacks.issue(s.id,current(s).getCurrentAttemptId());assertEquals(401,progress(s,stale,"TRACKING",80));
-        assertEquals(200,progress(s,valid,"EVENT_ANALYSIS",80));assertEquals(200,progress(s,valid,"COMPLETED",100));
+        assertEquals(200,progress(s,valid,"EVENT_ANALYSIS",80));
+        assertEquals(200,progress(s,valid,"CLIPPING",82));assertEquals(409,progress(s,valid,"EVENT_ANALYSIS",85));
+        assertEquals(200,progress(s,valid,"COMPLETED",100));
         assertEquals(99,current(s).getProgressPercent());assertEquals(TaskStatus.RUNNING,current(s).getStatus());assertEquals(0,eventCount(s));
         record(s,"MONOTONIC_PROGRESS_VISIBLE_SUCCESS_NOT_COMMITTED",200);
         s.analyzeRelease.countDown();await(()->current(s).getStatus()==TaskStatus.SUCCEEDED);assertEquals(100,current(s).getProgressPercent());
@@ -219,6 +221,16 @@ class TaskLifecycleTest {
         record(s,"OUTCOME_TRANSACTION_ROLLBACK_BARRIER_RETAINED",500);
         service.quarantineInterruptedAttempts();assertEquals("RECOVERY_REQUIRED",current(s).getStage());assertTrue(attempt(s).isActive());
         assertEquals(409,retry(s,owner).statusCode());record(s,"RESTART_QUARANTINES_CANCEL_SENDING",409);
+    }
+
+    @Test void realContactRejectsLegacyMockResultsBeforePersistence() throws Exception {
+        Scenario s=task();AnalysisTask task=current(s);task.setAnalysisMode("REAL_CONTACT");tasks.save(task);
+        doReturn(Map.of("status","SUCCEEDED","events",List.of(),"metrics",Map.of("mode","MOCK")))
+                .when(client).analyze(any(AnalysisTask.class),anyString());
+        service.runTask(s.id);
+        await(()->current(s).getStatus()==TaskStatus.FAILED);
+        assertTrue(events.findByTaskOrderByTimestampMsAsc(current(s)).isEmpty());
+        assertFalse(attempt(s).isActive());
     }
 
     @Test void additiveMigrationPreservesLegacyAttemptsAndDefaultsToNoStopClaim() throws Exception {

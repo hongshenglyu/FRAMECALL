@@ -4,8 +4,8 @@
 
 截至2026年11月6日，13项WBS完成限定验收，02-01仍因数据资产和许可核查未齐而阻塞。
 用户报告已导出19场比赛、另有近20场待整理；这些数量尚未独立审计，原始录像留在外部硬盘，不上传本仓库。
-真实YOLOv8→ByteTrack→接触候选→真实视频证据链尚未贯通，现有Mock闭环不能作为正式模型实验成果。
-最新计划为[V2.7](docs/project/plan/FRAMECALL_毕业设计总计划_V2.7_20261024.md)，
+2026年11月25日，V2.8 P4-B已完成首个真实上传闭环：Vue上传25秒足球视频，经Spring Boot/FastAPI执行CUDA YOLOv8、真实ByteTrack、接触候选与原片剪辑，并在现有页面播放、保存和重新读取联调复核记录。该结果仅为开发H2联调，不代表算法精度或正式裁判真值验收。
+当前执行用户确认的V2.8计划；此前[V2.7归档计划](docs/project/plan/FRAMECALL_毕业设计总计划_V2.7_20261024.md)继续保留，
 当前状态和后续提交记录见[项目执行记录](docs/PROJECT_LOG.md)。下文保留已有实现和启动说明，研究范围以正式开题工作基准及最新计划为准。
 
 ## 长期执行原则
@@ -18,7 +18,7 @@
 这是一个面向完整毕业设计的足球裁判辅助复核系统。当前版本已经搭好三段式结构：
 
 - `backend/`: Spring Boot 业务后端，负责登录、用户、视频、异步任务、事件复核、PDF 报告。
-- `ai-service/`: Python FastAPI AI 服务，默认提供可替换 mock analyzer，并预留可选 YOLO 检测、轨迹输出、犯规规则候选和局部姿态特征入口，产出与未来 YOLO + ByteTrack + 姿态模型一致的 JSON 合同。
+- `ai-service/`: FastAPI提供明确的REAL_CONTACT模式，复用已验证的YOLOv8 CUDA、ByteTrack、接触候选和真实剪辑；Vue上传默认选择此模式。旧Mock路径仅保留演示兼容，不能混入真实结果。部署说明见[AI服务说明](ai-service/README.md)。
 - `frontend/`: Vue3 + Element Plus 裁判快速复核工作台。
 
 ## 当前优先级

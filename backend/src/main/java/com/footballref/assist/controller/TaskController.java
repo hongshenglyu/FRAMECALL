@@ -125,6 +125,7 @@ public class TaskController {
         map.put("id", task.getId());
         map.put("attemptId", task.getCurrentAttemptId());
         map.put("archivedAt", task.getArchivedAt());
+        map.put("analysisMode",task.getAnalysisMode());
         map.put("videoId", task.getVideo().getId());
         map.put("assignedToUserId",task.getVideo().getAssignedTo()==null?null:task.getVideo().getAssignedTo().getId());
         map.put("videoTitle", task.getVideo().getTitle());

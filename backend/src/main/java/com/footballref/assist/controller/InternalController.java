@@ -26,7 +26,7 @@ public class InternalController {
         return Map.of("ok", true);
     }
 
-    public record ProgressRequest(@NotNull @Pattern(regexp = "EXTRACTING|DETECTING|TRACKING|EVENT_ANALYSIS|COMPLETED") String stage,
+    public record ProgressRequest(@NotNull @Pattern(regexp = "EXTRACTING|DETECTING|TRACKING|EVENT_ANALYSIS|CLIPPING|COMPLETED") String stage,
                                   @Min(0) @Max(100) int progressPercent, String message) {
     }
 }

@@ -14,6 +14,9 @@ public class AnalysisTask {
 
     @Column(length = 36)
     private String currentAttemptId;
+    private String analysisMode = "MOCK";
+    public String getAnalysisMode(){return analysisMode==null?"MOCK":analysisMode;}
+    public void setAnalysisMode(String value){analysisMode=value;}
 
     private Instant archivedAt;
     public Instant getArchivedAt() { return archivedAt; }

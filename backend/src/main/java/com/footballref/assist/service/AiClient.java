@@ -96,8 +96,8 @@ public class AiClient {
         String token = callbacks.issue(task.getId(), task.getCurrentAttemptId());
         try {
             Map<String, Object> payload = Map.of("taskId", task.getId(), "videoPath", video.toString(),
-                    "outputDir", output.toString(), "sensitivity", task.getSensitivity().name(),
-                    "enabledEvents", List.of(EventType.FOUL.name(), EventType.HANDBALL.name(), EventType.OFFSIDE.name()),
+                    "mode", task.getAnalysisMode(), "outputDir", output.toString(), "sensitivity", task.getSensitivity().name(),
+                    "enabledEvents", task.getAnalysisMode().equals("REAL_CONTACT") ? List.of("CONTACT") : List.of(EventType.FOUL.name(), EventType.HANDBALL.name(), EventType.OFFSIDE.name()),
                     "callbackUrl", callback);
             HttpHeaders headers = headers(); headers.set("X-Callback-Token", token);
             var response = client.exchange(origin(aiServiceUrl) + "/internal/analyze", HttpMethod.POST,
@@ -108,9 +108,22 @@ public class AiClient {
             return response.getBody();
         } catch (org.springframework.web.client.ResourceAccessException failure) {
             throw new UncertainExecutionException();
+        } catch (org.springframework.web.client.HttpStatusCodeException failure) {
+            if (task.getAnalysisMode().equals("REAL_CONTACT")) {
+                String code="REAL_CONTACT_FAILED";
+                try { var body=new com.fasterxml.jackson.databind.ObjectMapper().readTree(failure.getResponseBodyAsString());
+                    String value=body.path("detail").path("code").asText(); if(value.matches("[A-Z_]{3,80}")) code=value;
+                } catch(Exception ignored) {}
+                throw new RealAnalysisException(code);
+            }
+            throw new IllegalStateException("AI service request failed");
         } catch (RestClientException failure) {
             throw new IllegalStateException("AI service request failed");
         } finally { callbacks.revoke(task.getId(), token); }
+    }
+
+    public static class RealAnalysisException extends IllegalStateException {
+        public RealAnalysisException(String code){super(code);}
     }
 
     public static class UncertainExecutionException extends IllegalStateException {

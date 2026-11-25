@@ -134,6 +134,7 @@ public class TaskService {
             storageService.attemptDir(taskId, attemptId);
             // This blocking call deliberately runs outside any database transaction.
             Map<String, Object> result = aiClient.analyze(input, "configured-internal-callback");
+            if (input.getAnalysisMode().equals("REAL_CONTACT") && (!(result.get("metrics") instanceof Map<?,?> metrics) || !"REAL_CONTACT".equals(metrics.get("mode")))) throw new IllegalStateException("INVALID_REAL_RESULT");
             if (!"SUCCEEDED".equals(result.get("status")) || !(result.get("events") instanceof List<?>)) {
                 throw new IllegalStateException("INVALID_RESULT");
             }
@@ -154,7 +155,7 @@ public class TaskService {
             });
         } catch (Exception failure) {
             boolean uncertain = failure instanceof AiClient.UncertainExecutionException;
-            fail(taskId, attemptId, uncertain ? "AI_OUTCOME_UNKNOWN" : "ANALYSIS_FAILED", uncertain);
+            fail(taskId, attemptId, uncertain ? "AI_OUTCOME_UNKNOWN" : failure instanceof AiClient.RealAnalysisException ? failure.getMessage() : "ANALYSIS_FAILED", uncertain);
         }
     }
 
@@ -294,7 +295,7 @@ public class TaskService {
                     throw new ResponseStatusException(HttpStatus.CONFLICT, "Progress is closed for this attempt");
                 }
             }
-            List<String> stages = List.of("EXTRACTING", "DETECTING", "TRACKING", "EVENT_ANALYSIS", "COMPLETED");
+            List<String> stages = List.of("EXTRACTING", "DETECTING", "TRACKING", "EVENT_ANALYSIS", "CLIPPING", "COMPLETED");
             int nextStage = stages.indexOf(stage), previousStage = stages.indexOf(task.getStage());
             if (nextStage < 0 || percent < 0 || percent > 100) {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid analysis progress");
@@ -330,6 +331,7 @@ public class TaskService {
             event.setAttemptId(task.getCurrentAttemptId());
             event.setExternalId(string(item.get("externalId")));
             event.setEventType(EventType.valueOf(string(item.get("eventType"))));
+            if (task.getAnalysisMode().equals("REAL_CONTACT") && event.getEventType()!=EventType.CONTACT) throw new IllegalStateException("INVALID_REAL_EVENT");
             event.setRiskLevel(RiskLevel.valueOf(string(item.get("riskLevel"))));
             event.setTimestampMs(number(item.get("timestampMs")).longValue());
             event.setWindowStartMs(number(item.get("windowStartMs")).longValue());
@@ -341,6 +343,7 @@ public class TaskService {
             event.setInvolvedTrackIds(joinIds((List<?>) item.get("involvedTrackIds")));
             event.setEvidenceJson(objectMapper.writeValueAsString(item.get("evidenceMetrics")));
             event.setTrackBoxesJson(objectMapper.writeValueAsString(item.get("trackBoxes")));
+            if (item.get("contactMetadata") != null) event.setContactMetadataJson(objectMapper.writeValueAsString(item.get("contactMetadata")));
             events.save(event);
         }
     }

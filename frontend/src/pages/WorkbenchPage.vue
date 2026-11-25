@@ -19,6 +19,9 @@
             <el-option label="低误报" value="LOW_FALSE_POSITIVE" />
           </el-select>
         </el-form-item>
+        <el-form-item label="分析模式">
+          <el-select v-model="upload.analysisMode"><el-option label="真实接触候选（CUDA）" value="REAL_CONTACT" /><el-option label="历史模拟演示" value="MOCK" /></el-select>
+        </el-form-item>
         <el-form-item label="视频文件">
           <input type="file" accept="video/*" @change="onFile" />
         </el-form-item>
@@ -143,7 +146,7 @@ const isPilotTask = computed(() => selectedTask.value?.stage === 'CONTACT_PILOT_
 const pilotSummary = ref({})
 const currentUser = JSON.parse(localStorage.getItem('user') || 'null')
 const referees = ref([]), reviewerId = ref(null), assigning = ref(false)
-const isContactTask = computed(() => isPilotTask.value || selectedTask.value?.stage === 'REAL_CONTACT_IMPORTED')
+const isContactTask = computed(() => isPilotTask.value || selectedTask.value?.stage === 'REAL_CONTACT_IMPORTED' || selectedTask.value?.analysisMode === 'REAL_CONTACT')
 const displayedEvents = computed(() => {
   const events = selectedTask.value?.events || []
   if (!isContactTask.value || showAllCandidates.value) return events
@@ -162,6 +165,7 @@ const upload = reactive({
   title: '争议片段测试',
   competition: '校园足球赛',
   teams: '蓝队 vs 红队',
+  analysisMode: 'REAL_CONTACT',
   sensitivity: 'BALANCED'
 })
 
@@ -206,6 +210,7 @@ async function submitUpload() {
     body.append('competition', upload.competition)
     body.append('teams', upload.teams)
     body.append('sensitivity', upload.sensitivity)
+    body.append('analysisMode', upload.analysisMode)
     const { data } = await api.post('/videos', body)
     ElMessage.success('已创建分析任务')
     await loadTasks()

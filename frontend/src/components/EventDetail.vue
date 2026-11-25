@@ -14,7 +14,8 @@
         </div>
         <p class="muted">{{ isPilot ? '试标结论以人工标注为准。预览帧及选材原因不代表接触或犯规。' : '复核优先级不是犯规概率；证据峰值不是首次可见接触时间。' }}</p>
         <p class="muted">{{ event.externalId }} · 源PTS {{ isPilot ? `${formatTime(contact.clip.firstSourceTimeMs)}—${formatTime(contact.clip.lastSourceTimeMs)}` : formatTime(contact.candidate?.peakTimeMs) }}</p>
-        <p class="muted source-reference">{{ contact.source?.relativePath }}<br />{{ contact.source?.matchId }} / {{ contact.source?.partId }}</p>
+        <p class="muted source-reference">{{ contact.source?.relativePath }}<br />{{ contact.source?.matchId || contact.source?.localScopeId }} / {{ contact.source?.partId || '本次上传视频' }}</p>
+        <p v-if="contact.source?.identityStatus === 'UNCONFIRMED_UPLOAD'" class="muted">正式比赛身份未确认；时间以本次上传视频为准。</p>
         <el-select v-if="relatedEvents.length > 1" :model-value="event.id" @change="selectRelated" aria-label="同片段原始候选">
           <el-option v-for="related in relatedEvents" :key="related.id" :value="related.id" :label="related.externalId" />
         </el-select>

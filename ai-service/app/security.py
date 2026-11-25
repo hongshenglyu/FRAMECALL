@@ -152,5 +152,7 @@ def send_progress(request, update) -> None:
         with opener.open(outgoing, timeout=2) as response:
             if not 200 <= response.status < 300:
                 reject("CALLBACK_REJECTED", 502)
+    except urllib.error.HTTPError:
+        reject("CALLBACK_REJECTED", 502)
     except (urllib.error.URLError, OSError):
         reject("CALLBACK_UNAVAILABLE", 502)

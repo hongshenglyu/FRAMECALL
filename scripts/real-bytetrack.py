@@ -31,7 +31,7 @@ def arguments():
     return a
 
 
-def associate(rows, config, max_gap_seconds):
+def associate(rows, config, max_gap_seconds, check_cancel=None):
     import numpy as np
     from ultralytics.engine.results import Boxes
     from ultralytics.trackers.byte_tracker import BYTETracker
@@ -50,6 +50,7 @@ def associate(rows, config, max_gap_seconds):
     low_candidates = 0
     started = time.perf_counter()
     for i, row in enumerate(rows):
+        if check_cancel: check_cancel()
         if previous is not None:
             delta = row['timeMs']-previous['timeMs']
             if delta <= 0 or row['frameIndex'] <= previous['frameIndex']:

@@ -32,6 +32,18 @@ def arguments() -> argparse.Namespace:
     return args
 
 
+def manifest_source(args):
+    with (ROOT/'docs/data/video-parts.csv').open(encoding='utf-8-sig', newline='') as f:
+        choices = [r for r in csv.DictReader(f) if r['partId'] == args.part_id]
+    if len(choices) != 1:
+        raise ValueError('PartID must identify exactly one manifest row')
+    part = choices[0]
+    base = args.event_root.resolve(strict=True)
+    source = (base/part['relativePath']).resolve(strict=True)
+    source.relative_to(base)
+    return source, part
+
+
 def run(args: argparse.Namespace, out: Path) -> dict:
     import av
     import cv2
@@ -44,15 +56,11 @@ def run(args: argparse.Namespace, out: Path) -> dict:
     if not torch.cuda.is_available():
         raise RuntimeError('CUDA_UNAVAILABLE: this entry point never substitutes CPU or Mock')
     device = torch.device('cuda:0')
-    with (ROOT/'docs/data/video-parts.csv').open(encoding='utf-8-sig', newline='') as f:
-        choices = [row for row in csv.DictReader(f) if row['partId'] == args.part_id]
-    if len(choices) != 1:
-        raise ValueError('PartID must identify exactly one manifest row')
-    part = choices[0]
-    event_root = args.event_root.resolve(strict=True)
-    source = (event_root/part['relativePath']).resolve(strict=True)
-    if not source.is_relative_to(event_root):
-        raise ValueError('Manifest relative path escapes event root')
+    if getattr(args, 'video_path', None):
+        source = Path(args.video_path).resolve(strict=True)
+        part = dict(matchId=f'UPLOAD-T{args.task_id}', partId=f'UPLOAD-T{args.task_id}-LOCAL', eventId='UPLOAD', relativePath=source.name)
+    else:
+        source, part = manifest_source(args)
     before = (source.stat().st_size, source.stat().st_mtime_ns)
     weights_meta = json.loads((ROOT/'config/yolov8n.weights.json').read_text(encoding='utf8'))
     weights = ROOT/weights_meta['localPath']
@@ -90,6 +98,7 @@ def run(args: argparse.Namespace, out: Path) -> dict:
         encoder.options = {'preset': 'ultrafast', 'crf': '23', 'tune': 'zerolatency'}
         source_origin = None
         for index, frame in enumerate(video.decode(stream)):
+            if getattr(args, 'check_cancel', None): args.check_cancel()
             if frame.pts is None or frame.time_base is None:
                 raise RuntimeError('SOURCE_FRAME_WITHOUT_PTS')
             timestamp = frame.pts*frame.time_base

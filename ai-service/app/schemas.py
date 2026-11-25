@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from enum import Enum
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
@@ -11,6 +11,7 @@ class EventType(str, Enum):
     FOUL = "FOUL"
     HANDBALL = "HANDBALL"
     OFFSIDE = "OFFSIDE"
+    CONTACT = "CONTACT"
 
 
 class RiskLevel(str, Enum):
@@ -30,6 +31,7 @@ class AnalysisRequest(BaseModel):
     task_id: int = Field(alias="taskId")
     video_path: str = Field(alias="videoPath")
     output_dir: str = Field(alias="outputDir")
+    mode: Literal["MOCK", "REAL_CONTACT"] = "MOCK"
     sensitivity: Sensitivity = Sensitivity.BALANCED
     enabled_events: list[EventType] = Field(
         default_factory=lambda: [EventType.FOUL, EventType.HANDBALL, EventType.OFFSIDE],
@@ -41,7 +43,8 @@ class AnalysisRequest(BaseModel):
 
 class EvidenceMetric(BaseModel):
     name: str
-    value: float
+    value: float | None
+    unavailableReason: str | None = None
     unit: str | None = None
     description: str
 
@@ -55,6 +58,7 @@ class TrackBox(BaseModel):
 
 
 class DisputeEventResult(BaseModel):
+    contactMetadata: dict[str, Any] | None = None
     external_id: str = Field(alias="externalId")
     event_type: EventType = Field(alias="eventType")
     risk_level: RiskLevel = Field(alias="riskLevel")

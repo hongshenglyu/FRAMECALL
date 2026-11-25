@@ -23,10 +23,45 @@ symlinks, reparse points and multiply linked output files are rejected before an
 Use filesystem ACLs: these checks do not provide atomic protection from malicious concurrent
 filesystem writers. `/health` is public and minimal; Swagger/OpenAPI endpoints are disabled.
 
-The HTTP endpoint currently accepts only configured mock detector/tracker modes. Non-mock
-configuration returns `503 REAL_PIPELINE_UNAVAILABLE` while the real pipeline remains
-unfinished. Direct algorithm fixtures retain their historical fallback contract; neither
-those fixtures nor successful mock HTTP output prove real model processing.
+The HTTP endpoint accepts explicit `mode: REAL_CONTACT` for the real upload pipeline.
+This route requires CUDA and the pinned local YOLOv8n weights (SHA256 checked), then reuses
+the P1 detection script, P2 BYTETracker adapter, P3 candidates and P4 PTS clip extractor.
+It never calls the legacy analyzer or falls back to mock results. Failures return an error;
+zero candidates remain zero. Calls with omitted mode retain the historical MOCK contract;
+non-mock detector/tracker environment settings in that legacy route are still rejected.
+
+For REAL_CONTACT, reuse `ai-service/.venv-yolo` or install `requirements-real-contact.txt`
+into a dedicated Python 3.11 environment. Place the registered model at
+`models/yolo/v8.3.0/yolov8n.pt`; do not download it again when already present.
+Configure the three private service variables above and start **one** Uvicorn worker:
+`python -m uvicorn app.main:app --host 127.0.0.1 --port 8001` from `ai-service`.
+Spring uses corresponding `FRAMECALL_AI_SERVICE_TOKEN`, `FRAMECALL_STORAGE_ROOT`,
+`FRAMECALL_CALLBACK_BASE_URL` and `FRAMECALL_AI_SERVICE_URL`; both services must share
+the same absolute storage path. Use the existing backend private H2 configuration.
+YOLO sync/autoinstall/download should stay disabled (`YOLO_OFFLINE=true`,
+`YOLO_AUTOINSTALL=false`, local `YOLO_CONFIG_DIR`).
+
+In Vue, select “真实接触候选（CUDA）” and upload a short real football video. The upload
+request stores `analysisMode=REAL_CONTACT` on its task and retains it for retries.
+The existing task worker sends `mode=REAL_CONTACT` to FastAPI and accepts only CONTACT
+events with real-mode metrics. Progress includes DETECTING, TRACKING, EVENT_ANALYSIS,
+CLIPPING and completion; existing cancellation/attempt barriers still apply.
+The adapter serializes GPU work within the one service process and checks cancellation
+in detection, association, candidate analysis and extraction; it adds no scheduler.
+
+Uploads without confirmed official identity use `UPLOAD-T<taskId>` scope keys in local
+track/candidate data; source metadata keeps official matchId/partId null and labels the
+timeline UPLOADED_FILE_PTS. Each attempt stores detections.jsonl, tracks.jsonl,
+candidates.json, detection/tracking run logs, selected MP4/JPEG media and
+analysis_result.json beneath the existing task attempt directory. Source PTS and local
+clip offsets remain distinct. All candidates are kept, including ones outside the
+small representative set of review clips. Scores are review priorities, never foul
+probabilities; COCO person includes possible referees and sideline people.
+
+The optional detector/tracker/pose instructions below describe the **legacy fixtures**,
+not the supported real upload route. Do not combine their fallback outputs with
+REAL_CONTACT. Targeted adapter checks: `python -B -m unittest discover -s tests
+-p test_real_contact_adapter.py` (synthetic contracts, not football ground truth).
 
 Run tests using the existing virtual environment: `python -B -m unittest discover -s tests -v`.
 Security tests start isolated Uvicorn and loopback callback fixtures; they do not use real media.

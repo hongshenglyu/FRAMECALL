@@ -59,7 +59,7 @@ def plan_windows(events, start_ms, end_ms, count=8, before_ms=1500, after_ms=200
     return windows
 
 
-def extract_windows(source, windows, events, output):
+def extract_windows(source, windows, events, output, check_cancel=None):
     import av
     import cv2
     import numpy as np
@@ -89,6 +89,7 @@ def extract_windows(source, windows, events, output):
             last = max(w['endTimeMs'] for w in windows)
             container.seek(int(Fraction(str(first))/1000/stream.time_base), stream=stream)
             for frame in container.decode(stream):
+                if check_cancel: check_cancel()
                 pts = frame.pts*frame.time_base
                 ms = float(pts*1000)
                 if ms >= last:

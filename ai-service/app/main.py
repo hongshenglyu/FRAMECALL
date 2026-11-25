@@ -10,6 +10,7 @@ from .pose import pose_settings
 from .schemas import AnalysisRequest, AnalysisResult
 from .tracker import tracker_settings
 from .security import service_authenticated, validate_analysis, callback_scope, reject
+from .real_contact import run_real_contact, AnalysisCancelled
 
 app = FastAPI(title="Football Referee AI Service", version="0.1.0", docs_url=None, redoc_url=None, openapi_url=None)
 
@@ -43,11 +44,24 @@ def health() -> dict[str, str]:
 def analyze(request: AnalysisRequest, http_request: Request) -> AnalysisResult:
     token = http_request.headers.get("X-Callback-Token")
     output, target = validate_analysis(request, token)
-    if detector_settings()["mode"] != "mock" or tracker_settings()["mode"] != "mock":
+    if request.mode == 'MOCK' and (detector_settings()["mode"] != "mock" or tracker_settings()["mode"] != "mock"):
         reject("REAL_PIPELINE_UNAVAILABLE", 503)
     try:
         _cancelled_tasks.discard(request.task_id)
         with callback_scope(target, token):
+            if request.mode == 'REAL_CONTACT':
+                try:
+                    return run_real_contact(request.model_copy(update={"output_dir": str(output)}), lambda task_id: task_id in _cancelled_tasks)
+                except AnalysisCancelled:
+                    reject('ANALYSIS_CANCELLED', 409)
+                except HTTPException:
+                    raise
+                except Exception as failure:
+                    code = str(failure).split(':',1)[0]
+                    import re, json
+                    if not re.fullmatch('[A-Z_]{3,80}', code): code = 'REAL_CONTACT_FAILED'
+                    (output/'failure.json').write_text(json.dumps({'code':code,'type':type(failure).__name__,'mockFallback':False}),encoding='utf8')
+                    reject(code, 500)
             return run_analysis(request.model_copy(update={"output_dir": str(output)}), cancel_checker=lambda task_id: task_id in _cancelled_tasks)
     except HTTPException:
         raise
