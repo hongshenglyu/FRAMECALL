@@ -1,8 +1,8 @@
 {
   "target": "6-10 verified complete matches",
   "screeningCandidates": 8,
-  "confirmedCompleteNow": 0,
-  "splitPolicy": "All parts of a match share one split. Current P1-P5 match is DEVELOPMENT only. Reserved test footage has not been used for P5 tuning; finalize and freeze splits after eligibility checks.",
+  "confirmedCompleteNow": 4,
+  "splitPolicy": "All parts share a match-level split. E2026-D4064D929E stays DEVELOPMENT only and is excluded from complete-match eligibility. Preserve current reserves; confirm gaps, source/fixture and sufficient eligible matches before freezing. Test reserves were viewed only for coverage and identity.",
   "matches": [
     {
       "matchId": "E2026-D4064D929E",
@@ -20,26 +20,40 @@
       "partCount": 7,
       "readPartCountAtPriorAudit": 7,
       "knownDurationSeconds": 5235.289566,
-      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "completenessStatus": "PARTIAL_CONFIRMED",
       "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "continuityStatus": "MISSING_MATCH_FOOTAGE",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "DEVELOPMENT",
       "formalSplitFrozen": false,
       "p5FootageUsed": true,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation",
+        "Resolve manualReview before complete-match eligibility"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "EXCLUDED_MISSING_MATCH_FOOTAGE",
+      "readPartCountNow": 7,
+      "probedContainerDurationSeconds": 5235.56,
+      "partContainerDurationsSeconds": {
+        "E2026-D4064D929E-P001": 1708.759938,
+        "E2026-D4064D929E-P002": 206.245667,
+        "E2026-D4064D929E-P003": 655.147333,
+        "E2026-D4064D929E-P004": 465.037456,
+        "E2026-D4064D929E-P005": 508.313222,
+        "E2026-D4064D929E-P006": 1134.311708,
+        "E2026-D4064D929E-P007": 557.744633
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 06:36–06:40 从未开始进入上半场。P007 08:17–08:48 从比赛到完场。",
+      "boundaryEvidence": "P001→002、002→003、003→004、006→007 有秒级跳变，P004→005 为中场。P005 08:28.032 → P006 00:00 两端均为下半场实况，转播时钟 37:13 → 40:30，观察到约3分17秒画面缺口。",
+      "manualReview": "核对是否另有覆盖比赛钟37:13–40:30的原段。"
     },
     {
       "matchId": "E2026-05874991CE",
@@ -51,26 +65,33 @@
       "partCount": 1,
       "readPartCountAtPriorAudit": 1,
       "knownDurationSeconds": 6140.874789,
-      "completenessStatus": "UNVERIFIED_FULLNESS",
-      "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "completenessStatus": "FULL_CONFIRMED",
+      "isConfirmedFullMatch": true,
+      "continuityStatus": "BOUNDARIES_SUPPORTED_BY_SAMPLES",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "DEVELOPMENT",
       "formalSplitFrozen": false,
       "p5FootageUsed": false,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "READY_FOR_FULL_MATCH_ANNOTATION_PENDING_DATASET_FREEZE",
+      "readPartCountNow": 1,
+      "probedContainerDurationSeconds": 6140.906,
+      "partContainerDurationsSeconds": {
+        "E2026-05874991CE-P001": 6140.905789
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 02:36–02:38 开赛。45:00、48:00 中场，50:00 下半场。90:15–90:30 由比赛画面切至完场。",
+      "boundaryEvidence": "单文件。分散抽查两半场与中场的场上画面及比分牌，未见断口。",
+      "manualReview": null
     },
     {
       "matchId": "E2025-152F696FA9",
@@ -84,26 +105,35 @@
       "partCount": 3,
       "readPartCountAtPriorAudit": 3,
       "knownDurationSeconds": 5093.278733,
-      "completenessStatus": "UNVERIFIED_FULLNESS",
-      "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "completenessStatus": "FULL_CONFIRMED",
+      "isConfirmedFullMatch": true,
+      "continuityStatus": "BOUNDARIES_SUPPORTED_BY_SAMPLES",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "DEVELOPMENT",
       "formalSplitFrozen": false,
       "p5FootageUsed": false,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "READY_FOR_FULL_MATCH_ANNOTATION_PENDING_DATASET_FREEZE",
+      "readPartCountNow": 3,
+      "probedContainerDurationSeconds": 5093.387,
+      "partContainerDurationsSeconds": {
+        "E2025-152F696FA9-P001": 2859.779544,
+        "E2025-152F696FA9-P002": 1956.936622,
+        "E2025-152F696FA9-P003": 276.670563
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 06:04–06:09 从未开始到开赛。P003 04:14–04:19 从比赛到完场。",
+      "boundaryEvidence": "P001→002 两侧为中场，P002 07:05–07:12 已进入下半场。P002 32:31–32:33 暂离画面落在 P003 已覆盖的时钟区间，P003 开始于60:10，与 P002 尾重叠约18秒。标注前以画面对齐后去重。",
+      "manualReview": null
     },
     {
       "matchId": "E2025-16299AC604",
@@ -119,24 +149,34 @@
       "knownDurationSeconds": 3964.557078,
       "completenessStatus": "UNVERIFIED_FULLNESS",
       "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "continuityStatus": "UNVERIFIED_AT_FLAGGED_BOUNDARIES",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "DEVELOPMENT",
       "formalSplitFrozen": false,
       "p5FootageUsed": false,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation",
+        "Resolve manualReview before complete-match eligibility"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION",
+      "readPartCountNow": 3,
+      "probedContainerDurationSeconds": 3964.607,
+      "partContainerDurationsSeconds": {
+        "E2025-16299AC604-P001": 1648.348,
+        "E2025-16299AC604-P002": 1751.582133,
+        "E2025-16299AC604-P003": 564.676667
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 00:00–00:02 已显示上半场00:00起计时。P003 06:25–07:25 从比赛到完场。",
+      "boundaryEvidence": "P001 26:32、P002 00:00 同场画面及上半场26:31一致，前一接缝重叠约57秒。P002 29:06.572 出现暂离画面，P003 00:00 从下半场52:13开始。",
+      "manualReview": "核对 P001 00:00–00:03 是否含实际开球，以及 P002 29:06–29:12 至 P003 00:00–00:03 的争抢是否有漏录。"
     },
     {
       "matchId": "E2026-0E01A9836E",
@@ -154,24 +194,36 @@
       "knownDurationSeconds": 5482.850478,
       "completenessStatus": "UNVERIFIED_FULLNESS",
       "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "continuityStatus": "UNVERIFIED_AT_FLAGGED_BOUNDARIES",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "VALIDATION_RESERVED",
       "formalSplitFrozen": false,
       "p5FootageUsed": false,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation",
+        "Resolve manualReview before complete-match eligibility"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "PENDING_FULL_MATCH_VERIFICATION",
+      "readPartCountNow": 5,
+      "probedContainerDurationSeconds": 5483.042,
+      "partContainerDurationsSeconds": {
+        "E2026-0E01A9836E-P001": 2415.745146,
+        "E2026-0E01A9836E-P002": 622.739878,
+        "E2026-0E01A9836E-P003": 781.3372,
+        "E2026-0E01A9836E-P004": 655.8464,
+        "E2026-0E01A9836E-P005": 1007.373188
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 04:10–04:18 开赛。P005 16:17–16:39 从比赛到完场。",
+      "boundaryEvidence": "P001→002 比分牌和相同场景证实约84秒重叠。P002→003 两侧画面相近，比分牌标签中场/完场不一致。P003 12:54–12:56.306 出现暂离，P004 首只回到下半场42:12。P004 尾至P005首比赛钟51:07→51:12。",
+      "manualReview": "核对 P002 10:14–10:22 与 P003 00:00–00:05 是否跨越下半场开球，P003 12:54–13:01 与 P004 00:00–00:05 暂离时是否有有效比赛，及 P004 10:51–10:55.565 到 P005 00:00–00:05 有无漏录。"
     },
     {
       "matchId": "E2025-23A6D68C35",
@@ -184,26 +236,34 @@
       "partCount": 2,
       "readPartCountAtPriorAudit": 2,
       "knownDurationSeconds": 4810.551778,
-      "completenessStatus": "UNVERIFIED_FULLNESS",
-      "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "completenessStatus": "FULL_CONFIRMED",
+      "isConfirmedFullMatch": true,
+      "continuityStatus": "BOUNDARIES_SUPPORTED_BY_SAMPLES",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "VALIDATION_RESERVED",
       "formalSplitFrozen": false,
       "p5FootageUsed": false,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "READY_FOR_FULL_MATCH_ANNOTATION_PENDING_DATASET_FREEZE",
+      "readPartCountNow": 2,
+      "probedContainerDurationSeconds": 4810.614,
+      "partContainerDurationsSeconds": {
+        "E2025-23A6D68C35-P001": 2504.113689,
+        "E2025-23A6D68C35-P002": 2306.500089
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 04:18–04:22 开赛。P002 38:10–38:18 从下半场到完场。",
+      "boundaryEvidence": "P001 尾与 P002 首同为中场，P002 03:00、05:00 有休息画面，11:00 已有争球画面但仍显示中场，后段显示下半场。画面支持接缝在休息期间。",
+      "manualReview": null
     },
     {
       "matchId": "E2026-0E0681C00F",
@@ -215,26 +275,33 @@
       "partCount": 1,
       "readPartCountAtPriorAudit": 1,
       "knownDurationSeconds": 7473.852356,
-      "completenessStatus": "UNVERIFIED_FULLNESS",
-      "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "completenessStatus": "FULL_CONFIRMED",
+      "isConfirmedFullMatch": true,
+      "continuityStatus": "BOUNDARIES_SUPPORTED_BY_SAMPLES",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "TEST_RESERVED",
       "formalSplitFrozen": false,
       "p5FootageUsed": false,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "READY_FOR_FULL_MATCH_ANNOTATION_PENDING_DATASET_FREEZE",
+      "readPartCountNow": 1,
+      "probedContainerDurationSeconds": 7473.883,
+      "partContainerDurationsSeconds": {
+        "E2026-0E0681C00F-P001": 7473.883356
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "球门侧较高远景",
+      "openingAndFinishEvidence": "P001 24:00–24:12 开赛，65:00–70:00 有中场画面，80:00 已下半场，110:30–111:30 从比赛到完场。",
+      "boundaryEvidence": "单文件。分散抽查两半场与中场的场上画面及比分牌，未见断口。",
+      "manualReview": null
     },
     {
       "matchId": "E2025-2F24F4C95D",
@@ -247,27 +314,57 @@
       "partCount": 2,
       "readPartCountAtPriorAudit": 2,
       "knownDurationSeconds": 5252.277489,
-      "completenessStatus": "UNVERIFIED_FULLNESS",
+      "completenessStatus": "PARTIAL_CONFIRMED",
       "isConfirmedFullMatch": false,
-      "continuityStatus": "UNVERIFIED_BETWEEN_PARTS",
+      "continuityStatus": "MISSING_MATCH_FOOTAGE",
       "sourceStatus": "UNVERIFIED",
       "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
       "distributionPermission": "UNVERIFIED",
       "archivePermission": "UNVERIFIED",
-      "evidenceDate": "2026-11-08_REUSED",
-      "evidenceScope": "Prior metadata and sampled decoding only; no new whole-match audit",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Observed fixture overlay, opening/closing windows and part-boundary samples; no full sequential decode",
       "proposedMatchSplit": "TEST_RESERVED",
       "formalSplitFrozen": false,
       "p5FootageUsed": false,
       "requiredVerification": [
-        "Official fixture identity",
-        "Opening and final whistle coverage",
-        "Between-part continuity",
-        "Decode completeness",
-        "Source and permitted uses"
+        "Independent fixture/source confirmation",
+        "Full playback and evaluable coverage during annotation",
+        "Resolve manualReview before complete-match eligibility"
       ],
-      "eligibility": "PENDING_FULL_MATCH_VERIFICATION"
+      "eligibility": "EXCLUDED_MISSING_MATCH_FOOTAGE",
+      "readPartCountNow": 2,
+      "probedContainerDurationSeconds": 5252.34,
+      "partContainerDurationsSeconds": {
+        "E2025-2F24F4C95D-P001": 4152.526022,
+        "E2025-2F24F4C95D-P002": 1099.814467
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 08:00–10:00 从未开始到上半场。P002 15:00–15:20 从比赛到完场。",
+      "boundaryEvidence": "P001 67:20 对应 P002 00:00 附近，球员位置及下半场时钟印证重叠约1分52秒。重叠区内 P001 69:00–69:05 和 P002 01:41–01:45 同为主播暂离，两个文件均缺少该段下半场场上画面。",
+      "manualReview": "若有同一时段清晰补源，核查两个暂离区间对应的比赛是否停表或仍在进行，再决定能否纳入。"
     }
   ],
-  "notFullnessEvidence": "Neither duration nor UNVERIFIED_FULLNESS proves full-match coverage"
+  "notFullnessEvidence": "Neither duration nor UNVERIFIED_FULLNESS proves full-match coverage",
+  "screeningBasis": "2026-11-26. 24 registered files matched recorded sizes; re-probed container durations and decoded boundary frames plus targeted comparisons. Broadcast fixture labels agree with the manifest; independent fixture/source confirmation and full sequential decoding remain pending. Times are player-local unless specified as broadcast clock.",
+  "reserveOptions": [
+    {
+      "matchId": "E2026-74AA541E7B",
+      "matchLabel": "吉外商学院A队VS叽歪国传第四轮",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "basis": "Single-file entry; metadata only"
+    },
+    {
+      "matchId": "E2025-329938CCB6",
+      "matchLabel": "东方语学院VS英教高翻第五轮",
+      "proposedMatchSplit": "TEST_RESERVED",
+      "basis": "Single-file entry; metadata only"
+    },
+    {
+      "matchId": "E2026-423051312A",
+      "matchLabel": "吉外商学院A队VS吉外商学院B队第一轮",
+      "proposedMatchSplit": "UNASSIGNED",
+      "basis": "Single-file fallback; metadata only"
+    }
+  ]
 }
