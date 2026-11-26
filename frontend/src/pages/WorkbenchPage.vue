@@ -117,7 +117,8 @@
         </div>
 
         <el-divider />
-        <EventDetail v-if="selectedEvent" :event="selectedEvent" :related-events="relatedEvents" @select-event="selectEvent" @reviewed="refreshSelectedTask" />
+        <EventDetail v-if="selectedEvent" :event="selectedEvent" :related-events="relatedEvents"
+          :source-video-id="selectedTask.videoId" @select-event="selectEvent" @reviewed="refreshSelectedTask" />
         <ManualEventForm v-if="!selectedTask.archivedAt && !isContactTask" :task-id="selectedTask.id" @created="refreshSelectedTask" />
       </template>
       <el-empty v-else description="请选择或上传一个分析任务" />

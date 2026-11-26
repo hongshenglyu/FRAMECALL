@@ -39,6 +39,25 @@ def run_real_contact(request, cancel_checker):
         GPU.release()
 
 
+def plan_review_windows(events, tracks, config):
+    by_segment = {}
+    for event in events:
+        by_segment.setdefault(event['segmentId'], []).append(event)
+    bounds = {}
+    for frame in tracks:
+        segment = frame['segmentId']
+        start, _ = bounds.get(segment, (frame['timeMs'], None))
+        bounds[segment] = start, frame['timeMs']
+    windows = []
+    for segment, candidates in by_segment.items():
+        planned = plan_windows(candidates, *bounds[segment], **config)
+        if len(by_segment) > 1:
+            for window in planned:
+                window['clipId'] = f"segment-{segment}-{window['clipId']}"
+        windows.extend(planned)
+    return windows
+
+
 def execute(request, check):
     import av
     import yaml
@@ -77,7 +96,7 @@ def execute(request, check):
                   relativePath=Path(request.video_path).name, timeline='UPLOADED_FILE_PTS',
                   sampleStartTimeMs=first, sampleEndTimeMs=last)
     progress('CLIPPING', 82)
-    windows = plan_windows(events, first, last, **json.loads((ROOT/'config/contact-clips.json').read_text(encoding='utf8'))) if events else []
+    windows = plan_review_windows(events, tracks, json.loads((ROOT/'config/contact-clips.json').read_text(encoding='utf8'))) if events else []
     if windows:
         extract_windows(request.video_path, windows, events, out, check_cancel=check)
     results = []

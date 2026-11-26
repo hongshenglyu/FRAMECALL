@@ -15,6 +15,20 @@ import urllib.error
 
 
 class AdapterContracts(TestCase):
+    def test_review_windows_include_both_sides_of_a_track_reset(self):
+        tracks = [{'segmentId': segment, 'timeMs': time_ms}
+                  for segment, times in [(0, [0, 1000]), (1, [2500, 3500])] for time_ms in times]
+        events = [
+            dict(matchId='SYNTHETIC', partId='LOCAL', segmentId=segment, eventId=f'event-{segment}',
+                 startTimeMs=peak-100, peakTimeMs=peak, endTimeMs=peak+100, candidateScore=0.5,
+                 closingSpeedEvidence={'value': None}, relativeVelocityChangeEvidence={'value': None})
+            for segment, peak in [(0, 500), (1, 3000)]
+        ]
+        windows = real_contact.plan_review_windows(events, tracks, {'count': 1})
+        self.assertEqual([(w['startTimeMs'], w['endTimeMs'], w['eventIds']) for w in windows],
+                         [(0, 1000, ['event-0']), (2500, 3500, ['event-1'])])
+        self.assertEqual(len({w['clipId'] for w in windows}), 2)
+
     def test_callback_http_rejection_is_distinct_from_transport_failure(self):
         with TemporaryDirectory() as directory, patch.object(security.urllib.request,'build_opener') as opener:
             opener.return_value.open.side_effect=urllib.error.HTTPError('http://127.0.0.1:1',400,'rejected',None,None)

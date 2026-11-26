@@ -3,14 +3,15 @@
     <div class="event-visual">
       <div class="panel-title">事件详情</div>
       <template v-if="isContact">
-        <video v-if="event.clipPath" ref="player" :key="event.clipPath" class="review-video" controls preload="metadata"
-          :src="fileUrl('event', event.id, 'clip')" @error="mediaError = true" />
+        <video v-if="reviewVideoUrl" ref="player" :key="reviewVideoUrl" class="review-video" controls preload="metadata"
+          :src="reviewVideoUrl" @error="mediaError = true" />
         <el-alert v-else title="本轮未提取此候选片段，原始候选及证据记录仍保留。" type="info" :closable="false" />
-        <el-alert v-if="mediaError" title="视频资源无法读取，请核查本地片段。系统未替换或伪造画面。" type="error" :closable="false" />
+        <p v-if="useSourceVideo" class="muted">正在查看上传原视频。</p>
+        <el-alert v-if="mediaError" title="视频资源无法播放，请核查文件和浏览器支持的格式。" type="error" :closable="false" />
         <div class="frame-toolbar">
-          <el-button :disabled="!event.clipPath || mediaError" @click="seek(0)">片段起点</el-button>
-          <el-button v-if="!isPilot" :disabled="!event.clipPath || mediaError" @click="seek(contact.clipPeakTimeMs / 1000)">定位证据峰值</el-button>
-          <el-button :disabled="!event.clipPath || mediaError" @click="slowPlay">0.5倍播放</el-button>
+          <el-button v-if="!useSourceVideo" :disabled="!event.clipPath || mediaError" @click="seek(0)">片段起点</el-button>
+          <el-button v-if="!isPilot" :disabled="!reviewVideoUrl || mediaError" @click="seek(peakSeconds)">定位证据峰值</el-button>
+          <el-button :disabled="!reviewVideoUrl || mediaError" @click="slowPlay">0.5倍播放</el-button>
         </div>
         <p class="muted">{{ isPilot ? '试标结论以人工标注为准。预览帧及选材原因不代表接触或犯规。' : '复核优先级不是犯规概率；证据峰值不是首次可见接触时间。' }}</p>
         <p class="muted">{{ event.externalId }} · 源PTS {{ isPilot ? `${formatTime(contact.clip.firstSourceTimeMs)}—${formatTime(contact.clip.lastSourceTimeMs)}` : formatTime(contact.candidate?.peakTimeMs) }}</p>
@@ -169,7 +170,10 @@ import { ArrowLeft, ArrowRight, VideoPlay } from '@element-plus/icons-vue'
 import { api, fileUrl } from '../api/client'
 import ContactAnnotationForm from './ContactAnnotationForm.vue'
 
-const props = defineProps({ event: { type: Object, required: true }, relatedEvents: { type: Array, default: () => [] } })
+const props = defineProps({
+  event: { type: Object, required: true }, relatedEvents: { type: Array, default: () => [] },
+  sourceVideoId: Number
+})
 const emit = defineEmits(['reviewed', 'select-event'])
 const player = ref(null)
 const mediaError = ref(false)
@@ -177,6 +181,15 @@ const saving = ref(false)
 const isContact = computed(() => props.event.eventType === 'CONTACT')
 const contact = computed(() => JSON.parse(props.event.contactMetadataJson || '{}'))
 const isPilot = computed(() => Boolean(contact.value.pilotSample))
+const useSourceVideo = computed(() => !props.event.clipPath && props.sourceVideoId
+  && contact.value.source?.timeline === 'UPLOADED_FILE_PTS'
+  && Number.isFinite(contact.value.candidate?.peakTimeMs))
+const reviewVideoUrl = computed(() => props.event.clipPath ? fileUrl('event', props.event.id, 'clip')
+  : useSourceVideo.value ? fileUrl('video', props.sourceVideoId) : null)
+// Round up the source PTS so browser seek quantization does not show the preceding frame.
+const peakSeconds = computed(() => (useSourceVideo.value
+  ? Math.ceil(contact.value.candidate.peakTimeMs)
+  : contact.value.clipPeakTimeMs) / 1000)
 const annotationRevisions = ref([])
 const currentUser = JSON.parse(localStorage.getItem('user') || 'null')
 const submittedAnnotations = computed(() => annotationRevisions.value.filter(r => r.recordType === 'HUMAN' && r.status === 'SUBMITTED'))
@@ -236,7 +249,7 @@ watch(
   }, { immediate: true }
 )
 watch(() => props.event.id, () => { annotationRevisions.value = [] })
-watch(() => props.event.clipPath, () => { mediaError.value = false })
+watch(reviewVideoUrl, () => { mediaError.value = false })
 
 async function submitReview() {
   saving.value = true
