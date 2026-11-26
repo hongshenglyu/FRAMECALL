@@ -1,8 +1,8 @@
 {
   "target": "6-10 verified complete matches",
-  "screeningCandidates": 8,
-  "confirmedCompleteNow": 4,
-  "splitPolicy": "All parts share a match-level split. E2026-D4064D929E stays DEVELOPMENT only and is excluded from complete-match eligibility. Preserve current reserves; confirm gaps, source/fixture and sufficient eligible matches before freezing. Test reserves were viewed only for coverage and identity.",
+  "screeningCandidates": 10,
+  "confirmedCompleteNow": 6,
+  "splitPolicy": "All parts share a match-level split. The six currently eligible matches form a provisional 3 development / 1 validation / 2 test split. E2026-D4064D929E stays development only, outside the six complete matches. Test footage was viewed only for coverage and identity. Freeze after verifying fixture/source, full playable coverage and effective timelines, and arranging independent referee review.",
   "matches": [
     {
       "matchId": "E2026-D4064D929E",
@@ -343,23 +343,87 @@
       "openingAndFinishEvidence": "P001 08:00–10:00 从未开始到上半场。P002 15:00–15:20 从比赛到完场。",
       "boundaryEvidence": "P001 67:20 对应 P002 00:00 附近，球员位置及下半场时钟印证重叠约1分52秒。重叠区内 P001 69:00–69:05 和 P002 01:41–01:45 同为主播暂离，两个文件均缺少该段下半场场上画面。",
       "manualReview": "若有同一时段清晰补源，核查两个暂离区间对应的比赛是否停表或仍在进行，再决定能否纳入。"
-    }
-  ],
-  "notFullnessEvidence": "Neither duration nor UNVERIFIED_FULLNESS proves full-match coverage",
-  "screeningBasis": "2026-11-26. 24 registered files matched recorded sizes; re-probed container durations and decoded boundary frames plus targeted comparisons. Broadcast fixture labels agree with the manifest; independent fixture/source confirmation and full sequential decoding remain pending. Times are player-local unless specified as broadcast clock.",
-  "reserveOptions": [
+    },
     {
       "matchId": "E2026-74AA541E7B",
+      "eventId": "E2026",
       "matchLabel": "吉外商学院A队VS叽歪国传第四轮",
+      "partIds": [
+        "E2026-74AA541E7B-P001"
+      ],
+      "partCount": 1,
+      "knownDurationSeconds": 5211.580444,
+      "completenessStatus": "FULL_CONFIRMED",
+      "isConfirmedFullMatch": true,
+      "continuityStatus": "BOUNDARIES_SUPPORTED_BY_SAMPLES",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Single registered file, size matched; 43 sampled frames; no full sequential playback",
       "proposedMatchSplit": "DEVELOPMENT",
-      "basis": "Single-file entry; metadata only"
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Independent fixture/source confirmation",
+        "Full playback and effective timeline verification",
+        "Licensed referee review arrangement"
+      ],
+      "eligibility": "READY_FOR_FULL_MATCH_ANNOTATION_PENDING_DATASET_FREEZE",
+      "readPartCountNow": 1,
+      "probedContainerDurationSeconds": 5211.612,
+      "partContainerDurationsSeconds": {
+        "E2026-74AA541E7B-P001": 5211.612444
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 03:03–03:06 中圈开球，比分牌由未开始切到上半场00:00，球开始滚动。86:40–86:45 由下半场68:48切到完场2:0。",
+      "boundaryEvidence": "P001 37:45 尚为上半场，40:00–47:30 观察到中场画面，48:00 已是下半场。两半场离散抽样，未见明显跳段、重播重叠或暂离。",
+      "manualReview": "人工标注前确认有效时间轴，复看片头03:03–03:06、中场前后37:45–40:00及47:30–48:00、终场86:40–86:45。"
     },
     {
       "matchId": "E2025-329938CCB6",
+      "eventId": "E2025",
       "matchLabel": "东方语学院VS英教高翻第五轮",
+      "partIds": [
+        "E2025-329938CCB6-P001"
+      ],
+      "partCount": 1,
+      "knownDurationSeconds": 4533.802289,
+      "completenessStatus": "FULL_CONFIRMED",
+      "isConfirmedFullMatch": true,
+      "continuityStatus": "BOUNDARIES_SUPPORTED_BY_SAMPLES",
+      "sourceStatus": "UNVERIFIED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "distributionPermission": "UNVERIFIED",
+      "archivePermission": "UNVERIFIED",
+      "evidenceDate": "2026-11-26",
+      "evidenceScope": "Single registered file, size matched; 44 sampled frames; no full sequential playback",
       "proposedMatchSplit": "TEST_RESERVED",
-      "basis": "Single-file entry; metadata only"
-    },
+      "formalSplitFrozen": false,
+      "p5FootageUsed": false,
+      "requiredVerification": [
+        "Independent fixture/source confirmation",
+        "Full playback and effective timeline verification",
+        "Licensed referee review arrangement"
+      ],
+      "eligibility": "READY_FOR_FULL_MATCH_ANNOTATION_PENDING_DATASET_FREEZE",
+      "readPartCountNow": 1,
+      "probedContainerDurationSeconds": 4533.835,
+      "partContainerDurationsSeconds": {
+        "E2025-329938CCB6-P001": 4533.835458
+      },
+      "fixtureEvidence": "Broadcast overlay matches teams and round in the existing manifest",
+      "observedCamera": "场边低位",
+      "openingAndFinishEvidence": "P001 03:15–03:17 中线开球，比分牌由未开始切到上半场00:00，球向右侧移动。75:29–75:31 由下半场65:04切到完场0:3。",
+      "boundaryEvidence": "P001 37:00 尚为上半场，39:00及40:00显示中场，41:00已为下半场。两半场离散抽样，未见明显跳段、重播重叠或暂离。",
+      "manualReview": "人工标注前确认有效时间轴，复看片头03:15–03:17、中场前后37:00–39:00及40:00–41:00、终场75:29–75:31。"
+    }
+  ],
+  "notFullnessEvidence": "Neither duration nor UNVERIFIED_FULLNESS proves full-match coverage",
+  "screeningBasis": "2026-11-26. 24 registered files matched recorded sizes; re-probed container durations and decoded boundary frames plus targeted comparisons. Broadcast fixture labels agree with the manifest; independent fixture/source confirmation and full sequential decoding remain pending. Times are player-local unless specified as broadcast clock. Task 2 added two single-file reserves, with 87 sampled frames total covering pre-kickoff, both halves, halftime and full time. The fallback reserve was not opened.",
+  "reserveOptions": [
     {
       "matchId": "E2026-423051312A",
       "matchLabel": "吉外商学院A队VS吉外商学院B队第一轮",
