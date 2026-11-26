@@ -1,0 +1,25 @@
+{
+  "schema": "framecall.contact-evaluation.v1",
+  "kind": "SYNTHETIC",
+  "protocol": { "toleranceMs": 2000 },
+  "matches": [{
+    "matchId": "SYNTH-M1",
+    "split": "DEVELOPMENT",
+    "segments": [{
+      "partId": "SYNTH-P1", "segmentId": "S1", "continuityId": "C1",
+      "timeBase": "1/1000", "sourceStartPts": 1000, "sourceEndPts": 15000,
+      "matchStartMs": 0, "annotatedRanges": [[1000, 10000]]
+    }],
+    "truth": [{
+      "id": "SYNTH-T1", "sceneType": "CONTEST", "visibility": "VISIBLE_CONTACT",
+      "start": { "partId": "SYNTH-P1", "segmentId": "S1", "sourcePts": 3000 },
+      "firstContact": { "partId": "SYNTH-P1", "segmentId": "S1", "sourcePts": 4000 },
+      "end": { "partId": "SYNTH-P1", "segmentId": "S1", "sourcePts": 5000 }
+    }],
+    "predictions": [{
+      "id": "SYNTH-PRED1", "eventType": "CONTACT",
+      "peak": { "partId": "SYNTH-P1", "segmentId": "S1", "sourcePts": 4200 },
+      "playableClipId": null
+    }]
+  }]
+}
