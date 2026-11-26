@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FRAMECALL 整场人工标注</title>
+<style>
+body{font:16px/1.55 system-ui,sans-serif;background:#f0f3f2;color:#17302a;margin:0;padding:20px}
+main{display:grid;grid-template-columns:minmax(0,3fr) minmax(270px,2fr);gap:16px;max-width:1500px;margin:auto}
+header,section{background:#fff;border:1px solid #d5dfda;padding:16px}
+header{grid-column:1/-1}h1,h2{margin:0 0 10px} h2{font-size:1.1rem}
+video{width:100%;max-height:65vh;background:#111;display:block}button,select,input,textarea{font:inherit;padding:5px;margin:3px}
+label{display:block}textarea{box-sizing:border-box;width:100%}.row{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+[hidden]{display:none}
+#status{color:#185246}#status.error{color:#ad2621} output{font-variant-numeric:tabular-nums}
+@media(max-width:850px){main{display:block}section{margin-top:12px}}
+</style>
+</head>
+<body><main>
+<header><h1>FRAMECALL 整场人工标注</h1>
+  <div class="row"><label>比赛 <select id="match"></select></label><label>分段 <select id="part"></select></label>
+    <button id="next">下一分段</button><button id="resume">回到保存位置</button><a id="export">导出 JSON</a></div>
+  <p id="profile"></p><output id="status" role="status"></output>
+</header>
+<section><h2>原片</h2><video id="video" controls preload="metadata"></video>
+  <div class="row"><button id="previous-frame">上一帧</button><button id="next-frame">下一帧</button>
+    <label>播放速度 <select id="rate"><option value="1">1 倍</option><option value="0.5">0.5 倍</option><option value="0.25">0.25 倍</option></select></label>
+    <output id="position"></output>
+  </div>
+  <h2>人工检查覆盖</h2>
+  <button id="coverage-start">标记已检查起点</button><button id="coverage-save">保存至当前帧</button>
+  <p id="coverage"></p>
+</section>
+<section><h2>争抢或待复核区间</h2>
+  <label>接触可见性
+    <select id="visibility"><option value="">请选择</option><option value="VISIBLE_CONTACT">可见身体接触</option><option value="NO_VISIBLE_CONTACT">未见接触</option><option value="INSUFFICIENT_VIEW">画面不足</option><option value="OUT_OF_SCOPE">范围外</option></select>
+  </label>
+  <label>过程 <select id="scene"><option value="CONTEST">双人争抢</option><option value="UNCLEAR">无法确认过程</option><option value="NO_CONTEST">范围外过程</option></select></label>
+  <div id="marks"></div>
+  <label>参与者线索及备注<textarea id="note" rows="3" placeholder="例如蓝衣 7 号与白衣队员，画面左侧"></textarea></label>
+  <label id="reference-row" hidden>原标注记录／修订号（裁定时填）<input id="reference"></label>
+  <label><input type="checkbox" id="observed">我已查看画面并确认本次记录</label>
+  <button id="new">新记录</button><button id="draft">保存草稿与进度</button><button id="save">保存事件</button>
+  <h2>已保存事件</h2><div id="events"></div>
+</section>
+</main><script type="module" src="/annotation.mjs"></script></body></html>

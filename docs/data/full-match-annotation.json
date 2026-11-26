@@ -1,0 +1,137 @@
+{
+  "matches": [
+    {
+      "matchId": "E2026-74AA541E7B",
+      "eventId": "E2026",
+      "matchLabel": "吉外商学院A队VS叽歪国传第四轮",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "sourceStatus": "UNVERIFIED",
+      "parts": [
+        {
+          "partId": "E2026-74AA541E7B-P001",
+          "relativePath": "吉外商学院A队VS叽歪国传第四轮.mp4",
+          "sizeBytes": 2128621180,
+          "startSeconds": 183,
+          "endSeconds": 5205,
+          "continuityId": "C1"
+        }
+      ]
+    },
+    {
+      "matchId": "E2026-05874991CE",
+      "eventId": "E2026",
+      "matchLabel": "西方语中东欧B队VS人工智能学院第四轮",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "sourceStatus": "UNVERIFIED",
+      "parts": [
+        {
+          "partId": "E2026-05874991CE-P001",
+          "relativePath": "西方语中东欧B队VS人工智能学院第四轮.mp4",
+          "sizeBytes": 3454255517,
+          "startSeconds": 156,
+          "endSeconds": 5430,
+          "continuityId": "C1"
+        }
+      ]
+    },
+    {
+      "matchId": "E2025-152F696FA9",
+      "eventId": "E2025",
+      "matchLabel": "国际商学院VS东方语学院第四轮",
+      "proposedMatchSplit": "DEVELOPMENT",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "sourceStatus": "UNVERIFIED",
+      "parts": [
+        {
+          "partId": "E2025-152F696FA9-P001",
+          "relativePath": "国际商学院VS东方语学院第四轮/国际商学院VS东方语学院1.mp4",
+          "sizeBytes": 1666677241,
+          "startSeconds": 364,
+          "endSeconds": null,
+          "continuityId": "C1"
+        },
+        {
+          "partId": "E2025-152F696FA9-P002",
+          "relativePath": "国际商学院VS东方语学院第四轮/国际商学院VS东方语学院2.mp4",
+          "sizeBytes": 1135105609,
+          "startSeconds": 0,
+          "endSeconds": 1938.138288888889,
+          "continuityId": "C2",
+          "trimEndPts": 174432446
+        },
+        {
+          "partId": "E2025-152F696FA9-P003",
+          "relativePath": "国际商学院VS东方语学院第四轮/国际商学院VS东方语学院3.mp4",
+          "sizeBytes": 162258675,
+          "startSeconds": 0,
+          "endSeconds": 259,
+          "continuityId": "C2"
+        }
+      ]
+    },
+    {
+      "matchId": "E2025-23A6D68C35",
+      "eventId": "E2025",
+      "matchLabel": "叽歪国传VS英教高翻第三轮",
+      "proposedMatchSplit": "VALIDATION_RESERVED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "sourceStatus": "UNVERIFIED",
+      "parts": [
+        {
+          "partId": "E2025-23A6D68C35-P001",
+          "relativePath": "叽歪国传VS英教高翻第三轮/叽歪国传VS英教高翻1.mp4",
+          "sizeBytes": 1465300538,
+          "startSeconds": 258,
+          "endSeconds": null,
+          "continuityId": "C1"
+        },
+        {
+          "partId": "E2025-23A6D68C35-P002",
+          "relativePath": "叽歪国传VS英教高翻第三轮/叽歪国传VS英教高翻2.mp4",
+          "sizeBytes": 1352488061,
+          "startSeconds": 0,
+          "endSeconds": 2298,
+          "continuityId": "C2"
+        }
+      ]
+    },
+    {
+      "matchId": "E2026-0E0681C00F",
+      "eventId": "E2026",
+      "matchLabel": "人工智能学院VS西方语中东欧B队决赛",
+      "proposedMatchSplit": "TEST_RESERVED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "sourceStatus": "UNVERIFIED",
+      "parts": [
+        {
+          "partId": "E2026-0E0681C00F-P001",
+          "relativePath": "人工智能学院VS西方语中东欧B队决赛.mp4",
+          "sizeBytes": 4375389847,
+          "startSeconds": 1440,
+          "endSeconds": 6690,
+          "continuityId": "C1"
+        }
+      ]
+    },
+    {
+      "matchId": "E2025-329938CCB6",
+      "eventId": "E2025",
+      "matchLabel": "东方语学院VS英教高翻第五轮",
+      "proposedMatchSplit": "TEST_RESERVED",
+      "researchPermission": "USER_CONFIRMED_LOCAL_RESEARCH",
+      "sourceStatus": "UNVERIFIED",
+      "parts": [
+        {
+          "partId": "E2025-329938CCB6-P001",
+          "relativePath": "东方语学院VS英教高翻第五轮.mp4",
+          "sizeBytes": 1809305992,
+          "startSeconds": 195,
+          "endSeconds": 4531,
+          "continuityId": "C1"
+        }
+      ]
+    }
+  ]
+}
